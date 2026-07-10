@@ -1,0 +1,41 @@
+{
+  "iconsExtracted": 4124,
+  "itemsParsed": 10169,
+  "itemsMapped": 9608,
+  "formatsSeen": [
+    "DXT1",
+    "DXT3"
+  ],
+  "sampleFiles": [
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\57.png",
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\1538.png",
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\728.png",
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\1.png",
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\2.png",
+    "C:\\Users\\admin\\Desktop\\l2versus-site\\public\\l2icons\\3.png"
+  ],
+  "missingIconSample": [
+    "time_weapon_two_handed_sword_i00",
+    "time_weapon_dual_sword_i00",
+    "sign_i00",
+    "stone_piece_i00",
+    "trans_form_i00",
+    "madicine_bottle_i00",
+    "wise_man_stone_i00",
+    "wise_man_stone_i01",
+    "wise_man_stone_i03",
+    "wise_man_stone_i04",
+    "wise_man_stone_i05",
+    "wise_man_stone_i02",
+    "accessary_mask_of_chaotic_i00",
+    "master_yogy.yogi_scroll",
+    "master_yogy.yogi_staff",
+    "etc_fire_i00",
+    "etc_tikect_free",
+    "etc_ticket_donate",
+    "bm_sayha_gold_blessed",
+    "etc_blood_oath"
+  ],
+  "failuresCount": 0,
+  "failuresSample": []
+}

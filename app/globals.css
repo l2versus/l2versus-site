@@ -1,0 +1,473 @@
+@import "tailwindcss";
+
+/* ============================================================
+   L2 VERSUS — Design System "Obsidiana & Ouro Fundido"
+   ============================================================ */
+@theme {
+  --font-display: var(--font-cinzel), Georgia, serif;
+  --font-body: var(--font-barlow), "Segoe UI", sans-serif;
+
+  /* Obsidiana (fundos) */
+  --color-obsidian: #0a0a0c;
+  --color-abyss: #07070a;
+  --color-panel: #121016;
+  --color-panel-2: #17141c;
+  --color-line: #2a2530;
+
+  /* Ouro fundido (dominante) */
+  --color-gold: #c9a24b;
+  --color-gold-bright: #f0d488;
+  --color-gold-deep: #8a6b2c;
+
+  /* Carmesim (perigo / PvP) */
+  --color-crimson: #c8433b;
+  --color-crimson-deep: #7e211d;
+
+  /* Texto (contraste reforcado p/ legibilidade) */
+  --color-parchment: #f2ede1;
+  --color-muted: #c2b9a9;
+  --color-faint: #8c8374;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-abyss);
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Atmosfera: glows radiais + grão */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(201, 162, 75, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 100% 10%, rgba(200, 67, 59, 0.08), transparent 55%),
+    radial-gradient(700px 700px at 0% 90%, rgba(201, 162, 75, 0.06), transparent 60%),
+    linear-gradient(180deg, #0a0a0c 0%, #07070a 100%);
+}
+
+/* Grão sutil */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Display */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* Texto em ouro com brilho */
+.text-glow-gold {
+  color: var(--color-gold-bright);
+  text-shadow: 0 0 24px rgba(201, 162, 75, 0.35), 0 0 4px rgba(240, 212, 136, 0.4);
+}
+
+/* Regua de losango (motivo L2) */
+.diamond-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-gold);
+}
+.diamond-rule::before,
+.diamond-rule::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, var(--color-gold-deep), transparent);
+}
+.diamond-rule .dia {
+  transform: rotate(45deg);
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-gold);
+  background: rgba(201, 162, 75, 0.15);
+}
+
+/* Painel com moldura de ouro */
+.panel {
+  background:
+    linear-gradient(180deg, rgba(30, 26, 20, 0.6), rgba(12, 11, 14, 0.85));
+  border: 1px solid var(--color-line);
+  position: relative;
+}
+.panel-gold {
+  border-color: rgba(201, 162, 75, 0.35);
+  box-shadow: inset 0 1px 0 rgba(240, 212, 136, 0.08), 0 20px 50px -30px rgba(0, 0, 0, 0.9);
+}
+
+/* Botao ouro */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1408;
+  background: linear-gradient(180deg, var(--color-gold-bright), var(--color-gold));
+  border: 1px solid var(--color-gold-bright);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 12px 30px -12px rgba(201, 162, 75, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.25s ease, filter 0.2s ease;
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 18px 40px -12px rgba(201, 162, 75, 0.75);
+}
+
+/* Botao contorno */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-bright);
+  background: rgba(201, 162, 75, 0.05);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  background: rgba(201, 162, 75, 0.12);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Reveal no load */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer {
+  0%, 100% { text-shadow: 0 0 24px rgba(201,162,75,0.25), 0 0 4px rgba(240,212,136,0.3); }
+  50% { text-shadow: 0 0 40px rgba(201,162,75,0.55), 0 0 8px rgba(240,212,136,0.6); }
+}
+.shimmer { animation: shimmer 4s ease-in-out infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-abyss); }
+::-webkit-scrollbar-thumb { background: var(--color-gold-deep); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
+
+/* Scroll horizontal sem barra visível (nav mobile, chips) */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Seleção de texto dourada */
+::selection {
+  background: rgba(201, 162, 75, 0.35);
+  color: #f4ead2;
+}
+
+/* Grão de filme por cima de tudo — textura de estúdio */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Títulos em OURO METÁLICO (gradiente recortado no texto).
+   Antes do split JS: aplica no h2 inteiro; depois: em cada palavra. */
+[data-split]:not([data-split-done]),
+[data-split] > span > span {
+  background: linear-gradient(180deg, #f8e7b0 0%, #f0d488 36%, #c9a24b 64%, #967834 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Brilho diagonal que varre o card no hover */
+.tile-shine {
+  position: relative;
+  overflow: hidden;
+}
+.tile-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -140%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(240, 212, 136, 0.16), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+  pointer-events: none;
+}
+.tile-shine:hover::after {
+  left: 170%;
+}
+
+/* Lenis (scroll suave) — recomendação oficial */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ============================================================
+   Logo VERSUS metálica + efeito (shine sweep + glow)
+   ============================================================ */
+.brand-logo {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+.brand-logo img {
+  width: 100%;
+  height: auto;
+  animation: brand-glow 4.5s ease-in-out infinite;
+}
+/* shine varrendo SÓ dentro das letras (mask = a própria logo) */
+.brand-logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 246, 220, 0.85) 50%, transparent 70%);
+  background-size: 250% 100%;
+  background-position: 160% 0;
+  -webkit-mask-image: url("/art/versus-logo-alpha.png");
+  mask-image: url("/art/versus-logo-alpha.png");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  animation: brand-sweep 5.5s ease-in-out infinite;
+}
+@keyframes brand-sweep {
+  0%, 25% { background-position: 160% 0; }
+  70%, 100% { background-position: -60% 0; }
+}
+@keyframes brand-glow {
+  0%, 100% { filter: drop-shadow(0 2px 10px rgba(0,0,0,0.65)) drop-shadow(0 0 16px rgba(240, 212, 136, 0.18)); }
+  50% { filter: drop-shadow(0 2px 10px rgba(0,0,0,0.65)) drop-shadow(0 0 30px rgba(240, 212, 136, 0.42)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-logo img,
+  .brand-logo::after { animation: none; }
+}
+
+/* ============================================================
+   Zonas tonais com corte diagonal (background nível estúdio)
+   ============================================================ */
+.zone-bronze {
+  position: relative;
+  background:
+    radial-gradient(900px 420px at 85% 0%, rgba(201, 162, 75, 0.10), transparent 60%),
+    radial-gradient(700px 500px at 8% 95%, rgba(201, 162, 75, 0.05), transparent 55%),
+    linear-gradient(180deg, #1a140b 0%, #150f09 55%, #0e0b08 100%);
+}
+/* corte diagonal: topo desce da esq p/ dir; base sobe da esq p/ dir */
+.cut-both {
+  clip-path: polygon(0 3.5vw, 100% 0, 100% calc(100% - 3.5vw), 0 100%);
+  padding-top: calc(3.5vw + 3rem);
+  padding-bottom: calc(3.5vw + 3rem);
+  margin-top: -3.5vw;
+  margin-bottom: -3.5vw;
+}
+.cut-both-alt {
+  clip-path: polygon(0 0, 100% 3.5vw, 100% 100%, 0 calc(100% - 3.5vw));
+  padding-top: calc(3.5vw + 3rem);
+  padding-bottom: calc(3.5vw + 3rem);
+  margin-top: -3.5vw;
+  margin-bottom: -3.5vw;
+}
+/* linha de ouro acompanhando o corte superior */
+.zone-bronze::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(240, 212, 136, 0.10), transparent 2.5rem);
+}
+
+/* ============================================================
+   Zona PERGAMINHO (contraste claro × escuro, estilo l2royale)
+   Re-mapeia os tokens dentro da zona: componentes adaptam sozinhos.
+   ============================================================ */
+.zone-parchment {
+  position: relative;
+  background:
+    radial-gradient(900px 400px at 82% 0%, rgba(201, 162, 75, 0.16), transparent 60%),
+    linear-gradient(180deg, #efe7d2 0%, #e8dfc8 55%, #ddd2b4 100%);
+  --color-parchment: #241d12;   /* texto principal vira tinta */
+  --color-muted: #5f5544;
+  --color-faint: #93876e;
+  --color-panel: #f6f0df;
+  --color-panel-2: #efe7d2;
+  --color-line: #d3c7a9;
+  --color-gold: #8a6b2c;        /* ouro escurece p/ ler no claro */
+  --color-gold-bright: #7c5e20;
+}
+.zone-parchment .panel {
+  background: linear-gradient(180deg, #faf5e8, #f1e9d5);
+  border-color: #d3c7a9;
+  box-shadow: 0 18px 44px -30px rgba(60, 45, 20, 0.5);
+}
+.zone-parchment .panel-gold {
+  border-color: rgba(138, 107, 44, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 18px 44px -30px rgba(60, 45, 20, 0.5);
+}
+.zone-parchment .text-glow-gold {
+  color: #7c5e20;
+  text-shadow: none;
+}
+
+/* ============================================================
+   PACOTE VIDA (receita Scryde: partículas + fundo vivo + reveal)
+   ============================================================ */
+/* Brasas douradas subindo (2 camadas defasadas) */
+.embers { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.embers::before, .embers::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -12%;
+  height: 120%;
+  background-image:
+    radial-gradient(2px 2px at 12% 90%, rgba(240,212,136,0.9), transparent 60%),
+    radial-gradient(1.5px 1.5px at 28% 70%, rgba(201,162,75,0.8), transparent 60%),
+    radial-gradient(2.5px 2.5px at 44% 85%, rgba(255,180,90,0.75), transparent 60%),
+    radial-gradient(1.5px 1.5px at 61% 65%, rgba(240,212,136,0.8), transparent 60%),
+    radial-gradient(2px 2px at 76% 88%, rgba(201,162,75,0.85), transparent 60%),
+    radial-gradient(1.5px 1.5px at 89% 72%, rgba(255,200,120,0.7), transparent 60%);
+  background-size: 100% 100%;
+  animation: ember-rise 11s linear infinite;
+  opacity: 0.7;
+}
+.embers::after {
+  animation-duration: 17s;
+  animation-delay: -6s;
+  transform: scaleX(-1);
+  opacity: 0.45;
+}
+@keyframes ember-rise {
+  0%   { transform: translateY(0); opacity: 0; }
+  8%   { opacity: 0.8; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-88%); opacity: 0; }
+}
+
+/* Fundo vivo: Ken Burns lento (pan+zoom) */
+.kenburns { animation: kb 30s ease-in-out infinite alternate; will-change: transform; }
+@keyframes kb {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1.8%, -1.2%); }
+}
+
+/* Raios de luz dourada descendo (pulso lento) */
+.god-rays {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(115deg, transparent 42%, rgba(240,212,136,0.06) 47%, transparent 53%),
+    linear-gradient(105deg, transparent 60%, rgba(240,212,136,0.05) 66%, transparent 72%);
+  animation: rays 9s ease-in-out infinite alternate;
+}
+@keyframes rays { 0% { opacity: 0.35; } 100% { opacity: 1; } }
+
+/* Reveal no scroll (IntersectionObserver adiciona .in) */
+.sfx { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+.sfx.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .embers::before, .embers::after, .kenburns, .god-rays { animation: none; }
+  .sfx { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Cabinet: cena cinematográfica fixa atrás do painel (Stitch) ---- */
+.cabinet-scene {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("/art/cabinet-bg.png");
+  background-size: cover;
+  background-position: center top;
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.35) 55%, transparent 100%);
+  filter: saturate(1.15);
+}
+.cabinet-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 7, 10, 0.55);
+}
+
+/* Painel com "luz de topo" (folha metálica iluminada por cima) */
+.panel-lit {
+  position: relative;
+  overflow: hidden;
+}
+.panel-lit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Título de seção estilo russo: à esquerda, denso */
+.sec-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  color: var(--color-parchment);
+}
+.sec-title::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  border: 1px solid var(--color-gold);
+  background: rgba(201, 162, 75, 0.2);
+}

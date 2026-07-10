@@ -1,0 +1,34 @@
+{
+  "name": "l2versus-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "rmt:worker": "node scripts/rmt-worker.mjs",
+    "rmt:once": "node scripts/rmt-worker.mjs --once"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "gsap": "^3.15.0",
+    "jose": "^6.2.3",
+    "lenis": "^1.3.25",
+    "mysql2": "^3.22.6",
+    "next": "^16.2.10",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "tailwindcss": "^4.3.2",
+    "typescript": "7.0.2"
+  }
+}
