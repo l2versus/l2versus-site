@@ -5,6 +5,7 @@ import { carregarArvore } from "@/lib/wiki/classes.server";
 import { carregarDadosDaClasse, NOME_DA_ARMA } from "@/lib/wiki/classes-dados";
 import { ARQUETIPOS, TIERS } from "@/lib/wiki/classes-ui";
 import type { Classe } from "@/lib/wiki/classes";
+import Fonte from "../../_components/Fonte";
 import GlifoArquetipo from "../../_components/GlifoArquetipo";
 
 /** Uma rota estática por classe — nenhuma toca o banco. */
@@ -250,9 +251,7 @@ export default async function ClassePage({
               );
             })}
           </div>
-          <p className="mt-3 font-mono text-[0.72rem] text-[var(--color-faint)]">
-            {dados.stats.fonte}
-          </p>
+          <Fonte>{dados.stats.fonte}</Fonte>
         </section>
       )}
 
@@ -376,15 +375,14 @@ export default async function ClassePage({
               </table>
             </div>
 
-            <p className="mt-3 font-mono text-[0.72rem] text-[var(--color-faint)]">
-              {dados.skills.fonteArquivo}
-            </p>
+            <Fonte>{dados.skills.fonteArquivo}</Fonte>
             {dados.skills.linhasSemSp > 0 && (
               <p className="nota nota-fonte mt-4">
                 <span aria-hidden className="text-[var(--color-gold)]">◆</span>
                 <span>
-                  {dados.skills.linhasSemSp} dos {dados.skills.totalLinhas} níveis não
-                  declaram custo de SP no arquivo — são as skills automáticas, que
+                  {dados.skills.linhasSemSp} dos {dados.skills.totalLinhas}{" "}
+                  níveis não declaram custo de SP no arquivo — são as skills
+                  automáticas, que
                   chegam sozinhas ao subir de nível. Aparecem como
                   &ldquo;—&rdquo; na tabela, não como zero inventado.
                 </span>
@@ -409,11 +407,11 @@ export default async function ClassePage({
             Esta página segue o enum, que é de onde o servidor tira a árvore de
             skills de verdade.
           </p>
-          <p className="mt-3 font-mono text-[0.72rem] leading-relaxed text-[var(--color-faint)]">
+          <Fonte>
             {divergencia.fonteXml}
             <br />
             {divergencia.fonteEnum}
-          </p>
+          </Fonte>
         </section>
       )}
 
@@ -423,11 +421,11 @@ export default async function ClassePage({
           Nome, hierarquia e raça lidos dos arquivos do servidor. A função é
           classificação nossa, para dar cor e leitura à árvore.
         </p>
-        <p className="mt-2 font-mono text-[0.72rem] leading-relaxed text-[var(--color-faint)]">
+        <Fonte>
           {c.fonte}
           <br />
           {c.fonteEnum}
-        </p>
+        </Fonte>
         <Link href="/wiki/classes" className="btn-ghost mt-6 inline-flex px-5 py-2.5 text-xs">
           ◆ Todas as classes
         </Link>

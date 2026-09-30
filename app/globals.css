@@ -2397,3 +2397,51 @@ html.lenis, html.lenis body { height: auto; }
   .pag-conta { width: 100%; text-align: center; }
   .pag-num, .pag-seta { min-width: 1.9rem; height: 1.9rem; font-size: 0.78rem; }
 }
+
+/* ============================================================
+   FONTE RECOLHIDA (app/wiki/_components/Fonte.tsx)
+   O caminho do arquivo-fonte continua em toda afirmação — mas
+   fechado, numa linha. Quem audita abre; quem joga não tropeça.
+   ============================================================ */
+.fonte-dobra {
+  margin-top: 0.75rem;
+}
+.fonte-dobra > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+  transition: color 0.18s;
+}
+.fonte-dobra > summary::-webkit-details-marker { display: none; }
+.fonte-dobra > summary:hover { color: var(--color-gold); }
+/* o losango do design system, girando ao abrir */
+.fonte-dia {
+  width: 0.34rem;
+  height: 0.34rem;
+  rotate: 45deg;
+  border: 1px solid currentColor;
+  transition: rotate 0.22s ease, background-color 0.22s;
+}
+.fonte-dobra[open] > summary { color: var(--color-gold); }
+.fonte-dobra[open] .fonte-dia {
+  rotate: 225deg;
+  background: rgba(201, 162, 75, 0.35);
+}
+.fonte-corpo {
+  margin-top: 0.5rem;
+  padding-left: 0.8rem;
+  border-left: 1px solid var(--color-line);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--color-faint);
+  /* caminho longo não pode empurrar a página no celular */
+  overflow-wrap: anywhere;
+}
