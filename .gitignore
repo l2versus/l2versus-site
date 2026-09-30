@@ -11,3 +11,4 @@ npm-debug.log*
 .vscode
 next-env.d.ts
 .playwright-mcp
+tsconfig.tsbuildinfo

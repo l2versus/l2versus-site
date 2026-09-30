@@ -1,0 +1,40 @@
+# O `COPY . .` do Dockerfile leva TUDO que não estiver listado aqui para
+# dentro das camadas da imagem. Duas consequências, nesta ordem de gravidade:
+#
+#   1. SEGREDO. Sem este arquivo, `.env.local` (senha do MariaDB e JWT_SECRET)
+#      entrava na camada do estágio de build. O estágio final não o copia, mas
+#      a camada existe no cache e em qualquer registry que receba o builder.
+#      Segredo em imagem não se apaga: se subiu, vazou.
+#   2. TAMANHO E TEMPO. node_modules e .next da máquina local são inúteis no
+#      build (o `npm ci` e o `next build` refazem os dois) e custam minutos de
+#      upload de contexto a cada deploy.
+#
+# O que NÃO pode entrar aqui: `content/`. O wiki lê content/wiki/*.json em
+# RUNTIME via fs — sem esses arquivos o códice sobe inteiro vazio.
+
+# --- segredos ---
+.env
+.env.local
+.env*.local
+
+# --- refeitos no build ---
+node_modules
+.next
+out
+build
+
+# --- histórico e ferramentas ---
+.git
+.gitignore
+.github
+.vscode
+.playwright-mcp
+tsconfig.tsbuildinfo
+
+# --- ruído ---
+*.log
+npm-debug.log*
+.DS_Store
+Dockerfile
+.dockerignore
+README.md

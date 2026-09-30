@@ -1,13 +1,17 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import BrandLogo from "@/components/BrandLogo";
+import SiteHeader from "@/components/site/SiteHeader";
+import SiteFooter from "@/components/site/SiteFooter";
+import { getT } from "@/lib/i18n/server";
 import {
   topByLevel,
   topByPvp,
   topByPk,
   topClans,
+  castles,
   type CharRankRow,
   type ClanRankRow,
+  type CastleRow,
 } from "@/lib/repos/rankings";
 
 // A base da rev muda o tempo todo; nunca renderizar estático nem chamar o DB no build.
@@ -21,27 +25,14 @@ export const metadata: Metadata = {
 
 /* ---------------------------------------------------------------- helpers */
 
-type TabKey = "level" | "pvp" | "pk" | "clans";
+type TabKey = "level" | "pvp" | "pk" | "clans" | "castles";
+type T = (key: string) => string;
 
-const TABS: { key: TabKey; label: string }[] = [
-  { key: "level", label: "Nível" },
-  { key: "pvp", label: "PvP" },
-  { key: "pk", label: "PK" },
-  { key: "clans", label: "Clãs" },
+/** Tabela castle não tem nome — id 1..9 (ordem oficial Interlude). */
+const CASTLE_NAMES = [
+  "Gludio", "Dion", "Giran", "Oren", "Aden",
+  "Innadril", "Goddard", "Rune", "Schuttgart",
 ];
-
-const SUBTITLE: Record<TabKey, string> = {
-  level: "Os heróis de maior nível do servidor.",
-  pvp: "Os duelistas mais letais em combate justo.",
-  pk: "Os assassinos mais temidos de Aden.",
-  clans: "As ordens mais poderosas do reino.",
-};
-
-const RACES = ["Humano", "Elfo", "Dark Elf", "Orc", "Anão"] as const;
-
-function raceName(race: number): string {
-  return RACES[race] ?? "—";
-}
 
 function fmt(n: number | string): string {
   return Number(n).toLocaleString("pt-BR");
@@ -56,7 +47,15 @@ function formatOnline(seconds: number): string {
 }
 
 function isTab(v: string | undefined): v is TabKey {
-  return v === "level" || v === "pvp" || v === "pk" || v === "clans";
+  return v === "level" || v === "pvp" || v === "pk" || v === "clans" || v === "castles";
+}
+
+/** siegeDate (millis) -> data local, ou "—" se não agendado. */
+function formatSiege(ms: number | string): string {
+  const n = Number(ms);
+  if (!n) return "—";
+  const d = new Date(n);
+  return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}`;
 }
 
 function Diamond() {
@@ -108,22 +107,31 @@ function RankCell({ rank }: { rank: number }) {
 function CharTable({
   rows,
   highlight,
+  t,
 }: {
   rows: CharRankRow[];
   highlight: "level" | "pvp" | "pk";
+  t: T;
 }) {
+  const races = [
+    t("site.race.human"),
+    t("site.race.elf"),
+    t("site.race.darkelf"),
+    t("site.race.orc"),
+    t("site.race.dwarf"),
+  ];
   return (
     <table className="w-full min-w-[720px] border-collapse text-sm">
       <thead>
         <tr className="border-b border-[var(--color-line)]">
           <th className={`${TH} text-center`}>#</th>
-          <th className={TH}>Jogador</th>
-          <th className={TH}>Nível</th>
-          <th className={TH}>Raça</th>
-          <th className={TH}>Clã</th>
+          <th className={TH}>{t("site.rk.h.player")}</th>
+          <th className={TH}>{t("site.rk.h.level")}</th>
+          <th className={TH}>{t("site.rk.h.race")}</th>
+          <th className={TH}>{t("site.rk.h.clan")}</th>
           <th className={TH}>PvP</th>
           <th className={TH}>PK</th>
-          <th className={TH}>Tempo online</th>
+          <th className={TH}>{t("site.rk.h.online")}</th>
         </tr>
       </thead>
       <tbody>
@@ -154,7 +162,7 @@ function CharTable({
               >
                 {r.level}
               </td>
-              <td className={`${TD} text-[var(--color-muted)]`}>{raceName(r.race)}</td>
+              <td className={`${TD} text-[var(--color-muted)]`}>{races[r.race] ?? "—"}</td>
               <td className={`${TD} text-[var(--color-muted)]`}>
                 {r.clan_name ?? <span className="text-[var(--color-faint)]">—</span>}
               </td>
@@ -187,19 +195,19 @@ function CharTable({
   );
 }
 
-function ClanTable({ rows }: { rows: ClanRankRow[] }) {
+function ClanTable({ rows, t }: { rows: ClanRankRow[]; t: T }) {
   return (
     <table className="w-full min-w-[760px] border-collapse text-sm">
       <thead>
         <tr className="border-b border-[var(--color-line)]">
           <th className={`${TH} text-center`}>#</th>
-          <th className={TH}>Clã</th>
-          <th className={TH}>Nível</th>
-          <th className={TH}>Reputação</th>
-          <th className={TH}>Membros</th>
-          <th className={TH}>Líder</th>
-          <th className={TH}>Aliança</th>
-          <th className={TH}>Castelo</th>
+          <th className={TH}>{t("site.rk.h.clan")}</th>
+          <th className={TH}>{t("site.rk.h.level")}</th>
+          <th className={TH}>{t("site.rk.h.reputation")}</th>
+          <th className={TH}>{t("site.rk.h.members")}</th>
+          <th className={TH}>{t("site.rk.h.leader")}</th>
+          <th className={TH}>{t("site.rk.h.ally")}</th>
+          <th className={TH}>{t("site.rk.h.castle")}</th>
         </tr>
       </thead>
       <tbody>
@@ -235,7 +243,7 @@ function ClanTable({ rows }: { rows: ClanRankRow[] }) {
               </td>
               <td className={TD}>
                 {r.hasCastle > 0 ? (
-                  <span className="text-[var(--color-gold)]">◈ Sim</span>
+                  <span className="text-[var(--color-gold)]">◈ {t("site.rk.yes")}</span>
                 ) : (
                   <span className="text-[var(--color-faint)]">—</span>
                 )}
@@ -248,17 +256,63 @@ function ClanTable({ rows }: { rows: ClanRankRow[] }) {
   );
 }
 
-function EmptyState({ isClan }: { isClan: boolean }) {
+function CastleTable({ rows, t }: { rows: CastleRow[]; t: T }) {
+  return (
+    <table className="w-full min-w-[680px] border-collapse text-sm">
+      <thead>
+        <tr className="border-b border-[var(--color-line)]">
+          <th className={`${TH} text-center`}>#</th>
+          <th className={TH}>{t("site.rk.h.castlename")}</th>
+          <th className={TH}>{t("site.rk.h.owner")}</th>
+          <th className={TH}>{t("site.rk.h.ally")}</th>
+          <th className={TH}>{t("site.rk.h.tax")}</th>
+          <th className={TH}>{t("site.rk.h.siege")}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr
+            key={r.id}
+            className={`border-b border-[var(--color-line)] transition-colors hover:bg-[rgba(201,162,75,0.05)] ${
+              r.clan_name ? "bg-[rgba(201,162,75,0.06)]" : ""
+            }`}
+          >
+            <td className={`${TD} w-14 text-center`}>
+              <span className="font-display text-lg text-[var(--color-gold)]">{r.id}</span>
+            </td>
+            <td className={`${TD} font-semibold text-[var(--color-parchment)]`}>
+              ⚑ {CASTLE_NAMES[r.id - 1] ?? `#${r.id}`}
+            </td>
+            <td className={TD}>
+              {r.clan_name ? (
+                <span className="font-semibold text-[var(--color-gold-bright)]">{r.clan_name}</span>
+              ) : (
+                <span className="text-[var(--color-faint)]">{t("site.rk.free_castle")}</span>
+              )}
+            </td>
+            <td className={`${TD} text-[var(--color-muted)]`}>
+              {r.ally_name ?? <span className="text-[var(--color-faint)]">—</span>}
+            </td>
+            <td className={`${TD} font-display text-[var(--color-parchment)]`}>
+              {Number(r.currentTaxPercent)}%
+            </td>
+            <td className={`${TD} text-[var(--color-muted)]`}>{formatSiege(r.siegeDate)}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
+
+function EmptyState({ isClan, t }: { isClan: boolean; t: T }) {
   return (
     <div className="flex flex-col items-center justify-center gap-4 px-6 py-24 text-center">
       <Diamond />
       <p className="max-w-md text-[var(--color-muted)]">
-        {isClan
-          ? "Nenhum clã registrado ainda — funde o primeiro."
-          : "Nenhum herói registrado ainda — seja o primeiro."}
+        {isClan ? t("site.rk.empty_clan") : t("site.rk.empty_char")}
       </p>
       <Link href="/register" className="btn-gold mt-2 px-6 py-3 text-xs">
-        ⚔ Criar Conta
+        ⚔ {t("site.rk.create")}
       </Link>
     </div>
   );
@@ -272,63 +326,47 @@ export default async function RankingsPage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const sp = await searchParams;
+  const t = await getT();
   const tabParam = typeof sp.tab === "string" ? sp.tab : undefined;
   const active: TabKey = isTab(tabParam) ? tabParam : "level";
+
+  const TABS: { key: TabKey; label: string }[] = [
+    { key: "level", label: t("site.rk.tab.level") },
+    { key: "pvp", label: t("site.rk.tab.pvp") },
+    { key: "pk", label: t("site.rk.tab.pk") },
+    { key: "clans", label: t("site.rk.tab.clans") },
+    { key: "castles", label: t("site.rk.tab.castles") },
+  ];
+
+  const SUBTITLE: Record<TabKey, string> = {
+    level: t("site.rk.sub.level"),
+    pvp: t("site.rk.sub.pvp"),
+    pk: t("site.rk.sub.pk"),
+    clans: t("site.rk.sub.clans"),
+    castles: t("site.rk.sub.castles"),
+  };
 
   // Busca só a categoria ativa.
   let charRows: CharRankRow[] = [];
   let clanRows: ClanRankRow[] = [];
+  let castleRows: CastleRow[] = [];
   if (active === "level") charRows = await topByLevel();
   else if (active === "pvp") charRows = await topByPvp();
   else if (active === "pk") charRows = await topByPk();
-  else clanRows = await topClans();
+  else if (active === "clans") clanRows = await topClans();
+  else castleRows = await castles();
 
   const isClan = active === "clans";
-  const isEmpty = isClan ? clanRows.length === 0 : charRows.length === 0;
+  const isCastle = active === "castles";
+  const isEmpty = isCastle
+    ? castleRows.length === 0
+    : isClan
+      ? clanRows.length === 0
+      : charRows.length === 0;
 
   return (
     <main className="min-h-screen">
-      {/* NAV — replica da landing, com "Rankings" ativo */}
-      <header className="sticky top-0 z-50 border-b border-[var(--color-line)] bg-[rgba(7,7,10,0.72)] backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <Diamond />
-            <BrandLogo className="w-[124px] sm:w-[144px]" priority />
-          </Link>
-          <nav className="hidden items-center gap-8 text-sm uppercase tracking-widest text-[var(--color-muted)] md:flex">
-            <Link href="/" className="transition-colors hover:text-[var(--color-gold-bright)]">
-              Início
-            </Link>
-            <Link
-              href="/rankings"
-              aria-current="page"
-              className="text-[var(--color-gold-bright)]"
-            >
-              Rankings
-            </Link>
-            <Link
-              href="/download"
-              className="transition-colors hover:text-[var(--color-gold-bright)]"
-            >
-              Downloads
-            </Link>
-            <Link
-              href="/donate"
-              className="transition-colors hover:text-[var(--color-gold-bright)]"
-            >
-              Doar
-            </Link>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Link href="/login" className="btn-ghost px-4 py-2 text-xs">
-              Entrar
-            </Link>
-            <Link href="/register" className="btn-gold px-4 py-2 text-xs">
-              Registrar
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active="rankings" />
 
       {/* BANNER */}
       <section className="relative overflow-hidden border-b border-[var(--color-line)]">
@@ -343,7 +381,7 @@ export default async function RankingsPage({
         />
         <div className="relative mx-auto max-w-6xl px-6 py-20 text-center md:py-24">
           <p className="mb-5 text-xs uppercase tracking-[0.5em] text-[var(--color-gold)]">
-            Salão da Fama
+            {t("site.rk.kicker")}
           </p>
           <h1 className="font-display text-glow-gold text-5xl leading-none tracking-[0.08em] sm:text-6xl md:text-7xl">
             RANKINGS
@@ -361,12 +399,12 @@ export default async function RankingsPage({
       <section className="mx-auto max-w-6xl px-6 py-14">
         {/* Abas (pílulas) */}
         <div className="mb-8 flex flex-wrap justify-center gap-3">
-          {TABS.map((t) => {
-            const isActive = t.key === active;
+          {TABS.map((tb) => {
+            const isActive = tb.key === active;
             return (
               <Link
-                key={t.key}
-                href={t.key === "level" ? "/rankings" : `/rankings?tab=${t.key}`}
+                key={tb.key}
+                href={tb.key === "level" ? "/rankings" : `/rankings?tab=${tb.key}`}
                 aria-current={isActive ? "page" : undefined}
                 className={`rounded-sm border px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all ${
                   isActive
@@ -374,7 +412,7 @@ export default async function RankingsPage({
                     : "border-[var(--color-line)] text-[var(--color-muted)] hover:border-[rgba(201,162,75,0.5)] hover:text-[var(--color-gold-bright)]"
                 }`}
               >
-                {t.label}
+                {tb.label}
               </Link>
             );
           })}
@@ -383,47 +421,34 @@ export default async function RankingsPage({
         {/* Tabela / estado vazio */}
         <div className="panel panel-gold rounded-sm">
           {isEmpty ? (
-            <EmptyState isClan={isClan} />
+            <EmptyState isClan={isClan || isCastle} t={t} />
           ) : (
             <div className="overflow-x-auto">
-              {isClan ? (
-                <ClanTable rows={clanRows} />
+              {isCastle ? (
+                <CastleTable rows={castleRows} t={t} />
+              ) : isClan ? (
+                <ClanTable rows={clanRows} t={t} />
               ) : (
                 <CharTable
                   rows={charRows}
                   highlight={active as "level" | "pvp" | "pk"}
+                  t={t}
                 />
               )}
             </div>
           )}
         </div>
 
-        {!isEmpty && (
+        {!isEmpty && !isCastle && (
           <p className="mt-4 text-center text-xs uppercase tracking-[0.25em] text-[var(--color-faint)]">
             {isClan
-              ? `${clanRows.length} clã${clanRows.length === 1 ? "" : "s"} classificado${
-                  clanRows.length === 1 ? "" : "s"
-                }`
-              : `${charRows.length} jogador${charRows.length === 1 ? "" : "es"} classificado${
-                  charRows.length === 1 ? "" : "s"
-                }`}
+              ? `${clanRows.length} ${t("site.rk.listed_clans")}`
+              : `${charRows.length} ${t("site.rk.listed_players")}`}
           </p>
         )}
       </section>
 
-      {/* FOOTER */}
-      <footer className="border-t border-[var(--color-line)] py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-[var(--color-faint)] md:flex-row">
-          <div className="flex items-center gap-3">
-            <Diamond />
-            <BrandLogo className="w-[112px]" />
-          </div>
-          <p>
-            © {new Date().getFullYear()} L2 Versus. Lineage II é marca da NCSoft. Projeto
-            sem fins lucrativos.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

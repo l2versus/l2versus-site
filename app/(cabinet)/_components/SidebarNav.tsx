@@ -73,6 +73,12 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M12 12h4" />
     </>
   ),
+  streams: (
+    <>
+      <rect x="3" y="5" width="18" height="12" rx="1.5" />
+      <path d="M10 9l4 2-4 2V9ZM8 21h8" />
+    </>
+  ),
 };
 
 export type NavItem = { slug: string; href: string; label: string };

@@ -1,0 +1,4756 @@
+{
+  "familia": "arma-sa",
+  "titulo": "SA das Armas (pedras de alma)",
+  "geradoDe": [
+    "SA-ARMAS-alteracoes.txt",
+    "SA-ARMAS-TODAS-AS-GRADES.txt",
+    "SA-ARMAS-GRADE-A.txt",
+    "SA-ARMAS-GRADE-B.txt",
+    "SA-ARMAS-GRADE-S.txt",
+    "SA-ARMAS-DYNASTY.txt",
+    "SA-ARMAS-ICARUS.txt",
+    "SA-ARMAS-VESPER.txt"
+  ],
+  "curadoPor": "leitura integral das 8 fontes em 28/09/2026 — cada entrada cita arquivo:linha",
+  "comoLer": [
+    {
+      "titulo": "O que esta lista é - e o que ela não é",
+      "texto": "Este documento reúne num lugar só os sete arquivos por grade. NÃO é a lista completa das armas do jogo: são só as que tiveram a SA trocada, com o que elas dão AGORA, depois da mudança.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:6"
+    },
+    {
+      "titulo": "De onde vêm os valores",
+      "texto": "Os valores foram lidos direto dos arquivos do servidor, um por um - não da descrição que aparece no cliente.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:14"
+    },
+    {
+      "titulo": "Escopo: só arma normal",
+      "texto": "Só entra arma NORMAL: ficam de fora as Shadow, as Common Item, as {PvP}, as de prazo de validade e as de evento. As Masterwork também ficam de fora - elas têm documento próprio, o BONUS-MASTERWORK-ARMAS.txt.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:17"
+    },
+    {
+      "titulo": "Legenda dos marcadores",
+      "texto": "A SA que MUDOU vem marcada no fim da própria linha: \"[SA NOVA - saiu: <a pedra velha e o que ela dava>]\"; \"[SA NOVA]\" quando a arma teve mais de uma trocada; \"[SA ADICIONADA - nada saiu no lugar]\" quando a arma ganhou uma a mais. Linha sem marca é SA que não mexemos - está ali só para você ver o trio inteiro da arma.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:50"
+    },
+    {
+      "titulo": "Ordenação",
+      "texto": "Dentro de cada tipo de arma a lista vai do MENOR para o MAIOR P. Atk.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:59"
+    },
+    {
+      "titulo": "A pedra não muda o dano base",
+      "texto": "As versões com SA têm P. Atk. e M. Atk. iguais aos da arma sem pedra - conferi uma por uma; a pedra de alma não muda o dano base.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:60"
+    },
+    {
+      "titulo": "SA de disparo: de quem é o número",
+      "texto": "Quando a SA é um efeito que dispara sozinho, o número da frente é a chance de disparo do PRÓPRIO ITEM - ela muda de arma para arma. Quais SAs o alvo consegue resistir está nas NOTAS de cada grade.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:63"
+    },
+    {
+      "titulo": "A regra de leitura mais importante: dano crítico é soma",
+      "texto": "\"Dano crítico\" é um número SOMADO ao dano do golpe crítico, não uma porcentagem.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:67"
+    },
+    {
+      "titulo": "Tamanho do conjunto",
+      "texto": "Tabela-resumo: 52 armas e 11 espadas duplas, com 73 linhas de SA trocada. Por grade: C 12, B 11, A 12, S 7, Dynasty 11, Icarus 10, Vesper 10.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:26"
+    },
+    {
+      "titulo": "Total de alterações",
+      "texto": "Total: 223 alterações, em 30 SAs e 83 skills.",
+      "fonte": "SA-ARMAS-alteracoes.txt:5"
+    },
+    {
+      "titulo": "Quando e de onde",
+      "texto": "SA trocada em 11 e 12/08/2026. Lido de dist3 depois da mudança.",
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:953"
+    }
+  ],
+  "entradas": [
+    {
+      "id": "sa-anger",
+      "categoria": "arma-sa",
+      "titulo": "Anger",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "+20,44 a +78,33"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "+20%"
+        },
+        {
+          "rotulo": "MANTIDO: Max HP",
+          "valor": "-15%"
+        },
+        {
+          "rotulo": "MANTIDO: nas armas de grade A, S e S80",
+          "valor": "Dano fisico em PvP +5%, Dano de skill fisica em PvP +5%, Dano magico em PvP +5%"
+        },
+        {
+          "rotulo": "MANTIDO: nas de S80 também",
+          "valor": "Alvos por golpe +4"
+        }
+      ],
+      "notaCliente": "texto novo: \"Increases P. Atk. by 20% while reducing Max HP by 15%.\"",
+      "fonte": "SA-ARMAS-alteracoes.txt:7",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-back-blow",
+      "categoria": "arma-sa",
+      "titulo": "Back Blow",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Critical Rate (pelas costas)",
+          "valor": "+37% a +67%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate (pelas costas)",
+          "valor": "+40%"
+        }
+      ],
+      "notaCliente": "texto novo: \"Increases Critical Rate by 40% when attacking a target from behind.\"",
+      "fonte": "SA-ARMAS-alteracoes.txt:17",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-cheap-shot-mp",
+      "categoria": "arma-sa",
+      "titulo": "Cheap Shot",
+      "subtitulo": "Special Ability (pedra de alma) — primeira entrada: custo de MP",
+      "antes": [
+        {
+          "rotulo": "MP de skill física",
+          "valor": "-12% a -4%"
+        },
+        {
+          "rotulo": "MP de skill mágica",
+          "valor": "-12% a -4%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "MP de skill física",
+          "valor": "-15%"
+        },
+        {
+          "rotulo": "MP de skill mágica",
+          "valor": "-15%"
+        }
+      ],
+      "notaCliente": "texto novo: \"MP consumption decreases by 15% during skill use.\"",
+      "fonte": "SA-ARMAS-alteracoes.txt:24",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-anger",
+      "categoria": "arma-sa",
+      "titulo": "Critical Anger",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Efeito",
+          "valor": "debuff ao golpear; Critical Damage +248.56"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Efeito",
+          "valor": "Armas com esse bônus ganhou bônus de Anger"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:31",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-bleed",
+      "categoria": "arma-sa",
+      "titulo": "Critical Bleed",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance por golpe crítico",
+          "valor": "de 12% a 42% de chance por golpe critico, e mesmo assim o alvo resistia quase sempre - a taxa efetiva ficava entre 10% e 19%. No fim, de 5% a 25% dos criticos sangravam."
+        },
+        {
+          "rotulo": "Dano",
+          "valor": "de 64 a 256 por segundo, durante 20s"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance por golpe crítico",
+          "valor": "40% dos golpes criticos sangram o alvo, sem chance de resistir"
+        },
+        {
+          "rotulo": "Dano",
+          "valor": "80 por segundo, durante 20s"
+        },
+        {
+          "rotulo": "MANTIDO: Speed (no alvo)",
+          "valor": "-20%"
+        }
+      ],
+      "prosa": "OBS: a taxa de acerto das skills foi para 100, e o motor entrega acerto\nOBS: garantido acima de 99 sem fazer conta nenhuma. Com isso a SA parou de\nOBS: depender do nível e do CON do alvo: a arma de grade C sangra tanto\nOBS: quanto a de grade S, e a única chance que sobrou é a da própria arma.\nOBS: seis armas caem de 41-42% para 40% na chance do item, mas como o alvo\nOBS: deixou de resistir, todas subiram no resultado final.\nOBS: o dano por segundo é igual ao número da skill: \"dano 80\" é 80 por\nOBS: segundo. Nas armas mais fortes ele era maior (até 256), então o ganho\nOBS: desta rodada está na frequência, não no dano.",
+      "fonte": "SA-ARMAS-alteracoes.txt:36",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-damage",
+      "categoria": "arma-sa",
+      "titulo": "Critical Damage",
+      "subtitulo": "Special Ability (pedra de alma) — primeira faixa",
+      "antes": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+49,42 a +559"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+149,42 a +659"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:56",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-drain",
+      "categoria": "arma-sa",
+      "titulo": "Critical Drain",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Absorção",
+          "valor": "era uma PORCENTAGEM do dano do proprio golpe: 21% a 35% nas armas de grade C e B, 24% a 33% em outra faixa de C/B/A, e 35% ou 65% nas de grade A"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Absorção",
+          "valor": "absorve 30 de HP no golpe critico - valor fixo, igual em toda grade, e nunca mais do que o golpe tirou do alvo"
+        }
+      ],
+      "notaCliente": "texto novo: \"Absorbs 30 HP from the target during a critical attack.\"",
+      "prosa": "OBS: para as armas de grade C isso é ganho; para as de grade A que absorviam 65% do golpe, é\nOBS: perda. O número deixou de depender do quanto você bateu.",
+      "fonte": "SA-ARMAS-alteracoes.txt:61",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-poison",
+      "categoria": "arma-sa",
+      "titulo": "Critical Poison",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance por golpe crítico",
+          "valor": "de 6% a 18% de chance por golpe critico, e o alvo ainda resistia: a taxa efetiva era de 10% em quase toda arma. No fim, de 0,6% a 1,7% dos criticos envenenavam."
+        },
+        {
+          "rotulo": "Dano",
+          "valor": "de 168 a 671 por segundo, durante 30s"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance por golpe crítico",
+          "valor": "40% dos golpes criticos envenenam, sem chance de resistir"
+        },
+        {
+          "rotulo": "Dano",
+          "valor": "50 por segundo, durante 30s"
+        }
+      ],
+      "prosa": "OBS: quatro das cinco skills de Critical Poison (3040, 3041, 3061 e 3062)\nOBS: declaram a tabela de nível mágico e nunca a usam - falha que vem do\nOBS: próprio L2J. Sem nível mágico a conta de acerto afundava no piso de\nOBS: 10% por mais alta que fosse a taxa, e era por isso que o veneno quase\nOBS: nunca pegava. Com o acerto garantido isso deixou de importar.\nOBS: as quatro Sirra's Blade {PvP} e Eclair Bijou {PvP} não trazem número\nOBS: de chance no item, o que no motor vale 100%: nelas todo crítico\nOBS: envenena.\nOBS: o dano por segundo é igual ao número da skill: \"dano 50\" é 50 por\nOBS: segundo. Nas armas mais fortes ele era maior (até 671), então o ganho\nOBS: desta rodada está na frequência, não no dano.",
+      "fonte": "SA-ARMAS-alteracoes.txt:75",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-critical-stun",
+      "categoria": "arma-sa",
+      "titulo": "Critical Stun",
+      "subtitulo": "Special Ability (pedra de alma) — primeira entrada",
+      "antes": [
+        {
+          "rotulo": "debuff ao golpear: STUN, 9s",
+          "valor": "taxa de acerto 34; 32; 31; 29; 27; 25, conforme a arma"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "debuff ao golpear: STUN, 9s",
+          "valor": "taxa de acerto 48"
+        }
+      ],
+      "prosa": "OBS: as armas de grade S e S80 já atordoavam com 48; agora todas as grades usam esse valor.",
+      "fonte": "SA-ARMAS-alteracoes.txt:96",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-crtical-damage-faixa-alta",
+      "categoria": "arma-sa",
+      "titulo": "Critical Damage",
+      "subtitulo": "Special Ability — segunda entrada, grafada \"Crtical Damage\" no .txt (faixa alta)",
+      "antes": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+265 a +999"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+565 a +999"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:107",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-crtical-slow",
+      "categoria": "arma-sa",
+      "titulo": "Critical Slow",
+      "subtitulo": "Special Ability — grafada \"Crtical Slow\" no .txt",
+      "antes": [
+        {
+          "rotulo": "debuff ao golpear: SPEED_DOWN, 120s",
+          "valor": "taxa de acerto 16; 24; 33"
+        },
+        {
+          "rotulo": "Speed (no alvo)",
+          "valor": "-30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Speed (no alvo)",
+          "valor": "-20%"
+        },
+        {
+          "rotulo": "debuff ao golpear: SPEED_DOWN, 5s",
+          "valor": "taxa de acerto 30"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:112",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-crtical-stun",
+      "categoria": "arma-sa",
+      "titulo": "Critical Stun",
+      "subtitulo": "Special Ability — segunda entrada, grafada \"Crtical Stun\" no .txt",
+      "antes": [
+        {
+          "rotulo": "debuff ao golpear: STUN, 9s",
+          "valor": "taxa de acerto 27; taxa de acerto 43"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "debuff ao golpear: STUN, 9s",
+          "valor": "taxa de acerto 48"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:120",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-empower",
+      "categoria": "arma-sa",
+      "titulo": "Empower",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+24,59 a +176,53"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+20%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano físico em PvP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano de skill física em PvP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano mágico em PvP",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:126",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-evasion",
+      "categoria": "arma-sa",
+      "titulo": "Evasion",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+2,41 a +5,31"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7 fixo, em todas as grades"
+        }
+      ],
+      "prosa": "OBS: as armas de grade C e B davam de +2,41 a +2,95 e passaram a dar +7, quase o triplo. As de\nOBS: grade S e S80 davam +5,31 e também foram para +7.\nOBS: não confundir com as armas da seção Rsk. Evasion, que hoje também se chamam Evasion mas\nOBS: continuam com os valores próprios delas (+6,24 a +7,63).",
+      "fonte": "SA-ARMAS-alteracoes.txt:133",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-focus",
+      "categoria": "arma-sa",
+      "titulo": "Focus",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+24,8 a +139,9"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+74,8 a +139,9"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:143",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-guidance",
+      "categoria": "arma-sa",
+      "titulo": "Guidance",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Accuracy",
+          "valor": "+2,2 a +7,5"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Accuracy",
+          "valor": "+5 a +10"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:148",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-hp-drain",
+      "categoria": "arma-sa",
+      "titulo": "HP Drain",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "HP absorvido (Vampiric)",
+          "valor": "+3 a +4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "HP absorvido (Vampiric)",
+          "valor": "+5"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:153",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-hp-regeneration",
+      "categoria": "arma-sa",
+      "titulo": "HP Regeneration",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "HP Recovery",
+          "valor": "+2,04 a +5,18"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "HP Recovery",
+          "valor": "+12,04 a +15,18"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:158",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-haste",
+      "categoria": "arma-sa",
+      "titulo": "Haste",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Atk. Spd.",
+          "valor": "+2% a +11%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk. Spd.",
+          "valor": "+7% a +11%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano físico em PvP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano de skill física em PvP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "MANTIDO: Dano mágico em PvP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "MANTIDO: Alvos por golpe",
+          "valor": "+4"
+        }
+      ],
+      "prosa": "OBS: 36 espadas duplas de grade C e B davam +5% de dano em PvP por engano - o bônus estava\nOBS: cravado em todos os níveis da skill em vez de seguir a tabela de grade, e o texto no jogo\nOBS: nunca prometeu isso. Foi corrigido: o +5% de PvP só vale de grade A para cima.",
+      "fonte": "SA-ARMAS-alteracoes.txt:163",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-light",
+      "categoria": "arma-sa",
+      "titulo": "Light",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:174",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-m-atk",
+      "categoria": "arma-sa",
+      "titulo": "M. Atk.",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+75,86 a +167,02"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+30%"
+        },
+        {
+          "rotulo": "MANTIDO: MP de skill mágica",
+          "valor": "+15% - a SA sempre cobrou esse custo a mais, e continua cobrando"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:179",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-mp-regeneration",
+      "categoria": "arma-sa",
+      "titulo": "MP Regeneration",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "MP Recovery",
+          "valor": "+0,54 a +2,05"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "MP Recovery",
+          "valor": "+10,54 a +12,05"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:185",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-damage",
+      "categoria": "arma-sa",
+      "titulo": "Magic Damage",
+      "subtitulo": "Special Ability (pedra de alma) — extinta",
+      "antes": [
+        {
+          "rotulo": "Efeito",
+          "valor": "debuff ao golpear: MagicalDamage"
+        },
+        {
+          "rotulo": "Gatilho",
+          "valor": "era a unica SA que disparava uma magia extra (30% de chance ao lancar magia)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Estado",
+          "valor": "a SA deixou de ser concedida por qualquer arma"
+        },
+        {
+          "rotulo": "renomeada",
+          "valor": "5606 Branch of the Mother Tree - Magic Damage -> - M. Atk."
+        },
+        {
+          "rotulo": "renomeada",
+          "valor": "11106 Branch of the Mother Tree - Nature - Magic Damage -> - M. Atk."
+        }
+      ],
+      "prosa": "OBS: era a única SA que disparava uma magia extra (30% de chance ao lançar magia). Virou passiva de\nOBS: M. Atk. +30% e MP de skill mágica +15%. O item também perdeu o gatilho ON_MAGIC_SKILL, senão\nOBS: concederia uma passiva por chance.",
+      "fonte": "SA-ARMAS-alteracoes.txt:190",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-branch-of-the-mother-tree-m-atk",
+      "categoria": "arma-sa",
+      "titulo": "Branch of the Mother Tree - M. Atk.",
+      "subtitulo": "antes \"Branch of the Mother Tree - Magic Damage\"",
+      "itemId": 5606,
+      "antes": [
+        {
+          "rotulo": "SA",
+          "valor": "Magic Damage - debuff ao golpear: MagicalDamage; disparava uma magia extra com 30% de chance ao lancar magia (gatilho ON_MAGIC_SKILL)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "SA",
+          "valor": "M. Atk. (passiva)"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+30%"
+        },
+        {
+          "rotulo": "MP de skill mágica",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Gatilho",
+          "valor": "o item perdeu o ON_MAGIC_SKILL, senao concederia uma passiva por chance"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:195",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-branch-of-the-mother-tree-nature-m-atk",
+      "categoria": "arma-sa",
+      "titulo": "Branch of the Mother Tree - Nature - M. Atk.",
+      "subtitulo": "antes \"Branch of the Mother Tree - Nature - Magic Damage\"",
+      "itemId": 11106,
+      "antes": [
+        {
+          "rotulo": "SA",
+          "valor": "Magic Damage - debuff ao golpear: MagicalDamage; disparava uma magia extra com 30% de chance ao lancar magia (gatilho ON_MAGIC_SKILL)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "SA",
+          "valor": "M. Atk. (passiva)"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "+30%"
+        },
+        {
+          "rotulo": "MP de skill mágica",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Gatilho",
+          "valor": "o item perdeu o ON_MAGIC_SKILL, senao concederia uma passiva por chance"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:196",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-hold-debuff",
+      "categoria": "arma-sa",
+      "titulo": "Magic Hold",
+      "subtitulo": "Special Ability — primeira entrada: duração e taxa do debuff",
+      "antes": [
+        {
+          "rotulo": "debuff ao golpear: ROOT_MAGICALLY",
+          "valor": "30s, taxa de acerto 80"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "debuff ao golpear: ROOT_MAGICALLY",
+          "valor": "5s, taxa de acerto 100"
+        },
+        {
+          "rotulo": "debuff ao golpear: ROOT_MAGICALLY",
+          "valor": "5s, taxa de acerto 80"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:202",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-paralyze",
+      "categoria": "arma-sa",
+      "titulo": "Magic Paralyze",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "debuff ao golpear: PARALYZE",
+          "valor": "15s, taxa de acerto 20"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "debuff ao golpear: PARALYZE",
+          "valor": "5s, taxa de acerto 50"
+        },
+        {
+          "rotulo": "MANTIDO: Atk. Spd. (no alvo)",
+          "valor": "-50%"
+        },
+        {
+          "rotulo": "MANTIDO: Speed (no alvo)",
+          "valor": "-50%"
+        },
+        {
+          "rotulo": "MANTIDO: Casting Spd. (no alvo)",
+          "valor": "-50%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:208",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-silence",
+      "categoria": "arma-sa",
+      "titulo": "Magic Silence",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance ao lançar magia",
+          "valor": "10% das magias lancadas silenciavam o alvo, por 120s"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance ao lançar magia",
+          "valor": "40% das magias lancadas silenciam o alvo, por 5s, sem chance de resistir"
+        }
+      ],
+      "notaCliente": "a descrição no cliente dizia \"100% chance\", que era a taxa da skill e nunca a chance real. Passou a dizer só \"Has a chance of silencing a target for 5 seconds during magic attack.\", sem número, para não precisar ser reescrita se a chance mudar de novo. As duas Mardil's Fan anunciavam o silêncio DUAS vezes, com 100% e 10% na mesma tooltip - sobra da redação antiga. A frase repetida saiu.",
+      "prosa": "OBS: a duração caiu de 120s para 5s e a chance subiu de 10% para 40%, nas\nOBS: 17 armas que têm a SA. A skill em si já acertava sempre desde a\nOBS: rodada anterior (taxa 100, e acima de 99 o motor nem faz a conta); o\nOBS: que segurava era a chance da arma, que ninguém tinha mexido.\nOBS: só vale lançando magia OFENSIVA no alvo - buff e cura não acionam a\nOBS: SA, em chance nenhuma. E o silêncio não pode ser resistido: nível e\nOBS: MEN do alvo não contam.",
+      "fonte": "SA-ARMAS-alteracoes.txt:215",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-mighty-mortal",
+      "categoria": "arma-sa",
+      "titulo": "Mighty Mortal",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance de blow",
+          "valor": "+40% a +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de blow",
+          "valor": "+40%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:235",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-rsk-evasion",
+      "categoria": "arma-sa",
+      "titulo": "Rsk. Evasion",
+      "subtitulo": "Special Ability — renomeada para Evasion",
+      "antes": [
+        {
+          "rotulo": "Evasion (com HP <= 60%)",
+          "valor": "+6,24 a +7,63"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Condição",
+          "valor": "a condicao <player hp=\"60\"/> saiu das quatro skills, entao o bonus vale sempre"
+        },
+        {
+          "rotulo": "Evasion",
+          "valor": "+6,24 a +7,63 (valores proprios, mantidos)"
+        },
+        {
+          "rotulo": "Nome",
+          "valor": "como deixou de ser \"Risk\", as skills e as 20 armas foram renomeadas para Evasion no servidor e no cliente"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:240",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-rsk-focus",
+      "categoria": "arma-sa",
+      "titulo": "Rsk. Focus",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Critical Rate (com HP <= 60%)",
+          "valor": "Armas que davam +99,9 agora dão +164"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate (com HP <= 60%)",
+          "valor": "Armas que davam +164 agora dão +194"
+        }
+      ],
+      "prosa": "OBS: só as 6 armas de DUAS MÃOS continuam com Rsk. Focus. As 21 de uma mão saíram da SA: passaram\nOBS: a usar Focus, que não tem a condição de HP, com o valor mais próximo e mais alto que existia\nOBS: - e foram renomeadas para \"- Focus\" no servidor e no cliente. Duas delas perderam bastante\nOBS: no número (138,7 -> 110,5 e 164 -> 139,9) porque 110,5 e 139,9 são o teto do Focus em cada\nOBS: categoria, mas em troca o bônus vale sempre, e não só com HP em 60% ou menos.",
+      "fonte": "SA-ARMAS-alteracoes.txt:246",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-rsk-haste",
+      "categoria": "arma-sa",
+      "titulo": "Rsk. Haste",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Atk. Spd. (com HP <= 60%)",
+          "valor": "+9% a +13%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk. Spd. (com HP <= 60%)",
+          "valor": "+15%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:257",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-blessed-body",
+      "categoria": "arma-sa",
+      "titulo": "Blessed Body",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance de ativação",
+          "valor": "20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de ativação",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:262",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-cheap-shot-chance",
+      "categoria": "arma-sa",
+      "titulo": "Cheap Shot",
+      "subtitulo": "Special Ability — segunda entrada: chance de ativação",
+      "antes": [
+        {
+          "rotulo": "Chance",
+          "valor": "47% de gastar 1 de MP / 42% de gastar 1 de MP / 42% de gastar 2 de MP"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance",
+          "valor": "100% de gastar 1 de MP / 100% de gastar 2 de MP"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:267",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-chaos",
+      "categoria": "arma-sa",
+      "titulo": "Magic Chaos",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Redução de Accuracy",
+          "valor": "chance 8%/7% ao usar magia"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Redução de Accuracy",
+          "valor": "agora 100% ao usar magia"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:273",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-focus",
+      "categoria": "arma-sa",
+      "titulo": "Magic Focus",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance de ativação",
+          "valor": "20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de ativação",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:278",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-hold-chance",
+      "categoria": "arma-sa",
+      "titulo": "Magic Hold",
+      "subtitulo": "Special Ability — segunda entrada: chance e duração do hold",
+      "antes": [
+        {
+          "rotulo": "Chance de dar hold",
+          "valor": "10%"
+        },
+        {
+          "rotulo": "Duração",
+          "valor": "hold de 30s"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de dar hold",
+          "valor": "80%"
+        },
+        {
+          "rotulo": "Duração",
+          "valor": "hold de 5s"
+        }
+      ],
+      "prosa": "OBS: mesmo caso do Magic Poison - a arma lançava a Dryad Root, que é magia de Prophet e de\nOBS: Shillien Elder. Agora ela tem a versão dela, e a magia dos jogadores continua com 30s.",
+      "fonte": "SA-ARMAS-alteracoes.txt:283",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-poison",
+      "categoria": "arma-sa",
+      "titulo": "Magic Poison",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance de poison",
+          "valor": "8%/7%/6%"
+        },
+        {
+          "rotulo": "Veneno",
+          "valor": "30s, 58 de dano a cada 5s"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de poison",
+          "valor": "60%"
+        },
+        {
+          "rotulo": "Veneno",
+          "valor": "5s, 88 de dano a cada 1s"
+        }
+      ],
+      "prosa": "OBS: o veneno da arma passou a ser uma skill só dela. Antes a arma lançava a Curse Poison, que é\nOBS: a magia do Necromancer e do Spellhowler - mexer na duração teria mudado a magia dos\nOBS: jogadores também. A magia deles continua igual.",
+      "fonte": "SA-ARMAS-alteracoes.txt:291",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-regeneration",
+      "categoria": "arma-sa",
+      "titulo": "Magic Regeneration",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance do buff pegar",
+          "valor": "30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance do buff pegar",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:300",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-shield",
+      "categoria": "arma-sa",
+      "titulo": "Magic Shield",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance do buff pegar",
+          "valor": "50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance do buff pegar",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:305",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-magic-weakness",
+      "categoria": "arma-sa",
+      "titulo": "Magic Weakness",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance do debuff pegar",
+          "valor": "8%/7%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance do debuff pegar",
+          "valor": "30%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:310",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-mental-shield",
+      "categoria": "arma-sa",
+      "titulo": "Mental Shield",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance do debuff pegar",
+          "valor": "50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance do debuff pegar",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:316",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-miser",
+      "categoria": "arma-sa",
+      "titulo": "Miser",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Chance de redução de gasto de soulshot",
+          "valor": "59%/60%/61%/19%/40%/32%/37%/19%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de redução de gasto de soulshot",
+          "valor": "100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:321",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-towering-blow",
+      "categoria": "arma-sa",
+      "titulo": "Towering Blow",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Raio do golpe",
+          "valor": "80"
+        },
+        {
+          "rotulo": "Alcance",
+          "valor": "80"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Raio do golpe",
+          "valor": "90"
+        },
+        {
+          "rotulo": "Alcance",
+          "valor": "90"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:326",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-wide-blow",
+      "categoria": "arma-sa",
+      "titulo": "Wide Blow",
+      "subtitulo": "Special Ability (pedra de alma)",
+      "antes": [
+        {
+          "rotulo": "Ângulo do golpe",
+          "valor": "180"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Ângulo do golpe",
+          "valor": "200"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:331",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-armas-que-nao-davam-nada",
+      "categoria": "arma-sa",
+      "titulo": "Armas que nao davam nada",
+      "subtitulo": "sete armas de grade A com SA no nome e nenhuma skill no item",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Estado",
+          "valor": "sete armas tinham a SA no nome, a arma base prometia o bonus e o item nao concedia skill nenhuma. Quem comprava levava uma arma comum com nome bonito."
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Estado",
+          "valor": "cada uma recebeu a mesma SA que a versao elemental dela ja concedia"
+        },
+        {
+          "rotulo": "Meteor Shower - Focus",
+          "valor": "Critical Rate +101,6"
+        },
+        {
+          "rotulo": "Bloody Orchid - Focus",
+          "valor": "Critical Rate +107,3"
+        },
+        {
+          "rotulo": "Bloody Orchid - Back Blow",
+          "valor": "Critical Rate +40% atacando pelas costas"
+        },
+        {
+          "rotulo": "Blood Tornado - Haste",
+          "valor": "Atk. Spd. +7%"
+        },
+        {
+          "rotulo": "Carnage Bow - Critical Bleed",
+          "valor": "sangramento de 20s, 80 de dano a cada 1s"
+        },
+        {
+          "rotulo": "Carnage Bow - Mana Up",
+          "valor": "Max MP +30%"
+        },
+        {
+          "rotulo": "Halberd - Critical Stun",
+          "valor": "atordoa por 9s"
+        }
+      ],
+      "prosa": "OBS: todas são grade A. O valor não foi inventado: cada uma dessas armas tem uma gêmea elemental\nOBS: (a mesma arma na versão \"- Earth\", \"- Confusion\", \"- Lightning\"...) que já concedia a SA, e\nOBS: foi de lá que veio o número.",
+      "fonte": "SA-ARMAS-alteracoes.txt:336",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-meteor-shower-focus",
+      "categoria": "arma-sa",
+      "titulo": "Meteor Shower - Focus",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+101,6"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:342",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-bloody-orchid-focus",
+      "categoria": "arma-sa",
+      "titulo": "Bloody Orchid - Focus",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+107,3"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:343",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-bloody-orchid-back-blow",
+      "categoria": "arma-sa",
+      "titulo": "Bloody Orchid - Back Blow",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+40% atacando pelas costas"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:344",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-blood-tornado-haste",
+      "categoria": "arma-sa",
+      "titulo": "Blood Tornado - Haste",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk. Spd.",
+          "valor": "+7%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:345",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-carnage-bow-critical-bleed",
+      "categoria": "arma-sa",
+      "titulo": "Carnage Bow - Critical Bleed",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Sangramento",
+          "valor": "20s, 80 de dano a cada 1s"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:346",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-carnage-bow-mana-up",
+      "categoria": "arma-sa",
+      "titulo": "Carnage Bow - Mana Up",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max MP",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:347",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "arma-halberd-critical-stun",
+      "categoria": "arma-sa",
+      "titulo": "Halberd - Critical Stun",
+      "subtitulo": "SA que passou a ser concedida de fato",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "nenhuma - o item nao concedia skill, so tinha a SA no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atordoamento",
+          "valor": "atordoa por 9s"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:348",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-ate-onde-cada-alteracao-chegou",
+      "categoria": "arma-sa",
+      "titulo": "Ate onde cada alteracao chegou",
+      "subtitulo": "o que ficou de fora da rodada de 07/08/2026",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Alcance da rodada",
+          "valor": "mexeu nas armas que alguma arma BASE anuncia. As de grade A e S, as versoes {PvP}, as de evento e as \"of Fortune\" nao entram nessa conta, entao varias continuam com o valor antigo"
+        },
+        {
+          "rotulo": "Magic Focus",
+          "valor": "2 de 6 armas foram para 100%. As quatro Themis' Tongue (grade A) continuam em 20%"
+        },
+        {
+          "rotulo": "Mental Shield",
+          "valor": "11 de 19. As oito de grade A (Themis' Tongue e Daimon Crystal, incluindo as {PvP}) continuam em 50%"
+        },
+        {
+          "rotulo": "Cheap Shot",
+          "valor": "4 de 21. Draconic Bow (26%), Shyeed's Bow (30%), Soul Bow (38%) e as versoes de evento continuam como estavam"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "as de grade C e B foram para 80%. As de grade S e S84 (Imperial Staff, Vesper Buster, Vesper Singer, Black Visage e afins) continuam disparando em 20% - hoje as armas mais fracas seguram melhor que as mais fortes"
+        },
+        {
+          "rotulo": "Magic Poison",
+          "valor": "8 de 10. As duas Spiritual Eye (grade A) continuam em 8%"
+        },
+        {
+          "rotulo": "Magic Weakness",
+          "valor": "11 de 14. Dasparion's Staff (4%) e Nirvana Axe (7%) continuam iguais"
+        },
+        {
+          "rotulo": "Miser",
+          "valor": "11 de 12. So a Ballista (id 9262) ficou em 40%"
+        },
+        {
+          "rotulo": "Blessed Body",
+          "valor": "5 de 6"
+        },
+        {
+          "rotulo": "Magic Regeneration",
+          "valor": "9 de 10. Em cada uma (Blessed Body e Magic Regeneration) sobrou uma arma de Player Commendation"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:354",
+      "alteradoEm": "2026-08-07"
+    },
+    {
+      "id": "sa-alinhamento-quatro-versoes",
+      "categoria": "arma-sa",
+      "titulo": "As SA passaram a ser as MESMAS nas quatro versoes de cada arma",
+      "subtitulo": "67 armas alinhadas (normal, {PvP}, masterwork e masterwork+{PvP})",
+      "antes": [
+        {
+          "rotulo": "Estado",
+          "valor": "as SA que o dono escolheu foram trocadas so na versao NORMAL, e as outras tres ficaram para tras - quem comprava a versao de PvP levava outra SA, sem aviso"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "4 lanças Vesper Stormer",
+          "valor": "Focus e Guidance viraram CRITICAL STUN, para as quatro versoes ficarem com Health, Haste e Critical Stun"
+        },
+        {
+          "rotulo": "54 armas de várias famílias",
+          "valor": "a SA da versao normal foi copiada para as outras versoes"
+        },
+        {
+          "rotulo": "5 arcos e bestas",
+          "valor": "viraram QUICK RECOVERY. Nessas a SA nao e uma skill: e o intervalo entre os tiros (reuse_delay), que caiu de 1500 para 1305 - os 13% que o texto promete"
+        },
+        {
+          "rotulo": "4 que quase escaparam",
+          "valor": "a Daimon Crystal {PvP} e a Draconic Bow {PvP}, nas duas versoes cada. A da Daimon tinha o comentario da SA escrito sem o \"Special Ability:\" na frente; a Draconic Bow estava PIOR: o texto prometia a Cheap Shot e o item nao tinha linha de SA nenhuma, ou seja, nao dava SA alguma. As duas passaram a acompanhar a versao normal (Empower e Haste)"
+        },
+        {
+          "rotulo": "4 Quick Recovery que não valiam nada",
+          "valor": "ja se chamavam Quick Recovery mas continuavam com reuse_delay 1500 (a promessa dos 13% nao valia nada) e receberam o mesmo 1305: as versoes masterwork da Dynasty Bow, da Icarus Spitter e da Vesper Thrower"
+        },
+        {
+          "rotulo": "O que mudou em cada arma",
+          "valor": "tres coisas - a linha da SA, o sufixo do nome e a frase do texto. Foram PRESERVADAS as skills proprias de PvP, a skill de masterwork e as frases delas"
+        }
+      ],
+      "notaCliente": "No CLIENTE, o sufixo da SA não fica no nome da arma: fica num campo separado, que o jogo junta ao nome na hora de mostrar. Esse campo e a frase da SA foram acertados nas 67.",
+      "prosa": "Uma arma existe em até quatro versões: normal, {PvP}, masterwork e masterwork+{PvP}.\nAs SA que o dono escolheu foram trocadas só na versão NORMAL, e as outras três ficaram\npara trás - quem comprava a versão de PvP levava outra SA, sem aviso.",
+      "fonte": "SA-ARMAS-alteracoes.txt:375",
+      "alteradoEm": "2026-08-18"
+    },
+    {
+      "id": "sa-quick-recovery",
+      "categoria": "arma-sa",
+      "titulo": "Quick Recovery",
+      "subtitulo": "Special Ability que não é skill: é o reuse_delay do tiro",
+      "antes": [
+        {
+          "rotulo": "Intervalo entre os tiros (reuse_delay)",
+          "valor": "1500"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Intervalo entre os tiros (reuse_delay)",
+          "valor": "1305 - os 13% que o texto promete"
+        },
+        {
+          "rotulo": "Quem recebeu",
+          "valor": "5 arcos e bestas que viraram Quick Recovery no alinhamento das quatro versoes, mais as versoes masterwork da Dynasty Bow, da Icarus Spitter e da Vesper Thrower, que ja se chamavam Quick Recovery e continuavam em 1500"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:386",
+      "alteradoEm": "2026-08-18"
+    },
+    {
+      "id": "sa-toda-arma-tem-tres-sa",
+      "categoria": "arma-sa",
+      "titulo": "Toda arma tem TRES SA - quem diz quais e a arma base",
+      "subtitulo": "como conferir alinhamento de SA sem se perder nos itens órfãos",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Regra",
+          "valor": "TODA ARMA TEM TRES SA, e so tres, na versao normal e na masterwork igualmente. Quem diz quais sao e a ARMA BASE, na frase \"Bestows one of the following functions: X, Y, or Z.\" da descricao dela"
+        },
+        {
+          "rotulo": "269 Blood Tornado",
+          "valor": "Haste, Focus, or Anger"
+        },
+        {
+          "rotulo": "11033 Blood Tornado - Destruction (a masterwork)",
+          "valor": "Haste, Focus, or Anger"
+        },
+        {
+          "rotulo": "243 Hell Knife",
+          "valor": "Mental Shield, Magic Weakness, Magic Regeneration"
+        },
+        {
+          "rotulo": "80 Tallum Blade",
+          "valor": "Critical Poison, Haste, or Anger"
+        },
+        {
+          "rotulo": "Cuidado",
+          "valor": "o datapack GUARDA ITENS DE SA QUE A BASE NAO OFERECE MAIS - sobra de geracao antiga, que nenhuma loja vende e nenhum cristal forja. Sao mais de cem no jogo. Contar esses orfaos junto faz a arma PARECER ter cinco ou seis SA e a masterwork parecer incompleta"
+        }
+      ],
+      "prosa": "Contar esses órfãos junto faz a arma PARECER ter cinco ou seis SA e a masterwork\nparecer incompleta. Não é o caso: as duas versões oferecem as mesmas três. Quem for\nconferir alinhamento de SA tem de partir da lista da arma base, nunca dos itens soltos.",
+      "fonte": "SA-ARMAS-alteracoes.txt:407",
+      "alteradoEm": "2026-08-18"
+    },
+    {
+      "id": "arma-blood-tornado-base",
+      "categoria": "arma-sa",
+      "titulo": "Blood Tornado",
+      "subtitulo": "arma base - trio de SA que ela oferece",
+      "itemId": 269,
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Bestows one of the following functions",
+          "valor": "Haste, Focus, or Anger"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:411"
+    },
+    {
+      "id": "arma-blood-tornado-destruction-base",
+      "categoria": "arma-sa",
+      "titulo": "Blood Tornado - Destruction",
+      "subtitulo": "a masterwork - mesmo trio da arma base",
+      "itemId": 11033,
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Bestows one of the following functions",
+          "valor": "Haste, Focus, or Anger"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:412"
+    },
+    {
+      "id": "arma-hell-knife-base",
+      "categoria": "arma-sa",
+      "titulo": "Hell Knife",
+      "subtitulo": "arma base - trio de SA que ela oferece",
+      "itemId": 243,
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Bestows one of the following functions",
+          "valor": "Mental Shield, Magic Weakness, Magic Regeneration"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:413"
+    },
+    {
+      "id": "arma-tallum-blade-base",
+      "categoria": "arma-sa",
+      "titulo": "Tallum Blade",
+      "subtitulo": "arma base - trio de SA que ela oferece",
+      "itemId": 80,
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Bestows one of the following functions",
+          "valor": "Critical Poison, Haste, or Anger"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:414"
+    },
+    {
+      "id": "sa-itens-orfaos",
+      "categoria": "arma-sa",
+      "titulo": "Itens de SA orfaos (a arma base nao oferece mais)",
+      "subtitulo": "sobra de geração antiga: nenhuma loja vende e nenhum cristal forja",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Blood Tornado",
+          "valor": "4807 Critical Drain, 4808 Evasion"
+        },
+        {
+          "rotulo": "Hell Knife",
+          "valor": "4786 Focus, 4787 Back Blow, 4788 Mortal Strike"
+        },
+        {
+          "rotulo": "Tallum Blade",
+          "valor": "4720 Health, 4721 Evasion, 4722 Rsk. Haste"
+        },
+        {
+          "rotulo": "Meteor Shower",
+          "valor": "4756 Health, 4758 P.Focus"
+        },
+        {
+          "rotulo": "Total",
+          "valor": "sao mais de cem no jogo"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:416",
+      "alteradoEm": "2026-08-18"
+    },
+    {
+      "id": "arma-vesper-fighter-health-volta",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Fighter - Health",
+      "subtitulo": "punho de Tyrant/Grand Khavatari (S84) - voltou a dar Health",
+      "grade": "S84",
+      "itemId": 14131,
+      "antes": [
+        {
+          "rotulo": "SA (desde 12/08/2026)",
+          "valor": "Evasion - skill 3069 nv1, +6,8 de Evasion"
+        },
+        {
+          "rotulo": "Nome",
+          "valor": "\"- Evasion\""
+        },
+        {
+          "rotulo": "Dano em PvP",
+          "valor": "nenhum - a 3069 nao traz o pacote de PvP e o item nao tinha a 3552 para compensar, entao o texto prometia \"increases damage inflicted during PvP\" e nao dava bonus nenhum"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Trio da arma",
+          "valor": "Health, Focus e Critical Stun"
+        },
+        {
+          "rotulo": "SA",
+          "valor": "Health - skill 3013 nv3, Max HP +25%"
+        },
+        {
+          "rotulo": "Dano em PvP",
+          "valor": "a 3013 traz o pacote de dano em PvP DENTRO dela (x1,05)"
+        },
+        {
+          "rotulo": "Nome",
+          "valor": "\"- Health\" nos quatro itens"
+        },
+        {
+          "rotulo": "Itens renomeados",
+          "valor": "14131 Vesper Fighter - Health; 14491 Vesper Fighter {PvP} - Health; 16069 Vesper Fighter - Gale - Health; 16192 Vesper Fighter - Gale {PvP} - Health"
+        },
+        {
+          "rotulo": "Cardápio das armas limpas",
+          "valor": "13461, 14467, 16046 e 16138, que anunciavam Evasion"
+        }
+      ],
+      "notaCliente": "A redação NÃO foi copiada do dist2: o texto de fábrica diz \"Masterwork Item that increases Atk. Spd.\" sem o \"by 8%\" que nós acrescentamos. Trocamos só a frase da SA, copiando a das irmãs que já são Health (Vesper Cutter e Vesper Slasher - Gale).",
+      "prosa": "A pedido do dono, o trio da arma é de novo Health, Focus e Critical Stun.\nIsto DESFAZ uma das dez trocas de 12/08/2026 - e só aquela; as outras nove\ncontinuam como estão.",
+      "fonte": "SA-ARMAS-alteracoes.txt:432",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-varredura-geral",
+      "categoria": "arma-sa",
+      "titulo": "Varredura geral das SA - seis perguntas feitas ao jogo inteiro",
+      "subtitulo": "1646 itens com pedra de alma e 43 rótulos de SA",
+      "antes": [
+        {
+          "rotulo": "1 NOME (sufixo do servidor x nome adicional do cliente)",
+          "valor": "0 divergencias"
+        },
+        {
+          "rotulo": "2 ENTREGA (versão com pedra que não acrescenta nada à arma limpa)",
+          "valor": "0"
+        },
+        {
+          "rotulo": "3 RÓTULO (a skill não é a que o jogo usa sob esse rótulo)",
+          "valor": "2, as duas ja conhecidas e corretas (P.Focus x Focus; a Stick of Faith, que se chama \"- Magic Shield\" e carrega a Mental Shield)"
+        },
+        {
+          "rotulo": "4 TEXTO (cliente x comentário do XML)",
+          "valor": "106"
+        },
+        {
+          "rotulo": "5 CHANCE (a porcentagem do texto x o type_chance do item)",
+          "valor": "115"
+        },
+        {
+          "rotulo": "6 PVP (texto promete PvP que o item não dá, ou o contrário)",
+          "valor": "25"
+        },
+        {
+          "rotulo": "+ CARDÁPIO (a arma limpa anuncia as pedras que ela aceita hoje)",
+          "valor": "4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "1 NOME",
+          "valor": "0"
+        },
+        {
+          "rotulo": "2 ENTREGA",
+          "valor": "0"
+        },
+        {
+          "rotulo": "3 RÓTULO",
+          "valor": "2, as duas certas - a P.Focus, que e um rotulo diferente do Focus, e a Stick of Faith, que se chama \"- Magic Shield\" e carrega a Mental Shield (a mesma pedra com dois nomes)"
+        },
+        {
+          "rotulo": "4 TEXTO",
+          "valor": "106 -> 0"
+        },
+        {
+          "rotulo": "5 CHANCE",
+          "valor": "115 -> 64 no estado da varredura (ver SA-ARMAS-alteracoes.txt:474); 115 -> 44 no fim do dia (ver SA-ARMAS-alteracoes.txt:658)"
+        },
+        {
+          "rotulo": "6 PVP",
+          "valor": "25 -> 0"
+        },
+        {
+          "rotulo": "+ CARDÁPIO",
+          "valor": "4 -> 0"
+        },
+        {
+          "rotulo": "Os 44 que sobram na 5",
+          "valor": "sao todos \"o texto NAO cita porcentagem nenhuma\", e nenhum deles e mentira: 21 Critical Drain (absorvem em todo critico e o texto diz \"Absorbs 30 HP ... during a critical attack\", que e verdade sem numero) e 12 Magic Silence (numero retirado de proposito em 08/08), mais as {PvP} delas"
+        },
+        {
+          "rotulo": "Onde mora a varredura",
+          "valor": "no scratchpad (VarreSA.java) e nao depende de nenhuma tabela digitada: toda regra sai por consenso do proprio jogo. Rodar de novo depois de qualquer troca de SA"
+        }
+      ],
+      "prosa": "São 1646 itens com pedra de alma e 43 rótulos de SA. Nenhuma das seis\nperguntas depende de uma tabela digitada à mão - todas comparam o jogo com\nele mesmo, para a varredura continuar valendo depois da próxima troca.",
+      "fonte": "SA-ARMAS-alteracoes.txt:462",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-porcentagem-anunciada-x-disparada",
+      "categoria": "arma-sa",
+      "titulo": "A porcentagem que a arma anuncia passou a ser a que ela dispara",
+      "subtitulo": "52 descrições no cliente e 85 comentários no XML, em 25 arquivos",
+      "antes": [
+        {
+          "rotulo": "Critical Stun",
+          "valor": "48% (31 armas prometiam 48% e disparavam entre 25% e 43%)"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "100%"
+        },
+        {
+          "rotulo": "Critical Slow",
+          "valor": "30%"
+        },
+        {
+          "rotulo": "Magic Paralyze",
+          "valor": "50%"
+        },
+        {
+          "rotulo": "Critical Poison e Critical Bleed",
+          "valor": "32 COMENTARIOS do XML ainda diziam 80%, de antes de 08/08. O cliente e o item ja estavam em 40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Stun",
+          "valor": "25, 27, 29, 31, 32, 34 ou 43%, conforme a arma"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "20% (16 armas)"
+        },
+        {
+          "rotulo": "Critical Slow",
+          "valor": "16, 24 ou 33%"
+        },
+        {
+          "rotulo": "Magic Paralyze",
+          "valor": "5%"
+        },
+        {
+          "rotulo": "Regra",
+          "valor": "quando uma SA age por golpe, quem manda na frequencia e o type_chance DO ITEM. O activateRate da SKILL e outra coisa: e a chance de o alvo nao resistir, e passa por uma formula com nivel, CON e um teto de 90%"
+        },
+        {
+          "rotulo": "Como a regra foi decidida",
+          "valor": "das 260 armas de gatilho, 145 ja anunciavam exatamente o type_chance. Foi essa maioria que decidiu qual numero e o certo"
+        },
+        {
+          "rotulo": "Onde o número mora no texto",
+          "valor": "ha SO DUAS formas: \"Has a N% chance of\" e \"with a N% chance when/during\". Todo o resto das porcentagens do texto e TAMANHO de efeito, nao chance - a Critical Slow tem as duas na mesma frase (\"30% de chance de reduzir a Speed em 20%\"). Por isso a ancora e \"% chance\", e o programa exige que ela apareca uma vez so"
+        }
+      ],
+      "prosa": "A CONFUSÃO ERA MINHA, de 07/08/2026. Quando uma SA age por golpe, quem manda\nna frequência é o type_chance DO ITEM. O activateRate da SKILL é outra coisa:\né a chance de o alvo não resistir, e passa por uma fórmula com nível, CON e um\nteto de 90%. Eu peguei o activateRate da Critical Stun (48) e publiquei como\nse fosse a chance da arma. Ficaram 31 armas prometendo 48% e disparando entre\n25% e 43%.",
+      "fonte": "SA-ARMAS-alteracoes.txt:480",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-comentario-xml-igual-ao-cliente",
+      "categoria": "arma-sa",
+      "titulo": "O comentario do XML passou a dizer o mesmo que o cliente",
+      "subtitulo": "74 armas",
+      "antes": [
+        {
+          "rotulo": "Focus das Kamael",
+          "valor": "o XML ainda anunciava 131, 133, 134 e 139, os valores de fabrica"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "\"by about 7%\" x \"by 7%\" - 45 armas"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "\"base MP\" x \"Max MP\" - o stat e maxMp"
+        },
+        {
+          "rotulo": "Vesper Stormer",
+          "valor": "o XML prometia dano em PvP que a skill 3070 nao da"
+        },
+        {
+          "rotulo": "Icarus Stinger",
+          "valor": "o comentario estava PARTIDO no meio (\"...during PvP.enchanted to . 4 or more...\")"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Focus das Kamael",
+          "valor": "a skill 8289 entrega 128,7 (nv1) e 137,1 (nv2), que e o que o cliente ja dizia"
+        },
+        {
+          "rotulo": "Quebra de linha do cliente",
+          "valor": "os dois caracteres \\ e n viraram ponto e espaco, e so quando a frase anterior ainda nao terminava em pontuacao - senao sai \"Conversion.. <Soul Crystal Enhancement>\", que e o que ja existia em dois itens por causa de uma conversao ingenua"
+        }
+      ],
+      "notaCliente": "O comentário do XML não é carregado pelo servidor: é documentação. O texto que o jogador lê é o do cliente, e foi ele que a varredura provou estar certo nos números. Onde os dois discordavam, era o XML que tinha ficado para trás.",
+      "fonte": "SA-ARMAS-alteracoes.txt:511",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "skill-focus-kamael-8289",
+      "categoria": "skill",
+      "titulo": "Focus (Kamael)",
+      "subtitulo": "skill de SA das armas Kamael",
+      "skillId": 8289,
+      "antes": [
+        {
+          "rotulo": "Critical Rate anunciado no XML",
+          "valor": "131, 133, 134 e 139 (valores de fabrica)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Critical Rate entregue (nv1)",
+          "valor": "128,7"
+        },
+        {
+          "rotulo": "Critical Rate entregue (nv2)",
+          "valor": "137,1"
+        }
+      ],
+      "notaCliente": "128,7 e 137,1 é o que o cliente já dizia; o XML estava com os números de fábrica e foi corrigido.",
+      "fonte": "SA-ARMAS-alteracoes.txt:518",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-cardapio-vesper-stormer-cliente",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Stormer (arma limpa) - cardapio de pedras no cliente",
+      "subtitulo": "4 itens: 13462, 14468, 16047 e 16139",
+      "grade": "S84",
+      "itemId": 13462,
+      "antes": [
+        {
+          "rotulo": "Cardápio no cliente",
+          "valor": "oferecia ao jogador uma pedra de Focus que nao existe mais nela (a arma passou dois dias assim)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Cardápio no cliente",
+          "valor": "corrigido em 13462, 14468, 16047 e 16139 - em 18/08 o Focus da Vesper Stormer virou Critical Stun e naquele dia so o comentario do XML foi acertado"
+        },
+        {
+          "rotulo": "Resto do jogo",
+          "valor": "fora essas quatro, os 825 cardapios do jogo dizem a verdade"
+        },
+        {
+          "rotulo": "Exceção que não é defeito",
+          "valor": "as 14 armas Kamael de conversao (Ballista, Blinzlasher, Chevalier Rapier) continuam de fora: varios itens DIFERENTES compartilham o mesmo nome, cada um vindo de uma arma de origem com o proprio trio"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:534",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-armas-pvp-atordoam-todo-critico",
+      "categoria": "arma-sa",
+      "titulo": "20 armas {PvP} atordoam ou lentificam em TODO golpe critico",
+      "subtitulo": "decisão do dono: só o texto mudou, nenhuma arma mudou de força",
+      "antes": [
+        {
+          "rotulo": "Texto (cliente e XML)",
+          "valor": "prometia 48% (Critical Stun) ou 30% (Critical Slow) - dois numeros que nunca foram a chance da arma"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "type_chance do item",
+          "valor": "elas nao declaram type_chance, e sem o atributo o motor usa 100. O buraco vem de fabrica: o dist2 esta igual"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "atordoa por 9 SEGUNDOS. Resiste pelo CON. E o stun NAO quebra ao levar dano: as skills 3016/3070/3571 nao declaram removedOnDamage, que sem declaracao vale false. Os 9 segundos correm inteiros mesmo apanhando"
+        },
+        {
+          "rotulo": "Critical Slow",
+          "valor": "Speed -20% por 5 segundos. Resiste pelo MEN"
+        },
+        {
+          "rotulo": "Vesper Fighter / Octo Claw / Jade Claw {PvP}",
+          "valor": "37% (a irma: 15,9%)"
+        },
+        {
+          "rotulo": "Dynasty Halberd / Icarus Trident {PvP}",
+          "valor": "33% (a irma: 15,8%)"
+        },
+        {
+          "rotulo": "Demon Splinter {PvP}",
+          "valor": "28% (a irma: 7,6%)"
+        },
+        {
+          "rotulo": "Tiphon's Spear {PvP}",
+          "valor": "23% (a irma: 5,8%)"
+        },
+        {
+          "rotulo": "Vesper Thrower / Thorne / Dominion {PvP}",
+          "valor": "35% (a irma: 11,6%)"
+        },
+        {
+          "rotulo": "Vesper Shooter {PvP}",
+          "valor": "35% (a irma: 8,4%)"
+        },
+        {
+          "rotulo": "Draconic Bow / Sarunga {PvP}",
+          "valor": "26% (a irma: 4,2%)"
+        },
+        {
+          "rotulo": "Leitura",
+          "valor": "a {PvP} acerta de 2 a 6 vezes mais que a versao normal da mesma arma, e continua assim. O CON do alvo pesa muito: contra um mago (CON 24) a Vesper Fighter {PvP} atordoa 56% dos criticos; contra CON 60, 20%"
+        },
+        {
+          "rotulo": "Medida",
+          "valor": "valores medidos no jar em uso antes da decisao, contra um jogador nivel 85 com CON 43, sem resistencia extra"
+        }
+      ],
+      "notaCliente": "DECISÃO DO DONO: só o texto. As 20 descrições passaram a dizer 100%, no cliente e no XML. O caminho alternativo (pôr no item o type_chance da irmã sem {PvP}) foi apresentado com os números arma por arma e recusado. E \"100%\" NÃO É ATORDOAMENTO GARANTIDO - é TENTATIVA garantida.",
+      "prosa": "A chance real tem duas etapas e quase todo mundo só conhece a primeira:\n\n   1) type_chance do ITEM ... a SA tenta?\n   2) calcEffectSuccess ..... o alvo resiste?\n      baseMod = (magicLevel - nivelDoAlvo + 3) * lvlBonusRate\n                + activateRate + 30 - (CON ou MEN CRU do alvo)\n      e o resultado fica preso entre 10% e 90% pelo Player.ini.",
+      "fonte": "SA-ARMAS-alteracoes.txt:550",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "arma-vesper-stormer-critical-stun-pvp",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Stormer - Critical Stun",
+      "subtitulo": "S84 - o dano em PvP que a troca de 18/08 tinha apagado",
+      "grade": "S84",
+      "itemId": 14134,
+      "antes": [
+        {
+          "rotulo": "Dano em PvP",
+          "valor": "nenhum - a troca do Focus (3567, que carrega +5% de PvP por dentro) por Critical Stun (3070, que nao carrega nada) apagou o bonus e ninguem pos a 3552 no lugar"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Dano em PvP",
+          "valor": "recebeu a skill 3552 no nivel 1"
+        },
+        {
+          "rotulo": "Itens corrigidos",
+          "valor": "14134 Vesper Stormer - Critical Stun; 16072 Vesper Stormer - Thunder - Critical Stun (a Masterwork)"
+        },
+        {
+          "rotulo": "As versões {PvP}",
+          "valor": "14494 e 16195 nunca perderam nada - carregam a 3552 por conta propria"
+        },
+        {
+          "rotulo": "Tamanho do buraco (medido)",
+          "valor": "das 180 armas S84 com pedra e sem {PvP}, 178 tinham fonte de dano em PvP e 2 nao tinham - estas duas. Agora sao 180"
+        },
+        {
+          "rotulo": "Nível da 3552 (medido, não escolhido)",
+          "valor": "nas armas S84 sem {PvP} e sempre o nivel 1 (Vesper Fighter - Critical Stun e a Gale dela, Octo Claw, Jade Claw, e as Magic Hold da Vesper Buster e da Vesper Singer). O nivel 3 aparece so nas {PvP}"
+        }
+      ],
+      "notaCliente": "A frase também veio da irmã: a versão normal escreve \"Also increases damage inflicted during PvP.\" e a Masterwork escreve sem o \"Also\", porque ali a frase já vem depois de outra.",
+      "fonte": "SA-ARMAS-alteracoes.txt:592",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "arma-dragon-grinder-evasion-sem-pvp",
+      "categoria": "arma-sa",
+      "titulo": "Dragon Grinder - Evasion",
+      "subtitulo": "grade A - prometia dano em PvP que não existe (com a Dragon Grinder - Earth - Evasion)",
+      "grade": "A",
+      "itemId": 5623,
+      "antes": [
+        {
+          "rotulo": "Texto",
+          "valor": "prometia dano em PvP"
+        },
+        {
+          "rotulo": "Realidade",
+          "valor": "a skill delas e a 3069, que nao traz pacote de PvP nenhum, e o item nao tem a 3552 para compensar"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Texto",
+          "valor": "a frase de PvP saiu das duas: 5623 Dragon Grinder - Evasion e 11093 Dragon Grinder - Earth - Evasion"
+        },
+        {
+          "rotulo": "Por que não o contrário",
+          "valor": "a irma de mesma grade e mesma skill - 4721 Tallum Blade - Evasion - escreve \"Increases Evasion by 6.8.\" e ponto, sem prometer PvP. Em grade A a Evasion realmente nao da PvP; por a 3552 no item faria a Dragon Grinder - Evasion ficar melhor que TODAS as outras Evasion de grade A do jogo"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:613",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-22-armas-davam-pvp-sem-contar",
+      "categoria": "arma-sa",
+      "titulo": "22 armas davam dano em PvP e o texto nao contava",
+      "subtitulo": "sete de grade A, oito de S, quatro de S80 e quatro de S84",
+      "antes": [
+        {
+          "rotulo": "Texto",
+          "valor": "nao mencionava o dano em PvP - a arma entregava mais do que anunciava"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Texto",
+          "valor": "as 22 ganharam a frase \"Increases damage inflicted during PvP.\", no cliente e no XML"
+        },
+        {
+          "rotulo": "Onde a frase entra",
+          "valor": "NAO no fim do texto. Varias descricoes terminam com uma frase que NAO e da pedra - o extra da arma {PvP} (\"Improves the chance of...\") ou a clausula de encantamento das Kamael (\"When enchanted to 4 or more...\"). A frase do PvP pertence ao bloco da SA e vai ANTES dessas, que e a ordem que as irmas usam"
+        },
+        {
+          "rotulo": "Cuidado com o \"Has a\"",
+          "valor": "a propria frase da Critical Slow comeca com \"Has a 30% chance of decreasing...\" e NAO e clausula final. Por isso o gatilho e \"Has a chance of\" por extenso, sem numero no meio"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:624",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "arma-angel-slayer-pvp-critical-damage",
+      "categoria": "arma-sa",
+      "titulo": "Angel Slayer {PvP} - Critical Damage",
+      "subtitulo": "o único item do jogo que escrevia \"in PvP\" em vez de \"during PvP\"",
+      "itemId": 10722,
+      "antes": [
+        {
+          "rotulo": "Texto",
+          "valor": "\"Increases damage in PvP\" - ja contava o bonus, mas fora do padrao da casa"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Texto",
+          "valor": "passou a usar a frase da casa (\"during PvP\")"
+        },
+        {
+          "rotulo": "Motivo",
+          "valor": "nao era mentira - era o unico item do jogo com essa redacao, e enquanto estivesse fora do padrao a varredura ia apontar para ele todo dia"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:639",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "sa-nao-sao-defeito",
+      "categoria": "arma-sa",
+      "titulo": "Textos sem porcentagem que NAO sao defeito",
+      "subtitulo": "Magic Silence e Critical Drain",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "12 armas de Magic Silence",
+          "valor": "sem porcentagem no texto - decisao de 08/08, para a frase nao envelhecer se a chance mudar"
+        },
+        {
+          "rotulo": "21 armas de Critical Drain",
+          "valor": "absorvem em todo critico e o texto nao cita porcentagem nenhuma - o que e verdade"
+        }
+      ],
+      "fonte": "SA-ARMAS-alteracoes.txt:645",
+      "alteradoEm": "2026-08-20"
+    },
+    {
+      "id": "regra-espada-dupla-sa",
+      "categoria": "arma-sa",
+      "titulo": "Dual Sword",
+      "subtitulo": "regra da SA da espada dupla - vale para todas as grades",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Pedra de alma",
+          "valor": "a espada dupla NAO recebe pedra de alma. A SA dela ja vem decidida pela COMBINACAO das duas laminas usadas na forja, por isso cada combinacao tem uma SA fixa - ou nenhuma - em vez de um trio"
+        },
+        {
+          "rotulo": "Trava de encantamento",
+          "valor": "a SA da espada dupla so LIGA com a arma encantada a +4 ou mais. Isso vale para todas as combinacoes, e nao existe versao sem essa trava. Com a arma abaixo de +4 a dupla nao da SA nenhuma"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:70"
+    },
+    {
+      "id": "skill-3552-pvp-damage",
+      "categoria": "skill",
+      "titulo": "Special Ability: PvP Damage",
+      "subtitulo": "eixo à parte da SA, presente em várias versões com pedra",
+      "skillId": 3552,
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Dano em PvP",
+          "valor": "+5% - fisico, de skill fisica e magico"
+        },
+        {
+          "rotulo": "Quantas versões levam junto",
+          "valor": "grade A: 9 versoes com pedra; grade S: 3; Dynasty: 7; Icarus: 8; Vesper: 6"
+        },
+        {
+          "rotulo": "Leitura",
+          "valor": "ela e um eixo a parte da SA e nao esta repetida linha a linha nas listas. Onde a propria SA ja traz esse pacote, ele aparece como \"Dano em PvP +5%\""
+        },
+        {
+          "rotulo": "Espada dupla",
+          "valor": "em Dynasty Dual Sword, Icarus Dual Sword e Vesper Dual Sword a 3552 NAO esta presa ao +4: esse +5% de PvP vale desde o +0, so a SA e que espera o +4"
+        },
+        {
+          "rotulo": "Nível",
+          "valor": "nas armas S84 sem {PvP} e sempre o nivel 1; o nivel 3 aparece so nas {PvP}. Nas polearms Dynasty e Icarus com pedra aparece no nivel 2 em duas versoes (Critical Stun/Haste)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:433"
+    },
+    {
+      "id": "arma-stormbringer",
+      "categoria": "arma-sa",
+      "titulo": "Stormbringer",
+      "subtitulo": "One Handed Sword",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "107"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "61"
+        },
+        {
+          "rotulo": "Anger",
+          "valor": "P.Atk +20%, Max HP -15%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +106,7"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +7%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:90",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-homunkulus-sword",
+      "categoria": "arma-sa",
+      "titulo": "Homunkulus's Sword",
+      "subtitulo": "One Handed Sword",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Magic Paralyze (saiu)",
+          "valor": "5% de chance ao usar magia"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "111"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "101"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "Conversion",
+          "valor": "Max MP +60%, Max HP -40%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:96",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-raid-sword",
+      "categoria": "arma-sa",
+      "titulo": "Raid Sword",
+      "subtitulo": "One Handed Sword",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Critical Poison (saiu)",
+          "valor": "40% no golpe critico"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "122"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "68"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +102,2"
+        },
+        {
+          "rotulo": "Critical Drain",
+          "valor": "SEMPRE no golpe critico: absorve 30 de HP do alvo"
+        },
+        {
+          "rotulo": "Critical Damage [SA NOVA]",
+          "valor": "Dano critico +294,1"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:102",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-stick-of-faith",
+      "categoria": "arma-sa",
+      "titulo": "Stick of Faith",
+      "subtitulo": "One Handed Blunt",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "85"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "81"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "80% de chance ao usar magia: prende o alvo no lugar por 5s"
+        },
+        {
+          "rotulo": "Magic Shield",
+          "valor": "100% de chance ao usar magia: Resist. Hold/Root +30%, Resist. Sleep +30%, Resist. Confusao +30% por 20 min"
+        },
+        {
+          "rotulo": "Rótulo x skill",
+          "valor": "esta arma se chama \"- Magic Shield\" e carrega a Mental Shield - a mesma pedra com dois nomes (conferido e correto)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:113",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-mace-of-underworld",
+      "categoria": "arma-sa",
+      "titulo": "Mace of Underworld",
+      "subtitulo": "One Handed Blunt",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "111"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "101"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "Magic Silence",
+          "valor": "40% de chance ao usar magia: silencia o alvo por 5s"
+        },
+        {
+          "rotulo": "Conversion",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:119",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-ecliptic-axe",
+      "categoria": "arma-sa",
+      "titulo": "Ecliptic Axe",
+      "subtitulo": "One Handed Blunt",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "125"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "111"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "M.Atk +30%, MP de magias +15%"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "10% de chance ao usar magia: prende o alvo no lugar por 30s e Resist. Hold/Root +100%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:125",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-scythe",
+      "categoria": "arma-sa",
+      "titulo": "Scythe",
+      "subtitulo": "Polearm",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "107"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "61"
+        },
+        {
+          "rotulo": "Anger",
+          "valor": "P.Atk +20%, Max HP -15%"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "34% de chance no golpe critico: atordoa o alvo por 9s"
+        },
+        {
+          "rotulo": "Rsk. Haste [SA NOVA]",
+          "valor": "Atk.Spd +15% (so com HP em 60% ou menos)"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:136",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-fisted-blade",
+      "categoria": "arma-sa",
+      "titulo": "Fisted Blade",
+      "subtitulo": "Dual Fist",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Haste (saiu)",
+          "valor": "Atk.Spd +7%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "169"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "76"
+        },
+        {
+          "rotulo": "Evasion",
+          "valor": "Evasao +6,95"
+        },
+        {
+          "rotulo": "Rsk. Haste",
+          "valor": "Atk.Spd +15% (so com HP em 60% ou menos)"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +93,3"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:147",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-elven-sword-elven-long-sword",
+      "categoria": "arma-sa",
+      "titulo": "Elven Sword*Elven Long Sword",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Critical Damage (saiu)",
+          "valor": "Dano critico +161,4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "148"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "68"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:158",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-sword-of-revolution",
+      "categoria": "arma-sa",
+      "titulo": "Sword of Revolution*Sword of Revolution",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Health (saiu)",
+          "valor": "Max HP +25%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "148"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "68"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:162",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-stormbringer-stormbringer",
+      "categoria": "arma-sa",
+      "titulo": "Stormbringer*Stormbringer",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +10"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "175"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "78"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:166",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-katana-katana",
+      "categoria": "arma-sa",
+      "titulo": "Katana*Katana",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "C",
+      "antes": [
+        {
+          "rotulo": "Haste (saiu)",
+          "valor": "Atk.Spd +10%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "190"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "83"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:170",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-grade-c",
+      "categoria": "arma-sa",
+      "titulo": "Notas da GRADE C",
+      "subtitulo": "resistência, polearm e apelidos de SA",
+      "grade": "C",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "O alvo NÃO resiste (a chance do item é a única que existe)",
+          "valor": "Critical Drain, Magic Shield, Magic Silence"
+        },
+        {
+          "rotulo": "O alvo AINDA pode resistir (depois da chance do item vem a conta de resistência, que pesa o nível e o CON/MEN do alvo)",
+          "valor": "Critical Stun, Magic Hold"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "nao perde o ataque em varios alvos ao receber a pedra - conferidas as 3 versoes com pedra. O que muda e a FONTE: na arma sem pedra vem sempre da passiva Polearm Multi-attack; nas versoes com pedra, a passiva Polearm Multi-attack em 2 (Critical Stun/Rsk. Haste) e a propria SA em 1 (Anger)"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "usa Dryad Root (nome que o jogador ve x magia usada por baixo)"
+        },
+        {
+          "rotulo": "Magic Shield",
+          "valor": "usa Mental Shield (nome que o jogador ve x magia usada por baixo)"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Scythe - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "8 armas com 24 versoes com SA, mais 4 combinacoes de espada dupla (4 com SA). Todas as 4 combinacoes de grade C dao SA - nao ha nenhuma sem"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:179"
+    },
+    {
+      "id": "arma-sword-of-valhalla",
+      "categoria": "arma-sa",
+      "titulo": "Sword of Valhalla",
+      "subtitulo": "One Handed Sword",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Magic Weakness (saiu)",
+          "valor": "30% ao usar magia: P.Atk -23%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "140"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "122"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%"
+        },
+        {
+          "rotulo": "Magic Regeneration",
+          "valor": "100% de chance ao usar magia: Regen HP +20% por 20 min"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:221",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-kaim-vanuls-bones",
+      "categoria": "arma-sa",
+      "titulo": "Kaim Vanul's Bones",
+      "subtitulo": "One Handed Blunt",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "155"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "132"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%"
+        },
+        {
+          "rotulo": "Magic Silence",
+          "valor": "40% de chance ao usar magia: silencia o alvo por 5s"
+        },
+        {
+          "rotulo": "Conversion",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:232",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-great-axe",
+      "categoria": "arma-sa",
+      "titulo": "Great Axe",
+      "subtitulo": "Polearm",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "175"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "91"
+        },
+        {
+          "rotulo": "Anger",
+          "valor": "P.Atk +20%, Max HP -15%"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "27% de chance no golpe critico: atordoa o alvo por 9s"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +98,9"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:243",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dark-elven-long-bow",
+      "categoria": "arma-sa",
+      "titulo": "Dark Elven Long Bow",
+      "subtitulo": "Bow",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Evasion (saiu)",
+          "valor": "Evasao +7"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "397"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "100"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +98,9"
+        },
+        {
+          "rotulo": "Critical Bleed",
+          "valor": "40% de chance no golpe critico: sangramento de 80 de dano por segundo por 20s"
+        },
+        {
+          "rotulo": "Miser",
+          "valor": "100% de chance de gastar so 2 soulshots em vez de 3"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:254",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-bow-of-peril",
+      "categoria": "arma-sa",
+      "titulo": "Bow of Peril",
+      "subtitulo": "Bow",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "gastava 2 de MP por tiro em vez de 4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "400"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "99"
+        },
+        {
+          "rotulo": "Guidance",
+          "valor": "Precisao +5"
+        },
+        {
+          "rotulo": "Quick Recovery",
+          "valor": "Tempo entre tiros -13%"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +7%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:260",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-bellion-cestus",
+      "categoria": "arma-sa",
+      "titulo": "Bellion Cestus",
+      "subtitulo": "Dual Fist",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Critical Poison (saiu)",
+          "valor": "40% no golpe critico"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "236"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "99"
+        },
+        {
+          "rotulo": "Critical Drain",
+          "valor": "SEMPRE no golpe critico: absorve 30 de HP do alvo"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +98,9"
+        },
+        {
+          "rotulo": "Rsk. Haste",
+          "valor": "Atk.Spd +15% (so com HP em 60% ou menos)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:271",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-sword-of-delusion",
+      "categoria": "arma-sa",
+      "titulo": "Sword of Delusion*Sword of Delusion",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +10"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "213"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "91"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +98,9 - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +7% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:282",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-sword-of-nightmare",
+      "categoria": "arma-sa",
+      "titulo": "Sword of Nightmare*Sword of Nightmare",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Focus (saiu)",
+          "valor": "Chance de critico +94"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "213"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "91"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +98,9 - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +7% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:287",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-samurai-long-sword",
+      "categoria": "arma-sa",
+      "titulo": "Samurai Long Sword*Samurai Long Sword",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "236"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "99"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +10% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Focus [SA ADICIONADA - nada saiu no lugar]",
+          "valor": "Chance de critico +98,9 - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:292",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-grade-b",
+      "categoria": "arma-sa",
+      "titulo": "Notas da GRADE B",
+      "subtitulo": "resistência, polearm e apelidos de SA",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "O alvo NÃO resiste (a chance do item é a única que existe)",
+          "valor": "Critical Bleed, Critical Drain, Magic Regeneration, Magic Silence"
+        },
+        {
+          "rotulo": "O alvo AINDA pode resistir",
+          "valor": "Critical Stun"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "nao perde o ataque em varios alvos ao receber a pedra - conferidas as 3 versoes com pedra. Nas versoes com pedra: a passiva Polearm Multi-attack em 2 (Critical Stun/Focus), a propria SA em 1 (Anger)"
+        },
+        {
+          "rotulo": "Magic Regeneration",
+          "valor": "usa Regeneration (nome que o jogador ve x magia usada por baixo)"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Great Axe - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "6 armas com 18 versoes com SA, mais 3 combinacoes de espada dupla (6 com SA). Todas as 3 combinacoes de grade B dao SA - nao ha nenhuma sem"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:302"
+    },
+    {
+      "id": "arma-elemental-sword",
+      "categoria": "arma-sa",
+      "titulo": "Elemental Sword",
+      "subtitulo": "One Handed Sword",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Magic Paralyze (saiu)",
+          "valor": "5% ao usar magia"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "170"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "143"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "M.Atk +30%, MP de magias +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:343",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-sword-of-miracles",
+      "categoria": "arma-sa",
+      "titulo": "Sword of Miracles",
+      "subtitulo": "One Handed Sword",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "M. Atk. (saiu)",
+          "valor": "M.Atk +30%, MP de magias +15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "186"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "152"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Magic Silence",
+          "valor": "40% de chance ao usar magia: silencia o alvo por 5s"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:349",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-themis-tongue",
+      "categoria": "arma-sa",
+      "titulo": "Themis' Tongue",
+      "subtitulo": "One Handed Sword",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "202"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "161"
+        },
+        {
+          "rotulo": "M. Atk. [SA NOVA]",
+          "valor": "M.Atk +30%, MP de magias +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mental Shield",
+          "valor": "50% de chance ao usar magia: Resist. Hold/Root +50%, Resist. Sleep +50%, Resist. Confusao +50% por 20 min"
+        },
+        {
+          "rotulo": "Magic Focus",
+          "valor": "20% de chance ao usar magia: Chance de critico +30% por 20 min"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:355",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dragon-slayer",
+      "categoria": "arma-sa",
+      "titulo": "Dragon Slayer",
+      "subtitulo": "Two Handed Sword",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Critical Bleed (saiu)",
+          "valor": "40% no critico"
+        },
+        {
+          "rotulo": "Critical Drain (saiu)",
+          "valor": "sempre no critico"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "282"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "114"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +101,6, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Anger [SA NOVA]",
+          "valor": "P.Atk +20%, Max HP -15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:366",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-cabrios-hand",
+      "categoria": "arma-sa",
+      "titulo": "Cabrio's Hand",
+      "subtitulo": "One Handed Blunt",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "202"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "161"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Magic Silence",
+          "valor": "40% de chance ao usar magia: silencia o alvo por 5s"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:377",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-daimon-crystal",
+      "categoria": "arma-sa",
+      "titulo": "Daimon Crystal",
+      "subtitulo": "Two Handed Blunt",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Mental Shield (saiu)",
+          "valor": "50% ao usar magia"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "245"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "177"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:388",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-destroyer-hammer",
+      "categoria": "arma-sa",
+      "titulo": "Destroyer Hammer",
+      "subtitulo": "Two Handed Blunt",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Health (saiu)",
+          "valor": "Max HP +25%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "259"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "107"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +101,6, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +7%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Critical Drain",
+          "valor": "SEMPRE no golpe critico: absorve 30 de HP do alvo"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:394",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dragon-grinder",
+      "categoria": "arma-sa",
+      "titulo": "Dragon Grinder",
+      "subtitulo": "Dual Fist",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +5"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "282"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "114"
+        },
+        {
+          "rotulo": "Evasion",
+          "valor": "Evasao +6,8"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +101,6, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Atualização posterior (20/08/2026)",
+          "valor": "a versao Evasion (5623 Dragon Grinder - Evasion e 11093 Dragon Grinder - Earth - Evasion) perdeu do texto a frase de dano em PvP, que a skill 3069 nao entrega (ver SA-ARMAS-alteracoes.txt:613)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:405",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-damascus-damascus",
+      "categoria": "arma-sa",
+      "titulo": "Damascus*Damascus",
+      "subtitulo": "Dual Sword (combinação de lâminas)",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +10"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "282"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "114"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Health [SA NOVA]",
+          "valor": "Max HP +25%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +101,6, Dano em PvP +5% - so com a arma a +4 ou mais"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:416",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-grade-a",
+      "categoria": "arma-sa",
+      "titulo": "Notas da GRADE A",
+      "subtitulo": "resistência, skill 3552 e apelidos de SA",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "O alvo NÃO resiste (a chance do item é a única que existe)",
+          "valor": "Critical Drain, Magic Focus, Magic Silence, Mental Shield"
+        },
+        {
+          "rotulo": "Skill 3552 (Special Ability: PvP Damage)",
+          "valor": "9 versoes com pedra levam junto, dando +5% de dano em PvP - fisico, de skill fisica e magico. E um eixo a parte da SA; onde a propria SA ja traz esse pacote, ele aparece como \"Dano em PvP +5%\""
+        },
+        {
+          "rotulo": "Magic Focus",
+          "valor": "usa Focus (nome que o jogador ve x magia usada por baixo)"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "8 armas com 24 versoes com SA, mais 1 combinacao de espada dupla (3 com SA). A unica combinacao de grade A da SA"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:427"
+    },
+    {
+      "id": "arma-arcana-mace",
+      "categoria": "arma-sa",
+      "titulo": "Arcana Mace",
+      "subtitulo": "One Handed Blunt",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "MP Regeneration (saiu)",
+          "valor": "Regen MP +10,54"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "225"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "175"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:455",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-basalt-battlehammer",
+      "categoria": "arma-sa",
+      "titulo": "Basalt Battlehammer",
+      "subtitulo": "One Handed Blunt",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "HP Regeneration (saiu)",
+          "valor": "Regen HP +12,04"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "281"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "132"
+        },
+        {
+          "rotulo": "HP Drain",
+          "valor": "Vampirismo +5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +111,5, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:461",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-imperial-staff",
+      "categoria": "arma-sa",
+      "titulo": "Imperial Staff",
+      "subtitulo": "Two Handed Blunt",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "MP Regeneration (saiu)",
+          "valor": "Regen MP +10,54"
+        },
+        {
+          "rotulo": "Magic Hold (saiu)",
+          "valor": "20% ao usar magia"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "274"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "193"
+        },
+        {
+          "rotulo": "Empower",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "M. Atk. [SA NOVA]",
+          "valor": "M.Atk +30%, MP de magias +15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:472",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dragon-hunter-axe",
+      "categoria": "arma-sa",
+      "titulo": "Dragon Hunter Axe",
+      "subtitulo": "Two Handed Blunt",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "HP Regeneration (saiu)",
+          "valor": "Regen HP +12,04"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "342"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "132"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +100,6, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "HP Drain",
+          "valor": "Vampirismo +5, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:478",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-saint-spear",
+      "categoria": "arma-sa",
+      "titulo": "Saint Spear",
+      "subtitulo": "Polearm",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +5"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "281"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "132"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +100,6, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +7%, Dano fisico PvP +5%, Dano magico PvP +5%"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Atenção",
+          "valor": "Saint Spear - Focus fica SEM o ataque em varios alvos"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:489",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-draconic-bow",
+      "categoria": "arma-sa",
+      "titulo": "Draconic Bow",
+      "subtitulo": "Bow",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "gastava 1 de MP por tiro em vez de 6"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "581"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "132"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +7%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +108,1, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Critical Slow",
+          "valor": "16% de chance no golpe critico: Velocidade -20% por 5s"
+        },
+        {
+          "rotulo": "Atualização posterior (18/08/2026)",
+          "valor": "a Draconic Bow {PvP}, nas duas versoes, estava PIOR: o texto prometia a Cheap Shot e o item nao tinha linha de SA nenhuma. Passou a acompanhar a versao normal - Empower e Haste (ver SA-ARMAS-alteracoes.txt:389)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:500",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-grade-s",
+      "categoria": "arma-sa",
+      "titulo": "Notas da GRADE S",
+      "subtitulo": "resistência, skill 3552 e polearm",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "O alvo AINDA pode resistir",
+          "valor": "Critical Slow"
+        },
+        {
+          "rotulo": "Skill 3552 (Special Ability: PvP Damage)",
+          "valor": "3 versoes com pedra levam junto, dando +5% de dano em PvP - fisico, de skill fisica e magico"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "quase sempre mantem o ataque em varios alvos ao receber a pedra. Nas versoes com pedra: a propria SA em 2 (Haste/Health). Ficam SEM o ataque em varios alvos: Saint Spear - Focus"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Saint Spear - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "6 armas com 18 versoes com SA, mais 0 combinacoes de espada dupla (0 com SA)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:510"
+    },
+    {
+      "id": "arma-dynasty-phantom",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Phantom",
+      "subtitulo": "One Handed Sword - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "267"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "202"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:555",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-sword",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Sword",
+      "subtitulo": "One Handed Sword - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "333"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +111,5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:561",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-blade",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Blade",
+      "subtitulo": "Two Handed Sword - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "405"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +111,5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Rsk. Haste [SA NOVA]",
+          "valor": "Atk.Spd +15% (so com HP em 60% ou menos)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:572",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-mace",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Mace",
+      "subtitulo": "One Handed Blunt - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "267"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "202"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:583",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-staff",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Staff",
+      "subtitulo": "Two Handed Blunt - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        },
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "325"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "222"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "M. Atk. [SA NOVA]",
+          "valor": "M.Atk +30%, MP de magias +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:594",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-halberd",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Halberd",
+      "subtitulo": "Polearm - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "333"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Anger",
+          "valor": "P.Atk +20%, Max HP -15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "48% de chance no golpe critico: atordoa o alvo por 9s"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Atualização posterior (20/08/2026)",
+          "valor": "a chance real do Critical Stun e o type_chance do item: a versao normal fica em 15,8% de efeito contra alvo nivel 85 com CON 43, e a {PvP} em 33% (ver SA-ARMAS-alteracoes.txt:581)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:605",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-bow",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Bow",
+      "subtitulo": "Bow - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "MP de magias e de skills -15%"
+        },
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +5"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "654"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Quick Recovery [SA NOVA]",
+          "valor": "Tempo entre tiros -13%"
+        },
+        {
+          "rotulo": "Critical Slow [SA NOVA]",
+          "valor": "16% de chance no golpe critico: Velocidade -20% por 5s"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +116, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Atualização posterior (18/08/2026)",
+          "valor": "a versao masterwork da Dynasty Bow ja se chamava Quick Recovery mas continuava com reuse_delay 1500; recebeu o 1305 (ver SA-ARMAS-alteracoes.txt:396)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:616",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dynasty-bagh-nakh",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Bagh-Nakh",
+      "subtitulo": "Dual Fist - família Dynasty",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Evasion (saiu)",
+          "valor": "Evasao +6,8"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "405"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Health [SA NOVA]",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +107, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:627",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-dynasty-dual-sword",
+      "categoria": "arma-sa",
+      "titulo": "Dynasty Dual Sword",
+      "subtitulo": "Dual Sword (combinação de lâminas) - família Dynasty",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "405"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "151"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +109,2, Max HP +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Haste [SA ADICIONADA - nada saiu no lugar]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Skill 3552",
+          "valor": "aqui ela NAO esta presa ao +4: o +5% de PvP vale desde o +0, so a SA e que espera o +4"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:638",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-dynasty",
+      "categoria": "arma-sa",
+      "titulo": "Notas da familia DYNASTY",
+      "subtitulo": "onde a família se encaixa, resistência, skill 3552 e polearm",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Onde esta família se encaixa",
+          "valor": "no servidor estas 9 armas sao crystal_type \"S\". Cuidado, porque isso confunde: e a MESMA marca das armas da GRADE S, ou seja, esta familia NAO e uma grade propria. Ela tem secao separada so porque sao muitas armas. Nenhuma outra arma de jogador usa essa marca"
+        },
+        {
+          "rotulo": "O alvo AINDA pode resistir",
+          "valor": "Critical Slow, Critical Stun"
+        },
+        {
+          "rotulo": "Skill 3552 (Special Ability: PvP Damage)",
+          "valor": "7 versoes com pedra levam junto, dando +5% de dano em PvP - fisico, de skill fisica e magico. Em Dynasty Dual Sword ela NAO esta presa ao +4"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "nao perde o ataque em varios alvos ao receber a pedra - conferidas as 3 versoes com pedra. Nas versoes com pedra: a propria SA em 1 (Anger), a skill 3552 no nivel 2 em 2 (Critical Stun/Haste)"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Dynasty Halberd - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "8 armas com 24 versoes com SA, mais 1 combinacao de espada dupla (2 com SA). A unica combinacao Dynasty da SA"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:648"
+    },
+    {
+      "id": "arma-icarus-spirit",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Spirit",
+      "subtitulo": "One Handed Sword - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "290"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "217"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:692",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-sawsword",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Sawsword",
+      "subtitulo": "One Handed Sword - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "363"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +111,5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:698",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-heavy-arms",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Heavy Arms",
+      "subtitulo": "Two Handed Sword - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "442"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +111,5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Rsk. Haste [SA NOVA]",
+          "valor": "Atk.Spd +15% (so com HP em 60% ou menos)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:709",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-hall",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Hall",
+      "subtitulo": "One Handed Blunt - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Conversion (saiu)",
+          "valor": "Max MP +60%, Max HP -40%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "290"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "217"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:720",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-trident",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Trident",
+      "subtitulo": "Polearm - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Light (saiu)",
+          "valor": "Limite de peso +50%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "363"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Anger",
+          "valor": "P.Atk +20%, Max HP -15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "48% de chance no golpe critico: atordoa o alvo por 9s"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Atualização posterior (20/08/2026)",
+          "valor": "efeito medido contra alvo nivel 85 com CON 43: a versao normal atordoa 15,8% dos criticos e a {PvP} 33% (ver SA-ARMAS-alteracoes.txt:581)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:731",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-spitter",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Spitter",
+      "subtitulo": "Bow - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "MP de magias e de skills -15%"
+        },
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +5"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "689"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Quick Recovery [SA NOVA]",
+          "valor": "Tempo entre tiros -13%"
+        },
+        {
+          "rotulo": "Critical Slow [SA NOVA]",
+          "valor": "16% de chance no golpe critico: Velocidade -20% por 5s"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +116, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Atualização posterior (18/08/2026)",
+          "valor": "a versao masterwork da Icarus Spitter ja se chamava Quick Recovery mas continuava com reuse_delay 1500; recebeu o 1305 (ver SA-ARMAS-alteracoes.txt:396)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:742",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-shooter",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Shooter",
+      "subtitulo": "Crossbow - família Icarus (Kamael - conversão de Icarus Spitter)",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "MP de skills e de magias -15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "422"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Haste [SA NOVA]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Guidance",
+          "valor": "Precisao +5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +116, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Como se obtém",
+          "valor": "as armas marcadas KAMAEL o jogador consegue convertendo uma arma normal - aqui, a Icarus Spitter"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:753",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-icarus-hand",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Hand",
+      "subtitulo": "Dual Fist - família Icarus",
+      "grade": "S80",
+      "antes": [
+        {
+          "rotulo": "Evasion (saiu)",
+          "valor": "Evasao +6,8"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "442"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Health [SA NOVA]",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +107, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +10%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:764",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-dual-icarus-dual-sword",
+      "categoria": "arma-sa",
+      "titulo": "Icarus Dual Sword",
+      "subtitulo": "Dual Sword (combinação de lâminas) - família Icarus",
+      "grade": "S80",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "442"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "163"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +109,2, Max HP +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Haste [SA ADICIONADA - nada saiu no lugar]",
+          "valor": "Atk.Spd +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Skill 3552",
+          "valor": "aqui ela NAO esta presa ao +4: o +5% de PvP vale desde o +0, so a SA e que espera o +4"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:775",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-icarus",
+      "categoria": "arma-sa",
+      "titulo": "Notas da familia ICARUS",
+      "subtitulo": "onde a família se encaixa, resistência, skill 3552 e polearm",
+      "grade": "S80",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Onde esta família se encaixa",
+          "valor": "no servidor estas 9 armas sao crystal_type \"S80\". Essa e uma grade propria, acima da S - nao se mistura com as armas da GRADE S. Nenhuma outra arma de jogador usa essa marca"
+        },
+        {
+          "rotulo": "O alvo AINDA pode resistir",
+          "valor": "Critical Slow, Critical Stun"
+        },
+        {
+          "rotulo": "Armas KAMAEL",
+          "valor": "o jogador consegue convertendo uma arma normal - a arma de origem esta escrita ao lado do nome"
+        },
+        {
+          "rotulo": "Skill 3552 (Special Ability: PvP Damage)",
+          "valor": "8 versoes com pedra levam junto, dando +5% de dano em PvP - fisico, de skill fisica e magico. Em Icarus Dual Sword ela NAO esta presa ao +4"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "nao perde o ataque em varios alvos ao receber a pedra - conferidas as 3 versoes com pedra. Nas versoes com pedra: a propria SA em 1 (Anger), a skill 3552 no nivel 2 em 2 (Critical Stun/Haste)"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Icarus Trident - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "8 armas com 24 versoes com SA, mais 1 combinacao de espada dupla (2 com SA). A unica combinacao Icarus da SA"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:785"
+    },
+    {
+      "id": "arma-vesper-buster",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Buster",
+      "subtitulo": "One Handed Sword - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "Mana Up (saiu)",
+          "valor": "Max MP +30%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "317"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "234"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "20% de chance ao usar magia: prende o alvo no lugar por 5s"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:832",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-caster",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Caster",
+      "subtitulo": "One Handed Blunt - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "MP Regeneration (saiu)",
+          "valor": "Regen MP +11,95"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "317"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "234"
+        },
+        {
+          "rotulo": "Acumen",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Empower [SA NOVA]",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Mana Up",
+          "valor": "Max MP +30%, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:843",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-avenger",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Avenger",
+      "subtitulo": "One Handed Blunt - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "HP Drain (saiu)",
+          "valor": "Vampirismo +5"
+        },
+        {
+          "rotulo": "HP Regeneration (saiu)",
+          "valor": "Regen HP +14,92"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "396"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Anger [SA NOVA]",
+          "valor": "P.Atk +20%, Max HP -15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:849",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-singer",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Singer",
+      "subtitulo": "Two Handed Blunt - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "MP Regeneration (saiu)",
+          "valor": "Regen MP +11,95"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "386"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "257"
+        },
+        {
+          "rotulo": "Empower",
+          "valor": "M.Atk +20%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Acumen [SA NOVA]",
+          "valor": "Casting Spd +15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Magic Hold",
+          "valor": "20% de chance ao usar magia: prende o alvo no lugar por 5s"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:860",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-retributer",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Retributer",
+      "subtitulo": "Two Handed Blunt - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "HP Regeneration (saiu)",
+          "valor": "Regen HP +14,92"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "482"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Anger [SA NOVA]",
+          "valor": "P.Atk +20%, Max HP -15%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "HP Drain",
+          "valor": "Vampirismo +5, Dano em PvP +5%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:866",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-stormer",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Stormer",
+      "subtitulo": "Polearm - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "Guidance (saiu)",
+          "valor": "Precisao +7"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "396"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Health",
+          "valor": "Max HP +25%, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Focus [SA NOVA]",
+          "valor": "Chance de critico +139,9, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Haste",
+          "valor": "Atk.Spd +11%, Dano fisico PvP +5%, Dano magico PvP +5%"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Atenção",
+          "valor": "Vesper Stormer - Focus fica SEM o ataque em varios alvos"
+        },
+        {
+          "rotulo": "Atualização posterior (18 e 20/08/2026)",
+          "valor": "o Focus destas quatro lancas virou CRITICAL STUN, para as quatro versoes ficarem com Health, Haste e Critical Stun; a troca apagou o dano em PvP (3567 carregava +5% por dentro, 3070 nao) e em 20/08 os itens 14134 e 16072 receberam a skill 3552 nivel 1 (ver SA-ARMAS-alteracoes.txt:383 e :592)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:877",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-thrower",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Thrower",
+      "subtitulo": "Bow - família Vesper",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "Cheap Shot (saiu)",
+          "valor": "MP de magias e de skills -15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "724"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Quick Recovery [SA NOVA]",
+          "valor": "Tempo entre tiros -13%"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +133,9, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Critical Slow",
+          "valor": "33% de chance no golpe critico: Velocidade -20% por 5s"
+        },
+        {
+          "rotulo": "Atualização posterior (18/08/2026)",
+          "valor": "a versao masterwork da Vesper Thrower ja se chamava Quick Recovery mas continuava com reuse_delay 1500; recebeu o 1305 (ver SA-ARMAS-alteracoes.txt:396)"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:888",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "arma-vesper-fighter",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Fighter",
+      "subtitulo": "Dual Fist - família Vesper (punho de Tyrant/Grand Khavatari)",
+      "grade": "S84",
+      "antes": [
+        {
+          "rotulo": "Health (saiu em 12/08/2026)",
+          "valor": "Max HP +25%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "482"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +123,5, Dano em PvP +5%"
+        },
+        {
+          "rotulo": "Evasion [SA NOVA em 12/08/2026]",
+          "valor": "Evasao +6,8"
+        },
+        {
+          "rotulo": "Critical Stun",
+          "valor": "43% de chance no golpe critico: atordoa o alvo por 9s"
+        },
+        {
+          "rotulo": "Atualização posterior (20/08/2026) - DESFEITA a troca",
+          "valor": "a Vesper Fighter VOLTOU A DAR HEALTH, a pedido do dono: skill 3069 nv1 (Evasion +6,8) -> 3013 nv3 (Max HP +25%), e o nome \"- Evasion\" -> \"- Health\" nos quatro itens (14131, 14491, 16069, 16192). O trio da arma e de novo Health, Focus e Critical Stun (ver SA-ARMAS-alteracoes.txt:432)"
+        },
+        {
+          "rotulo": "Critical Stun medido (20/08/2026)",
+          "valor": "contra alvo nivel 85 com CON 43: versao normal 15,9%, versao {PvP} 37% dos criticos; contra mago (CON 24) a {PvP} atordoa 56%, contra CON 60, 20%"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:899",
+      "alteradoEm": "2026-08-12"
+    },
+    {
+      "id": "arma-dual-vesper-dual-sword",
+      "categoria": "arma-sa",
+      "titulo": "Vesper Dual Sword",
+      "subtitulo": "Dual Sword (combinação de lâminas) - família Vesper",
+      "grade": "S84",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P. Atk.",
+          "valor": "482"
+        },
+        {
+          "rotulo": "M. Atk.",
+          "valor": "176"
+        },
+        {
+          "rotulo": "Focus",
+          "valor": "Chance de critico +109,2, Max HP +10%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Haste [SA ADICIONADA - nada saiu no lugar]",
+          "valor": "Atk.Spd +11%, Dano em PvP +5% - so com a arma a +4 ou mais"
+        },
+        {
+          "rotulo": "Skill 3552",
+          "valor": "aqui ela NAO esta presa ao +4: o +5% de PvP vale desde o +0, so a SA e que espera o +4"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:910",
+      "alteradoEm": "2026-08-11"
+    },
+    {
+      "id": "notas-vesper",
+      "categoria": "arma-sa",
+      "titulo": "Notas da familia VESPER",
+      "subtitulo": "onde a família se encaixa, resistência, skill 3552 e polearm",
+      "grade": "S84",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Onde esta família se encaixa",
+          "valor": "no servidor estas 9 armas sao crystal_type \"S84\". Essa e uma grade propria, acima da S - nao se mistura com as armas da GRADE S. Nenhuma outra arma de jogador usa essa marca"
+        },
+        {
+          "rotulo": "O alvo NÃO resiste (a chance do item é a única que existe)",
+          "valor": "Magic Hold"
+        },
+        {
+          "rotulo": "O alvo AINDA pode resistir",
+          "valor": "Critical Slow, Critical Stun"
+        },
+        {
+          "rotulo": "Skill 3552 (Special Ability: PvP Damage)",
+          "valor": "6 versoes com pedra levam junto, dando +5% de dano em PvP - fisico, de skill fisica e magico. Em Vesper Dual Sword ela NAO esta presa ao +4"
+        },
+        {
+          "rotulo": "Polearm",
+          "valor": "quase sempre mantem o ataque em varios alvos ao receber a pedra. Nas versoes com pedra: a propria SA em 2 (Haste/Health). Ficam SEM o ataque em varios alvos: Vesper Stormer - Focus"
+        },
+        {
+          "rotulo": "Habilidade própria da arma (não vem da pedra)",
+          "valor": "Vesper Stormer - Polearm Multi-attack: Alvos por golpe +4"
+        },
+        {
+          "rotulo": "Quantidade",
+          "valor": "8 armas com 24 versoes com SA, mais 1 combinacao de espada dupla (2 com SA). A unica combinacao Vesper da SA"
+        }
+      ],
+      "fonte": "SA-ARMAS-TODAS-AS-GRADES.txt:920"
+    }
+  ]
+}

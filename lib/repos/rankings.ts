@@ -83,13 +83,44 @@ export function topByPk(limit = 100): Promise<CharRankRow[]> {
   );
 }
 
+/** Quantos jogadores legítimos estão online agora (inclui fake players). */
+export async function onlineCount(): Promise<number> {
+  const rows = await safeQuery<{ n: number | string }>(
+    `SELECT COUNT(*) AS n FROM characters c WHERE ${LEGIT} AND c.online = 1`,
+    []
+  );
+  return Number(rows[0]?.n ?? 0);
+}
+
+/** Linha de castelo (tabela castle não tem nome — id 1..9 mapeado no front). */
+export interface CastleRow {
+  id: number;
+  currentTaxPercent: number;
+  treasury: number | string;
+  siegeDate: number | string;
+  clan_name: string | null;
+  ally_name: string | null;
+}
+
+/** Castelos de Aden + clã dono (clan_data.hasCastle). */
+export function castles(): Promise<CastleRow[]> {
+  return safeQuery<CastleRow>(
+    `SELECT c.id, c.taxPercent AS currentTaxPercent, c.treasury, c.siegeDate,
+            cd.clan_name, cd.ally_name
+       FROM castle c
+       LEFT JOIN clan_data cd ON cd.hasCastle = c.id
+      ORDER BY c.id`,
+    []
+  );
+}
+
 /** Top clãs por reputação (desempate por nível do clã). */
 export function topClans(limit = 50): Promise<ClanRankRow[]> {
   return safeQuery<ClanRankRow>(
     `SELECT c.clan_id, c.clan_name, c.clan_level, c.reputation_score,
             c.ally_name, c.hasCastle,
             (SELECT COUNT(*) FROM characters m WHERE m.clanid = c.clan_id) AS members,
-            (SELECT ch.char_name FROM characters ch WHERE ch.obj_Id = c.leader_id) AS leader
+            (SELECT ch.char_name FROM characters ch WHERE ch.charId = c.leader_id) AS leader
        FROM clan_data c
       ORDER BY c.reputation_score DESC, c.clan_level DESC
       LIMIT ?`,

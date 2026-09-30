@@ -1,0 +1,562 @@
+{
+  "familia": "heroi",
+  "geradoDe": [
+    "ARMAS-HEROI.txt"
+  ],
+  "comoLer": [
+    {
+      "titulo": "Crítico, Atk. Spd. e Dano variável",
+      "texto": "\"Crítico\" é a chance de golpe crítico da própria arma, e \"Atk. Spd.\" a velocidade de ataque. \"Dano variável\" é o quanto o dano do golpe balança para cima e para baixo: 40% bate muito mais irregular que 5%.",
+      "fonte": "ARMAS-HEROI.txt:519-521"
+    },
+    {
+      "titulo": "Precisão negativa",
+      "texto": "\"Precisão\" negativa é penalidade da própria arma - ela erra mais que uma arma comum do mesmo tipo. Já vem assim de fábrica.",
+      "fonte": "ARMAS-HEROI.txt:523-524"
+    },
+    {
+      "titulo": "SA e DISPARA SOZINHO",
+      "texto": "O que está debaixo de \"SA\" é a Special Ability embutida. O que está debaixo de \"DISPARA SOZINHO\" não vale o tempo todo: acontece quando a condição da frente acontece.",
+      "fonte": "ARMAS-HEROI.txt:526-528"
+    },
+    {
+      "titulo": "Dano em PvP",
+      "texto": "O dano em PvP tem linha própria, fora da SA, porque não é bônus de SA: é o pacote de PvP, que nestas armas está escrito dentro da mesma skill.",
+      "fonte": "ARMAS-HEROI.txt:530-532"
+    },
+    {
+      "titulo": "As duas contas do DISPARA SOZINHO",
+      "texto": "Debaixo de \"DISPARA SOZINHO\" vem também a chance. São DUAS contas em série: 1) o item DISPARA a skill? Nas nove armas de debuff isso está em 33%, e é um 33% seco: não olha nível, nem INT, nem resistência do alvo. 2) o efeito PEGA no alvo? Nessas mesmas nove a segunda conta foi desligada, para o 33% ser a chance final de verdade. Onde ainda houver um número de base escrito, ele sobe ou desce com a diferença de nível (estas skills contam como nível 80), com o INT de quem bate e com a resistência do alvo. Só o Full Recover não tem a segunda conta - quando dispara, cura.",
+      "fonte": "ARMAS-HEROI.txt:538-552"
+    },
+    {
+      "titulo": "Fim do P. Atk. sagrado",
+      "texto": "Saiu o P. Atk. sagrado 250 de TODAS as 14 armas. Depois disto não há mais nenhum item no servidor com esse status.",
+      "fonte": "ARMAS-HEROI.txt:575-576"
+    },
+    {
+      "titulo": "Anotações originais de 13/08",
+      "texto": "O que foi escrito à mão no dia 13/08/2026 está em _ANOTACOES-ORIGINAIS_ARMAS-HEROI_2026-08-13.txt.",
+      "fonte": "ARMAS-HEROI.txt:602-603"
+    },
+    {
+      "titulo": "Anotações originais de 12/08",
+      "texto": "O que foi escrito à mão no dia 12/08/2026 está guardado inteiro em _ANOTACOES-ORIGINAIS_ARMAS-HEROI.txt.",
+      "fonte": "ARMAS-HEROI.txt:623-624"
+    },
+    {
+      "titulo": "Proveniência",
+      "texto": "Levantado em 11/08/2026, atualizado em 13/08/2026, direto de dist3.",
+      "fonte": "ARMAS-HEROI.txt:628"
+    }
+  ],
+  "entradas": [
+    {
+      "id": "heroi-infinity-blade",
+      "categoria": "heroi",
+      "titulo": "Infinity Blade",
+      "subtitulo": "One Handed Sword",
+      "itemId": 6611,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" },
+        { "rotulo": "Reflete dano", "valor": "+9" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "524" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "379" },
+        { "rotulo": "Dano variável", "valor": "10%" },
+        { "rotulo": "SA Infinity Blade - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Blade - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Blade - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Blade - Defesa do escudo", "valor": "+33%" },
+        { "rotulo": "SA Infinity Blade - Reflete dano de perto", "valor": "+20%" },
+        { "rotulo": "SA Infinity Blade - Contra-ataque em skill física", "valor": "20%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Decrease P. Def.: P.Def -23% por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Decrease P. Def. sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "notaFonte": "A entrada mistura as duas datas da fonte: a saída do P. Atk. sagrado da Blade e a troca do \"Reflete dano +9\" por reflete de perto + contra-ataque vêm da seção MUDADO EM 12/08/2026 (ARMAS-HEROI.txt:610 e 612-613); o Crítico de 10 para 12 vem da seção de 13/08/2026.",
+      "prosa": "Infinity Blade  -  saiu o P. Atk. sagrado 250.\n\nBlade e Axe     -  \"Reflete dano +9\" virou reflete de perto 20% mais contra-ataque 20% em skill física.",
+      "fonte": "ARMAS-HEROI.txt:28",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-cleaver",
+      "categoria": "heroi",
+      "titulo": "Infinity Cleaver",
+      "subtitulo": "Two Handed Sword",
+      "itemId": 6612,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "638" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Dano variável", "valor": "10%" },
+        { "rotulo": "SA Infinity Cleaver - Dano crítico", "valor": "+504" },
+        { "rotulo": "SA Infinity Cleaver - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Cleaver - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Cleaver - Chance de crítico", "valor": "+78,7" },
+        { "rotulo": "SA Infinity Cleaver - Chance de refletir skill física", "valor": "+10%" },
+        { "rotulo": "SA Infinity Cleaver - Chance de refletir magia", "valor": "+10%" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "fonte": "ARMAS-HEROI.txt:63",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-stinger",
+      "categoria": "heroi",
+      "titulo": "Infinity Stinger",
+      "subtitulo": "Dagger",
+      "itemId": 6617,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "458" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "433" },
+        { "rotulo": "Precisão", "valor": "-3,75" },
+        { "rotulo": "Dano variável", "valor": "5%" },
+        { "rotulo": "SA Infinity Stinger - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Stinger - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Stinger - Atk.Spd", "valor": "+3%" },
+        { "rotulo": "SA Infinity Stinger - Regen MP", "valor": "+0,51" },
+        { "rotulo": "SA Infinity Stinger - Chance de crítico", "valor": "+22% (só atacando pelas costas)" },
+        { "rotulo": "SA Infinity Stinger - Vampirismo", "valor": "+2" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Silence: silencia o alvo por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Silence sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+10%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "prosa": "TODAS as 14      -  o Crítico passou de 10 para 12. A Stinger e a Bow já estavam em 12 e não mudaram; as outras doze subiram.",
+      "fonte": "ARMAS-HEROI.txt:92",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-rod",
+      "categoria": "heroi",
+      "titulo": "Infinity Rod",
+      "subtitulo": "One Handed Blunt",
+      "itemId": 6614,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "420" },
+        { "rotulo": "M. Atk.", "valor": "307" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "379" },
+        { "rotulo": "Precisão", "valor": "4,75" },
+        { "rotulo": "Dano variável", "valor": "20%" },
+        { "rotulo": "SA Infinity Rod - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Rod - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Rod - Casting Spd", "valor": "+15%" },
+        { "rotulo": "SA Infinity Rod - Chance de crítico mágico", "valor": "+25%" },
+        { "rotulo": "SA Infinity Rod - Regen MP", "valor": "+0,51" },
+        { "rotulo": "Dispara sozinho", "valor": "3% de chance ao usar magia, Full Recover: lança Full Recover nv1 - dispara em 3% das vezes; não há segunda conta - se disparou, pegou" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "notaFonte": "A fonte diz que a arma GANHOU a Chance de crítico mágico +25% (ARMAS-HEROI.txt:589) — o bônus não existia antes, por isso não há valor antigo em antes.",
+      "prosa": "Infinity Rod     -  ganhou Chance de crítico mágico +25%.",
+      "fonte": "ARMAS-HEROI.txt:129",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-axe",
+      "categoria": "heroi",
+      "titulo": "Infinity Axe",
+      "subtitulo": "One Handed Blunt",
+      "itemId": 6613,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" },
+        { "rotulo": "Reflete dano", "valor": "+9" },
+        { "rotulo": "Dispara sozinho", "valor": "Discord" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "524" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "379" },
+        { "rotulo": "Precisão", "valor": "4,75" },
+        { "rotulo": "Dano variável", "valor": "20%" },
+        { "rotulo": "SA Infinity Axe - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Axe - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Axe - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Axe - Chance de bloqueio", "valor": "+39%" },
+        { "rotulo": "SA Infinity Axe - Reflete dano de perto", "valor": "+20%" },
+        { "rotulo": "SA Infinity Axe - Contra-ataque em skill física", "valor": "20%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Target Cancel: o alvo perde o alvo dele, para o ataque e para a magia que estava lançando - dispara em 33% das vezes; o Target Cancel pega em qualquer alvo, menos raid boss" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "notaFonte": "A entrada mistura as duas datas da fonte: a troca do \"Reflete dano +9\" por reflete de perto + contra-ataque e a saída do Discord com entrada do Target Cancel vêm da seção MUDADO EM 12/08/2026 (ARMAS-HEROI.txt:612-613 e 619-621); o Crítico de 10 para 12, a saída do P. Atk. sagrado e a Chance de crítico +78,7 que NÃO entrou vêm da seção de 13/08/2026.",
+      "prosa": "Infinity Axe     -  você pediu Chance de crítico +78,7 e depois mandou tirar, por ser blunt de uma mão. NÃO entrou; a arma está como estava.\n\nInfinity Axe    -  o Discord saiu; no lugar, o alvo perde o alvo, para o ataque e para a magia que estava lançando. Não pega em raid boss.",
+      "fonte": "ARMAS-HEROI.txt:160",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-scepter",
+      "categoria": "heroi",
+      "titulo": "Infinity Scepter",
+      "subtitulo": "Two Handed Blunt",
+      "itemId": 6616,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" },
+        { "rotulo": "M. Atk.", "valor": "+29,67" },
+        { "rotulo": "Chance de crítico mágico", "valor": "+1" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "511" },
+        { "rotulo": "M. Atk.", "valor": "337" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Precisão", "valor": "4,75" },
+        { "rotulo": "Dano variável", "valor": "20%" },
+        { "rotulo": "SA Infinity Scepter - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Scepter - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Scepter - Casting Spd", "valor": "+15%" },
+        { "rotulo": "SA Infinity Scepter - Chance de crítico mágico", "valor": "+25%" },
+        { "rotulo": "SA Infinity Scepter - MP de magias", "valor": "-4%" },
+        { "rotulo": "SA Infinity Scepter - Cancelamento de magia", "valor": "-106" },
+        { "rotulo": "Dispara sozinho", "valor": "3% de chance ao usar magia, Full Recover: lança Full Recover nv1 - dispara em 3% das vezes; não há segunda conta - se disparou, pegou" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "prosa": "Infinity Scepter -  M. Atk. +29,67 virou Casting Spd. +15%, e a chance de crítico mágico +1 virou Chance de crítico mágico +25%.",
+      "fonte": "ARMAS-HEROI.txt:197",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-crusher",
+      "categoria": "heroi",
+      "titulo": "Infinity Crusher",
+      "subtitulo": "Two Handed Blunt",
+      "itemId": 6615,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "638" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Precisão", "valor": "4,75" },
+        { "rotulo": "Dano variável", "valor": "20%" },
+        { "rotulo": "SA Infinity Crusher - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Crusher - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Crusher - Atk.Spd", "valor": "+7%" },
+        { "rotulo": "SA Infinity Crusher - Chance de refletir skill física", "valor": "+10%" },
+        { "rotulo": "SA Infinity Crusher - Chance de refletir magia", "valor": "+10%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Shock: atordoa o alvo por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Shock sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "fonte": "ARMAS-HEROI.txt:229",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-spear",
+      "categoria": "heroi",
+      "titulo": "Infinity Spear",
+      "subtitulo": "Polearm",
+      "itemId": 6621,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "524" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Precisão", "valor": "-3,75" },
+        { "rotulo": "Alcance", "valor": "80" },
+        { "rotulo": "Dano variável", "valor": "10%" },
+        { "rotulo": "SA Infinity Spear - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Spear - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Spear - Atk.Spd", "valor": "+7%" },
+        { "rotulo": "SA Infinity Spear - Precisão", "valor": "+4,89" },
+        { "rotulo": "SA Infinity Spear - Chance de refletir skill física", "valor": "+20%" },
+        { "rotulo": "SA Infinity Spear - Chance de refletir magia", "valor": "+20%" },
+        { "rotulo": "SA Infinity Spear - Alvos por golpe", "valor": "+4" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Dispell: lança Dispell nv1 - dispara sempre que a condição acima acontece; tira até 2 buffs do alvo, um rolado por vez com peso 5 - não funciona em raid boss" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "prosa": "O Dispell funciona diferente dos outros: em vez de uma chance única, ele tenta buff por buff até tirar 2, e não faz nada em raid boss. Ele também é o único que continua disparando em TODO golpe crítico.",
+      "fonte": "ARMAS-HEROI.txt:264",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-bow",
+      "categoria": "heroi",
+      "titulo": "Infinity Bow",
+      "subtitulo": "Bow",
+      "itemId": 6619,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Precisão", "valor": "-3,75" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "952" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "15" },
+        { "rotulo": "Atk. Spd.", "valor": "293" },
+        { "rotulo": "Precisão", "valor": "-15,75" },
+        { "rotulo": "Alcance", "valor": "500" },
+        { "rotulo": "Dano variável", "valor": "5%" },
+        { "rotulo": "SA Infinity Bow - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Bow - Max CP", "valor": "+50%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Slow: Velocidade -30% por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Slow sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "prosa": "Infinity Bow     -  o Crítico subiu de 12 para 15, só nela.\n\nInfinity Bow     -  a Precisão passou de -3,75 para -15,75. Não foi só ela: TODOS os 244 arcos do servidor levaram a mesma penalidade. Besta não entra - é outro tipo de arma, com penalidade própria de -1,5.",
+      "fonte": "ARMAS-HEROI.txt:303",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-shooter",
+      "categoria": "heroi",
+      "titulo": "Infinity Shooter",
+      "subtitulo": "Crossbow (só KAMAEL)",
+      "itemId": 9390,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "Restrição de raça", "valor": "só KAMAEL" },
+        { "rotulo": "P. Atk.", "valor": "584" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "303" },
+        { "rotulo": "Precisão", "valor": "-1,5" },
+        { "rotulo": "Alcance", "valor": "400" },
+        { "rotulo": "Dano variável", "valor": "10%" },
+        { "rotulo": "SA Infinity Shooter - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Shooter - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Cheap Shot - MP de skills físicas", "valor": "-15%" },
+        { "rotulo": "SA Cheap Shot - MP de magias", "valor": "-15%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Slow: Velocidade -30% por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Slow sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "fonte": "ARMAS-HEROI.txt:336",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-rapier",
+      "categoria": "heroi",
+      "titulo": "Infinity Rapier",
+      "subtitulo": "Rapier (só KAMAEL)",
+      "itemId": 9388,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "Restrição de raça", "valor": "só KAMAEL" },
+        { "rotulo": "P. Atk.", "valor": "475" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "406" },
+        { "rotulo": "Precisão", "valor": "-1,5" },
+        { "rotulo": "Dano variável", "valor": "40%" },
+        { "rotulo": "SA Infinity Rapier - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Rapier - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Rapier - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Rapier - Reflete dano", "valor": "+9" },
+        { "rotulo": "SA Infinity Rapier - Maximum Ability na party", "valor": "5% de chance de aplicar Maximum Ability na party (8s, P.Atk +10%, M.Atk +10%, MP de magias -100%, MP de skills físicas -100%, Efeito de cura +10%) no golpe crítico" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Decrease P. Def.: P.Def -23% por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Decrease P. Def. sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "fonte": "ARMAS-HEROI.txt:374",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-sword",
+      "categoria": "heroi",
+      "titulo": "Infinity Sword",
+      "subtitulo": "Ancient Sword (só KAMAEL)",
+      "itemId": 9389,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" }
+      ],
+      "agora": [
+        { "rotulo": "Restrição de raça", "valor": "só KAMAEL" },
+        { "rotulo": "P. Atk.", "valor": "568" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "350" },
+        { "rotulo": "Precisão", "valor": "2" },
+        { "rotulo": "Dano variável", "valor": "15%" },
+        { "rotulo": "SA Infinity Sword - Dano crítico", "valor": "+504" },
+        { "rotulo": "SA Infinity Sword - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Sword - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Sword - Chance de crítico", "valor": "+78,7" },
+        { "rotulo": "SA Infinity Sword - Chance de refletir skill física", "valor": "+10%" },
+        { "rotulo": "SA Infinity Sword - Chance de refletir magia", "valor": "+10%" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "fonte": "ARMAS-HEROI.txt:413",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-fang",
+      "categoria": "heroi",
+      "titulo": "Infinity Fang",
+      "subtitulo": "Dual Fist",
+      "itemId": 6618,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" },
+        { "rotulo": "Chance de refletir skill física", "valor": "+10%" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "638" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Precisão", "valor": "4,75" },
+        { "rotulo": "Dano variável", "valor": "5%" },
+        { "rotulo": "SA Infinity Fang - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Fang - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Fang - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Fang - Evasão", "valor": "+3,15" },
+        { "rotulo": "SA Infinity Fang - Chance de crítico", "valor": "+78,7" },
+        { "rotulo": "SA Infinity Fang - Reflete dano de perto", "valor": "+20%" },
+        { "rotulo": "SA Infinity Fang - Contra-ataque em skill física", "valor": "20%" },
+        { "rotulo": "SA Infinity Fang - Chance de refletir magia", "valor": "+10%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Shock: atordoa o alvo por 5s - dispara em 33% das vezes; não há rolagem de resistência - o Shock sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "notaFonte": "A fonte diz que a arma GANHOU a Chance de crítico +78,7 (ARMAS-HEROI.txt:591-592) — o bônus não existia antes, por isso não há valor antigo em antes. A entrada também mistura as duas datas da fonte: a troca da \"Chance de refletir skill física +10%\" pelos bônus de reflete de perto + contra-ataque vem da seção MUDADO EM 12/08/2026 (:615-617); o Crítico de 10 para 12, a saída do P. Atk. sagrado e o ganho da Chance de crítico vêm da seção de 13/08/2026.",
+      "prosa": "Infinity Fang    -  ganhou Chance de crítico +78,7, o mesmo valor que a Cleaver, a Wing e a Sword já usam.\n\nFang e Wing     -  \"Chance de refletir skill física +10%\" saiu, e no lugar entraram esses mesmos dois bônus. A chance de refletir MAGIA continua em 10%.",
+      "fonte": "ARMAS-HEROI.txt:444",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-infinity-wing",
+      "categoria": "heroi",
+      "titulo": "Infinity Wing",
+      "subtitulo": "Dual Sword",
+      "itemId": 6620,
+      "antes": [
+        { "rotulo": "P. Atk. sagrado", "valor": "250" },
+        { "rotulo": "Crítico", "valor": "10" },
+        { "rotulo": "Chance de refletir skill física", "valor": "+10%" }
+      ],
+      "agora": [
+        { "rotulo": "P. Atk.", "valor": "638" },
+        { "rotulo": "M. Atk.", "valor": "230" },
+        { "rotulo": "Crítico", "valor": "12" },
+        { "rotulo": "Atk. Spd.", "valor": "325" },
+        { "rotulo": "Dano variável", "valor": "10%" },
+        { "rotulo": "SA Infinity Wing - Max HP", "valor": "+25%" },
+        { "rotulo": "SA Infinity Wing - Max MP", "valor": "+30%" },
+        { "rotulo": "SA Infinity Wing - Max CP", "valor": "+50%" },
+        { "rotulo": "SA Infinity Wing - Chance de crítico", "valor": "+78,7" },
+        { "rotulo": "SA Infinity Wing - Reflete dano de perto", "valor": "+20%" },
+        { "rotulo": "SA Infinity Wing - Contra-ataque em skill física", "valor": "20%" },
+        { "rotulo": "SA Infinity Wing - Chance de refletir magia", "valor": "+10%" },
+        { "rotulo": "Dispara sozinho", "valor": "No golpe crítico, Physical Skill Restraint: lança Physical Skill Restraint nv1 - dispara em 33% das vezes; não há rolagem de resistência - o Physical Skill Restraint sempre pega" },
+        { "rotulo": "Pacote de PvP (não é bônus de SA) - Dano em PvP", "valor": "+7%" },
+        { "rotulo": "Pedra de alma", "valor": "Não recebe - o que ela tem já vem dentro dela" }
+      ],
+      "notaCliente": "Os números foram lidos direto dos arquivos do servidor, um por um, não da descrição que aparece no cliente.",
+      "notaFonte": "A entrada mistura as duas datas da fonte: a troca da \"Chance de refletir skill física +10%\" pelos bônus de reflete de perto + contra-ataque vem da seção MUDADO EM 12/08/2026 (ARMAS-HEROI.txt:615-617); o Crítico de 10 para 12 e a saída do P. Atk. sagrado vêm da seção de 13/08/2026.",
+      "prosa": "Fang e Wing     -  \"Chance de refletir skill física +10%\" saiu, e no lugar entraram esses mesmos dois bônus. A chance de refletir MAGIA continua em 10%.",
+      "fonte": "ARMAS-HEROI.txt:482",
+      "alteradoEm": "2026-08-13"
+    },
+    {
+      "id": "heroi-wings-of-destiny-circlet",
+      "categoria": "heroi",
+      "titulo": "Wings of Destiny Circlet",
+      "subtitulo": "Item de Herói que não é arma",
+      "itemId": 6842,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Quem equipa", "valor": "Só o Herói" },
+        { "rotulo": "Tipo", "valor": "Não é arma - não entra no formulário das armas de Herói" }
+      ],
+      "prosa": "Fora das armas, o Herói tem mais 1 item que só ele equipa, e que não entra aqui por não ser arma: Wings of Destiny Circlet [6842].",
+      "fonte": "ARMAS-HEROI.txt:535"
+    },
+    {
+      "id": "heroi-triumph-rapier",
+      "categoria": "heroi",
+      "titulo": "Triumph Rapier",
+      "subtitulo": "Linha Triumph - fora do escopo deste levantamento",
+      "antes": [],
+      "agora": [
+        { "rotulo": "Special Ability", "valor": "Usa a SA da Infinity Rapier" },
+        { "rotulo": "Linha Triumph", "valor": "14 armas de Herói; 13 delas não entregam Special Ability nenhuma" }
+      ],
+      "prosa": "Ficam de fora, a seu pedido, as 14 armas de Herói da linha Triumph. Para registro: 13 delas não entregam Special Ability nenhuma, e a única que entrega (Triumph Rapier) usa a SA da Infinity Rapier.",
+      "fonte": "ARMAS-HEROI.txt:21"
+    },
+    {
+      "id": "heroi-bonus-reflete-dano-de-perto",
+      "categoria": "heroi",
+      "titulo": "Reflete dano de perto",
+      "subtitulo": "Bônus das armas de Herói - glossário",
+      "antes": [],
+      "agora": [
+        { "rotulo": "O que é", "valor": "A fatia do dano que volta sozinha para quem bateu" },
+        { "rotulo": "Quando conta", "valor": "Só no golpe normal, e só se a arma dele for de perto" },
+        { "rotulo": "Arco e besta", "valor": "Não levam nada de volta" }
+      ],
+      "prosa": "\"Reflete dano de perto\" é a fatia do dano que volta sozinha para quem bateu. Só conta no golpe normal, e só se a arma dele for de perto - arco e besta não levam nada de volta.",
+      "fonte": "ARMAS-HEROI.txt:561"
+    },
+    {
+      "id": "heroi-bonus-contra-ataque-em-skill-fisica",
+      "categoria": "heroi",
+      "titulo": "Contra-ataque em skill física",
+      "subtitulo": "Bônus das armas de Herói - glossário",
+      "antes": [],
+      "agora": [
+        { "rotulo": "O que NÃO é", "valor": "Não é uma fatia do dano" },
+        { "rotulo": "O que é", "valor": "A chance de revidar quando levo uma skill física de perto" },
+        { "rotulo": "Como o revide bate", "valor": "Tem golpe próprio, que sai do meu P. Atk. contra a P. Def. dele" },
+        { "rotulo": "Motor", "valor": "O mesmo do Shield of Revenge" }
+      ],
+      "prosa": "\"Contra-ataque em skill física\" NÃO é uma fatia do dano: é a chance de eu revidar quando levo uma skill física de perto. O revide tem golpe próprio, que sai do meu P. Atk. contra a P. Def. dele. É o mesmo motor do Shield of Revenge.",
+      "fonte": "ARMAS-HEROI.txt:565"
+    }
+  ]
+}

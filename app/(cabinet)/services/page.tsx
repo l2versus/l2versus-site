@@ -19,7 +19,7 @@ export default async function ServicesPage() {
   const levels = new Map<number, number>();
   if (objIds.length) {
     const rows = await query<{ obj_Id: number; level: number }>(
-      `SELECT obj_Id, level FROM characters WHERE obj_Id IN (${objIds
+      `SELECT charId AS obj_Id, level FROM characters WHERE charId IN (${objIds
         .map(() => "?")
         .join(",")})`,
       objIds

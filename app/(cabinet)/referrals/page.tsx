@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session";
 import { getProfile } from "@/lib/repos/accounts";
+import { SITE_URL } from "@/lib/links";
 import ReferralsClient from "./ReferralsClient";
 
 export default async function ReferralsPage() {
@@ -8,7 +9,8 @@ export default async function ReferralsPage() {
   if (!s) redirect("/login");
 
   const profile = await getProfile(s.uid);
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  // Domínio de produção como padrão; env só sobrescreve se definido (ex.: preview).
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_URL;
 
   return (
     <>

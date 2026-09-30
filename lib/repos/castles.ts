@@ -43,7 +43,7 @@ type CastleRow = {
 export async function castleStatus(): Promise<CastleStatus[]> {
   try {
     const rows = await query<CastleRow>(
-      `SELECT c.id, c.currentTaxPercent, c.siegeDate,
+      `SELECT c.id, c.taxPercent AS currentTaxPercent, c.siegeDate,
               (SELECT cd.clan_name FROM clan_data cd WHERE cd.hasCastle = c.id LIMIT 1) AS owner
          FROM castle c
         ORDER BY c.id ASC`

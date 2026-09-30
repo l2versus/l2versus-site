@@ -7,30 +7,26 @@ import { execute } from "@/lib/db";
 /** Estado do formulário de recarga (tipo apenas — é apagado em runtime). */
 export type TopUpState = { error?: string; ok?: boolean; message?: string };
 
-/** Rótulos das formas de pagamento aceitas (id -> nome exibido). */
+/** Formas de pagamento europeias (id -> nome exibido). */
 const METHODS: Record<string, string> = {
-  pix: "Pix",
-  card: "Cartão de Crédito",
-  mercadopago: "Mercado Pago",
+  card: "Cartão",
   paypal: "PayPal",
+  sepa: "SEPA",
   crypto: "Cripto",
 };
 
-const MIN_AMOUNT = 10;
+const MIN_AMOUNT = 5;
 const MAX_AMOUNT = 100000;
 
 /**
- * Faixa de bônus por volume recarregado.
+ * Faixa de bônus por volume (1 VSCOIN = 1 €).
  * MANTER EM SINCRONIA com BONUS_TIERS em BalanceClient.tsx
  * (duplicado de propósito: helpers não podem ser exportados de um arquivo "use server").
  */
 function bonusRate(amount: number): number {
-  if (amount >= 500) return 0.25;
-  if (amount >= 250) return 0.2;
-  if (amount >= 200) return 0.15;
-  if (amount >= 150) return 0.12;
-  if (amount >= 100) return 0.09;
-  if (amount >= 70) return 0.06;
+  if (amount >= 100) return 0.15;
+  if (amount >= 50) return 0.1;
+  if (amount >= 20) return 0.05;
   return 0;
 }
 

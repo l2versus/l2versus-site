@@ -7,6 +7,17 @@ import type { ResultSetHeader } from "mysql2/promise";
  * (tabela `characters`). Um web_user possui várias contas de jogo
  * (accounts.site_user_id = web_users.id); cada conta possui vários personagens
  * (characters.account_name = accounts.login).
+ *
+ * PORT H5: o schema do Mobius High Five nomeia algumas colunas diferente da rev
+ * Interlude em que o site nasceu. O SQL abaixo usa os nomes REAIS do H5 e faz
+ * alias de volta para o vocabulário do site, mantendo os tipos e todos os
+ * consumidores intactos:
+ *
+ *   H5                 ->  site
+ *   characters.charId  ->  obj_Id
+ *   accounts.lastactive->  last_active
+ *   accounts.accessLevel-> access_level
+ *   accounts.lastServer->  last_server
  */
 
 export type GameAccount = {
@@ -78,7 +89,11 @@ export async function getProfile(uid: number): Promise<Profile> {
 /** Lista as contas de jogo pertencentes a um web_user. */
 export async function listGameAccounts(uid: number): Promise<GameAccount[]> {
   return query<GameAccount>(
-    "SELECT login, email, last_active, access_level, last_server FROM accounts WHERE site_user_id = ? ORDER BY login",
+    `SELECT login, email,
+            lastactive   AS last_active,
+            accessLevel  AS access_level,
+            lastServer   AS last_server
+       FROM accounts WHERE site_user_id = ? ORDER BY login`,
     [uid]
   );
 }
@@ -86,7 +101,7 @@ export async function listGameAccounts(uid: number): Promise<GameAccount[]> {
 /** Personagens (não deletados) de uma conta de jogo, do maior nível ao menor. */
 export async function charactersFor(login: string): Promise<GameCharacter[]> {
   return query<GameCharacter>(
-    `SELECT c.obj_Id, c.char_name, c.level, c.classid, c.race, c.clanid,
+    `SELECT c.charId AS obj_Id, c.char_name, c.level, c.classid, c.race, c.clanid,
             c.online, c.onlinetime, c.pvpkills, c.pkkills,
             cd.clan_name
        FROM characters c
@@ -147,8 +162,32 @@ export async function createGameAccount({
   passwordHash: string;
 }): Promise<ResultSetHeader> {
   return execute(
-    "INSERT INTO accounts (login, password, email, site_user_id, access_level, last_active, last_server) VALUES (?, ?, '', ?, 0, 0, 1)",
+    "INSERT INTO accounts (login, password, email, site_user_id, accessLevel, lastactive, lastServer) VALUES (?, ?, '', ?, 0, 0, 1)",
     [login, passwordHash, uid]
+  );
+}
+
+/** Quantos personagens (não deletados) uma conta de jogo possui. */
+export async function countCharacters(login: string): Promise<number> {
+  const row = await queryOne<{ n: number }>(
+    "SELECT COUNT(*) AS n FROM characters WHERE account_name = ? AND (deletetime = 0 OR deletetime IS NULL)",
+    [login]
+  );
+  return Number(row?.n ?? 0);
+}
+
+/**
+ * Exclui uma conta de jogo. Escopo por `uid` (só contas do próprio usuário).
+ * A verificação de "sem personagens" é feita no action antes de chamar —
+ * aqui garantimos a posse via WHERE. affectedRows = 0 se não pertence ao uid.
+ */
+export async function deleteGameAccount(
+  login: string,
+  uid: number
+): Promise<ResultSetHeader> {
+  return execute(
+    "DELETE FROM accounts WHERE login = ? AND site_user_id = ?",
+    [login, uid]
   );
 }
 

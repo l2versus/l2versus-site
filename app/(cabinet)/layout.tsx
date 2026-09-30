@@ -47,6 +47,7 @@ export default async function CabinetLayout({
     { slug: "rankings", href: "/stats", label: t("nav.rankings") },
     { slug: "market", href: "/market", label: t("nav.market") },
     { slug: "rmt", href: "/rmt", label: t("nav.rmt") },
+    { slug: "streams", href: "/streams/connect", label: t("nav.streams") },
     { slug: "warehouse", href: "/warehouse", label: t("nav.warehouse") },
     { slug: "history", href: "/history", label: t("nav.history") },
   ];
@@ -87,7 +88,7 @@ export default async function CabinetLayout({
             <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-[rgba(42,37,48,0.7)] bg-[rgba(18,16,22,0.8)] px-3 py-1 md:mt-3">
               <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[#5ec26a] shadow-[0_0_8px_rgba(94,194,106,0.6)]" />
               <span className="text-[0.6rem] uppercase tracking-[0.18em] text-[var(--color-muted)] md:text-[0.62rem]">
-                Interlude+ · {t("chrome.online")}
+                High Five · {t("chrome.online")}
               </span>
             </div>
           </div>

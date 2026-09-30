@@ -19,9 +19,34 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "L2 Versus — Servidor Lineage 2 Interlude",
+  metadataBase: new URL("https://www.l2versus.com"),
+  title: "L2 Versus — Servidor Lineage 2 High Five",
   description:
-    "L2 Versus — servidor privado de Lineage 2. Interlude com conteúdo High Five, eventos automáticos, itens custom e economia equilibrada.",
+    "L2 Versus — servidor privado de Lineage 2, crônica High Five (Chaotic Throne 2.6). Eventos automáticos, itens custom, zonas de farm próprias e economia equilibrada.",
+  openGraph: {
+    type: "website",
+    url: "https://www.l2versus.com",
+    siteName: "L2 Versus",
+    title: "L2 Versus — Servidor Lineage 2",
+    description:
+      "Servidor privado de Lineage 2 — eventos automáticos, itens custom e economia equilibrada. Entre na luta.",
+    locale: "pt_BR",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "L2 Versus — Lineage 2",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "L2 Versus — Servidor Lineage 2",
+    description:
+      "Servidor privado de Lineage 2 — eventos automáticos, itens custom e economia equilibrada.",
+    images: ["/og.png"],
+  },
 };
 
 export default function RootLayout({

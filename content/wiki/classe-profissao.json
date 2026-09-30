@@ -1,0 +1,5697 @@
+{
+  "familia": "classe",
+  "titulo": "Troca de profissão",
+  "geradoDe": [
+    "dist/game/data/scripts/village_master/ (15 scripts)",
+    "dist/game/data/scripts/quests/AbstractSagaQuest.java",
+    "dist/game/data/scripts/quests/ (34 Saga quests)",
+    "dist/game/data/scripts/quests/Q00061_LawEnforcement/Q00061_LawEnforcement.java",
+    "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java",
+    "dist/game/config/Player.ini",
+    "dist/game/config/ClassMaster.xml",
+    "dist/game/data/stats/items",
+    "dist/game/data/stats/npcs"
+  ],
+  "curadoPor": "extraído por scripts/extrair-profissao.mjs — níveis, itens, quests e NPCs lidos do código do servidor; a prosa de `comoObter` e o texto das regras de subclasse são redação nossa, mas cada regra carrega a linha real do fonte (âncora conferida em tempo de extração)",
+  "total": 92,
+  "porTier": {
+    "1": {
+      "nivel": 20,
+      "niveisVistos": [
+        20
+      ],
+      "classesCobertas": 20,
+      "comoObter": "Falar com o village master da raça e entregar o item de prova da quest de 1ª profissão. O item é cobrado (hasQuestItems) e tomado; o Kamael é a exceção — lá o gate é a quest concluída, não o item.",
+      "fontes": [
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:171",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:200",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:229",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:171",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:200",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:258",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:287",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:229",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:258",
+        "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:80",
+        "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:124",
+        "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:153",
+        "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:182",
+        "dist/game/data/scripts/village_master/DwarfWarehouseChange1/DwarfWarehouseChange1.java:106",
+        "dist/game/data/scripts/village_master/DwarfBlacksmithChange1/DwarfBlacksmithChange1.java:106",
+        "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:107",
+        "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:137"
+      ]
+    },
+    "2": {
+      "nivel": 40,
+      "niveisVistos": [
+        40
+      ],
+      "classesCobertas": 36,
+      "comoObter": "Falar com o village master de 2ª e entregar as marcas (normalmente 3: a da linha, a da raça e a da especialização). Kamael de novo é quest, não item.",
+      "fontes": [
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:149",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:178",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:207",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:236",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:265",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:294",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:115",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:144",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:173",
+        "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:103",
+        "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:132",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:323",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:352",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:381",
+        "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:410",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:202",
+        "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:231",
+        "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:161",
+        "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98",
+        "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:112",
+        "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:141",
+        "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:170",
+        "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:199",
+        "dist/game/data/scripts/village_master/DwarfWarehouseChange2/DwarfWarehouseChange2.java:91",
+        "dist/game/data/scripts/village_master/DwarfBlacksmithChange2/DwarfBlacksmithChange2.java:91",
+        "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:157",
+        "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:187",
+        "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:231",
+        "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:261"
+      ]
+    },
+    "3": {
+      "nivel": 76,
+      "niveisVistos": [
+        76
+      ],
+      "classesCobertas": 36,
+      "comoObter": "NÃO passa por village master. Vem das Saga quests (AbstractSagaQuest): aceitar a saga da classe, matar o guardião/arcanjo e voltar ao NPC com nível 76+. A troca acontece em AbstractSagaQuest.onEvent(\"0-2\"), que ainda paga 2.299.404 XP, 5.000.000 adena e o Book of Giants (6622). Fora da saga: Judicator (136) sai da Q00061_LawEnforcement, e Inspector (135) não é profissão — só existe como subclasse de Kamael.",
+      "fontes": [
+        "dist/game/data/scripts/quests/AbstractSagaQuest.java:133",
+        "dist/game/data/scripts/quests/Q00061_LawEnforcement/Q00061_LawEnforcement.java:37"
+      ],
+      "fonteTroca": "dist/game/data/scripts/quests/AbstractSagaQuest.java:163"
+    }
+  },
+  "nomeDasCategorias": {
+    "observacao": "No CategoryData.xml os nomes estão deslocados em um: FIRST_CLASS_GROUP são as classes base (nenhuma profissão feita), e quem já fez a 3ª profissão está em FOURTH_CLASS_GROUP. Os scripts de village master usam esses nomes — ler SECOND_CLASS_GROUP como '2ª profissão' inverte a regra.",
+    "mapa": [
+      {
+        "categoria": "FIRST_CLASS_GROUP",
+        "profissao": 0,
+        "classes": 11,
+        "fonte": "dist/game/data/CategoryData.xml:219"
+      },
+      {
+        "categoria": "SECOND_CLASS_GROUP",
+        "profissao": 1,
+        "classes": 20,
+        "fonte": "dist/game/data/CategoryData.xml:232"
+      },
+      {
+        "categoria": "THIRD_CLASS_GROUP",
+        "profissao": 2,
+        "classes": 36,
+        "fonte": "dist/game/data/CategoryData.xml:254"
+      },
+      {
+        "categoria": "FOURTH_CLASS_GROUP",
+        "profissao": 3,
+        "classes": 36,
+        "fonte": "dist/game/data/CategoryData.xml:292"
+      }
+    ]
+  },
+  "atalhoClassMaster": {
+    "ligado": false,
+    "observacao": "O NPC de atalho (Mr. Cat / Miss Queen) está desligado neste servidor; a única rota é village master + quest.",
+    "fonte": "dist/game/config/ClassMaster.xml:3"
+  },
+  "porClasse": {
+    "1": {
+      "classId": 1,
+      "nome": "Warrior",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 0,
+      "classeOrigemNome": "Human Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1145,
+      "itemExigidoNome": "Medallion of Warrior",
+      "itensExigidos": [
+        {
+          "id": 1145,
+          "nome": "Medallion of Warrior",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:604"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1145,
+          "nome": "Medallion of Warrior",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:604"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30066,
+          "nome": "Pabris",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:1981"
+        },
+        {
+          "id": 30288,
+          "nome": "Rains",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1057"
+        },
+        {
+          "id": 30373,
+          "nome": "Ramos",
+          "fonte": "dist/game/data/stats/npcs/30300-30399.xml:2149"
+        },
+        {
+          "id": 32094,
+          "nome": "Schule",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3808"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:169",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:171"
+    },
+    "2": {
+      "classId": 2,
+      "nome": "Gladiator",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 1,
+      "classeOrigemNome": "Warrior",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:147",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:149"
+    },
+    "3": {
+      "classId": 3,
+      "nome": "Warlord",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 1,
+      "classeOrigemNome": "Warrior",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3276,
+          "nome": "Mark of Champion",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:915"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3276,
+          "nome": "Mark of Champion",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:915"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:176",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:178"
+    },
+    "4": {
+      "classId": 4,
+      "nome": "Human Knight",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 0,
+      "classeOrigemNome": "Human Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1161,
+      "itemExigidoNome": "Sword of Ritual",
+      "itensExigidos": [
+        {
+          "id": 1161,
+          "nome": "Sword of Ritual",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:796"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1161,
+          "nome": "Sword of Ritual",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:796"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30066,
+          "nome": "Pabris",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:1981"
+        },
+        {
+          "id": 30288,
+          "nome": "Rains",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1057"
+        },
+        {
+          "id": 30373,
+          "nome": "Ramos",
+          "fonte": "dist/game/data/stats/npcs/30300-30399.xml:2149"
+        },
+        {
+          "id": 32094,
+          "nome": "Schule",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3808"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:198",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:200"
+    },
+    "5": {
+      "classId": 5,
+      "nome": "Paladin",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 4,
+      "classeOrigemNome": "Human Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:205",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:207"
+    },
+    "6": {
+      "classId": 6,
+      "nome": "Dark Avenger",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 4,
+      "classeOrigemNome": "Human Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:234",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:236"
+    },
+    "7": {
+      "classId": 7,
+      "nome": "Rogue",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 0,
+      "classeOrigemNome": "Human Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1190,
+      "itemExigidoNome": "Bezique's Recommendation",
+      "itensExigidos": [
+        {
+          "id": 1190,
+          "nome": "Bezique's Recommendation",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:1172"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1190,
+          "nome": "Bezique's Recommendation",
+          "fonte": "dist/game/data/stats/items/01100-01199.xml:1172"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30066,
+          "nome": "Pabris",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:1981"
+        },
+        {
+          "id": 30288,
+          "nome": "Rains",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1057"
+        },
+        {
+          "id": 30373,
+          "nome": "Ramos",
+          "fonte": "dist/game/data/stats/npcs/30300-30399.xml:2149"
+        },
+        {
+          "id": 32094,
+          "nome": "Schule",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3808"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:227",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:229"
+    },
+    "8": {
+      "classId": 8,
+      "nome": "Treasure Hunter",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 7,
+      "classeOrigemNome": "Rogue",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:263",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:265"
+    },
+    "9": {
+      "classId": 9,
+      "nome": "Hawkeye",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 7,
+      "classeOrigemNome": "Rogue",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:292",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:294"
+    },
+    "11": {
+      "classId": 11,
+      "nome": "Human Wizard",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 10,
+      "classeOrigemNome": "Human Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1292,
+      "itemExigidoNome": "Bead of Season",
+      "itensExigidos": [
+        {
+          "id": 1292,
+          "nome": "Bead of Season",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:1123"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1292,
+          "nome": "Bead of Season",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:1123"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30037,
+          "nome": "Levian",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:972"
+        },
+        {
+          "id": 30070,
+          "nome": "Sylvain",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:2145"
+        },
+        {
+          "id": 30289,
+          "nome": "Raymond",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1097"
+        },
+        {
+          "id": 32095,
+          "nome": "Marie",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3849"
+        },
+        {
+          "id": 32098,
+          "nome": "Celes",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3971"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:169",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:171"
+    },
+    "12": {
+      "classId": 12,
+      "nome": "Sorcerer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 11,
+      "classeOrigemNome": "Human Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30115,
+          "nome": "Jurek",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:484"
+        },
+        {
+          "id": 30174,
+          "nome": "Arkenias",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2509"
+        },
+        {
+          "id": 30176,
+          "nome": "Valleria",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2591"
+        },
+        {
+          "id": 30694,
+          "nome": "Scraide",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3598"
+        },
+        {
+          "id": 30854,
+          "nome": "Drikiyan",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1251"
+        },
+        {
+          "id": 31331,
+          "nome": "Valdis",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1291"
+        },
+        {
+          "id": 31755,
+          "nome": "Halaster",
+          "fonte": "dist/game/data/stats/npcs/31700-31799.xml:2076"
+        },
+        {
+          "id": 31996,
+          "nome": "Javier",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:4356"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:113",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:115"
+    },
+    "13": {
+      "classId": 13,
+      "nome": "Necromancer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 11,
+      "classeOrigemNome": "Human Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30115,
+          "nome": "Jurek",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:484"
+        },
+        {
+          "id": 30174,
+          "nome": "Arkenias",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2509"
+        },
+        {
+          "id": 30176,
+          "nome": "Valleria",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2591"
+        },
+        {
+          "id": 30694,
+          "nome": "Scraide",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3598"
+        },
+        {
+          "id": 30854,
+          "nome": "Drikiyan",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1251"
+        },
+        {
+          "id": 31331,
+          "nome": "Valdis",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1291"
+        },
+        {
+          "id": 31755,
+          "nome": "Halaster",
+          "fonte": "dist/game/data/stats/npcs/31700-31799.xml:2076"
+        },
+        {
+          "id": 31996,
+          "nome": "Javier",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:4356"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:142",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:144"
+    },
+    "14": {
+      "classId": 14,
+      "nome": "Warlock",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 11,
+      "classeOrigemNome": "Human Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30115,
+          "nome": "Jurek",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:484"
+        },
+        {
+          "id": 30174,
+          "nome": "Arkenias",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2509"
+        },
+        {
+          "id": 30176,
+          "nome": "Valleria",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2591"
+        },
+        {
+          "id": 30694,
+          "nome": "Scraide",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3598"
+        },
+        {
+          "id": 30854,
+          "nome": "Drikiyan",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1251"
+        },
+        {
+          "id": 31331,
+          "nome": "Valdis",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1291"
+        },
+        {
+          "id": 31755,
+          "nome": "Halaster",
+          "fonte": "dist/game/data/stats/npcs/31700-31799.xml:2076"
+        },
+        {
+          "id": 31996,
+          "nome": "Javier",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:4356"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:171",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:173"
+    },
+    "15": {
+      "classId": 15,
+      "nome": "Cleric",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 10,
+      "classeOrigemNome": "Human Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1201,
+      "itemExigidoNome": "Mark of Faith",
+      "itensExigidos": [
+        {
+          "id": 1201,
+          "nome": "Mark of Faith",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:15"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1201,
+          "nome": "Mark of Faith",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:15"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30037,
+          "nome": "Levian",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:972"
+        },
+        {
+          "id": 30070,
+          "nome": "Sylvain",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:2145"
+        },
+        {
+          "id": 30289,
+          "nome": "Raymond",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1097"
+        },
+        {
+          "id": 32095,
+          "nome": "Marie",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3849"
+        },
+        {
+          "id": 32098,
+          "nome": "Celes",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3971"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:198",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:200"
+    },
+    "16": {
+      "classId": 16,
+      "nome": "Bishop",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 15,
+      "classeOrigemNome": "Cleric",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30120,
+          "nome": "Maximilian",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:693"
+        },
+        {
+          "id": 30191,
+          "nome": "Hollint",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3196"
+        },
+        {
+          "id": 30857,
+          "nome": "Orven",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1372"
+        },
+        {
+          "id": 30905,
+          "nome": "Squillari",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:204"
+        },
+        {
+          "id": 31279,
+          "nome": "Gregory",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3193"
+        },
+        {
+          "id": 31328,
+          "nome": "Innocentin",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1165"
+        },
+        {
+          "id": 31968,
+          "nome": "Baryl",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3206"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:101",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:103"
+    },
+    "17": {
+      "classId": 17,
+      "nome": "Prophet",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 15,
+      "classeOrigemNome": "Cleric",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2821,
+          "nome": "Mark of Reformer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:255"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 2734,
+          "nome": "Mark of Trust",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:411"
+        },
+        {
+          "id": 2821,
+          "nome": "Mark of Reformer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:255"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30120,
+          "nome": "Maximilian",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:693"
+        },
+        {
+          "id": 30191,
+          "nome": "Hollint",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3196"
+        },
+        {
+          "id": 30857,
+          "nome": "Orven",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1372"
+        },
+        {
+          "id": 30905,
+          "nome": "Squillari",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:204"
+        },
+        {
+          "id": 31279,
+          "nome": "Gregory",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3193"
+        },
+        {
+          "id": 31328,
+          "nome": "Innocentin",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1165"
+        },
+        {
+          "id": 31968,
+          "nome": "Baryl",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3206"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:130",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:132"
+    },
+    "19": {
+      "classId": 19,
+      "nome": "Elven Knight",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 18,
+      "classeOrigemNome": "Elven Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1204,
+      "itemExigidoNome": "Elven Knight Brooch",
+      "itensExigidos": [
+        {
+          "id": 1204,
+          "nome": "Elven Knight Brooch",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:51"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1204,
+          "nome": "Elven Knight Brooch",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:51"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30066,
+          "nome": "Pabris",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:1981"
+        },
+        {
+          "id": 30288,
+          "nome": "Rains",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1057"
+        },
+        {
+          "id": 30373,
+          "nome": "Ramos",
+          "fonte": "dist/game/data/stats/npcs/30300-30399.xml:2149"
+        },
+        {
+          "id": 32094,
+          "nome": "Schule",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3808"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:256",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:258"
+    },
+    "20": {
+      "classId": 20,
+      "nome": "Temple Knight",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 19,
+      "classeOrigemNome": "Elven Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:321",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:323"
+    },
+    "21": {
+      "classId": 21,
+      "nome": "Sword Singer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 19,
+      "classeOrigemNome": "Elven Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:350",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:352"
+    },
+    "22": {
+      "classId": 22,
+      "nome": "Elven Scout",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 18,
+      "classeOrigemNome": "Elven Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1217,
+      "itemExigidoNome": "Reisa's Recommendation",
+      "itensExigidos": [
+        {
+          "id": 1217,
+          "nome": "Reisa's Recommendation",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:223"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1217,
+          "nome": "Reisa's Recommendation",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:223"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30066,
+          "nome": "Pabris",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:1981"
+        },
+        {
+          "id": 30288,
+          "nome": "Rains",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1057"
+        },
+        {
+          "id": 30373,
+          "nome": "Ramos",
+          "fonte": "dist/game/data/stats/npcs/30300-30399.xml:2149"
+        },
+        {
+          "id": 32094,
+          "nome": "Schule",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3808"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:285",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange1/ElfHumanFighterChange1.java:287"
+    },
+    "23": {
+      "classId": 23,
+      "nome": "Plains Walker",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 22,
+      "classeOrigemNome": "Elven Scout",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:379",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:381"
+    },
+    "24": {
+      "classId": 24,
+      "nome": "Silver Ranger",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 22,
+      "classeOrigemNome": "Elven Scout",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30109,
+          "nome": "Hannavalt",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:243"
+        },
+        {
+          "id": 30187,
+          "nome": "Klaus Blackbird",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3033"
+        },
+        {
+          "id": 30689,
+          "nome": "Siria",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3397"
+        },
+        {
+          "id": 30849,
+          "nome": "Sedrick",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1050"
+        },
+        {
+          "id": 30900,
+          "nome": "Marcus",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:3"
+        },
+        {
+          "id": 31276,
+          "nome": "Bernhard",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3069"
+        },
+        {
+          "id": 31321,
+          "nome": "Siegmund",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:876"
+        },
+        {
+          "id": 31965,
+          "nome": "Hector",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3082"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:408",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanFighterChange2/ElfHumanFighterChange2.java:410"
+    },
+    "26": {
+      "classId": 26,
+      "nome": "Elven Wizard",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 25,
+      "classeOrigemNome": "Elven Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1230,
+      "itemExigidoNome": "Eternity Diamond",
+      "itensExigidos": [
+        {
+          "id": 1230,
+          "nome": "Eternity Diamond",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:379"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1230,
+          "nome": "Eternity Diamond",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:379"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30037,
+          "nome": "Levian",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:972"
+        },
+        {
+          "id": 30070,
+          "nome": "Sylvain",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:2145"
+        },
+        {
+          "id": 30289,
+          "nome": "Raymond",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1097"
+        },
+        {
+          "id": 32095,
+          "nome": "Marie",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3849"
+        },
+        {
+          "id": 32098,
+          "nome": "Celes",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3971"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:227",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:229"
+    },
+    "27": {
+      "classId": 27,
+      "nome": "Spellsinger",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 26,
+      "classeOrigemNome": "Elven Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30115,
+          "nome": "Jurek",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:484"
+        },
+        {
+          "id": 30174,
+          "nome": "Arkenias",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2509"
+        },
+        {
+          "id": 30176,
+          "nome": "Valleria",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2591"
+        },
+        {
+          "id": 30694,
+          "nome": "Scraide",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3598"
+        },
+        {
+          "id": 30854,
+          "nome": "Drikiyan",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1251"
+        },
+        {
+          "id": 31331,
+          "nome": "Valdis",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1291"
+        },
+        {
+          "id": 31755,
+          "nome": "Halaster",
+          "fonte": "dist/game/data/stats/npcs/31700-31799.xml:2076"
+        },
+        {
+          "id": 31996,
+          "nome": "Javier",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:4356"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:200",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:202"
+    },
+    "28": {
+      "classId": 28,
+      "nome": "Elemental Summoner",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 26,
+      "classeOrigemNome": "Elven Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30115,
+          "nome": "Jurek",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:484"
+        },
+        {
+          "id": 30174,
+          "nome": "Arkenias",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2509"
+        },
+        {
+          "id": 30176,
+          "nome": "Valleria",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:2591"
+        },
+        {
+          "id": 30694,
+          "nome": "Scraide",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3598"
+        },
+        {
+          "id": 30854,
+          "nome": "Drikiyan",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1251"
+        },
+        {
+          "id": 31331,
+          "nome": "Valdis",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1291"
+        },
+        {
+          "id": 31755,
+          "nome": "Halaster",
+          "fonte": "dist/game/data/stats/npcs/31700-31799.xml:2076"
+        },
+        {
+          "id": 31996,
+          "nome": "Javier",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:4356"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:229",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange2/ElfHumanWizardChange2.java:231"
+    },
+    "29": {
+      "classId": 29,
+      "nome": "Elven Oracle",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 25,
+      "classeOrigemNome": "Elven Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1235,
+      "itemExigidoNome": "Leaf of Oracle",
+      "itensExigidos": [
+        {
+          "id": 1235,
+          "nome": "Leaf of Oracle",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:439"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1235,
+          "nome": "Leaf of Oracle",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:439"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30037,
+          "nome": "Levian",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:972"
+        },
+        {
+          "id": 30070,
+          "nome": "Sylvain",
+          "fonte": "dist/game/data/stats/npcs/30000-30099.xml:2145"
+        },
+        {
+          "id": 30289,
+          "nome": "Raymond",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1097"
+        },
+        {
+          "id": 32095,
+          "nome": "Marie",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3849"
+        },
+        {
+          "id": 32098,
+          "nome": "Celes",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3971"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:256",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanWizardChange1/ElfHumanWizardChange1.java:258"
+    },
+    "30": {
+      "classId": 30,
+      "nome": "Elven Elder",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 29,
+      "classeOrigemNome": "Elven Oracle",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3140,
+          "nome": "Mark of Life",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:426"
+        },
+        {
+          "id": 2820,
+          "nome": "Mark of Healer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:243"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30120,
+          "nome": "Maximilian",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:693"
+        },
+        {
+          "id": 30191,
+          "nome": "Hollint",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3196"
+        },
+        {
+          "id": 30857,
+          "nome": "Orven",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1372"
+        },
+        {
+          "id": 30905,
+          "nome": "Squillari",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:204"
+        },
+        {
+          "id": 31279,
+          "nome": "Gregory",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3193"
+        },
+        {
+          "id": 31328,
+          "nome": "Innocentin",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1165"
+        },
+        {
+          "id": 31968,
+          "nome": "Baryl",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3206"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:159",
+      "fonteNivel": "dist/game/data/scripts/village_master/ElfHumanClericChange2/ElfHumanClericChange2.java:161"
+    },
+    "32": {
+      "classId": 32,
+      "nome": "Palus Knight",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 31,
+      "classeOrigemNome": "Dark Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1244,
+      "itemExigidoNome": "Gaze of Abyss",
+      "itensExigidos": [
+        {
+          "id": 1244,
+          "nome": "Gaze of Abyss",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:547"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1244,
+          "nome": "Gaze of Abyss",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:547"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30290,
+          "nome": "Xenos",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1137"
+        },
+        {
+          "id": 30297,
+          "nome": "Tobias",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1300"
+        },
+        {
+          "id": 30462,
+          "nome": "Tronix",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:1739"
+        },
+        {
+          "id": 32160,
+          "nome": "Devon",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:2381"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:57",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:80"
+    },
+    "33": {
+      "classId": 33,
+      "nome": "Shillien Knight",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 32,
+      "classeOrigemNome": "Palus Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2633,
+          "nome": "Mark of Duty",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:831"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3307,
+          "nome": "Mark of Witchcraft",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:87"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:70",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "34": {
+      "classId": 34,
+      "nome": "Bladedancer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 32,
+      "classeOrigemNome": "Palus Knight",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:71",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "35": {
+      "classId": 35,
+      "nome": "Assassin",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 31,
+      "classeOrigemNome": "Dark Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1252,
+      "itemExigidoNome": "Iron Heart",
+      "itensExigidos": [
+        {
+          "id": 1252,
+          "nome": "Iron Heart",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:643"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1252,
+          "nome": "Iron Heart",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:643"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30290,
+          "nome": "Xenos",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1137"
+        },
+        {
+          "id": 30297,
+          "nome": "Tobias",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1300"
+        },
+        {
+          "id": 30462,
+          "nome": "Tronix",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:1739"
+        },
+        {
+          "id": 32160,
+          "nome": "Devon",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:2381"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:58",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:80"
+    },
+    "36": {
+      "classId": 36,
+      "nome": "Abyss Walker",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 35,
+      "classeOrigemNome": "Assassin",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:73",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "37": {
+      "classId": 37,
+      "nome": "Phantom Ranger",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 35,
+      "classeOrigemNome": "Assassin",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2673,
+          "nome": "Mark of Seeker",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1311"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3293,
+          "nome": "Mark of Sagittarius",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:1119"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:74",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "39": {
+      "classId": 39,
+      "nome": "Dark Wizard",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 38,
+      "classeOrigemNome": "Dark Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1261,
+      "itemExigidoNome": "Dark Jewel",
+      "itensExigidos": [
+        {
+          "id": 1261,
+          "nome": "Dark Jewel",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:751"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1261,
+          "nome": "Dark Jewel",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:751"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30290,
+          "nome": "Xenos",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1137"
+        },
+        {
+          "id": 30297,
+          "nome": "Tobias",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1300"
+        },
+        {
+          "id": 30462,
+          "nome": "Tronix",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:1739"
+        },
+        {
+          "id": 32160,
+          "nome": "Devon",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:2381"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:59",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:80"
+    },
+    "40": {
+      "classId": 40,
+      "nome": "Spellhowler",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 39,
+      "classeOrigemNome": "Dark Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2840,
+          "nome": "Mark of Magus",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:483"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:75",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "41": {
+      "classId": 41,
+      "nome": "Phantom Summoner",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 39,
+      "classeOrigemNome": "Dark Wizard",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2674,
+          "nome": "Mark of Scholar",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:1323"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 3336,
+          "nome": "Mark of Summoner",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:435"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:76",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "42": {
+      "classId": 42,
+      "nome": "Shillien Oracle",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 38,
+      "classeOrigemNome": "Dark Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1270,
+      "itemExigidoNome": "Orb of Abyss",
+      "itensExigidos": [
+        {
+          "id": 1270,
+          "nome": "Orb of Abyss",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:859"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1270,
+          "nome": "Orb of Abyss",
+          "fonte": "dist/game/data/stats/items/01200-01299.xml:859"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30290,
+          "nome": "Xenos",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1137"
+        },
+        {
+          "id": 30297,
+          "nome": "Tobias",
+          "fonte": "dist/game/data/stats/npcs/30200-30299.xml:1300"
+        },
+        {
+          "id": 30462,
+          "nome": "Tronix",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:1739"
+        },
+        {
+          "id": 32160,
+          "nome": "Devon",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:2381"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:60",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange1/DarkElfChange1.java:80"
+    },
+    "43": {
+      "classId": 43,
+      "nome": "Shillien Elder",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 42,
+      "classeOrigemNome": "Shillien Oracle",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2821,
+          "nome": "Mark of Reformer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:255"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3172,
+          "nome": "Mark of Fate",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:810"
+        },
+        {
+          "id": 2821,
+          "nome": "Mark of Reformer",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:255"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30195,
+          "nome": "Brecson",
+          "fonte": "dist/game/data/stats/npcs/30100-30199.xml:3319"
+        },
+        {
+          "id": 30699,
+          "nome": "Medown",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3799"
+        },
+        {
+          "id": 30474,
+          "nome": "Angus",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2106"
+        },
+        {
+          "id": 31324,
+          "nome": "Andromeda",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1000"
+        },
+        {
+          "id": 30862,
+          "nome": "Oltran",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1581"
+        },
+        {
+          "id": 30910,
+          "nome": "Xairakin",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:409"
+        },
+        {
+          "id": 31285,
+          "nome": "Samael",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3439"
+        },
+        {
+          "id": 31334,
+          "nome": "Tifaren",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1412"
+        },
+        {
+          "id": 31974,
+          "nome": "Drizzit",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3452"
+        },
+        {
+          "id": 32096,
+          "nome": "Helminter",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3890"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:72",
+      "fonteNivel": "dist/game/data/scripts/village_master/DarkElfChange2/DarkElfChange2.java:98"
+    },
+    "45": {
+      "classId": 45,
+      "nome": "Orc Raider",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 44,
+      "classeOrigemNome": "Orc Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1592,
+      "itemExigidoNome": "Mark of Raider",
+      "itensExigidos": [
+        {
+          "id": 1592,
+          "nome": "Mark of Raider",
+          "fonte": "dist/game/data/stats/items/01500-01599.xml:1057"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1592,
+          "nome": "Mark of Raider",
+          "fonte": "dist/game/data/stats/items/01500-01599.xml:1057"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30500,
+          "nome": "Osborn",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:3"
+        },
+        {
+          "id": 30505,
+          "nome": "Drikus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:203"
+        },
+        {
+          "id": 30508,
+          "nome": "Castor",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:323"
+        },
+        {
+          "id": 32097,
+          "nome": "Finker",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3931"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:122",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:124"
+    },
+    "46": {
+      "classId": 46,
+      "nome": "Destroyer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 45,
+      "classeOrigemNome": "Orc Raider",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 3276,
+          "nome": "Mark of Champion",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:915"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 3276,
+          "nome": "Mark of Champion",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:915"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30513,
+          "nome": "Penatus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:525"
+        },
+        {
+          "id": 30681,
+          "nome": "Karia",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3073"
+        },
+        {
+          "id": 30704,
+          "nome": "Garvarentz",
+          "fonte": "dist/game/data/stats/npcs/30700-30799.xml:165"
+        },
+        {
+          "id": 30865,
+          "nome": "Ladanza",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1704"
+        },
+        {
+          "id": 30913,
+          "nome": "Tushku",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:532"
+        },
+        {
+          "id": 31288,
+          "nome": "Aklan",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3564"
+        },
+        {
+          "id": 31326,
+          "nome": "Lambac",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1083"
+        },
+        {
+          "id": 31336,
+          "nome": "Rahorakti",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1496"
+        },
+        {
+          "id": 31977,
+          "nome": "Shaka",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3578"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:110",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:112"
+    },
+    "47": {
+      "classId": 47,
+      "nome": "Monk",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 44,
+      "classeOrigemNome": "Orc Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1615,
+      "itemExigidoNome": "Khavatari Totem",
+      "itensExigidos": [
+        {
+          "id": 1615,
+          "nome": "Khavatari Totem",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:183"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1615,
+          "nome": "Khavatari Totem",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:183"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30500,
+          "nome": "Osborn",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:3"
+        },
+        {
+          "id": 30505,
+          "nome": "Drikus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:203"
+        },
+        {
+          "id": 30508,
+          "nome": "Castor",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:323"
+        },
+        {
+          "id": 32097,
+          "nome": "Finker",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3931"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:151",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:153"
+    },
+    "48": {
+      "classId": 48,
+      "nome": "Tyrant",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 47,
+      "classeOrigemNome": "Monk",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2627,
+          "nome": "Mark of Challenger",
+          "fonte": "dist/game/data/stats/items/02600-02699.xml:759"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 2762,
+          "nome": "Mark of Duelist",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:747"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30513,
+          "nome": "Penatus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:525"
+        },
+        {
+          "id": 30681,
+          "nome": "Karia",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3073"
+        },
+        {
+          "id": 30704,
+          "nome": "Garvarentz",
+          "fonte": "dist/game/data/stats/npcs/30700-30799.xml:165"
+        },
+        {
+          "id": 30865,
+          "nome": "Ladanza",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1704"
+        },
+        {
+          "id": 30913,
+          "nome": "Tushku",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:532"
+        },
+        {
+          "id": 31288,
+          "nome": "Aklan",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3564"
+        },
+        {
+          "id": 31326,
+          "nome": "Lambac",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1083"
+        },
+        {
+          "id": 31336,
+          "nome": "Rahorakti",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1496"
+        },
+        {
+          "id": 31977,
+          "nome": "Shaka",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3578"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:139",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:141"
+    },
+    "50": {
+      "classId": 50,
+      "nome": "Orc Shaman",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 49,
+      "classeOrigemNome": "Orc Mystic",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1631,
+      "itemExigidoNome": "Mask of Medium",
+      "itensExigidos": [
+        {
+          "id": 1631,
+          "nome": "Mask of Medium",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:375"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1631,
+          "nome": "Mask of Medium",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:375"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30500,
+          "nome": "Osborn",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:3"
+        },
+        {
+          "id": 30505,
+          "nome": "Drikus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:203"
+        },
+        {
+          "id": 30508,
+          "nome": "Castor",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:323"
+        },
+        {
+          "id": 32097,
+          "nome": "Finker",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3931"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:180",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange1/OrcChange1.java:182"
+    },
+    "51": {
+      "classId": 51,
+      "nome": "Overlord",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 50,
+      "classeOrigemNome": "Orc Shaman",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 3390,
+          "nome": "Mark of Lord",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:1083"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 3390,
+          "nome": "Mark of Lord",
+          "fonte": "dist/game/data/stats/items/03300-03399.xml:1083"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30513,
+          "nome": "Penatus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:525"
+        },
+        {
+          "id": 30681,
+          "nome": "Karia",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3073"
+        },
+        {
+          "id": 30704,
+          "nome": "Garvarentz",
+          "fonte": "dist/game/data/stats/npcs/30700-30799.xml:165"
+        },
+        {
+          "id": 30865,
+          "nome": "Ladanza",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1704"
+        },
+        {
+          "id": 30913,
+          "nome": "Tushku",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:532"
+        },
+        {
+          "id": 31288,
+          "nome": "Aklan",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3564"
+        },
+        {
+          "id": 31326,
+          "nome": "Lambac",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1083"
+        },
+        {
+          "id": 31336,
+          "nome": "Rahorakti",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1496"
+        },
+        {
+          "id": 31977,
+          "nome": "Shaka",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3578"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:168",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:170"
+    },
+    "52": {
+      "classId": 52,
+      "nome": "Warcryer",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 50,
+      "classeOrigemNome": "Orc Shaman",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 2879,
+          "nome": "Mark of Warspirit",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:952"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 2721,
+          "nome": "Mark of Pilgrim",
+          "fonte": "dist/game/data/stats/items/02700-02799.xml:255"
+        },
+        {
+          "id": 3203,
+          "nome": "Mark of Glory",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:39"
+        },
+        {
+          "id": 2879,
+          "nome": "Mark of Warspirit",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:952"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30513,
+          "nome": "Penatus",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:525"
+        },
+        {
+          "id": 30681,
+          "nome": "Karia",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3073"
+        },
+        {
+          "id": 30704,
+          "nome": "Garvarentz",
+          "fonte": "dist/game/data/stats/npcs/30700-30799.xml:165"
+        },
+        {
+          "id": 30865,
+          "nome": "Ladanza",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:1704"
+        },
+        {
+          "id": 30913,
+          "nome": "Tushku",
+          "fonte": "dist/game/data/stats/npcs/30900-30999.xml:532"
+        },
+        {
+          "id": 31288,
+          "nome": "Aklan",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:3564"
+        },
+        {
+          "id": 31326,
+          "nome": "Lambac",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1083"
+        },
+        {
+          "id": 31336,
+          "nome": "Rahorakti",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:1496"
+        },
+        {
+          "id": 31977,
+          "nome": "Shaka",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:3578"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:197",
+      "fonteNivel": "dist/game/data/scripts/village_master/OrcChange2/OrcChange2.java:199"
+    },
+    "54": {
+      "classId": 54,
+      "nome": "Scavenger",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 53,
+      "classeOrigemNome": "Dwarf Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1642,
+      "itemExigidoNome": "Ring of Raven",
+      "itensExigidos": [
+        {
+          "id": 1642,
+          "nome": "Ring of Raven",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:507"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1642,
+          "nome": "Ring of Raven",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:507"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30498,
+          "nome": "Moke",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2568"
+        },
+        {
+          "id": 30503,
+          "nome": "Rikadio",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:123"
+        },
+        {
+          "id": 30594,
+          "nome": "Ranspo",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:3752"
+        },
+        {
+          "id": 32092,
+          "nome": "Alder",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3727"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DwarfWarehouseChange1/DwarfWarehouseChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DwarfWarehouseChange1/DwarfWarehouseChange1.java:104",
+      "fonteNivel": "dist/game/data/scripts/village_master/DwarfWarehouseChange1/DwarfWarehouseChange1.java:106"
+    },
+    "55": {
+      "classId": 55,
+      "nome": "Bounty Hunter",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 54,
+      "classeOrigemNome": "Scavenger",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 3119,
+          "nome": "Mark of Guildsman",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:174"
+        },
+        {
+          "id": 3238,
+          "nome": "Mark of Prosperity",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:459"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 3119,
+          "nome": "Mark of Guildsman",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:174"
+        },
+        {
+          "id": 3238,
+          "nome": "Mark of Prosperity",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:459"
+        },
+        {
+          "id": 2809,
+          "nome": "Mark of Searcher",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:111"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30511,
+          "nome": "Gesto",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:443"
+        },
+        {
+          "id": 30676,
+          "nome": "Croop",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:2868"
+        },
+        {
+          "id": 30685,
+          "nome": "Baxt",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3234"
+        },
+        {
+          "id": 30845,
+          "nome": "Klump",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:886"
+        },
+        {
+          "id": 30894,
+          "nome": "Natools",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:2916"
+        },
+        {
+          "id": 31269,
+          "nome": "Mona",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:2784"
+        },
+        {
+          "id": 31314,
+          "nome": "Donal",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:592"
+        },
+        {
+          "id": 31958,
+          "nome": "Yasheni",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:2797"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DwarfWarehouseChange2/DwarfWarehouseChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DwarfWarehouseChange2/DwarfWarehouseChange2.java:89",
+      "fonteNivel": "dist/game/data/scripts/village_master/DwarfWarehouseChange2/DwarfWarehouseChange2.java:91"
+    },
+    "56": {
+      "classId": 56,
+      "nome": "Artisan",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 53,
+      "classeOrigemNome": "Dwarf Fighter",
+      "nivelMinimo": 20,
+      "metodo": "item",
+      "itemExigidoId": 1635,
+      "itemExigidoNome": "Final Pass Certificate",
+      "itensExigidos": [
+        {
+          "id": 1635,
+          "nome": "Final Pass Certificate",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:423"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 1635,
+          "nome": "Final Pass Certificate",
+          "fonte": "dist/game/data/stats/items/01600-01699.xml:423"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30499,
+          "nome": "Tapoy",
+          "fonte": "dist/game/data/stats/npcs/30400-30499.xml:2608"
+        },
+        {
+          "id": 30504,
+          "nome": "Mendio",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:163"
+        },
+        {
+          "id": 30595,
+          "nome": "Opix",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:3792"
+        },
+        {
+          "id": 32093,
+          "nome": "Bolin",
+          "fonte": "dist/game/data/stats/npcs/32000-32099.xml:3767"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DwarfBlacksmithChange1/DwarfBlacksmithChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/DwarfBlacksmithChange1/DwarfBlacksmithChange1.java:104",
+      "fonteNivel": "dist/game/data/scripts/village_master/DwarfBlacksmithChange1/DwarfBlacksmithChange1.java:106"
+    },
+    "57": {
+      "classId": 57,
+      "nome": "Warsmith",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 56,
+      "classeOrigemNome": "Artisan",
+      "nivelMinimo": 40,
+      "metodo": "item",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [
+        {
+          "id": 3119,
+          "nome": "Mark of Guildsman",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:174"
+        },
+        {
+          "id": 3238,
+          "nome": "Mark of Prosperity",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:459"
+        },
+        {
+          "id": 2867,
+          "nome": "Mark of Maestro",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:807"
+        }
+      ],
+      "itensConsumidos": [
+        {
+          "id": 3119,
+          "nome": "Mark of Guildsman",
+          "fonte": "dist/game/data/stats/items/03100-03199.xml:174"
+        },
+        {
+          "id": 3238,
+          "nome": "Mark of Prosperity",
+          "fonte": "dist/game/data/stats/items/03200-03299.xml:459"
+        },
+        {
+          "id": 2867,
+          "nome": "Mark of Maestro",
+          "fonte": "dist/game/data/stats/items/02800-02899.xml:807"
+        }
+      ],
+      "questExigida": null,
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 30512,
+          "nome": "Kusto",
+          "fonte": "dist/game/data/stats/npcs/30500-30599.xml:484"
+        },
+        {
+          "id": 30677,
+          "nome": "Flutter",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:2909"
+        },
+        {
+          "id": 30687,
+          "nome": "Vergara",
+          "fonte": "dist/game/data/stats/npcs/30600-30699.xml:3315"
+        },
+        {
+          "id": 30847,
+          "nome": "Ferris",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:968"
+        },
+        {
+          "id": 30897,
+          "nome": "Roman",
+          "fonte": "dist/game/data/stats/npcs/30800-30899.xml:3037"
+        },
+        {
+          "id": 31272,
+          "nome": "Noel",
+          "fonte": "dist/game/data/stats/npcs/31200-31299.xml:2906"
+        },
+        {
+          "id": 31317,
+          "nome": "Lombert",
+          "fonte": "dist/game/data/stats/npcs/31300-31399.xml:714"
+        },
+        {
+          "id": 31961,
+          "nome": "Newyear",
+          "fonte": "dist/game/data/stats/npcs/31900-31999.xml:2919"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/DwarfBlacksmithChange2/DwarfBlacksmithChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/DwarfBlacksmithChange2/DwarfBlacksmithChange2.java:89",
+      "fonteNivel": "dist/game/data/scripts/village_master/DwarfBlacksmithChange2/DwarfBlacksmithChange2.java:91"
+    },
+    "88": {
+      "classId": 88,
+      "nome": "Duelist",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 2,
+      "classeOrigemNome": "Gladiator",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00073_SagaOfTheDuelist",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00073_SagaOfTheDuelist/Q00073_SagaOfTheDuelist.java",
+      "fonte": "dist/game/data/scripts/quests/Q00073_SagaOfTheDuelist/Q00073_SagaOfTheDuelist.java:77",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "89": {
+      "classId": 89,
+      "nome": "Dreadnought",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 3,
+      "classeOrigemNome": "Warlord",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00074_SagaOfTheDreadnought",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00074_SagaOfTheDreadnought/Q00074_SagaOfTheDreadnought.java",
+      "fonte": "dist/game/data/scripts/quests/Q00074_SagaOfTheDreadnought/Q00074_SagaOfTheDreadnought.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "90": {
+      "classId": 90,
+      "nome": "Phoenix Knight",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 5,
+      "classeOrigemNome": "Paladin",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00070_SagaOfThePhoenixKnight",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00070_SagaOfThePhoenixKnight/Q00070_SagaOfThePhoenixKnight.java",
+      "fonte": "dist/game/data/scripts/quests/Q00070_SagaOfThePhoenixKnight/Q00070_SagaOfThePhoenixKnight.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "91": {
+      "classId": 91,
+      "nome": "Hell Knight",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 6,
+      "classeOrigemNome": "Dark Avenger",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00095_SagaOfTheHellKnight",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00095_SagaOfTheHellKnight/Q00095_SagaOfTheHellKnight.java",
+      "fonte": "dist/game/data/scripts/quests/Q00095_SagaOfTheHellKnight/Q00095_SagaOfTheHellKnight.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "92": {
+      "classId": 92,
+      "nome": "Sagittarius",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 9,
+      "classeOrigemNome": "Hawkeye",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00082_SagaOfTheSagittarius",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00082_SagaOfTheSagittarius/Q00082_SagaOfTheSagittarius.java",
+      "fonte": "dist/game/data/scripts/quests/Q00082_SagaOfTheSagittarius/Q00082_SagaOfTheSagittarius.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "93": {
+      "classId": 93,
+      "nome": "Adventurer",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 8,
+      "classeOrigemNome": "Treasure Hunter",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00079_SagaOfTheAdventurer",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00079_SagaOfTheAdventurer/Q00079_SagaOfTheAdventurer.java",
+      "fonte": "dist/game/data/scripts/quests/Q00079_SagaOfTheAdventurer/Q00079_SagaOfTheAdventurer.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "94": {
+      "classId": 94,
+      "nome": "Archmage",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 12,
+      "classeOrigemNome": "Sorcerer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00088_SagaOfTheArchmage",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00088_SagaOfTheArchmage/Q00088_SagaOfTheArchmage.java",
+      "fonte": "dist/game/data/scripts/quests/Q00088_SagaOfTheArchmage/Q00088_SagaOfTheArchmage.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "95": {
+      "classId": 95,
+      "nome": "Soultaker",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 13,
+      "classeOrigemNome": "Necromancer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00094_SagaOfTheSoultaker",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00094_SagaOfTheSoultaker/Q00094_SagaOfTheSoultaker.java",
+      "fonte": "dist/game/data/scripts/quests/Q00094_SagaOfTheSoultaker/Q00094_SagaOfTheSoultaker.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "96": {
+      "classId": 96,
+      "nome": "Arcana Lord",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 14,
+      "classeOrigemNome": "Warlock",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00091_SagaOfTheArcanaLord",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00091_SagaOfTheArcanaLord/Q00091_SagaOfTheArcanaLord.java",
+      "fonte": "dist/game/data/scripts/quests/Q00091_SagaOfTheArcanaLord/Q00091_SagaOfTheArcanaLord.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "97": {
+      "classId": 97,
+      "nome": "Cardinal",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 16,
+      "classeOrigemNome": "Bishop",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00085_SagaOfTheCardinal",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00085_SagaOfTheCardinal/Q00085_SagaOfTheCardinal.java",
+      "fonte": "dist/game/data/scripts/quests/Q00085_SagaOfTheCardinal/Q00085_SagaOfTheCardinal.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "98": {
+      "classId": 98,
+      "nome": "Hierophant",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 17,
+      "classeOrigemNome": "Prophet",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00086_SagaOfTheHierophant",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00086_SagaOfTheHierophant/Q00086_SagaOfTheHierophant.java",
+      "fonte": "dist/game/data/scripts/quests/Q00086_SagaOfTheHierophant/Q00086_SagaOfTheHierophant.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "99": {
+      "classId": 99,
+      "nome": "Eva's Templar",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 20,
+      "classeOrigemNome": "Temple Knight",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00071_SagaOfEvasTemplar",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00071_SagaOfEvasTemplar/Q00071_SagaOfEvasTemplar.java",
+      "fonte": "dist/game/data/scripts/quests/Q00071_SagaOfEvasTemplar/Q00071_SagaOfEvasTemplar.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "100": {
+      "classId": 100,
+      "nome": "Sword Muse",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 21,
+      "classeOrigemNome": "Sword Singer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00072_SagaOfTheSwordMuse",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00072_SagaOfTheSwordMuse/Q00072_SagaOfTheSwordMuse.java",
+      "fonte": "dist/game/data/scripts/quests/Q00072_SagaOfTheSwordMuse/Q00072_SagaOfTheSwordMuse.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "101": {
+      "classId": 101,
+      "nome": "Wind Rider",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 23,
+      "classeOrigemNome": "Plains Walker",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00080_SagaOfTheWindRider",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00080_SagaOfTheWindRider/Q00080_SagaOfTheWindRider.java",
+      "fonte": "dist/game/data/scripts/quests/Q00080_SagaOfTheWindRider/Q00080_SagaOfTheWindRider.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "102": {
+      "classId": 102,
+      "nome": "Moonlight Sentinel",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 24,
+      "classeOrigemNome": "Silver Ranger",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00083_SagaOfTheMoonlightSentinel",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00083_SagaOfTheMoonlightSentinel/Q00083_SagaOfTheMoonlightSentinel.java",
+      "fonte": "dist/game/data/scripts/quests/Q00083_SagaOfTheMoonlightSentinel/Q00083_SagaOfTheMoonlightSentinel.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "103": {
+      "classId": 103,
+      "nome": "Mystic Muse",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 27,
+      "classeOrigemNome": "Spellsinger",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00089_SagaOfTheMysticMuse",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00089_SagaOfTheMysticMuse/Q00089_SagaOfTheMysticMuse.java",
+      "fonte": "dist/game/data/scripts/quests/Q00089_SagaOfTheMysticMuse/Q00089_SagaOfTheMysticMuse.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "104": {
+      "classId": 104,
+      "nome": "Elemental Master",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 28,
+      "classeOrigemNome": "Elemental Summoner",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00092_SagaOfTheElementalMaster",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00092_SagaOfTheElementalMaster/Q00092_SagaOfTheElementalMaster.java",
+      "fonte": "dist/game/data/scripts/quests/Q00092_SagaOfTheElementalMaster/Q00092_SagaOfTheElementalMaster.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "105": {
+      "classId": 105,
+      "nome": "Eva's Saint",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 30,
+      "classeOrigemNome": "Elven Elder",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00087_SagaOfEvasSaint",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00087_SagaOfEvasSaint/Q00087_SagaOfEvasSaint.java",
+      "fonte": "dist/game/data/scripts/quests/Q00087_SagaOfEvasSaint/Q00087_SagaOfEvasSaint.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "106": {
+      "classId": 106,
+      "nome": "Shillien Templar",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 33,
+      "classeOrigemNome": "Shillien Knight",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00097_SagaOfTheShillienTemplar",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00097_SagaOfTheShillienTemplar/Q00097_SagaOfTheShillienTemplar.java",
+      "fonte": "dist/game/data/scripts/quests/Q00097_SagaOfTheShillienTemplar/Q00097_SagaOfTheShillienTemplar.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "107": {
+      "classId": 107,
+      "nome": "Spectral Dancer",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 34,
+      "classeOrigemNome": "Bladedancer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00096_SagaOfTheSpectralDancer",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00096_SagaOfTheSpectralDancer/Q00096_SagaOfTheSpectralDancer.java",
+      "fonte": "dist/game/data/scripts/quests/Q00096_SagaOfTheSpectralDancer/Q00096_SagaOfTheSpectralDancer.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "108": {
+      "classId": 108,
+      "nome": "Ghost Hunter",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 36,
+      "classeOrigemNome": "Abyss Walker",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00081_SagaOfTheGhostHunter",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00081_SagaOfTheGhostHunter/Q00081_SagaOfTheGhostHunter.java",
+      "fonte": "dist/game/data/scripts/quests/Q00081_SagaOfTheGhostHunter/Q00081_SagaOfTheGhostHunter.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "109": {
+      "classId": 109,
+      "nome": "Ghost Sentinel",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 37,
+      "classeOrigemNome": "Phantom Ranger",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00084_SagaOfTheGhostSentinel",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00084_SagaOfTheGhostSentinel/Q00084_SagaOfTheGhostSentinel.java",
+      "fonte": "dist/game/data/scripts/quests/Q00084_SagaOfTheGhostSentinel/Q00084_SagaOfTheGhostSentinel.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "110": {
+      "classId": 110,
+      "nome": "Storm Screamer",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 40,
+      "classeOrigemNome": "Spellhowler",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00090_SagaOfTheStormScreamer",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00090_SagaOfTheStormScreamer/Q00090_SagaOfTheStormScreamer.java",
+      "fonte": "dist/game/data/scripts/quests/Q00090_SagaOfTheStormScreamer/Q00090_SagaOfTheStormScreamer.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "111": {
+      "classId": 111,
+      "nome": "Spectral Master",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 41,
+      "classeOrigemNome": "Phantom Summoner",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00093_SagaOfTheSpectralMaster",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00093_SagaOfTheSpectralMaster/Q00093_SagaOfTheSpectralMaster.java",
+      "fonte": "dist/game/data/scripts/quests/Q00093_SagaOfTheSpectralMaster/Q00093_SagaOfTheSpectralMaster.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "112": {
+      "classId": 112,
+      "nome": "Shillien Saint",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 43,
+      "classeOrigemNome": "Shillien Elder",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00098_SagaOfTheShillienSaint",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00098_SagaOfTheShillienSaint/Q00098_SagaOfTheShillienSaint.java",
+      "fonte": "dist/game/data/scripts/quests/Q00098_SagaOfTheShillienSaint/Q00098_SagaOfTheShillienSaint.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "113": {
+      "classId": 113,
+      "nome": "Titan",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 46,
+      "classeOrigemNome": "Destroyer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00075_SagaOfTheTitan",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00075_SagaOfTheTitan/Q00075_SagaOfTheTitan.java",
+      "fonte": "dist/game/data/scripts/quests/Q00075_SagaOfTheTitan/Q00075_SagaOfTheTitan.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "114": {
+      "classId": 114,
+      "nome": "Grand Khavatari",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 48,
+      "classeOrigemNome": "Tyrant",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00076_SagaOfTheGrandKhavatari",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00076_SagaOfTheGrandKhavatari/Q00076_SagaOfTheGrandKhavatari.java",
+      "fonte": "dist/game/data/scripts/quests/Q00076_SagaOfTheGrandKhavatari/Q00076_SagaOfTheGrandKhavatari.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "115": {
+      "classId": 115,
+      "nome": "Dominator",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 51,
+      "classeOrigemNome": "Overlord",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00077_SagaOfTheDominator",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00077_SagaOfTheDominator/Q00077_SagaOfTheDominator.java",
+      "fonte": "dist/game/data/scripts/quests/Q00077_SagaOfTheDominator/Q00077_SagaOfTheDominator.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "116": {
+      "classId": 116,
+      "nome": "Doom Cryer",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 52,
+      "classeOrigemNome": "Warcryer",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00078_SagaOfTheDoomcryer",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00078_SagaOfTheDoomcryer/Q00078_SagaOfTheDoomcryer.java",
+      "fonte": "dist/game/data/scripts/quests/Q00078_SagaOfTheDoomcryer/Q00078_SagaOfTheDoomcryer.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "117": {
+      "classId": 117,
+      "nome": "Fortune Seeker",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 55,
+      "classeOrigemNome": "Bounty Hunter",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00099_SagaOfTheFortuneSeeker",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00099_SagaOfTheFortuneSeeker/Q00099_SagaOfTheFortuneSeeker.java",
+      "fonte": "dist/game/data/scripts/quests/Q00099_SagaOfTheFortuneSeeker/Q00099_SagaOfTheFortuneSeeker.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "118": {
+      "classId": 118,
+      "nome": "Maestro",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 57,
+      "classeOrigemNome": "Warsmith",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00100_SagaOfTheMaestro",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00100_SagaOfTheMaestro/Q00100_SagaOfTheMaestro.java",
+      "fonte": "dist/game/data/scripts/quests/Q00100_SagaOfTheMaestro/Q00100_SagaOfTheMaestro.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "125": {
+      "classId": 125,
+      "nome": "Trooper",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 123,
+      "classeOrigemNome": "Male Kamael Soldier",
+      "nivelMinimo": 20,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9753,
+          "nome": "Gwain's Recommendation",
+          "fonte": "dist/game/data/stats/items/09700-09799.xml:643"
+        }
+      ],
+      "questExigida": "Q00062_PathOfTheTrooper",
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32191,
+          "nome": "Hanarin",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3656"
+        },
+        {
+          "id": 32193,
+          "nome": "Yeniche",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3741"
+        },
+        {
+          "id": 32196,
+          "nome": "Gershwin",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3867"
+        },
+        {
+          "id": 32199,
+          "nome": "Holst",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3992"
+        },
+        {
+          "id": 32202,
+          "nome": "Khadava",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:86"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:104",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:107"
+    },
+    "126": {
+      "classId": 126,
+      "nome": "Warder",
+      "tier": 1,
+      "viaProfissao": 1,
+      "classeOrigemId": 124,
+      "classeOrigemNome": "Female Kamael Soldier",
+      "nivelMinimo": 20,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9772,
+          "nome": "Steelrazor Evaluation",
+          "fonte": "dist/game/data/stats/items/09700-09799.xml:852"
+        }
+      ],
+      "questExigida": "Q00063_PathOfTheWarder",
+      "recompensa": {
+        "id": 8869,
+        "nome": "Shadow Item Exchange Coupon (D-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1932",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32191,
+          "nome": "Hanarin",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3656"
+        },
+        {
+          "id": 32193,
+          "nome": "Yeniche",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3741"
+        },
+        {
+          "id": 32196,
+          "nome": "Gershwin",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3867"
+        },
+        {
+          "id": 32199,
+          "nome": "Holst",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:3992"
+        },
+        {
+          "id": 32202,
+          "nome": "Khadava",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:86"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:134",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange1/KamaelChange1.java:137"
+    },
+    "127": {
+      "classId": 127,
+      "nome": "Berserker",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 125,
+      "classeOrigemNome": "Trooper",
+      "nivelMinimo": 40,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9760,
+          "nome": "Orkurus' Recommendation",
+          "fonte": "dist/game/data/stats/items/09700-09799.xml:720"
+        }
+      ],
+      "questExigida": "Q00064_CertifiedBerserker",
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32146,
+          "nome": "Valpor",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:1817"
+        },
+        {
+          "id": 32205,
+          "nome": "Aetonic",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:212"
+        },
+        {
+          "id": 32209,
+          "nome": "Ferdinand",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:380"
+        },
+        {
+          "id": 32213,
+          "nome": "Vitus",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:548"
+        },
+        {
+          "id": 32217,
+          "nome": "Barta",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:716"
+        },
+        {
+          "id": 32221,
+          "nome": "Brome",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:884"
+        },
+        {
+          "id": 32225,
+          "nome": "Taine",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1052"
+        },
+        {
+          "id": 32229,
+          "nome": "Hagel",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1220"
+        },
+        {
+          "id": 32233,
+          "nome": "Zoldart",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1388"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:154",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:157"
+    },
+    "128": {
+      "classId": 128,
+      "nome": "Male Soul Breaker",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 125,
+      "classeOrigemNome": "Trooper",
+      "nivelMinimo": 40,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9806,
+          "nome": "Soul Breaker Certificate",
+          "fonte": "dist/game/data/stats/items/09800-09899.xml:69"
+        }
+      ],
+      "questExigida": "Q00065_CertifiedSoulBreaker",
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32146,
+          "nome": "Valpor",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:1817"
+        },
+        {
+          "id": 32205,
+          "nome": "Aetonic",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:212"
+        },
+        {
+          "id": 32209,
+          "nome": "Ferdinand",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:380"
+        },
+        {
+          "id": 32213,
+          "nome": "Vitus",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:548"
+        },
+        {
+          "id": 32217,
+          "nome": "Barta",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:716"
+        },
+        {
+          "id": 32221,
+          "nome": "Brome",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:884"
+        },
+        {
+          "id": 32225,
+          "nome": "Taine",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1052"
+        },
+        {
+          "id": 32229,
+          "nome": "Hagel",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1220"
+        },
+        {
+          "id": 32233,
+          "nome": "Zoldart",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1388"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:184",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:187"
+    },
+    "129": {
+      "classId": 129,
+      "nome": "Female Soul Breaker",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 126,
+      "classeOrigemNome": "Warder",
+      "nivelMinimo": 40,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9806,
+          "nome": "Soul Breaker Certificate",
+          "fonte": "dist/game/data/stats/items/09800-09899.xml:69"
+        }
+      ],
+      "questExigida": "Q00065_CertifiedSoulBreaker",
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32145,
+          "nome": "Maynard",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:1774"
+        },
+        {
+          "id": 32206,
+          "nome": "Pieche",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:254"
+        },
+        {
+          "id": 32210,
+          "nome": "Eddy",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:422"
+        },
+        {
+          "id": 32214,
+          "nome": "Meldina",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:590"
+        },
+        {
+          "id": 32218,
+          "nome": "Miya",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:758"
+        },
+        {
+          "id": 32222,
+          "nome": "Liane",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:926"
+        },
+        {
+          "id": 32226,
+          "nome": "Raula",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1094"
+        },
+        {
+          "id": 32230,
+          "nome": "Ceci",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1262"
+        },
+        {
+          "id": 32234,
+          "nome": "Nizer",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1430"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:228",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:231"
+    },
+    "130": {
+      "classId": 130,
+      "nome": "Arbalester",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": 126,
+      "classeOrigemNome": "Warder",
+      "nivelMinimo": 40,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [
+        {
+          "id": 9782,
+          "nome": "Kamael Inquisitor Mark",
+          "fonte": "dist/game/data/stats/items/09700-09799.xml:962"
+        }
+      ],
+      "questExigida": "Q00066_CertifiedArbalester",
+      "recompensa": {
+        "id": 8870,
+        "nome": "Shadow Item Exchange Coupon (C-Grade)",
+        "fonte": "dist/game/data/stats/items/08800-08899.xml:1942",
+        "quantidade": 15
+      },
+      "npcQueTroca": [
+        {
+          "id": 32145,
+          "nome": "Maynard",
+          "fonte": "dist/game/data/stats/npcs/32100-32199.xml:1774"
+        },
+        {
+          "id": 32206,
+          "nome": "Pieche",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:254"
+        },
+        {
+          "id": 32210,
+          "nome": "Eddy",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:422"
+        },
+        {
+          "id": 32214,
+          "nome": "Meldina",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:590"
+        },
+        {
+          "id": 32218,
+          "nome": "Miya",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:758"
+        },
+        {
+          "id": 32222,
+          "nome": "Liane",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:926"
+        },
+        {
+          "id": 32226,
+          "nome": "Raula",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1094"
+        },
+        {
+          "id": 32230,
+          "nome": "Ceci",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1262"
+        },
+        {
+          "id": 32234,
+          "nome": "Nizer",
+          "fonte": "dist/game/data/stats/npcs/32200-32299.xml:1430"
+        }
+      ],
+      "script": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java",
+      "fonte": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:258",
+      "fonteNivel": "dist/game/data/scripts/village_master/KamaelChange2/KamaelChange2.java:261"
+    },
+    "131": {
+      "classId": 131,
+      "nome": "Doombringer",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 127,
+      "classeOrigemNome": "Berserker",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00067_SagaOfTheDoombringer",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00067_SagaOfTheDoombringer/Q00067_SagaOfTheDoombringer.java",
+      "fonte": "dist/game/data/scripts/quests/Q00067_SagaOfTheDoombringer/Q00067_SagaOfTheDoombringer.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "132": {
+      "classId": 132,
+      "nome": "Male Soul Hound",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 128,
+      "classeOrigemNome": "Male Soul Breaker",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00068_SagaOfTheSoulHound",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00068_SagaOfTheSoulHound/Q00068_SagaOfTheSoulHound.java",
+      "fonte": "dist/game/data/scripts/quests/Q00068_SagaOfTheSoulHound/Q00068_SagaOfTheSoulHound.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "133": {
+      "classId": 133,
+      "nome": "Female Soul Hound",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 129,
+      "classeOrigemNome": "Female Soul Breaker",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00068_SagaOfTheSoulHound",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00068_SagaOfTheSoulHound/Q00068_SagaOfTheSoulHound.java",
+      "fonte": "dist/game/data/scripts/quests/Q00068_SagaOfTheSoulHound/Q00068_SagaOfTheSoulHound.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "134": {
+      "classId": 134,
+      "nome": "Trickster",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 130,
+      "classeOrigemNome": "Arbalester",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00069_SagaOfTheTrickster",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00069_SagaOfTheTrickster/Q00069_SagaOfTheTrickster.java",
+      "fonte": "dist/game/data/scripts/quests/Q00069_SagaOfTheTrickster/Q00069_SagaOfTheTrickster.java:68",
+      "fonteNivel": "dist/game/data/scripts/quests/AbstractSagaQuest.java:133"
+    },
+    "135": {
+      "classId": 135,
+      "nome": "Inspector",
+      "tier": 2,
+      "viaProfissao": 2,
+      "classeOrigemId": null,
+      "classeOrigemNome": "",
+      "nivelMinimo": null,
+      "metodo": "somente-subclasse",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": null,
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java",
+      "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:879",
+      "fonteNivel": ""
+    },
+    "136": {
+      "classId": 136,
+      "nome": "Judicator",
+      "tier": 3,
+      "viaProfissao": 3,
+      "classeOrigemId": 135,
+      "classeOrigemNome": "Inspector",
+      "nivelMinimo": 76,
+      "metodo": "quest",
+      "itemExigidoId": null,
+      "itemExigidoNome": "",
+      "itensExigidos": [],
+      "itensConsumidos": [],
+      "questExigida": "Q00061_LawEnforcement",
+      "recompensa": null,
+      "npcQueTroca": [],
+      "script": "dist/game/data/scripts/quests/Q00061_LawEnforcement/Q00061_LawEnforcement.java",
+      "fonte": "dist/game/data/scripts/quests/Q00061_LawEnforcement/Q00061_LawEnforcement.java:144",
+      "fonteNivel": "dist/game/data/scripts/quests/Q00061_LawEnforcement/Q00061_LawEnforcement.java:37"
+    }
+  },
+  "subclasse": {
+    "maximo": 3,
+    "fonteMaximo": "dist/game/config/Player.ini:356",
+    "nivelMinimoPersonagem": 75,
+    "fonteNivelMinimo": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:562",
+    "nivelInicialSub": 40,
+    "fonteNivelInicialSub": "dist/game/config/Player.ini:360",
+    "nivelMaximoSub": 80,
+    "fonteNivelMaximoSub": "dist/game/config/Player.ini:364",
+    "dispensaQuests": false,
+    "fonteDispensaQuests": "dist/game/config/Player.ini:229",
+    "emQualquerMestre": false,
+    "fonteEmQualquerMestre": "dist/game/config/Player.ini:233",
+    "restricoes": [
+      {
+        "regra": "O personagem precisa estar em nível 75 para adicionar uma subclasse.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:562"
+      },
+      {
+        "regra": "Todas as subclasses que ele já tem precisam estar em 75 também.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:572"
+      },
+      {
+        "regra": "O total de subclasses não pode passar do teto de configuração (MaxSubclass).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:417",
+        "fontesTambem": [
+          "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:557"
+        ]
+      },
+      {
+        "regra": "Precisa ter concluído as duas quests de liberação — salvo se for noble ou se AltSubClassWithoutQuests estiver ligado.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:586"
+      },
+      {
+        "regra": "Noble dispensa as quests de liberação.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:766"
+      },
+      {
+        "regra": "Quest de liberação 1: Fate's Whisper.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:771"
+      },
+      {
+        "regra": "Quest de liberação 2: Mimir's Elixir.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:777"
+      },
+      {
+        "regra": "A lista de subclasses possíveis são as classes de 2ª profissão (CategoryType.THIRD_CLASS_GROUP).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:86"
+      },
+      {
+        "regra": "Overlord e Warsmith nunca podem ser subclasse.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:77"
+      },
+      {
+        "regra": "Classes parecidas se excluem entre si (o grupo da classe principal some da lista).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:917"
+      },
+      {
+        "regra": "Se a principal é Kamael, só é possível subclassar Kamael.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:862"
+      },
+      {
+        "regra": "Se a principal NÃO é Kamael, nenhuma classe Kamael pode ser subclasse.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:907"
+      },
+      {
+        "regra": "Se a principal é Elfo, nenhuma classe de Elfo Negro pode ser subclasse.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:888"
+      },
+      {
+        "regra": "Se a principal é Elfo Negro, nenhuma classe de Elfo pode ser subclasse.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:898"
+      },
+      {
+        "regra": "Kamael fêmea não pega Male Soul Breaker; Kamael macho não pega Female Soul Breaker.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:870"
+      },
+      {
+        "regra": "Inspector só aparece se a 2ª subclasse já estiver em nível 75.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:879"
+      },
+      {
+        "regra": "Não dá para subclassar a própria linha (a classe atual ou ancestral dela).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:926"
+      },
+      {
+        "regra": "Não dá para repetir uma subclasse já escolhida (nem irmã na mesma linha).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:837",
+        "fontesTambem": [
+          "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:956"
+        ]
+      },
+      {
+        "regra": "Não dá para trocar de subclasse transformado.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:353"
+      },
+      {
+        "regra": "Não dá para trocar de subclasse com summon/pet invocado.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:361"
+      },
+      {
+        "regra": "Não dá para trocar de subclasse com o inventário acima de 90%.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:367"
+      },
+      {
+        "regra": "Não dá para trocar de subclasse sobrecarregado (penalidade de peso 2+).",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:374"
+      },
+      {
+        "regra": "Cada village master só atende as classes da raça/tipo dele — a menos que AltSubclassEverywhere esteja ligado.",
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:1028"
+      }
+    ],
+    "gruposSimilares": [
+      {
+        "classes": [
+          {
+            "constante": "DARK_AVENGER",
+            "classId": 6,
+            "nome": "Dark Avenger"
+          },
+          {
+            "constante": "PALADIN",
+            "classId": 5,
+            "nome": "Paladin"
+          },
+          {
+            "constante": "TEMPLE_KNIGHT",
+            "classId": 20,
+            "nome": "Temple Knight"
+          },
+          {
+            "constante": "SHILLIEN_KNIGHT",
+            "classId": 33,
+            "nome": "Shillien Knight"
+          }
+        ],
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:78"
+      },
+      {
+        "classes": [
+          {
+            "constante": "TREASURE_HUNTER",
+            "classId": 8,
+            "nome": "Treasure Hunter"
+          },
+          {
+            "constante": "ABYSS_WALKER",
+            "classId": 36,
+            "nome": "Abyss Walker"
+          },
+          {
+            "constante": "PLAINS_WALKER",
+            "classId": 23,
+            "nome": "Plains Walker"
+          }
+        ],
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:79"
+      },
+      {
+        "classes": [
+          {
+            "constante": "HAWKEYE",
+            "classId": 9,
+            "nome": "Hawkeye"
+          },
+          {
+            "constante": "SILVER_RANGER",
+            "classId": 24,
+            "nome": "Silver Ranger"
+          },
+          {
+            "constante": "PHANTOM_RANGER",
+            "classId": 37,
+            "nome": "Phantom Ranger"
+          }
+        ],
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:80"
+      },
+      {
+        "classes": [
+          {
+            "constante": "WARLOCK",
+            "classId": 14,
+            "nome": "Warlock"
+          },
+          {
+            "constante": "ELEMENTAL_SUMMONER",
+            "classId": 28,
+            "nome": "Elemental Summoner"
+          },
+          {
+            "constante": "PHANTOM_SUMMONER",
+            "classId": 41,
+            "nome": "Phantom Summoner"
+          }
+        ],
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:81"
+      },
+      {
+        "classes": [
+          {
+            "constante": "SORCERER",
+            "classId": 12,
+            "nome": "Sorcerer"
+          },
+          {
+            "constante": "SPELLSINGER",
+            "classId": 27,
+            "nome": "Spellsinger"
+          },
+          {
+            "constante": "SPELLHOWLER",
+            "classId": 40,
+            "nome": "Spellhowler"
+          }
+        ],
+        "fonte": "java/org/l2jmobius/gameserver/model/actor/instance/VillageMaster.java:82"
+      }
+    ]
+  },
+  "lacunas": [],
+  "avisos": [],
+  "classesSemRotaDeProfissao": []
+}

@@ -1,138 +1,84 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import BrandLogo from "@/components/BrandLogo";
+import SiteHeader from "@/components/site/SiteHeader";
+import SiteFooter from "@/components/site/SiteFooter";
+import { getT } from "@/lib/i18n/server";
 
 export const metadata: Metadata = {
   title: "Como Jogar & Downloads — L2 Versus",
   description:
-    "Baixe o client Interlude, aplique o patch do Versus, crie sua conta e entre no mundo de Aden. Guia de instalação, requisitos e informações de conexão.",
+    "Baixe o client High Five, aplique o patch do Versus, crie sua conta e entre no mundo de Aden. Guia de instalação, requisitos e informações de conexão.",
 };
 
-const RATES = [
-  { label: "EXP", value: "100x" },
-  { label: "SP", value: "100x" },
-  { label: "ADENA", value: "1x" },
-  { label: "DROP", value: "1x" },
-  { label: "SPOIL", value: "1x" },
-];
-
-const STEPS = [
-  {
-    n: "1",
-    title: "Baixar o Client",
-    desc: "Faça o download do client oficial de Lineage II — Crônica Interlude (C6). É a base do jogo, instale em qualquer pasta do seu PC.",
-    cta: { label: "Baixar Client (em breve)", href: "#", variant: "gold" as const },
-  },
-  {
-    n: "2",
-    title: "Baixar o Patch do Versus",
-    desc: "Extraia o patch do L2 Versus por cima da pasta do client, substituindo os arquivos. Ele adiciona o conteúdo High Five, itens custom e o system de conexão.",
-    cta: { label: "Baixar Patch (em breve)", href: "#", variant: "gold" as const },
-  },
-  {
-    n: "3",
-    title: "Criar sua Conta",
-    desc: "Registre sua conta gratuitamente em segundos. Uma conta serve para todos os seus personagens no servidor.",
-    cta: { label: "Criar Conta", href: "/register", variant: "ghost" as const },
-  },
-  {
-    n: "4",
-    title: "Entrar e Jogar",
-    desc: "Abra o L2.exe pelo patch, faça login com sua conta e escolha o servidor Versus. Sua lenda começa agora.",
-    cta: null,
-  },
-];
-
-const REQ_MIN = [
-  ["Sistema", "Windows 7 (64-bit)"],
-  ["Processador", "Dual Core 2.0 GHz"],
-  ["Memória RAM", "2 GB"],
-  ["Placa de Vídeo", "DirectX 9 compatível, 512 MB"],
-  ["Espaço em Disco", "~5 GB livres"],
-  ["Conexão", "Banda larga estável"],
-];
-
-const REQ_REC = [
-  ["Sistema", "Windows 10 / 11 (64-bit)"],
-  ["Processador", "Quad Core 3.0 GHz+"],
-  ["Memória RAM", "4 GB ou mais"],
-  ["Placa de Vídeo", "DirectX 9+, 1 GB dedicada"],
-  ["Espaço em Disco", "SSD com 8 GB livres"],
-  ["Conexão", "Banda larga, baixa latência"],
-];
+const CLIENT_URL =
+  "https://mega.nz/file/kihCWJIL#X4GqhOSCd6uSJZTa0EMp1WNNUiwnodJGTIW3_lJWFIg";
+const LAUNCHER_URL = "https://l2versus.com/patch/L2Versus-Launcher.exe";
 
 const CONN = [
-  { k: "Login Server", v: "em breve", port: "2106" },
-  { k: "Game Server", v: "em breve", port: "7777" },
+  { k: "Login Server", v: "187.77.226.144", port: "2106" },
+  { k: "Game Server", v: "187.77.226.144", port: "7777" },
 ];
 
-function Diamond() {
-  return (
-    <span className="inline-block h-2 w-2 rotate-45 border border-[var(--color-gold)] bg-[rgba(201,162,75,0.2)]" />
-  );
-}
+export default async function DownloadPage() {
+  const t = await getT();
 
-function NavHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-[var(--color-line)] backdrop-blur-md bg-[rgba(7,7,10,0.72)]">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <Diamond />
-          <BrandLogo className="w-[124px] sm:w-[144px]" priority />
-        </Link>
-        <nav className="hidden items-center gap-8 text-sm uppercase tracking-widest text-[var(--color-muted)] md:flex">
-          <Link href="/" className="transition-colors hover:text-[var(--color-gold-bright)]">
-            Início
-          </Link>
-          <Link href="/rankings" className="transition-colors hover:text-[var(--color-gold-bright)]">
-            Rankings
-          </Link>
-          <Link
-            href="/download"
-            aria-current="page"
-            className="text-[var(--color-gold-bright)] text-glow-gold"
-          >
-            Downloads
-          </Link>
-          <Link href="/donate" className="transition-colors hover:text-[var(--color-gold-bright)]">
-            Doar
-          </Link>
-        </nav>
-        <div className="flex items-center gap-3">
-          <Link href="/login" className="btn-ghost px-4 py-2 text-xs">
-            Entrar
-          </Link>
-          <Link href="/register" className="btn-gold px-4 py-2 text-xs">
-            Registrar
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+  const RATES = [
+    { label: "EXP", value: "7x" },
+    { label: "SP", value: "7x" },
+    { label: "ADENA", value: "7x" },
+    { label: "DROP", value: "7x" },
+    { label: "SPOIL", value: "7x" },
+  ];
 
-function SiteFooter() {
-  return (
-    <footer className="border-t border-[var(--color-line)] py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-[var(--color-faint)] md:flex-row">
-        <div className="flex items-center gap-3">
-          <Diamond />
-          <BrandLogo className="w-[112px]" />
-        </div>
-        <p>
-          © {new Date().getFullYear()} L2 Versus. Lineage II é marca da NCSoft. Projeto sem fins
-          lucrativos.
-        </p>
-      </div>
-    </footer>
-  );
-}
+  const STEPS = [
+    {
+      n: "1",
+      title: t("site.dl.s1.title"),
+      desc: t("site.dl.s1.desc"),
+      cta: { label: t("site.dl.s1.cta"), href: CLIENT_URL, variant: "gold" as const },
+    },
+    {
+      n: "2",
+      title: t("site.dl.s2.title"),
+      desc: t("site.dl.s2.desc"),
+      cta: { label: t("site.dl.s2.cta"), href: LAUNCHER_URL, variant: "gold" as const },
+    },
+    {
+      n: "3",
+      title: t("site.dl.s3.title"),
+      desc: t("site.dl.s3.desc"),
+      cta: { label: t("site.dl.s3.cta"), href: "/register", variant: "ghost" as const },
+    },
+    {
+      n: "4",
+      title: t("site.dl.s4.title"),
+      desc: t("site.dl.s4.desc"),
+      cta: null,
+    },
+  ];
 
-export default function DownloadPage() {
+  const REQ_MIN: [string, string][] = [
+    [t("site.dl.req.os"), "Windows 7 (64-bit)"],
+    [t("site.dl.req.cpu"), "Dual Core 2.0 GHz"],
+    [t("site.dl.req.ram"), "2 GB"],
+    [t("site.dl.req.gpu"), t("site.dl.minv.gpu")],
+    [t("site.dl.req.disk"), t("site.dl.minv.disk")],
+    [t("site.dl.req.net"), t("site.dl.minv.net")],
+  ];
+
+  const REQ_REC: [string, string][] = [
+    [t("site.dl.req.os"), "Windows 10 / 11 (64-bit)"],
+    [t("site.dl.req.cpu"), "Quad Core 3.0 GHz+"],
+    [t("site.dl.req.ram"), t("site.dl.recv.ram")],
+    [t("site.dl.req.gpu"), t("site.dl.recv.gpu")],
+    [t("site.dl.req.disk"), t("site.dl.recv.disk")],
+    [t("site.dl.req.net"), t("site.dl.recv.net")],
+  ];
+
   return (
     <main className="min-h-screen">
-      <NavHeader />
+      <SiteHeader active="download" />
 
       {/* HERO */}
       <section className="relative flex min-h-[62vh] items-center justify-center overflow-hidden">
@@ -152,13 +98,13 @@ export default function DownloadPage() {
             className="reveal mb-6 text-xs uppercase tracking-[0.5em] text-[var(--color-gold)]"
             style={{ animationDelay: "0.05s" }}
           >
-            Crônica Interlude · Conteúdo High Five
+            {t("site.dl.kicker")}
           </p>
           <h1
             className="reveal font-display text-glow-gold text-5xl leading-none tracking-[0.08em] sm:text-6xl md:text-7xl"
             style={{ animationDelay: "0.15s" }}
           >
-            COMECE A JOGAR
+            {t("site.dl.title")}
           </h1>
           <div className="reveal diamond-rule my-8 w-full max-w-md" style={{ animationDelay: "0.3s" }}>
             <span className="dia" />
@@ -167,18 +113,17 @@ export default function DownloadPage() {
             className="reveal max-w-2xl text-lg leading-relaxed text-[var(--color-muted)] md:text-xl"
             style={{ animationDelay: "0.4s" }}
           >
-            Quatro passos e você está em Aden. Baixe o client, aplique o patch do Versus, crie sua
-            conta e mergulhe na luta.
+            {t("site.dl.desc")}
           </p>
           <div
             className="reveal mt-10 flex flex-col items-center gap-4 sm:flex-row"
             style={{ animationDelay: "0.55s" }}
           >
             <Link href="#guia" className="btn-gold px-8 py-4 text-sm">
-              ⚔ Ver Guia de Instalação
+              ⚔ {t("site.dl.guide_btn")}
             </Link>
             <Link href="/register" className="btn-ghost px-8 py-4 text-sm">
-              Criar Conta
+              {t("site.dl.s3.cta")}
             </Link>
           </div>
         </div>
@@ -199,9 +144,9 @@ export default function DownloadPage() {
           ))}
           <div className="bg-[var(--color-panel)] px-4 py-5 text-center">
             <div className="text-[0.65rem] uppercase tracking-[0.25em] text-[var(--color-faint)]">
-              Crônica
+              {t("site.status.chronicle")}
             </div>
-            <div className="mt-1 font-display text-2xl text-[var(--color-parchment)]">Interlude+</div>
+            <div className="mt-1 font-display text-2xl text-[var(--color-parchment)]">High Five</div>
           </div>
         </div>
       </section>
@@ -212,10 +157,10 @@ export default function DownloadPage() {
           <span className="dia" />
         </div>
         <h2 className="mb-3 text-center font-display text-3xl tracking-[0.15em] text-[var(--color-parchment)] md:text-4xl">
-          GUIA DE INSTALAÇÃO
+          {t("site.dl.guide_title")}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-[var(--color-muted)]">
-          Siga a ordem dos passos. Todo o processo leva poucos minutos.
+          {t("site.dl.guide_sub")}
         </p>
 
         <div className="grid gap-5 sm:grid-cols-2">
@@ -230,7 +175,7 @@ export default function DownloadPage() {
                   {s.n}
                 </span>
                 <span className="mt-2 text-[0.6rem] uppercase tracking-[0.3em] text-[var(--color-faint)]">
-                  Passo {s.n}/4
+                  {t("site.dl.step")} {s.n}/4
                 </span>
               </div>
               <h3 className="mb-2 font-display text-xl tracking-wide text-[var(--color-gold-bright)]">
@@ -258,7 +203,7 @@ export default function DownloadPage() {
           <span className="dia" />
         </div>
         <h2 className="mb-12 text-center font-display text-3xl tracking-[0.15em] text-[var(--color-parchment)] md:text-4xl">
-          REQUISITOS DO SISTEMA
+          {t("site.dl.req_title")}
         </h2>
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -266,7 +211,7 @@ export default function DownloadPage() {
           <div className="panel rounded-sm p-7">
             <div className="mb-5 flex items-center gap-3">
               <span className="text-[0.65rem] uppercase tracking-[0.3em] text-[var(--color-faint)]">
-                Mínimo
+                {t("site.dl.min")}
               </span>
               <span className="h-px flex-1 bg-[var(--color-line)]" />
             </div>
@@ -284,7 +229,7 @@ export default function DownloadPage() {
           <div className="panel panel-gold rounded-sm p-7">
             <div className="mb-5 flex items-center gap-3">
               <span className="text-[0.65rem] uppercase tracking-[0.3em] text-[var(--color-gold)]">
-                Recomendado
+                {t("site.dl.rec")}
               </span>
               <span className="h-px flex-1 bg-[rgba(201,162,75,0.3)]" />
             </div>
@@ -306,13 +251,12 @@ export default function DownloadPage() {
           <span className="dia" />
         </div>
         <h2 className="mb-12 text-center font-display text-3xl tracking-[0.15em] text-[var(--color-parchment)] md:text-4xl">
-          INFORMAÇÕES DE CONEXÃO
+          {t("site.dl.conn_title")}
         </h2>
 
         <div className="panel panel-gold rounded-sm p-8">
           <p className="mb-8 text-center text-sm text-[var(--color-muted)]">
-            O endereço do servidor já vem configurado no patch. Você não precisa alterar nada — os
-            dados abaixo são apenas informativos.
+            {t("site.dl.conn_note")}
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -331,17 +275,13 @@ export default function DownloadPage() {
                 </div>
                 <div className="text-right">
                   <div className="text-[0.6rem] uppercase tracking-[0.3em] text-[var(--color-faint)]">
-                    Porta
+                    {t("site.dl.port")}
                   </div>
                   <div className="mt-1 font-mono text-lg text-[var(--color-parchment)]">{c.port}</div>
                 </div>
               </div>
             ))}
           </div>
-
-          <p className="mt-6 text-center text-xs uppercase tracking-[0.25em] text-[var(--color-faint)]">
-            IP do servidor · <span className="text-[var(--color-gold)]">divulgado no lançamento</span>
-          </p>
         </div>
       </section>
 
@@ -349,13 +289,13 @@ export default function DownloadPage() {
       <section className="mx-auto max-w-4xl px-6 py-16 text-center">
         <div className="panel panel-gold rounded-sm px-8 py-14">
           <h2 className="font-display text-3xl tracking-[0.1em] text-glow-gold md:text-4xl">
-            Tudo pronto para a batalha?
+            {t("site.dl.cta_title")}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-[var(--color-muted)]">
-            Crie sua conta agora e garanta seu nome antes que os melhores nicks sejam levados.
+            {t("site.dl.cta_desc")}
           </p>
           <Link href="/register" className="btn-gold mt-8 px-10 py-4 text-sm">
-            Criar Conta Grátis
+            {t("site.dl.cta_btn")}
           </Link>
         </div>
       </section>

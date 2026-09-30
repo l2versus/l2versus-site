@@ -10,25 +10,21 @@ const labelCls =
 const chipCls =
   "rounded-full border border-[var(--color-line)] px-3 py-1 text-xs text-[var(--color-muted)]";
 
-const SLIDER_MIN = 10;
+const SLIDER_MIN = 5;
 const SLIDER_MAX = 500;
-const BRL_PER_USD = 5.5; // referência aproximada — só para exibição das moedas
+const COINS_PER_EUR = 1; // âncora do dono: 1 VSCOIN = 1 €
 
-/** MANTER EM SINCRONIA com bonusRate() em actions.ts */
+/** MANTER EM SINCRONIA com bonusRate() em actions.ts (1 VSCOIN = 1 €) */
 const BONUS_TIERS = [
-  { min: 70, max: 99, pct: 6 },
-  { min: 100, max: 149, pct: 9 },
-  { min: 150, max: 199, pct: 12 },
-  { min: 200, max: 249, pct: 15 },
-  { min: 250, max: 499, pct: 20 },
-  { min: 500, max: Infinity, pct: 25 },
+  { min: 20, max: 49, pct: 5 },
+  { min: 50, max: 99, pct: 10 },
+  { min: 100, max: Infinity, pct: 15 },
 ] as const;
 
 const METHODS = [
-  { id: "pix", label: "Pix" },
   { id: "card", label: "Cartão" },
-  { id: "mercadopago", label: "Mercado Pago" },
   { id: "paypal", label: "PayPal" },
+  { id: "sepa", label: "SEPA" },
   { id: "crypto", label: "Cripto" },
 ] as const;
 
@@ -63,8 +59,8 @@ export default function BalanceClient({
   coinName: string;
   initialPromo?: string;
 }) {
-  const [amount, setAmount] = useState(100);
-  const [method, setMethod] = useState<string>("pix");
+  const [amount, setAmount] = useState(20);
+  const [method, setMethod] = useState<string>("card");
   const [state, action, pending] = useActionState<TopUpState, FormData>(
     topUpAction,
     {}
@@ -83,7 +79,7 @@ export default function BalanceClient({
   const pct = tierPct(safeAmount);
   const bonus = Math.floor((safeAmount * pct) / 100);
   const total = safeAmount + bonus;
-  const usd = (safeAmount / BRL_PER_USD).toFixed(2);
+  const eur = (safeAmount / COINS_PER_EUR).toFixed(2);
 
   return (
     <div className="mt-8 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
@@ -96,7 +92,7 @@ export default function BalanceClient({
           Recarregar Saldo
         </h2>
         <p className="mt-1 text-sm text-[var(--color-faint)]">
-          1 {coinName} ≈ R$ 1,00. Arraste ou digite o valor desejado.
+          1 {coinName} = 1 €. Arraste ou digite quantos {coinName} quer.
         </p>
 
         <form action={action} className="mt-6">
@@ -123,9 +119,8 @@ export default function BalanceClient({
               </div>
             </div>
             <div className="flex flex-wrap justify-end gap-2">
-              <span className={chipCls}>R$ {nf.format(safeAmount)}</span>
-              <span className={chipCls}>US$ {usd}</span>
-              <span className={chipCls}>{usd} USDT</span>
+              <span className={chipCls}>€ {eur}</span>
+              <span className={chipCls}>{eur} USDT</span>
             </div>
           </div>
 
@@ -207,7 +202,7 @@ export default function BalanceClient({
               >
                 {bonus > 0
                   ? `+ ${nf.format(bonus)} de bônus (${pct}%)`
-                  : "sem bônus abaixo de 70"}
+                  : "sem bônus abaixo de 20"}
               </div>
             </div>
           </div>
@@ -219,7 +214,7 @@ export default function BalanceClient({
           >
             {pending
               ? "PROCESSANDO…"
-              : `PAGAR · R$ ${nf.format(safeAmount)}`}
+              : `PAGAR · € ${eur}`}
           </button>
 
           <Feedback state={state} />

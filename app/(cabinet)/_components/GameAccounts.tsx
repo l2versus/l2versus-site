@@ -10,6 +10,7 @@ import {
   changePasswordAction,
   claimAccountAction,
   unstuckAction,
+  deleteAccountAction,
   type ActionState,
 } from "../actions";
 
@@ -251,14 +252,77 @@ function ChangeModal({
   );
 }
 
+/* ---- Modal: excluir conta (confirmação) ---- */
+function DeleteModal({
+  login,
+  hasChars,
+  onClose,
+  t,
+}: {
+  login: string | null;
+  hasChars: boolean;
+  onClose: () => void;
+  t: (k: string) => string;
+}) {
+  const [state, action, pending] = useActionState<ActionState, FormData>(
+    deleteAccountAction,
+    {}
+  );
+  useEffect(() => {
+    if (state.ok) {
+      const id = setTimeout(onClose, 1100);
+      return () => clearTimeout(id);
+    }
+  }, [state, onClose]);
+
+  return (
+    <Modal open={login !== null} onClose={onClose} title={`${t("modal.delete_title")} — ${login ?? ""}`}>
+      {hasChars ? (
+        <>
+          <p className="text-sm leading-relaxed text-[var(--color-muted)]">
+            {t("modal.delete_haschars")}
+          </p>
+          <div className="flex justify-end pt-4">
+            <button type="button" onClick={onClose} className="btn-ghost px-5 py-2.5 text-xs">
+              {t("modal.cancel")}
+            </button>
+          </div>
+        </>
+      ) : (
+        <form action={action} className="space-y-4">
+          <input type="hidden" name="login" value={login ?? ""} />
+          <p className="text-sm leading-relaxed text-[var(--color-muted)]">
+            {t("modal.delete_confirm")}
+          </p>
+          <Feedback state={state} />
+          <div className="flex gap-3 pt-1">
+            <button
+              type="submit"
+              disabled={pending}
+              className="flex-1 rounded-sm border border-[rgba(200,67,59,0.5)] bg-[rgba(200,67,59,0.12)] px-5 py-2.5 text-xs font-medium uppercase tracking-widest text-[var(--color-crimson)] transition-colors hover:bg-[rgba(200,67,59,0.2)] disabled:opacity-60"
+            >
+              {pending ? t("common.processing") : t("modal.delete")}
+            </button>
+            <button type="button" onClick={onClose} className="btn-ghost px-5 py-2.5 text-xs">
+              {t("modal.cancel")}
+            </button>
+          </div>
+        </form>
+      )}
+    </Modal>
+  );
+}
+
 /* ---- Bloco de uma conta (dentro do painel unificado) ---- */
 function AccountBlock({
   account,
   onChangePw,
+  onDelete,
   t,
 }: {
   account: AccountView;
   onChangePw: (login: string) => void;
+  onDelete: (login: string) => void;
   t: (k: string) => string;
 }) {
   return (
@@ -274,9 +338,22 @@ function AccountBlock({
             {account.login}
           </span>
         </div>
-        <button type="button" onClick={() => onChangePw(account.login)} className="btn-ghost px-4 py-1.5 text-[0.68rem]">
-          {t("profile.change_password")}
-        </button>
+        <div className="flex items-center gap-2">
+          <button type="button" onClick={() => onChangePw(account.login)} className="btn-ghost px-4 py-1.5 text-[0.68rem]">
+            {t("profile.change_password")}
+          </button>
+          <button
+            type="button"
+            onClick={() => onDelete(account.login)}
+            title={t("profile.delete_account")}
+            aria-label={t("profile.delete_account")}
+            className="rounded-sm border border-[rgba(200,67,59,0.25)] px-2.5 py-1.5 text-[var(--color-crimson)] transition-colors hover:border-[rgba(200,67,59,0.5)] hover:bg-[rgba(200,67,59,0.08)]"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       {account.chars.length === 0 ? (
@@ -371,6 +448,10 @@ export default function GameAccounts({
   const [createOpen, setCreateOpen] = useState(false);
   const [claimOpen, setClaimOpen] = useState(false);
   const [changeLogin, setChangeLogin] = useState<string | null>(null);
+  const [deleteLogin, setDeleteLogin] = useState<string | null>(null);
+  const deleteHasChars =
+    deleteLogin !== null &&
+    (accounts.find((a) => a.login === deleteLogin)?.chars.length ?? 0) > 0;
 
   return (
     <section className="reveal mt-8" style={{ animationDelay: "0.1s" }}>
@@ -410,7 +491,7 @@ export default function GameAccounts({
         ) : (
           <div>
             {accounts.map((a) => (
-              <AccountBlock key={a.login} account={a} onChangePw={setChangeLogin} t={t} />
+              <AccountBlock key={a.login} account={a} onChangePw={setChangeLogin} onDelete={setDeleteLogin} t={t} />
             ))}
           </div>
         )}
@@ -435,6 +516,7 @@ export default function GameAccounts({
       <CreateModal open={createOpen} onClose={() => setCreateOpen(false)} t={t} />
       <ClaimModal open={claimOpen} onClose={() => setClaimOpen(false)} t={t} />
       <ChangeModal login={changeLogin} onClose={() => setChangeLogin(null)} t={t} />
+      <DeleteModal login={deleteLogin} hasChars={deleteHasChars} onClose={() => setDeleteLogin(null)} t={t} />
     </section>
   );
 }

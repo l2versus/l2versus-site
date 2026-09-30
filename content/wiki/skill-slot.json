@@ -1,0 +1,260 @@
+{
+  "familia": "skill-slot",
+  "geradoDe": [
+    "SKILLS-SEM-SLOT.txt"
+  ],
+  "contexto": {
+    "resumo": "São 10 habilidades marcadas uma a uma com excludeFromSlots, mais 153 habilidades de gatilho isentas automaticamente. As 11 entradas desta página são as 10 marcadas e mais uma entrada sintética que resume a regra automática dos gatilhos — não uma 11ª habilidade marcada."
+  },
+  "comoLer": [
+    {
+      "titulo": "ATENÇÃO: só vale depois de REINICIAR o servidor",
+      "texto": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta. Sem o restart, um admin adiciona a linha no arquivo da habilidade, dá reload, nada muda, e conclui que a feature quebrou. O aviso aparece duas vezes na fonte (linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:81"
+    },
+    {
+      "titulo": "Marca custom — não é nativa do datapack",
+      "texto": "A marca excludeFromSlots não existe no datapack de fábrica: foi criada aqui, e o jar foi recompilado. Duas classes mudaram: Skill, que lê a marca do arquivo e responde também true para qualquer habilidade de gatilho; e EffectList, que passou a descontar as isentas das três contagens, a não derrubar ninguém quando uma isenta chega, e a nunca escolher uma isenta para dar lugar a outra.",
+      "fonte": "SKILLS-SEM-SLOT.txt:68"
+    },
+    {
+      "titulo": "O mecanismo antigo não servia",
+      "texto": "O motor tinha UM lugar só que decidia isso, e uma única isenção por habilidade: o is7Signs(). Só que aquilo não é uma marca no arquivo — é uma faixa de id cravada no código (4361 a 4366), que não dava para reaproveitar.",
+      "fonte": "SKILLS-SEM-SLOT.txt:63"
+    },
+    {
+      "titulo": "Rollback",
+      "texto": "O jar antigo está guardado como GameServer.jar.bak_pre_slots_2026-08-16.",
+      "fonte": "SKILLS-SEM-SLOT.txt:78"
+    },
+    {
+      "titulo": "Como marcar uma habilidade",
+      "texto": "É uma linha no arquivo da habilidade, em qualquer lugar dentro do bloco <skill>: <excludeFromSlots>true</excludeFromSlots>. Depois disso, reiniciar o servidor.",
+      "fonte": "SKILLS-SEM-SLOT.txt:89"
+    },
+    {
+      "titulo": "Limites em vigor para o resto",
+      "texto": "Os limites em vigor continuam os mesmos para o resto: 20 buffs, 12 danças/canções e 12 gatilhos (linhas 15-16 da fonte).",
+      "fonte": "SKILLS-SEM-SLOT.txt:15"
+    },
+    {
+      "titulo": "Proveniência",
+      "texto": "Levantado em 16/08/2026, direto de dist3. A lista foi varrida dos arquivos do servidor, não digitada — ela sempre reflete o que está marcado de verdade.",
+      "fonte": "SKILLS-SEM-SLOT.txt:99"
+    }
+  ],
+  "entradas": [
+    {
+      "id": "skill-slot-ultimate-defense-110",
+      "categoria": "skill-slot",
+      "titulo": "Ultimate Defense",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 110,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:25",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-deflect-arrow-112",
+      "categoria": "skill-slot",
+      "titulo": "Deflect Arrow",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 112,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:26",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-dance-of-shadows-366",
+      "categoria": "skill-slot",
+      "titulo": "Dance of Shadows",
+      "subtitulo": "Isenta de vaga de buff - nome duplicado na lista (ver id 21089)",
+      "skillId": 366,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "prosa": "O mesmo nome pode aparecer duas vezes: é quando existe uma versão da habilidade concedida por item, com id próprio. As duas ficam isentas.",
+      "fonte": "SKILLS-SEM-SLOT.txt:27",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-dance-of-blade-storm-765",
+      "categoria": "skill-slot",
+      "titulo": "Dance of Blade Storm",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 765,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:28",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-deflect-magic-913",
+      "categoria": "skill-slot",
+      "titulo": "Deflect Magic",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 913,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:29",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-song-of-purification-914",
+      "categoria": "skill-slot",
+      "titulo": "Song of Purification",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 914,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:30",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-dance-of-berserker-915",
+      "categoria": "skill-slot",
+      "titulo": "Dance of Berserker",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 915,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:31",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-battle-cry-1561",
+      "categoria": "skill-slot",
+      "titulo": "Battle Cry",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 1561,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:32",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-soul-roar-20006",
+      "categoria": "skill-slot",
+      "titulo": "Soul Roar",
+      "subtitulo": "Isenta de vaga de buff",
+      "skillId": 20006,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "fonte": "SKILLS-SEM-SLOT.txt:33",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-dance-of-shadows-21089",
+      "categoria": "skill-slot",
+      "titulo": "Dance of Shadows",
+      "subtitulo": "Isenta de vaga de buff - nome duplicado na lista (ver id 366)",
+      "skillId": 21089,
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta" },
+        { "rotulo": "Conta para o limite de buffs, danças ou gatilhos", "valor": "Não" },
+        { "rotulo": "Derruba algum buff quando é acionada", "valor": "Não" },
+        { "rotulo": "É derrubada quando outro buff chega e o limite estoura", "valor": "Não" },
+        { "rotulo": "Marca no arquivo da habilidade", "valor": "<excludeFromSlots>true</excludeFromSlots>" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Esta mudança só vale depois de REINICIAR o servidor — recarregar as habilidades não basta (fonte, linhas 81-82 e 94).",
+      "prosa": "O mesmo nome pode aparecer duas vezes: é quando existe uma versão da habilidade concedida por item, com id próprio. As duas ficam isentas.",
+      "fonte": "SKILLS-SEM-SLOT.txt:34",
+      "alteradoEm": "2026-08-16"
+    },
+    {
+      "id": "skill-slot-all-triggered-skills",
+      "categoria": "skill-slot",
+      "titulo": "All Triggered Skills",
+      "subtitulo": "Regra automática - 153 habilidades de gatilho isentas de vaga",
+      "antes": [],
+      "agora": [
+        { "rotulo": "Vaga de buff", "valor": "Não ocupa - isenta automaticamente" },
+        { "rotulo": "Quantas são", "valor": "153 no jogo inteiro, e nenhuma precisou ser marcada uma a uma" },
+        { "rotulo": "O que conta como gatilho", "valor": "a habilidade que dispara sozinha quando alguma condição acontece: bater, apanhar, usar outra habilidade, esquivar" },
+        { "rotulo": "Marca no arquivo", "valor": "isTriggeredSkill" },
+        { "rotulo": "Exemplos cobertos", "valor": "o buff do RhythmBlade, o da Defense Motion e todos os gatilhos de arma e de conjunto de armadura" },
+        { "rotulo": "Limites em vigor para o resto", "valor": "20 buffs, 12 danças/canções e 12 gatilhos" }
+      ],
+      "notaCliente": "Não precisa mexer no cliente: nada disso aparece em texto de habilidade.",
+      "notaFonte": "Entrada sintética: a fonte declara 10 habilidades marcadas uma a uma (linha 36) mais 153 de gatilho automáticas (linha 48) — esta entrada representa a regra automática dos gatilhos, não é uma 11ª habilidade marcada. Os números do rótulo 'Limites em vigor para o resto' (20 buffs, 12 danças/canções e 12 gatilhos) vivem nas linhas 15-16 da fonte, não no cabeçalho da linha 44.",
+      "prosa": "Além da lista acima, TODA habilidade disparada por gatilho entra na regra automaticamente - são 153 no jogo inteiro, e nenhuma precisou ser marcada uma a uma.\n\nGatilho aqui quer dizer a habilidade que dispara sozinha quando alguma condição acontece: bater, apanhar, usar outra habilidade, esquivar. São as que no arquivo têm isTriggeredSkill.\n\nIsso cobre, por exemplo, o buff do RhythmBlade, o da Defense Motion e todos os gatilhos de arma e de conjunto de armadura.",
+      "fonte": "SKILLS-SEM-SLOT.txt:44",
+      "alteradoEm": "2026-08-16"
+    }
+  ]
+}

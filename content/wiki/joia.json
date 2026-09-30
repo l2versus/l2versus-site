@@ -1,0 +1,527 @@
+{
+  "familia": "joia",
+  "titulo": "Jóias de Boss",
+  "geradoDe": ["MODIFICAÇÕES JOIAS BOSS.txt"],
+  "curadoPor": "leitura manual da fonte em 28/09/2026 — cada entrada cita arquivo:linha",
+  "contexto": {
+    "resumo": "No High Five original cada jóia de boss existe em uma versão só, que dropa do boss. Aqui cada uma existe em até três degraus — Lesser, normal e Improved — com efeitos crescentes e formas de obter diferentes.",
+    "tiers": [
+      {
+        "tier": "Lesser",
+        "comoObter": "Adquirida com a moeda do boss respectivo (ganha por ida ao boss) e também pelo drop dele.",
+        "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:27"
+      },
+      {
+        "tier": "Normal",
+        "comoObter": "Dropa do boss.",
+        "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:26"
+      },
+      {
+        "tier": "Improved",
+        "comoObter": "Sistema pós-Dynasty/Icarus — ainda não definido.",
+        "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:28",
+        "pendente": true
+      }
+    ],
+    "regraDuplicata": "Com duas jóias iguais equipadas, só o efeito de uma é aplicado."
+  },
+  "entradas": [
+    {
+      "id": "joia-lesser-ring-of-core",
+      "categoria": "joia",
+      "titulo": "Lesser Ring of Core",
+      "boss": "Core",
+      "tier": "Lesser",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+15%" },
+        { "rotulo": "Chance de Poison", "valor": "+15%" },
+        { "rotulo": "Resistência a Hold", "valor": "+7,5%" },
+        { "rotulo": "Accuracy", "valor": "+1" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:1"
+    },
+    {
+      "id": "joia-ring-of-core",
+      "categoria": "joia",
+      "titulo": "Ring of Core",
+      "boss": "Core",
+      "tier": "Normal",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+20%" },
+        { "rotulo": "Chance de Poison", "valor": "+20%" },
+        { "rotulo": "WIT", "valor": "+1" },
+        { "rotulo": "Resistência a Hold", "valor": "+10%" },
+        { "rotulo": "Accuracy", "valor": "+2" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:2"
+    },
+    {
+      "id": "joia-improved-ring-of-core",
+      "categoria": "joia",
+      "titulo": "Improved Ring of Core",
+      "boss": "Core",
+      "tier": "Improved",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+30%" },
+        { "rotulo": "Chance de Poison", "valor": "+30%" },
+        { "rotulo": "WIT", "valor": "+1" },
+        { "rotulo": "Resistência a Hold", "valor": "+20%" },
+        { "rotulo": "Accuracy", "valor": "+3" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:3"
+    },
+    {
+      "id": "joia-lesser-earring-of-orfen",
+      "categoria": "joia",
+      "titulo": "Lesser Earring of Orfen",
+      "boss": "Orfen",
+      "tier": "Lesser",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+15%" },
+        { "rotulo": "Chance de Bleed", "valor": "+15%" },
+        { "rotulo": "Vampiric Rage", "valor": "+2%" },
+        { "rotulo": "Resistência a Stun/Mental", "valor": "+5%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+2%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:4"
+    },
+    {
+      "id": "joia-earring-of-orfen",
+      "categoria": "joia",
+      "titulo": "Earring of Orfen",
+      "boss": "Orfen",
+      "tier": "Normal",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+20%" },
+        { "rotulo": "Chance de Bleed", "valor": "+20%" },
+        { "rotulo": "DEX", "valor": "+1" },
+        { "rotulo": "Vampiric Rage", "valor": "+4%" },
+        { "rotulo": "Resistência a Stun/Mental", "valor": "+10%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+4%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:5"
+    },
+    {
+      "id": "joia-improved-earring-of-orfen",
+      "categoria": "joia",
+      "titulo": "Improved Earring of Orfen",
+      "boss": "Orfen",
+      "tier": "Improved",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+30%" },
+        { "rotulo": "Chance de Bleed", "valor": "+30%" },
+        { "rotulo": "DEX", "valor": "+1" },
+        { "rotulo": "Vampiric Rage", "valor": "+6%" },
+        { "rotulo": "Resistência a Stun/Mental", "valor": "+20%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+6%" }
+      ],
+      "regraDuplicata": true,
+      "notaFonte": "A fonte escreve \"Earring of Orfen\" nesta linha, repetindo o nome da linha anterior. Classificado como Improved porque todos os valores são estritamente superiores aos da versão normal e o padrão Lesser/normal/Improved se repete em todas as outras jóias. Erro de digitação na fonte, não no jogo.",
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:6"
+    },
+    {
+      "id": "joia-lesser-ring-of-ant-queen",
+      "categoria": "joia",
+      "titulo": "Lesser Ring of Ant Queen",
+      "boss": "Ant Queen",
+      "tier": "Lesser",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+25%" },
+        { "rotulo": "Chance de Poison", "valor": "+25%" },
+        { "rotulo": "Accuracy", "valor": "+1" },
+        { "rotulo": "Dano crítico", "valor": "+10%" },
+        { "rotulo": "Resistência a Hold", "valor": "+15%" },
+        { "rotulo": "Chance de Hold", "valor": "+15%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:7"
+    },
+    {
+      "id": "joia-ring-of-ant-queen",
+      "categoria": "joia",
+      "titulo": "Ring of Ant Queen",
+      "boss": "Ant Queen",
+      "tier": "Normal",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+30%" },
+        { "rotulo": "Chance de Poison", "valor": "+30%" },
+        { "rotulo": "CON", "valor": "+1" },
+        { "rotulo": "Accuracy", "valor": "+2" },
+        { "rotulo": "Dano crítico", "valor": "+15%" },
+        { "rotulo": "Resistência a Hold", "valor": "+20%" },
+        { "rotulo": "Chance de Hold", "valor": "+20%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:8"
+    },
+    {
+      "id": "joia-improved-ring-of-ant-queen",
+      "categoria": "joia",
+      "titulo": "Improved Ring of Ant Queen",
+      "boss": "Ant Queen",
+      "tier": "Improved",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+40%" },
+        { "rotulo": "Chance de Poison", "valor": "+40%" },
+        { "rotulo": "CON", "valor": "+1" },
+        { "rotulo": "Accuracy", "valor": "+3" },
+        { "rotulo": "Dano crítico", "valor": "+20%" },
+        { "rotulo": "Resistência a Hold", "valor": "+30%" },
+        { "rotulo": "Chance de Hold", "valor": "+30%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:9"
+    },
+    {
+      "id": "joia-lesser-earring-of-zaken",
+      "categoria": "joia",
+      "titulo": "Lesser Earring of Zaken",
+      "boss": "Zaken",
+      "tier": "Lesser",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+25%" },
+        { "rotulo": "Chance de Bleed", "valor": "+25%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+3%" },
+        { "rotulo": "Vampiric Rage", "valor": "+3%" },
+        { "rotulo": "Resistência a Shock/Mental", "valor": "+15%" },
+        { "rotulo": "Chance de Shock/Mental", "valor": "+15%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:10"
+    },
+    {
+      "id": "joia-earring-of-zaken",
+      "categoria": "joia",
+      "titulo": "Earring of Zaken",
+      "boss": "Zaken",
+      "tier": "Normal",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+30%" },
+        { "rotulo": "Chance de Bleed", "valor": "+30%" },
+        { "rotulo": "MEN", "valor": "+1" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+5%" },
+        { "rotulo": "Vampiric Rage", "valor": "+5%" },
+        { "rotulo": "Resistência a Shock/Mental", "valor": "+20%" },
+        { "rotulo": "Chance de Shock/Mental", "valor": "+20%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:11"
+    },
+    {
+      "id": "joia-improved-earring-of-zaken",
+      "categoria": "joia",
+      "titulo": "Improved Earring of Zaken",
+      "boss": "Zaken",
+      "tier": "Improved",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Bleed", "valor": "+40%" },
+        { "rotulo": "Chance de Bleed", "valor": "+40%" },
+        { "rotulo": "MEN", "valor": "+1" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+7%" },
+        { "rotulo": "Vampiric Rage", "valor": "+7%" },
+        { "rotulo": "Resistência a Shock/Mental", "valor": "+30%" },
+        { "rotulo": "Chance de Shock/Mental", "valor": "+30%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:12"
+    },
+    {
+      "id": "joia-lesser-ring-of-baium",
+      "categoria": "joia",
+      "titulo": "Lesser Ring of Baium",
+      "boss": "Baium",
+      "tier": "Lesser",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+30%" },
+        { "rotulo": "Chance de Poison", "valor": "+30%" },
+        { "rotulo": "Resistência a Hold", "valor": "+20%" },
+        { "rotulo": "Chance de Hold", "valor": "+20%" },
+        { "rotulo": "Accuracy", "valor": "+2" },
+        { "rotulo": "Dano crítico", "valor": "+10%" },
+        { "rotulo": "Atk. Spd.", "valor": "+2%" },
+        { "rotulo": "Casting Spd.", "valor": "+2%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:13"
+    },
+    {
+      "id": "joia-ring-of-baium",
+      "categoria": "joia",
+      "titulo": "Ring of Baium",
+      "boss": "Baium",
+      "tier": "Normal",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+40%" },
+        { "rotulo": "Chance de Poison", "valor": "+40%" },
+        { "rotulo": "Resistência a Hold", "valor": "+30%" },
+        { "rotulo": "Chance de Hold", "valor": "+30%" },
+        { "rotulo": "Accuracy", "valor": "+3" },
+        { "rotulo": "Dano crítico", "valor": "+15%" },
+        { "rotulo": "Atk. Spd.", "valor": "+4%" },
+        { "rotulo": "Casting Spd.", "valor": "+4%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:14"
+    },
+    {
+      "id": "joia-improved-ring-of-baium",
+      "categoria": "joia",
+      "titulo": "Improved Ring of Baium",
+      "boss": "Baium",
+      "tier": "Improved",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+21" },
+        { "rotulo": "Resistência a Poison", "valor": "+50%" },
+        { "rotulo": "Chance de Poison", "valor": "+50%" },
+        { "rotulo": "Resistência a Hold", "valor": "+40%" },
+        { "rotulo": "Chance de Hold", "valor": "+40%" },
+        { "rotulo": "Accuracy", "valor": "+4" },
+        { "rotulo": "Dano crítico", "valor": "+20%" },
+        { "rotulo": "Atk. Spd.", "valor": "+6%" },
+        { "rotulo": "Casting Spd.", "valor": "+6%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:15"
+    },
+    {
+      "id": "joia-lesser-earring-of-antharas",
+      "categoria": "joia",
+      "titulo": "Lesser Earring of Antharas",
+      "boss": "Antharas",
+      "tier": "Lesser",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+37" },
+        { "rotulo": "Resistência a Bleed", "valor": "+30%" },
+        { "rotulo": "Chance de Bleed", "valor": "+30%" },
+        { "rotulo": "Vampiric Rage", "valor": "+5%" },
+        { "rotulo": "Resistência a Stun/Mental", "valor": "+20%" },
+        { "rotulo": "Chance de Stun/Mental", "valor": "+20%" },
+        { "rotulo": "Consumo de MP", "valor": "−5%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+5%" },
+        { "rotulo": "Resistência a Earth", "valor": "+10" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:16"
+    },
+    {
+      "id": "joia-earring-of-antharas",
+      "categoria": "joia",
+      "titulo": "Earring of Antharas",
+      "boss": "Antharas",
+      "tier": "Normal",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+37" },
+        { "rotulo": "Resistência a Bleed", "valor": "+40%" },
+        { "rotulo": "Chance de Bleed", "valor": "+40%" },
+        { "rotulo": "Vampiric Rage", "valor": "+7%" },
+        { "rotulo": "Resistência a Stun/Mental", "valor": "+30%" },
+        { "rotulo": "Chance de Stun/Mental", "valor": "+30%" },
+        { "rotulo": "Consumo de MP", "valor": "−10%" },
+        { "rotulo": "Efeito de cura recebida", "valor": "+7%" },
+        { "rotulo": "Resistência a Earth", "valor": "+15" }
+      ],
+      "regraDuplicata": true,
+      "notaFonte": "A fonte não documenta uma versão Improved para o brinco de Antharas — só Lesser e normal.",
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:17"
+    },
+    {
+      "id": "joia-lesser-necklace-of-frintezza",
+      "categoria": "joia",
+      "titulo": "Lesser Necklace of Frintezza",
+      "boss": "Frintezza",
+      "tier": "Lesser",
+      "slot": "Colar",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+42" },
+        { "rotulo": "Resistência a Sleep/Paralysis/Stun", "valor": "+10%" },
+        { "rotulo": "Chance de Sleep/Paralysis/Stun", "valor": "+10%" },
+        { "rotulo": "Resistência a Poison/Bleed", "valor": "+20%" },
+        { "rotulo": "Chance de Poison/Bleed", "valor": "+20%" },
+        { "rotulo": "Reuso de todas as skills", "valor": "−5%" },
+        { "rotulo": "Reflect Damage", "valor": "+2%" },
+        { "rotulo": "Resistência a Dark", "valor": "+5" }
+      ],
+      "notaFonte": "A fonte escreve apenas \"Lesser of Frintezza\", sem a palavra Necklace. Nome completado pela versão normal da linha seguinte.",
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:18"
+    },
+    {
+      "id": "joia-necklace-of-frintezza",
+      "categoria": "joia",
+      "titulo": "Necklace of Frintezza",
+      "boss": "Frintezza",
+      "tier": "Normal",
+      "slot": "Colar",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+42" },
+        { "rotulo": "Resistência a Sleep/Paralysis/Stun", "valor": "+15%" },
+        { "rotulo": "Chance de Sleep/Paralysis/Stun", "valor": "+15%" },
+        { "rotulo": "Resistência a Poison/Bleed", "valor": "+25%" },
+        { "rotulo": "Chance de Poison/Bleed", "valor": "+25%" },
+        { "rotulo": "Reuso de todas as skills", "valor": "−10%" },
+        { "rotulo": "Reflect Damage", "valor": "+4%" },
+        { "rotulo": "Resistência a Dark", "valor": "+10" }
+      ],
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:19"
+    },
+    {
+      "id": "joia-necklace-of-valakas",
+      "categoria": "joia",
+      "titulo": "Necklace of Valakas",
+      "boss": "Valakas",
+      "tier": "Normal",
+      "slot": "Colar",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+80" },
+        { "rotulo": "HP", "valor": "+445" },
+        { "rotulo": "Resistência a Sleep", "valor": "+40%" },
+        { "rotulo": "Chance de Sleep", "valor": "+40%" },
+        { "rotulo": "Reuso de todas as skills", "valor": "−15%" },
+        { "rotulo": "P. Atk.", "valor": "+6%" },
+        { "rotulo": "M. Atk.", "valor": "+10%" },
+        { "rotulo": "Efeito de Wild Magic", "valor": "+50%" },
+        { "rotulo": "Reflect Damage", "valor": "+10%" },
+        { "rotulo": "Resistência a Fire", "valor": "+15" }
+      ],
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:20"
+    },
+    {
+      "id": "joia-baylors-earring",
+      "categoria": "joia",
+      "titulo": "Baylor's Earring",
+      "boss": "Baylor",
+      "tier": "Normal",
+      "slot": "Brinco",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+31" },
+        { "rotulo": "Resistência a Dark", "valor": "+10" },
+        { "rotulo": "Resistência a Bleed", "valor": "+40%" },
+        { "rotulo": "Chance de Bleed", "valor": "+40%" },
+        { "rotulo": "Resistência a Poison", "valor": "+50%" },
+        { "rotulo": "Chance de Poison", "valor": "+50%" },
+        { "rotulo": "P. Atk. / M. Atk. / Atk. Spd. / Casting Spd.", "valor": "+4%" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:21"
+    },
+    {
+      "id": "joia-ring-of-beleth",
+      "categoria": "joia",
+      "titulo": "Ring of Beleth",
+      "boss": "Beleth",
+      "tier": "Normal",
+      "slot": "Anel",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "MP", "valor": "+38" },
+        { "rotulo": "HP", "valor": "+105" },
+        { "rotulo": "M. Def.", "valor": "+12%" },
+        { "rotulo": "Resistência a estado mental anormal", "valor": "+15%" },
+        { "rotulo": "Chance de estado mental anormal", "valor": "+15%" },
+        { "rotulo": "Regeneração de MP", "valor": "+0,3" },
+        { "rotulo": "Resistência a Dark", "valor": "+10" }
+      ],
+      "regraDuplicata": true,
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:22"
+    },
+    {
+      "id": "joia-necklace-of-freya",
+      "categoria": "joia",
+      "titulo": "Necklace of Freya",
+      "boss": "Freya",
+      "tier": "Normal",
+      "slot": "Colar",
+      "antes": [],
+      "antesAusente": true,
+      "agora": [
+        { "rotulo": "Max MP", "valor": "+150" },
+        { "rotulo": "Regeneração de MP", "valor": "+0,3" },
+        { "rotulo": "Resistência a Bleed", "valor": "+25%" },
+        { "rotulo": "Resistência a Paralysis/Shock/Sleep", "valor": "+20%" },
+        { "rotulo": "Resistência mental", "valor": "+15%" },
+        { "rotulo": "Resistência a Water", "valor": "+5" },
+        { "rotulo": "Reuso de todas as skills", "valor": "−5%" },
+        { "rotulo": "Reflete dano físico de curta distância", "valor": "8%" }
+      ],
+      "fonte": "MODIFICAÇÕES JOIAS BOSS.txt:23"
+    }
+  ]
+}

@@ -47,10 +47,10 @@ export type Wallet = {
 export function listSellerItems(uid: number): Promise<SellerItem[]> {
   return query<SellerItem>(
     `SELECT i.object_id, i.item_id, i.enchant_level AS enchant, i.count,
-            c.obj_Id AS char_obj_id, c.char_name, c.online
+            c.charId AS char_obj_id, c.char_name, c.online
        FROM items i
-       JOIN characters c ON c.obj_Id = i.owner_id
-       JOIN accounts a ON a.login COLLATE utf8mb4_general_ci = c.account_name
+       JOIN characters c ON c.charId = i.owner_id
+       JOIN accounts a ON a.login = c.account_name
       WHERE a.site_user_id = ?
         AND i.loc IN ('INVENTORY','WAREHOUSE')
         AND (c.deletetime = 0 OR c.deletetime IS NULL)
@@ -85,10 +85,10 @@ async function itemOwnedBy(
 ): Promise<SellerItem | null> {
   return queryOne<SellerItem>(
     `SELECT i.object_id, i.item_id, i.enchant_level AS enchant, i.count,
-            c.obj_Id AS char_obj_id, c.char_name, c.online
+            c.charId AS char_obj_id, c.char_name, c.online
        FROM items i
-       JOIN characters c ON c.obj_Id = i.owner_id
-       JOIN accounts a ON a.login COLLATE utf8mb4_general_ci = c.account_name
+       JOIN characters c ON c.charId = i.owner_id
+       JOIN accounts a ON a.login = c.account_name
       WHERE a.site_user_id = ? AND i.object_id = ?
         AND i.loc IN ('INVENTORY','WAREHOUSE') LIMIT 1`,
     [uid, objectId]

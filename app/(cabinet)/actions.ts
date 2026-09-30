@@ -1,7 +1,6 @@
 "use server";
 
 import bcrypt from "bcryptjs";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { getSession, destroySession } from "@/lib/session";
@@ -12,27 +11,15 @@ import {
   updateGamePassword,
   getAccountForClaim,
   linkAccountToUser,
+  countCharacters,
+  deleteGameAccount,
 } from "@/lib/repos/accounts";
 import { ownedCharByObjId, unstuck } from "@/lib/repos/services";
-import { LOCALE_COOKIE } from "@/lib/i18n/server";
-import { LOCALES, type Locale } from "@/lib/i18n/dict";
 
 export type ActionState = { error?: string; ok?: boolean; message?: string };
 
 const LOGIN_RE = /^[a-zA-Z0-9]{4,14}$/;
 const MAX_ACCOUNTS = 10;
-
-/** Troca o idioma (cookie). O client chama e dá router.refresh(). */
-export async function setLocaleAction(locale: string): Promise<void> {
-  const ok = LOCALES.some((l) => l.code === locale);
-  const value: Locale = ok ? (locale as Locale) : "pt";
-  const jar = await cookies();
-  jar.set(LOCALE_COOKIE, value, {
-    path: "/",
-    maxAge: 60 * 60 * 24 * 365,
-    sameSite: "lax",
-  });
-}
 
 /** Cria nova conta de jogo (login normalizado em lowercase — correção L2J). */
 export async function createAccountAction(
@@ -142,6 +129,38 @@ export async function changePasswordAction(
 
   revalidatePath("/dashboard");
   return { ok: true, message: `Senha da conta "${login}" alterada.` };
+}
+
+/**
+ * Exclui uma conta de jogo do usuário — SÓ se estiver vazia (sem personagens),
+ * para nunca apagar chars por acidente. Escopo por uid garante a posse.
+ */
+export async function deleteAccountAction(
+  _prev: ActionState,
+  formData: FormData
+): Promise<ActionState> {
+  const s = await getSession();
+  if (!s) return { error: "Sessão expirada. Faça login novamente." };
+
+  const login = String(formData.get("login") ?? "").trim().toLowerCase();
+  if (!login) return { error: "Selecione uma conta de jogo." };
+
+  try {
+    if ((await countCharacters(login)) > 0)
+      return {
+        error:
+          "Esta conta tem personagens. Delete os personagens no jogo antes de excluir a conta.",
+      };
+    const res = await deleteGameAccount(login, s.uid);
+    if (res.affectedRows === 0)
+      return { error: "Conta não encontrada ou não pertence a você." };
+  } catch (e) {
+    console.error("deleteAccountAction", e);
+    return { error: "Erro no servidor. Tente novamente." };
+  }
+
+  revalidatePath("/dashboard");
+  return { ok: true, message: `Conta "${login}" excluída.` };
 }
 
 /** Teleporta um personagem preso (offline) para Giran. Gratuito. */

@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import BrandLogo from "@/components/BrandLogo";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { getT, getLocale } from "@/lib/i18n/server";
 
-export default function AuthLayout({
+export default async function AuthLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [t, locale] = await Promise.all([getT(), getLocale()]);
   return (
     <div className="grid min-h-screen lg:grid-cols-[1.05fr_1fr]">
       {/* ===== LADO DA ARTE (desktop) ===== */}
@@ -29,7 +32,7 @@ export default function AuthLayout({
           className="group absolute left-10 top-8 z-10 flex items-center gap-3 text-xs uppercase tracking-[0.3em] text-[var(--color-muted)] transition-colors hover:text-[var(--color-gold-bright)]"
         >
           <span className="inline-block h-2 w-2 rotate-45 border border-[var(--color-gold)] bg-[rgba(201,162,75,0.2)] transition-transform group-hover:rotate-[135deg]" />
-          Voltar
+          {t("site.auth.back")}
         </Link>
 
         {/* Marca + tagline */}
@@ -39,8 +42,7 @@ export default function AuthLayout({
           </div>
           <BrandLogo priority className="w-[min(72vw,400px)]" />
           <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-[var(--color-muted)]">
-            A alma clássica do Interlude com o melhor do High&nbsp;Five.
-            Sua lenda em Aden começa aqui.
+            {t("site.auth.tagline")}
           </p>
         </div>
       </aside>
@@ -58,6 +60,11 @@ export default function AuthLayout({
             className="object-cover object-[center_15%] opacity-25"
           />
           <div className="absolute inset-0 bg-[rgba(7,7,10,0.82)]" />
+        </div>
+
+        {/* Seletor de idioma (todas as páginas, inclusive auth) */}
+        <div className="absolute right-6 top-6 z-10 sm:right-10 sm:top-8">
+          <LanguageSwitcher current={locale} compact />
         </div>
 
         <div className="w-full max-w-md">{children}</div>

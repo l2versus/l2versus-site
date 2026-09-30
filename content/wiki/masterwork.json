@@ -1,0 +1,5258 @@
+{
+  "familia": "masterwork",
+  "geradoDe": [
+    "BONUS-MASTERWORK-ARMAS.txt",
+    "BONUS-MASTERWORK-PEITOS.txt",
+    "MASTERWORK-FAMILIAS-BONUS.txt",
+    "MASTERWORK-ARMAS-GRADE-A.txt",
+    "MASTERWORK-ARMAS-GRADE-B.txt",
+    "MASTERWORK-ARMAS-GRADE-S.txt",
+    "MASTERWORK-ARMAS-DYNASTY.txt",
+    "MASTERWORK-ARMAS-ICARUS.txt",
+    "MASTERWORK-ARMAS-VESPER.txt"
+  ],
+  "comoLer": [
+    {
+      "titulo": "O que é o bônus Masterwork de uma arma",
+      "texto": "A arma Masterwork tem P.Atk, M.Atk, velocidade e alcance IDÊNTICOS aos da arma comum — conferido item por item. O que ela ganha a mais é uma habilidade passiva: essa passiva é o bônus Masterwork. No jogo, reconhece-se pela COR AMARELA do nome e pelo sufixo ('Icarus Sawsword - Destruction', 'Forgotten Blade - Lightning') — o sufixo É o bônus.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:15"
+    },
+    {
+      "titulo": "Grades sem Masterwork",
+      "texto": "Não existe arma Masterwork em grade C, D ou No Grade.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:24"
+    },
+    {
+      "titulo": "Por que 'X armas (Y itens)'",
+      "texto": "Cada arma Masterwork existe em várias versões que dividem o MESMO bônus: as versões com SA ('- Focus', '- Health', '- Haste'...) e a versão {PvP}, que acrescenta o pacote de PvP sem mexer no Masterwork. Por isso a contagem de cada capítulo vem em dois números: os nomes base e o total de itens contando essas versões.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:40"
+    },
+    {
+      "titulo": "Tamanho da lista",
+      "texto": "804 armas do jogo carregam bônus Masterwork, organizadas em 16 sufixos — os capítulos da fonte.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:60"
+    },
+    {
+      "titulo": "Quantos bônus já mudaram",
+      "texto": "Até agora 112 bônus já foram alterados neste servidor. A contagem não é escrita à mão: o documento-fonte compara, toda vez que é gerado, o servidor no ar com a distribuição intocada.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:312"
+    },
+    {
+      "titulo": "Habilidades que serviam dois capítulos",
+      "texto": "Cinco habilidades serviam dois capítulos ao mesmo tempo e não havia como atender os dois pedidos com uma só. Foram separadas: as 25 armas do lado minoritário passaram a usar a habilidade irmã do mesmo tipo de arma que já existia no capítulo certo — a Vesper Cutter '- Thunder', por exemplo, saiu da 'Sword of Critical Chance' e foi para a 'Sword of Critical Damage'. Nenhuma habilidade nova precisou ser criada.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:342"
+    },
+    {
+      "titulo": "Percentual escala por grade, fixo não",
+      "texto": "Os bônus em PERCENTUAL mantêm a progressão por grade sozinhos — 5% de uma arma S84 vale mais que 5% de uma B. Os fixos (Critical Rate +60, Evasion +7, alcance +200) valem igual em toda grade, de propósito.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:350"
+    },
+    {
+      "titulo": "Como reconhecer um peito Masterwork",
+      "texto": "O nome do peito Masterwork é IGUAL ao do item normal — o que muda é a COR: nome em amarelo é Masterwork, em branco é o comum. Não existe peito Masterwork em grade C nem D.",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:19"
+    },
+    {
+      "titulo": "A versão {PvP} dos peitos",
+      "texto": "Cada peito Masterwork tem também uma versão {PvP}, que NÃO ganha seção própria: 47 dos 47 pares conferidos dão exatamente o mesmo bônus da versão normal.",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:26"
+    },
+    {
+      "titulo": "'Sealed', pontos de stat e quando o bônus vale",
+      "texto": "'Sealed' é a versão selada da peça, a que cai antes de ser trocada na quest — tem o próprio Masterwork e aparece separada. Os pontos de STR/DEX/CON/INT/WIT/MEN listados são do PEITO; os do conjunto são outros (estão no BONUS-CONJUNTO-ARMADURAS.txt) e os dois SOMAM. O bônus vale com o peito equipado sozinho: não depende de completar o conjunto nem do nível de encantamento.",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:674"
+    },
+    {
+      "titulo": "Sobre o MASTERWORK-FAMILIAS-BONUS.txt",
+      "texto": "O arquivo aparece em geradoDe, mas nenhuma entrada aponta para ele: as suas 16 linhas (uma por sufixo) duplicam o que os capítulos do BONUS-MASTERWORK-ARMAS.txt já dizem, e serviram só de conferência cruzada. É uma dessas linhas que diverge no caso do Evil Spirit — ver a notaFonte daquela entrada.",
+      "fonte": "MASTERWORK-FAMILIAS-BONUS.txt:2"
+    }
+  ],
+  "entradas": [
+    {
+      "id": "masterwork-gale-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Gale / Great Gale",
+      "subtitulo": "Sufixo de arma Masterwork - Atk.Spd +8%",
+      "antes": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "prosa": "ARMAS: 25 armas (125 itens contando as versões com SA e {PvP}) - adaga, arco, besta, espada anciã, espada de duas mãos, maça de duas mãos, maça de uma mão, manopla - grades B, A, S, S84. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Blood Brother - Great Gale. (skills 3840, 3846, 3859, 3864, 3869, 3880, 3886, 3896)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:65",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-earth",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Earth",
+      "subtitulo": "Sufixo de arma Masterwork - Max HP +10%",
+      "antes": [
+        {
+          "rotulo": "Max HP",
+          "valor": "de +319 a +511"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "prosa": "ARMAS: 23 armas (104 itens contando as versões com SA e {PvP}) - arco, besta, espada anciã, espada de duas mãos, espada de uma mão, espadas duplas, lança, maça de uma mão, manopla, rapieira - grades B, A, S, S80. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Blades of Delusion - Earth. (skills 3826, 3831, 3836, 3843, 3849, 3867, 3872, 3877, 3881, 3884, 3891)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:82",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-destruction",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Destruction",
+      "subtitulo": "Sufixo de arma Masterwork - P.Atk +5%",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "de +16,25 a +51,26"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "prosa": "ARMAS: 40 armas (93 itens contando as versões com SA e {PvP}) - espada de uma mão, espadas duplas, lança, maça de duas mãos, manopla, rapieira - grades B, A, S, S80, S84. (skills 3825, 3830, 3835, 3878, 3879, 3897)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:100",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-molar-thunder",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Molar / Thunder",
+      "subtitulo": "Sufixo de arma Masterwork - Critical Damage +5%",
+      "antes": [
+        {
+          "rotulo": "Dano crítico (valor fixo)",
+          "valor": "de +156 a +528"
+        },
+        {
+          "rotulo": "Chance de aplicar Veneno no ataque normal",
+          "valor": "5% (30s, 63 de dano por vez)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Dano crítico",
+          "valor": "+5%"
+        }
+      ],
+      "prosa": "ARMAS: 25 armas (84 itens contando as versões com SA e {PvP}) - adaga, espada anciã, espada de duas mãos, espada de uma mão, espadas duplas, lança, maça de duas mãos, manopla, rapieira - grades B, A, S, S80, S84. (skills 3827, 3832, 3837, 3844, 3850, 3861, 3873, 3883, 3894). Os bônus de \"- Landslide\" e \"- Molar\" não dão stat: eles têm CHANCE de aplicar atordoamento ou veneno no ataque normal. Estão escritos assim, com a chance e a duração, para dar para comparar com os outros.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:114",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-concentration",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Concentration",
+      "subtitulo": "Sufixo de arma Masterwork - Physical Skill Power +10%",
+      "antes": [
+        {
+          "rotulo": "Precisão",
+          "valor": "de +3,3 a +4,2"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Dano de skill física",
+          "valor": "+10%"
+        }
+      ],
+      "prosa": "ARMAS: 12 armas (68 itens contando as versões com SA e {PvP}) - adaga, arco, besta, espada anciã, espada de duas mãos, maça de uma mão - grades B, A, S, S80. (skills 3841, 3847, 3862, 3863, 3868, 3888)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:130",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-landslide",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Landslide",
+      "subtitulo": "Sufixo de arma Masterwork - Shock Attacks +10%",
+      "antes": [
+        {
+          "rotulo": "Chance de aplicar Stun no ataque normal",
+          "valor": "de 5% a 8% (9s)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Eficácia de Stun",
+          "valor": "+10%"
+        }
+      ],
+      "notaFonte": "A fonte usa dois nomes para o mesmo bônus: o capítulo (BONUS-MASTERWORK-ARMAS.txt:155) diz 'Eficácia de Stun +10%', enquanto o histórico de alterações (BONUS-MASTERWORK-ARMAS.txt:330) diz 'eficácia de ataques de Shock +10%' e o MASTERWORK-FAMILIAS-BONUS.txt:22 diz 'Shock Attacks +10%'. É o mesmo bônus com dois nomes; esta entrada mantém os dois como a fonte escreveu.",
+      "prosa": "ARMAS: 11 armas (62 itens contando as versões com SA e {PvP}) - espada de uma mão, espadas duplas, lança, maça de uma mão, manopla, rapieira - grades B, A, S, S84. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Claw of Destruction - Landslide. (skills 3829, 3834, 3839, 3876, 3882, 3885). Os bônus de \"- Landslide\" e \"- Molar\" não dão stat: eles têm CHANCE de aplicar atordoamento ou veneno no ataque normal. Estão escritos assim, com a chance e a duração, para dar para comparar com os outros.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:144",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-lightning",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Lightning",
+      "subtitulo": "Sufixo de arma Masterwork - Critical Rate +60",
+      "antes": [
+        {
+          "rotulo": "Chance de crítico",
+          "valor": "de +52,2 a +54,4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Chance de crítico",
+          "valor": "+60"
+        }
+      ],
+      "prosa": "ARMAS: 11 armas (60 itens contando as versões com SA e {PvP}) - espada anciã, espada de duas mãos, espada de uma mão, espadas duplas, lança, maça de duas mãos, rapieira - grades B, A, S, S80, S84. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Hellblade - Lightning. (skills 3828, 3833, 3838, 3845, 3851, 3874, 3895)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:161",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-nature",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Nature",
+      "subtitulo": "Sufixo de arma Masterwork - Magic Critical Rate +30%",
+      "antes": [
+        {
+          "rotulo": "Max MP",
+          "valor": "de +187 a +334"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Crítico mágico (chance)",
+          "valor": "+30%"
+        }
+      ],
+      "prosa": "ARMAS: 6 armas (37 itens contando as versões com SA e {PvP}) - cajado, espada de uma mão, maça de uma mão - grades B, A, S, S80. (skills 3852, 3890, 3901)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:178",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-hail",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Hail",
+      "subtitulo": "Sufixo de arma Masterwork - M.Atk +5%",
+      "antes": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "de +21,77 a +45,81"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "prosa": "ARMAS: 7 armas (36 itens contando as versões com SA e {PvP}) - cajado, espada de uma mão, maça de uma mão - grades B, A, S80, S84. (skills 3854, 3889, 3899)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:191",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Cleverness",
+      "subtitulo": "Sufixo de arma Masterwork - Magic Skill Reuse -10%",
+      "antes": [
+        {
+          "rotulo": "Regen MP",
+          "valor": "+5%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        }
+      ],
+      "prosa": "ARMAS: 5 armas (34 itens contando as versões com SA e {PvP}) - espada de uma mão, maça de uma mão - grades B, A, S84. (skills 3853, 3893)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:204",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-clairvoyance",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Clairvoyance",
+      "subtitulo": "Sufixo de arma Masterwork - Attack Range +200",
+      "antes": [
+        {
+          "rotulo": "Alcance de ataque (só com BOW)",
+          "valor": "+100"
+        },
+        {
+          "rotulo": "Alcance de ataque (só com CROSSBOW)",
+          "valor": "+100"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Alcance de ataque (só com bow)",
+          "valor": "+200"
+        },
+        {
+          "rotulo": "Alcance de ataque (só com crossbow)",
+          "valor": "+200"
+        }
+      ],
+      "prosa": "ARMAS: 4 armas (24 itens contando as versões com SA e {PvP}) - arco, besta - grades A, S84. AGORA: varia conforme a arma - Alcance de ataque (só com BOW) +200 / Alcance de ataque (só com CROSSBOW) +200. (skills 3865, 3870)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:217",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-confusion",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Confusion",
+      "subtitulo": "Sufixo de arma Masterwork - Evasion +7",
+      "skillId": 3858,
+      "antes": [
+        {
+          "rotulo": "Evasão",
+          "valor": "+3,3"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Evasão",
+          "valor": "+7"
+        }
+      ],
+      "prosa": "ARMAS: 6 armas (24 itens contando as versões com SA e {PvP}) - adaga - grades B, A, S80. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Butcher Blades - Confusion. (skill 3858)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:232",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-holy-spirit",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Holy Spirit",
+      "subtitulo": "Sufixo de arma Masterwork - Heal Power +10%",
+      "antes": [
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "de +33 a +43"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+10%"
+        }
+      ],
+      "prosa": "ARMAS: 4 armas (19 itens contando as versões com SA e {PvP}) - cajado, espada de uma mão - grades B, A, S. AVISO: armas que NÃO são Masterwork usam o mesmo bônus e mudam junto: Mardil's Fan - Holy Spirit. (skills 3856, 3900)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:248",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-on-fire",
+      "categoria": "masterwork",
+      "titulo": "Masterwork On Fire",
+      "subtitulo": "Sufixo de arma Masterwork - Physical Skill Reuse -10%",
+      "antes": [
+        {
+          "rotulo": "Regen HP",
+          "valor": "+5%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        }
+      ],
+      "prosa": "ARMAS: 3 armas (15 itens contando as versões com SA e {PvP}) - adaga, lança, maça de uma mão - grade A. (skills 3860, 3875, 3887). MASTERWORK ON FIRE (Soul Separator, Tallum Glaive e Barakiel's Axe). Dava \"Regen HP +5%\", que era o bônus mais fraco da lista inteira: rendia cerca de 26 HP por minuto parado, menos de 1% da barra - uma poção de cura equivale a dez minutos dele. Passou a dar \"Reuso de skill física -10%\". As três habilidades também foram rebatizadas de \"<tipo> of Regeneration\" para \"<tipo> of Reuse\", porque o nome aparece para o jogador na janela de skills (Alt+K, aba de passivas) e continuaria prometendo regeneração.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:264",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-wisdom",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Wisdom",
+      "subtitulo": "Sufixo de arma Masterwork - MP Consumption -20%",
+      "antes": [
+        {
+          "rotulo": "MP de magias",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "MP de skills físicas",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "MP de canções/danças",
+          "valor": "-5%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "MP de magias",
+          "valor": "-20%"
+        },
+        {
+          "rotulo": "MP de skills físicas",
+          "valor": "-20%"
+        },
+        {
+          "rotulo": "MP de canções/danças",
+          "valor": "-20%"
+        }
+      ],
+      "prosa": "ARMAS: 2 armas (11 itens contando as versões com SA e {PvP}) - cajado, maça de uma mão - grade A. (skills 3892, 3902)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:277",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-evil-spirit",
+      "categoria": "masterwork",
+      "titulo": "Masterwork Evil Spirit",
+      "subtitulo": "Sufixo de arma Masterwork - Vampirismo +5",
+      "antes": [
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+3"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+5"
+        }
+      ],
+      "notaFonte": "A fonte se contradiz neste bônus: o capítulo (BONUS-MASTERWORK-ARMAS.txt:299) diz 'Vampirismo +5' (valor fixo), mas o histórico de alterações (BONUS-MASTERWORK-ARMAS.txt:339) e o MASTERWORK-FAMILIAS-BONUS.txt:62 dizem 'Vampiric Rage +5%'. Esta entrada segue o capítulo, que é a fonte primária; a divergência fica registrada aqui.",
+      "prosa": "ARMAS: 2 armas (8 itens contando as versões com SA e {PvP}) - espada anciã, espada de duas mãos - grade A. (skills 3842, 3848)",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:292",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-vesper-shooter-clairvoyance-pvp",
+      "categoria": "masterwork",
+      "titulo": "Vesper Shooter - Clairvoyance {PvP}",
+      "subtitulo": "Besta - correção de defeito de fábrica",
+      "itemId": 16146,
+      "antes": [
+        {
+          "rotulo": "Passiva concedida",
+          "valor": "Bow of Long Shot (passiva de ARCO, não funciona em besta)"
+        },
+        {
+          "rotulo": "Alcance de ataque",
+          "valor": "não ganhava o +100 que a versão comum ganha"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Passiva concedida",
+          "valor": "Crossbow of Long Shot, igual à versão comum (16054)"
+        }
+      ],
+      "notaCliente": "A descrição no cliente também dizia \"com arcos\" e foi acertada para \"com bestas\".",
+      "prosa": "\"Vesper Shooter - Clairvoyance {PvP}\" (item 16146) é uma BESTA mas carregava a passiva do ARCO (\"Bow of Long Shot\"), que só funciona com arco equipado - ou seja, a besta não ganhava o +100 de alcance que a versão comum ganha. Passou a usar \"Crossbow of Long Shot\", igual à versão comum (16054). A descrição no cliente também dizia \"com arcos\" e foi acertada para \"com bestas\".",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:371",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "arma-sa-hellblade-lightning-focus",
+      "categoria": "arma-sa",
+      "titulo": "Hellblade - Lightning - Focus",
+      "subtitulo": "Correção de defeito de fábrica - a SA não era a do nome",
+      "itemId": 21930,
+      "antes": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "Health (e não a Focus que o nome promete)"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "SA concedida",
+          "valor": "Focus nível 3, o mesmo que a gêmea {PvP} (21934) já usava"
+        }
+      ],
+      "prosa": "\"Hellblade - Lightning - Focus\" (item 21930) concedia a SA Health, e não a Focus que o nome promete. Passou a conceder Focus nível 3, o mesmo que a gêmea {PvP} dela (21934) já usava.",
+      "fonte": "BONUS-MASTERWORK-ARMAS.txt:378",
+      "alteradoEm": "2026-08-09"
+    },
+    {
+      "id": "masterwork-peito-avadon-robe",
+      "categoria": "masterwork",
+      "titulo": "Avadon Robe",
+      "subtitulo": "Robe",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+17,08%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:40"
+    },
+    {
+      "id": "masterwork-peito-blue-wolf-tunic",
+      "categoria": "masterwork",
+      "titulo": "Blue Wolf Tunic",
+      "subtitulo": "Robe",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Max MP",
+          "valor": "+205"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+7,24%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+400"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+6"
+        },
+        {
+          "rotulo": "INT",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+70%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+70%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:45"
+    },
+    {
+      "id": "masterwork-peito-tunic-of-doom",
+      "categoria": "masterwork",
+      "titulo": "Tunic of Doom",
+      "subtitulo": "Robe",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Fôlego",
+          "valor": "+200"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+80%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+80%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:51"
+    },
+    {
+      "id": "masterwork-peito-tunic-of-zubei",
+      "categoria": "masterwork",
+      "titulo": "Tunic of Zubei",
+      "subtitulo": "Robe",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Regen HP",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "Regen CP",
+          "valor": "+4"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Dano crítico mágico",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:57"
+    },
+    {
+      "id": "masterwork-peito-avadon-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Avadon Leather Armor",
+      "subtitulo": "Light",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+11038"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+17,08%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:67"
+    },
+    {
+      "id": "masterwork-peito-blue-wolf-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Blue Wolf Leather Armor",
+      "subtitulo": "Light",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+2,19%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Regen HP",
+          "valor": "+8"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+8"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "INT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+70%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+70%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:72"
+    },
+    {
+      "id": "masterwork-peito-leather-armor-of-doom",
+      "categoria": "masterwork",
+      "titulo": "Leather Armor of Doom",
+      "subtitulo": "Light",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Fôlego",
+          "valor": "+383"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+13%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "DEX",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1200"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+70%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+70%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:78"
+    },
+    {
+      "id": "masterwork-peito-zubeis-leather-shirt",
+      "categoria": "masterwork",
+      "titulo": "Zubei's Leather Shirt",
+      "subtitulo": "Light",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Evasão",
+          "valor": "+9,55"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:84"
+    },
+    {
+      "id": "masterwork-peito-avadon-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Avadon Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+833"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1833"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "STR",
+          "valor": "+1"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:94"
+    },
+    {
+      "id": "masterwork-peito-blue-wolf-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Blue Wolf Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Regen HP",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Regen HP",
+          "valor": "+8"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+70%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+70%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:100"
+    },
+    {
+      "id": "masterwork-peito-doom-plate-armor",
+      "categoria": "masterwork",
+      "titulo": "Doom Plate Armor",
+      "subtitulo": "Heavy",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Fôlego",
+          "valor": "+383"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1093"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "DEX",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1200"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+70%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+70%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:106"
+    },
+    {
+      "id": "masterwork-peito-zubeis-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Zubei's Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "B",
+      "antes": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+294"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+7,24%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+600"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "STR",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:112"
+    },
+    {
+      "id": "masterwork-peito-dark-crystal-robe",
+      "categoria": "masterwork",
+      "titulo": "Dark Crystal Robe",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Vulnerabilidade a cancel",
+          "valor": "+8,33"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+3,33%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+2,91"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Cancelamento de magia",
+          "valor": "-15"
+        },
+        {
+          "rotulo": "INT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:127"
+    },
+    {
+      "id": "masterwork-peito-majestic-robe",
+      "categoria": "masterwork",
+      "titulo": "Majestic Robe",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+3,33%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20,83%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Regen MP",
+          "valor": "+20"
+        },
+        {
+          "rotulo": "Regen HP",
+          "valor": "+20"
+        },
+        {
+          "rotulo": "Regen CP",
+          "valor": "+20"
+        },
+        {
+          "rotulo": "MEN",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Fogo",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Água",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Vento",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Terra",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Sagrado",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+10"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:134"
+    },
+    {
+      "id": "masterwork-peito-robe-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Robe of Nightmare",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+29,16%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+29,16%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Crítico mágico (chance)",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Dano crítico mágico",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:141"
+    },
+    {
+      "id": "masterwork-peito-tallum-tunic",
+      "categoria": "masterwork",
+      "titulo": "Tallum Tunic",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "INT",
+          "valor": "+2"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:148"
+    },
+    {
+      "id": "masterwork-peito-sealed-dark-crystal-robe",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dark Crystal Robe",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:153"
+    },
+    {
+      "id": "masterwork-peito-sealed-majestic-robe",
+      "categoria": "masterwork",
+      "titulo": "Sealed Majestic Robe",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:159"
+    },
+    {
+      "id": "masterwork-peito-sealed-robe-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Sealed Robe of Nightmare",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:165"
+    },
+    {
+      "id": "masterwork-peito-sealed-tallum-tunic",
+      "categoria": "masterwork",
+      "titulo": "Sealed Tallum Tunic",
+      "subtitulo": "Robe",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:171"
+    },
+    {
+      "id": "masterwork-peito-dark-crystal-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Dark Crystal Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+6%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+6%"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:181"
+    },
+    {
+      "id": "masterwork-peito-leather-armor-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Leather Armor of Nightmare",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+3"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+29,16%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+29,16%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "M.Def",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+20%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+20%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:186"
+    },
+    {
+      "id": "masterwork-peito-majestic-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Majestic Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+8159"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+340"
+        },
+        {
+          "rotulo": "P.Atk (só com BOW/CROSSBOW)",
+          "valor": "+9,32%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20,83%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk (só com BOW/CROSSBOW)",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "MP de skills físicas",
+          "valor": "-5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:193"
+    },
+    {
+      "id": "masterwork-peito-tallum-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Tallum Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Max MP",
+          "valor": "+315"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+9,32%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+52%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+52%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+20%"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "INT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "MEN",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:199"
+    },
+    {
+      "id": "masterwork-peito-sealed-dark-crystal-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dark Crystal Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:205"
+    },
+    {
+      "id": "masterwork-peito-sealed-leather-armor-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Sealed Leather Armor of Nightmare",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:211"
+    },
+    {
+      "id": "masterwork-peito-sealed-majestic-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Majestic Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:217"
+    },
+    {
+      "id": "masterwork-peito-sealed-tallum-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Tallum Leather Armor",
+      "subtitulo": "Light",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:223"
+    },
+    {
+      "id": "masterwork-peito-armor-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Armor of Nightmare",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+17,08%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+29,16%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+29,16%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reflete dano",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:233"
+    },
+    {
+      "id": "masterwork-peito-dark-crystal-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Dark Crystal Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+12%"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "CON",
+          "valor": "+1"
+        },
+        {
+          "rotulo": "STR",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:238"
+    },
+    {
+      "id": "masterwork-peito-majestic-plate-armor",
+      "categoria": "masterwork",
+      "titulo": "Majestic Plate Armor",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Precisão",
+          "valor": "+0,579"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+8,27%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20,83%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Precisão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20%"
+        },
+        {
+          "rotulo": "Chance de aplicar Stun",
+          "valor": "+20%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:244"
+    },
+    {
+      "id": "masterwork-peito-tallum-plate-armor",
+      "categoria": "masterwork",
+      "titulo": "Tallum Plate Armor",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+8159"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+9,32%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+52%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+52%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-20%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:250"
+    },
+    {
+      "id": "masterwork-peito-sealed-armor-of-nightmare",
+      "categoria": "masterwork",
+      "titulo": "Sealed Armor of Nightmare",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:256"
+    },
+    {
+      "id": "masterwork-peito-sealed-dark-crystal-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dark Crystal breastplate",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:262"
+    },
+    {
+      "id": "masterwork-peito-sealed-majestic-plate-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Majestic Plate Armor",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:268"
+    },
+    {
+      "id": "masterwork-peito-sealed-tallum-plate-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Tallum Plate Armor",
+      "subtitulo": "Heavy",
+      "grade": "A",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:274"
+    },
+    {
+      "id": "masterwork-peito-major-arcana-robe",
+      "categoria": "masterwork",
+      "titulo": "Major Arcana Robe",
+      "subtitulo": "Robe",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Cancelamento de magia",
+          "valor": "-21"
+        },
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+8159"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+16,03%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+9,91%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20,83%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Crítico mágico (chance)",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "WIT",
+          "valor": "+2"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:289"
+    },
+    {
+      "id": "masterwork-peito-sealed-major-arcana-robe",
+      "categoria": "masterwork",
+      "titulo": "Sealed Major Arcana Robe",
+      "subtitulo": "Robe",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:296"
+    },
+    {
+      "id": "masterwork-peito-draconic-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Draconic Leather Armor",
+      "subtitulo": "Light",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Limite de peso",
+          "valor": "+8159"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+630"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5,80%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5,80%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max MP",
+          "valor": "+630"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:306"
+    },
+    {
+      "id": "masterwork-peito-sealed-draconic-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Draconic Leather Armor",
+      "subtitulo": "Light",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:311"
+    },
+    {
+      "id": "masterwork-peito-imperial-crusader-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Imperial Crusader Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+889"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+28%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+28%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+889"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+7,24%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+28%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+28%"
+        }
+      ],
+      "prosa": "nada foi alterado neste peito; vale o mesmo do jogo original",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:321"
+    },
+    {
+      "id": "masterwork-peito-sealed-imperial-crusader-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Sealed Imperial Crusader Breastplate",
+      "subtitulo": "Heavy",
+      "grade": "S",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:329"
+    },
+    {
+      "id": "masterwork-peito-dynasty-tunic",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Tunic",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:344"
+    },
+    {
+      "id": "masterwork-peito-dynasty-tunic-enchanter",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Tunic - Enchanter",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        }
+      ],
+      "prosa": "este peito não existia no jogo",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:349"
+    },
+    {
+      "id": "masterwork-peito-dynasty-tunic-healer",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Tunic - Healer",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "prosa": "este peito não existia no jogo",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:355"
+    },
+    {
+      "id": "masterwork-peito-dynasty-tunic-summoner",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Tunic - Summoner",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        }
+      ],
+      "prosa": "este peito não existia no jogo",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:360"
+    },
+    {
+      "id": "masterwork-peito-dynasty-tunic-wizard",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Tunic - Wizard",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Dano crítico recebido",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "prosa": "este peito não existia no jogo",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:365"
+    },
+    {
+      "id": "masterwork-peito-sealed-dynasty-tunic",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dynasty Tunic",
+      "subtitulo": "Dynasty - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:370"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Precisão",
+          "valor": "+3,4"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+3,2"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+492"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+4,77%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+3,4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Precisão",
+          "valor": "+3"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+3"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:380"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-bow-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Bow Master",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Precisão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:386"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-dagger-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Dagger Master",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "Dano de skill física",
+          "valor": "+600"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:391"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-enchanter",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Enchanter",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:396"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-force-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Force Master",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Chance de aplicar Stun",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:402"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-summoner",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Summoner",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:408"
+    },
+    {
+      "id": "masterwork-peito-dynasty-leather-armor-weapon-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Leather Armor - Weapon Master",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+1000"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Chance de crítico",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Dano crítico",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:413"
+    },
+    {
+      "id": "masterwork-peito-sealed-dynasty-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dynasty Leather Armor",
+      "subtitulo": "Dynasty - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:419"
+    },
+    {
+      "id": "masterwork-peito-dynasty-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Breastplate",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+3,2"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+984"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+7,24%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+700"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:429"
+    },
+    {
+      "id": "masterwork-peito-dynasty-breastplate-bard",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Breastplate - Bard",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:434"
+    },
+    {
+      "id": "masterwork-peito-dynasty-breastplate-force-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Breastplate - Force Master",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:439"
+    },
+    {
+      "id": "masterwork-peito-dynasty-breastplate-shield-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Breastplate - Shield Master",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Resist. Fogo",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Água",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Vento",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Terra",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Sagrado",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1000"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:444"
+    },
+    {
+      "id": "masterwork-peito-dynasty-breastplate-weapon-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Breastplate - Weapon Master",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Dano crítico",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Chance de aplicar Stun",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:451"
+    },
+    {
+      "id": "masterwork-peito-sealed-dynasty-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Sealed Dynasty Breastplate",
+      "subtitulo": "Dynasty - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:456"
+    },
+    {
+      "id": "masterwork-peito-dynasty-silver-satin-tunic",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Silver Satin Tunic",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Robe",
+      "antes": [
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:471"
+    },
+    {
+      "id": "masterwork-peito-dynasty-silver-satin-tunic-enchanter",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Silver Satin Tunic - Enchanter",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:476"
+    },
+    {
+      "id": "masterwork-peito-dynasty-silver-satin-tunic-healer",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Silver Satin Tunic - Healer",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:482"
+    },
+    {
+      "id": "masterwork-peito-dynasty-silver-satin-tunic-summoner",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Silver Satin Tunic - Summoner",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:487"
+    },
+    {
+      "id": "masterwork-peito-dynasty-silver-satin-tunic-wizard",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Silver Satin Tunic - Wizard",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+10%"
+        },
+        {
+          "rotulo": "Dano crítico recebido",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:492"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Precisão",
+          "valor": "+3,4"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+3,2"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+492"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+4,77%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+3,4"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Precisão",
+          "valor": "+3"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+3"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:501"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-bow-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Bow Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Precisão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:507"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-dagger-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Dagger Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Evasão",
+          "valor": "+7"
+        },
+        {
+          "rotulo": "Dano de skill física",
+          "valor": "+600"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:512"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-enchanter",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Enchanter",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:517"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-force-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Force Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "Chance de aplicar Stun",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:523"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-summoner",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Summoner",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "M.Def",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:529"
+    },
+    {
+      "id": "masterwork-peito-dynasty-jewel-leather-armor-weapon-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Jewel Leather Armor - Weapon Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+1000"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Chance de crítico",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Dano crítico",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:534"
+    },
+    {
+      "id": "masterwork-peito-dynasty-platinum-plate",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Platinum Plate",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Heavy",
+      "antes": [
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+3,2"
+        },
+        {
+          "rotulo": "MP de magias",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1023"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+7,24%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+700"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:544"
+    },
+    {
+      "id": "masterwork-peito-dynasty-platinum-plate-bard",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Platinum Plate - Bard",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:550"
+    },
+    {
+      "id": "masterwork-peito-dynasty-platinum-plate-force-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Platinum Plate - Force Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-5%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:555"
+    },
+    {
+      "id": "masterwork-peito-dynasty-platinum-plate-shield-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Platinum Plate - Shield Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Resist. Fogo",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Água",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Vento",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Terra",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Sagrado",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+10"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+1000"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:560"
+    },
+    {
+      "id": "masterwork-peito-dynasty-platinum-plate-weapon-master",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Platinum Plate - Weapon Master",
+      "subtitulo": "Dynasty Jewel / Platinum / Silver Satin - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Dano crítico",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Chance de aplicar Stun",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:567"
+    },
+    {
+      "id": "masterwork-peito-vesper-tunic",
+      "categoria": "masterwork",
+      "titulo": "Vesper Tunic",
+      "subtitulo": "Vesper - Robe",
+      "antes": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+8,47%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Cancelamento de magia",
+          "valor": "-12"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+12,50%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:581"
+    },
+    {
+      "id": "masterwork-peito-sealed-vesper-tunic",
+      "categoria": "masterwork",
+      "titulo": "Sealed Vesper Tunic",
+      "subtitulo": "Vesper - Robe",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:588"
+    },
+    {
+      "id": "masterwork-peito-vesper-leather-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Vesper Leather Breastplate",
+      "subtitulo": "Vesper - Light",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+347"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:598"
+    },
+    {
+      "id": "masterwork-peito-sealed-vesper-leather-leather-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Sealed Vesper Leather Leather Breastplate",
+      "subtitulo": "Vesper - Light",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:604"
+    },
+    {
+      "id": "masterwork-peito-vesper-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Vesper Breastplate",
+      "subtitulo": "Vesper - Heavy",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+531"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+28%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+28%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Resist. Fogo",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Água",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Vento",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Terra",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Sagrado",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Confusão",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:614"
+    },
+    {
+      "id": "masterwork-peito-sealed-vesper-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Sealed Vesper Breastplate",
+      "subtitulo": "Vesper - Heavy",
+      "antes": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "não dava bônus nenhum - era Masterwork só no nome"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Bônus próprio",
+          "valor": "continua sem bônus próprio"
+        }
+      ],
+      "prosa": "este peito nunca deu bônus próprio, nem antes nem agora",
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:624"
+    },
+    {
+      "id": "masterwork-peito-vesper-noble-tunic",
+      "categoria": "masterwork",
+      "titulo": "Vesper Noble Tunic",
+      "subtitulo": "Vesper Noble - Robe",
+      "antes": [
+        {
+          "rotulo": "M.Atk",
+          "valor": "+8,47%"
+        },
+        {
+          "rotulo": "Casting Spd",
+          "valor": "+15%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Cancelamento de magia",
+          "valor": "-12"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+20%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "M.Atk",
+          "valor": "+12,50%"
+        },
+        {
+          "rotulo": "Efeito de cura",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Velocidade",
+          "valor": "+10"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:639"
+    },
+    {
+      "id": "masterwork-peito-vesper-noble-houberk",
+      "categoria": "masterwork",
+      "titulo": "Vesper Noble Houberk",
+      "subtitulo": "Vesper Noble - Light",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Regen MP",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Max MP",
+          "valor": "+347"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Reuso mágico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso físico",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Reuso de daga",
+          "valor": "-10%"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Vampirismo",
+          "valor": "+5"
+        },
+        {
+          "rotulo": "DEX",
+          "valor": "+2"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:650"
+    },
+    {
+      "id": "masterwork-peito-vesper-noble-breastplate",
+      "categoria": "masterwork",
+      "titulo": "Vesper Noble Breastplate",
+      "subtitulo": "Vesper Noble - Heavy",
+      "antes": [
+        {
+          "rotulo": "P.Atk",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "P.Def",
+          "valor": "+5,57%"
+        },
+        {
+          "rotulo": "Max HP",
+          "valor": "+531"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+28%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+28%"
+        }
+      ],
+      "agora": [
+        {
+          "rotulo": "Resist. Fogo",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Água",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Vento",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Terra",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Sagrado",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Resist. Trevas",
+          "valor": "+15"
+        },
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "P.Atk",
+          "valor": "+7,50%"
+        },
+        {
+          "rotulo": "Resist. Sleep",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Hold/Root",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Paralisia",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Stun",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Sangramento",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Veneno",
+          "valor": "+5%"
+        },
+        {
+          "rotulo": "Resist. Confusão",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "BONUS-MASTERWORK-PEITOS.txt:660"
+    },
+    {
+      "id": "masterwork-arma-elemental-sword-hail",
+      "categoria": "masterwork",
+      "titulo": "Elemental Sword",
+      "subtitulo": "One-Handed Sword (mago) - Hail",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:3"
+    },
+    {
+      "id": "masterwork-arma-tallum-blade-destruction",
+      "categoria": "masterwork",
+      "titulo": "Tallum Blade",
+      "subtitulo": "One-Handed Sword - Destruction",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:6"
+    },
+    {
+      "id": "masterwork-arma-dark-legions-edge-thunder",
+      "categoria": "masterwork",
+      "titulo": "Dark Legion's Edge",
+      "subtitulo": "One-Handed Sword - Thunder",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:9"
+    },
+    {
+      "id": "masterwork-arma-sword-of-miracles-holy-spirit",
+      "categoria": "masterwork",
+      "titulo": "Sword of Miracles",
+      "subtitulo": "One-Handed Sword (mago) - Holy Spirit",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Heal Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:12"
+    },
+    {
+      "id": "masterwork-arma-sirras-blade-landslide",
+      "categoria": "masterwork",
+      "titulo": "Sirra's Blade",
+      "subtitulo": "One-Handed Sword - Landslide",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:15"
+    },
+    {
+      "id": "masterwork-arma-themis-tongue-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Themis' Tongue",
+      "subtitulo": "One-Handed Sword (mago) - Cleverness",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:18"
+    },
+    {
+      "id": "masterwork-arma-mardils-fan-holy-spirit",
+      "categoria": "masterwork",
+      "titulo": "Mardil's Fan",
+      "subtitulo": "One-Handed Sword (mago) - Holy Spirit",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Heal Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:21"
+    },
+    {
+      "id": "masterwork-arma-infernal-master-concentration",
+      "categoria": "masterwork",
+      "titulo": "Infernal Master",
+      "subtitulo": "Two-Handed Sword - Concentration",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:26"
+    },
+    {
+      "id": "masterwork-arma-dragon-slayer-evil-spirit",
+      "categoria": "masterwork",
+      "titulo": "Dragon Slayer",
+      "subtitulo": "Two-Handed Sword - Evil Spirit",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Vampiric Rage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:29"
+    },
+    {
+      "id": "masterwork-arma-sword-of-ipos-earth",
+      "categoria": "masterwork",
+      "titulo": "Sword of Ipos",
+      "subtitulo": "Two-Handed Sword - Earth",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:32"
+    },
+    {
+      "id": "masterwork-arma-meteor-shower-earth",
+      "categoria": "masterwork",
+      "titulo": "Meteor Shower",
+      "subtitulo": "One-Handed Blunt - Earth",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:37"
+    },
+    {
+      "id": "masterwork-arma-spiritual-eye-hail",
+      "categoria": "masterwork",
+      "titulo": "Spiritual Eye",
+      "subtitulo": "One-Handed Blunt (mago) - Hail",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:40"
+    },
+    {
+      "id": "masterwork-arma-flaming-dragon-skull-wisdom",
+      "categoria": "masterwork",
+      "titulo": "Flaming Dragon Skull",
+      "subtitulo": "One-Handed Blunt (mago) - Wisdom",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "MP Consumption",
+          "valor": "-20%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:43"
+    },
+    {
+      "id": "masterwork-arma-elysian-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Elysian",
+      "subtitulo": "One-Handed Blunt - Great Gale",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:46"
+    },
+    {
+      "id": "masterwork-arma-barakiels-axe-on-fire",
+      "categoria": "masterwork",
+      "titulo": "Barakiel's Axe",
+      "subtitulo": "One-Handed Blunt - On Fire",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:49"
+    },
+    {
+      "id": "masterwork-arma-cabrios-hand-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Cabrio's Hand",
+      "subtitulo": "One-Handed Blunt (mago) - Cleverness",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:52"
+    },
+    {
+      "id": "masterwork-arma-dasparions-staff-hail",
+      "categoria": "masterwork",
+      "titulo": "Dasparion's Staff",
+      "subtitulo": "Two-Handed Blunt (mago) - Hail",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:57"
+    },
+    {
+      "id": "masterwork-arma-destroyer-hammer-lightning",
+      "categoria": "masterwork",
+      "titulo": "Destroyer Hammer",
+      "subtitulo": "Two-Handed Blunt - Lightning",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:60"
+    },
+    {
+      "id": "masterwork-arma-doom-crusher-thunder",
+      "categoria": "masterwork",
+      "titulo": "Doom Crusher",
+      "subtitulo": "Two-Handed Blunt - Thunder",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:63"
+    },
+    {
+      "id": "masterwork-arma-branch-of-the-mother-tree-nature",
+      "categoria": "masterwork",
+      "titulo": "Branch of the Mother Tree",
+      "subtitulo": "Two-Handed Blunt (mago) - Nature",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:66"
+    },
+    {
+      "id": "masterwork-arma-daimon-crystal-wisdom",
+      "categoria": "masterwork",
+      "titulo": "Daimon Crystal",
+      "subtitulo": "Two-Handed Blunt (mago) - Wisdom",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "MP Consumption",
+          "valor": "-20%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:69"
+    },
+    {
+      "id": "masterwork-arma-behemoths-tuning-fork-destruction",
+      "categoria": "masterwork",
+      "titulo": "Behemoth's Tuning Fork",
+      "subtitulo": "Two-Handed Blunt - Destruction",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:72"
+    },
+    {
+      "id": "masterwork-arma-bloody-orchid-confusion",
+      "categoria": "masterwork",
+      "titulo": "Bloody Orchid",
+      "subtitulo": "Dagger - Confusion",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:77"
+    },
+    {
+      "id": "masterwork-arma-soul-separator-on-fire",
+      "categoria": "masterwork",
+      "titulo": "Soul Separator",
+      "subtitulo": "Dagger - On Fire",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:80"
+    },
+    {
+      "id": "masterwork-arma-naga-storm-molar",
+      "categoria": "masterwork",
+      "titulo": "Naga Storm",
+      "subtitulo": "Dagger - Molar",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:83"
+    },
+    {
+      "id": "masterwork-arma-keshanberk-keshanberk-destruction",
+      "categoria": "masterwork",
+      "titulo": "Keshanberk*Keshanberk",
+      "subtitulo": "Dual Sword - Destruction",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:88"
+    },
+    {
+      "id": "masterwork-arma-damascus-damascus-thunder",
+      "categoria": "masterwork",
+      "titulo": "Damascus*Damascus",
+      "subtitulo": "Dual Sword - Thunder",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:91"
+    },
+    {
+      "id": "masterwork-arma-tallum-blade-damascus-landslide",
+      "categoria": "masterwork",
+      "titulo": "Tallum Blade*Damascus",
+      "subtitulo": "Dual Sword - Landslide",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:94"
+    },
+    {
+      "id": "masterwork-arma-keshanberk-damascus-destruction",
+      "categoria": "masterwork",
+      "titulo": "Keshanberk*Damascus",
+      "subtitulo": "Dual Sword - Destruction",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:97"
+    },
+    {
+      "id": "masterwork-arma-blood-tornado-destruction",
+      "categoria": "masterwork",
+      "titulo": "Blood Tornado",
+      "subtitulo": "Dual Fist - Destruction",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:102"
+    },
+    {
+      "id": "masterwork-arma-dragon-grinder-earth",
+      "categoria": "masterwork",
+      "titulo": "Dragon Grinder",
+      "subtitulo": "Dual Fist - Earth",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:105"
+    },
+    {
+      "id": "masterwork-arma-sobekks-hurricane-landslide",
+      "categoria": "masterwork",
+      "titulo": "Sobekk's Hurricane",
+      "subtitulo": "Dual Fist - Landslide",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:108"
+    },
+    {
+      "id": "masterwork-arma-halberd-lightning",
+      "categoria": "masterwork",
+      "titulo": "Halberd",
+      "subtitulo": "Polearm - Lightning",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:113"
+    },
+    {
+      "id": "masterwork-arma-tallum-glaive-on-fire",
+      "categoria": "masterwork",
+      "titulo": "Tallum Glaive",
+      "subtitulo": "Polearm - On Fire",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:116"
+    },
+    {
+      "id": "masterwork-arma-tiphons-spear-landslide",
+      "categoria": "masterwork",
+      "titulo": "Tiphon's Spear",
+      "subtitulo": "Polearm - Landslide",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:119"
+    },
+    {
+      "id": "masterwork-arma-carnage-bow-concentration",
+      "categoria": "masterwork",
+      "titulo": "Carnage Bow",
+      "subtitulo": "Bow - Concentration",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:124"
+    },
+    {
+      "id": "masterwork-arma-soul-bow-clairvoyance",
+      "categoria": "masterwork",
+      "titulo": "Soul Bow",
+      "subtitulo": "Bow - Clairvoyance",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Attack Range",
+          "valor": "+200"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:127"
+    },
+    {
+      "id": "masterwork-arma-shyeeds-bow-concentration",
+      "categoria": "masterwork",
+      "titulo": "Shyeed's Bow",
+      "subtitulo": "Bow - Concentration",
+      "grade": "A",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-A.txt:130"
+    },
+    {
+      "id": "masterwork-arma-sword-of-valhalla-nature",
+      "categoria": "masterwork",
+      "titulo": "Sword of Valhalla",
+      "subtitulo": "One-Handed Sword (mago) - Nature",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:3"
+    },
+    {
+      "id": "masterwork-arma-keshanberk-destruction",
+      "categoria": "masterwork",
+      "titulo": "Keshanberk",
+      "subtitulo": "One-Handed Sword - Destruction",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:6"
+    },
+    {
+      "id": "masterwork-arma-sword-of-damascus-earth",
+      "categoria": "masterwork",
+      "titulo": "Sword of Damascus",
+      "subtitulo": "One-Handed Sword - Earth",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:9"
+    },
+    {
+      "id": "masterwork-arma-wizards-tear-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Wizard's Tear",
+      "subtitulo": "One-Handed Sword (mago) - Cleverness",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:12"
+    },
+    {
+      "id": "masterwork-arma-great-sword-lightning",
+      "categoria": "masterwork",
+      "titulo": "Great Sword",
+      "subtitulo": "Two-Handed Sword - Lightning",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:17"
+    },
+    {
+      "id": "masterwork-arma-guardian-sword-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Guardian Sword",
+      "subtitulo": "Two-Handed Sword - Great Gale",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:20"
+    },
+    {
+      "id": "masterwork-arma-spell-breaker-hail",
+      "categoria": "masterwork",
+      "titulo": "Spell Breaker",
+      "subtitulo": "One-Handed Blunt (mago) - Hail",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:25"
+    },
+    {
+      "id": "masterwork-arma-heavy-war-axe-earth",
+      "categoria": "masterwork",
+      "titulo": "Heavy War Axe",
+      "subtitulo": "One-Handed Blunt - Earth",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:28"
+    },
+    {
+      "id": "masterwork-arma-deadmans-glory-landslide",
+      "categoria": "masterwork",
+      "titulo": "Deadman's Glory",
+      "subtitulo": "One-Handed Blunt - Landslide",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:31"
+    },
+    {
+      "id": "masterwork-arma-art-of-battle-axe-landslide",
+      "categoria": "masterwork",
+      "titulo": "Art of Battle Axe",
+      "subtitulo": "One-Handed Blunt - Landslide",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:34"
+    },
+    {
+      "id": "masterwork-arma-kaim-vanuls-bones-earth",
+      "categoria": "masterwork",
+      "titulo": "Kaim Vanul's Bones",
+      "subtitulo": "One-Handed Blunt (mago) - Earth",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:37"
+    },
+    {
+      "id": "masterwork-arma-ice-storm-hammer-lightning",
+      "categoria": "masterwork",
+      "titulo": "Ice Storm Hammer",
+      "subtitulo": "Two-Handed Blunt - Lightning",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:42"
+    },
+    {
+      "id": "masterwork-arma-sprites-staff-hail",
+      "categoria": "masterwork",
+      "titulo": "Sprite's Staff",
+      "subtitulo": "Two-Handed Blunt (mago) - Hail",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:45"
+    },
+    {
+      "id": "masterwork-arma-staff-of-evil-spirits-holy-spirit",
+      "categoria": "masterwork",
+      "titulo": "Staff of Evil Spirits",
+      "subtitulo": "Two-Handed Blunt (mago) - Holy Spirit",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Heal Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:48"
+    },
+    {
+      "id": "masterwork-arma-star-buster-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Star Buster",
+      "subtitulo": "Two-Handed Blunt - Great Gale",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:51"
+    },
+    {
+      "id": "masterwork-arma-kris-confusion",
+      "categoria": "masterwork",
+      "titulo": "Kris",
+      "subtitulo": "Dagger - Confusion",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:56"
+    },
+    {
+      "id": "masterwork-arma-hell-knife-confusion",
+      "categoria": "masterwork",
+      "titulo": "Hell Knife",
+      "subtitulo": "Dagger (mago) - Confusion",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:59"
+    },
+    {
+      "id": "masterwork-arma-demons-dagger-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Demon's Dagger",
+      "subtitulo": "Dagger - Great Gale",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:62"
+    },
+    {
+      "id": "masterwork-arma-25-low-rate-duals-destruction",
+      "categoria": "masterwork",
+      "titulo": "25 low rate Duals",
+      "subtitulo": "Dual Sword - Destruction",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:67"
+    },
+    {
+      "id": "masterwork-arma-samurai-long-sword-samurai-long-sword-landslide",
+      "categoria": "masterwork",
+      "titulo": "Samurai Long Sword*Samurai Long Sword",
+      "subtitulo": "Dual Sword - Landslide",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:70"
+    },
+    {
+      "id": "masterwork-arma-arthro-nail-destruction",
+      "categoria": "masterwork",
+      "titulo": "Arthro Nail",
+      "subtitulo": "Dual Fist - Destruction",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:75"
+    },
+    {
+      "id": "masterwork-arma-bellion-cestus-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Bellion Cestus",
+      "subtitulo": "Dual Fist - Great Gale",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:78"
+    },
+    {
+      "id": "masterwork-arma-great-axe-thunder",
+      "categoria": "masterwork",
+      "titulo": "Great Axe",
+      "subtitulo": "Polearm - Thunder",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:83"
+    },
+    {
+      "id": "masterwork-arma-lance-earth",
+      "categoria": "masterwork",
+      "titulo": "Lance",
+      "subtitulo": "Polearm - Earth",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:86"
+    },
+    {
+      "id": "masterwork-arma-dark-elven-long-bow-concentration",
+      "categoria": "masterwork",
+      "titulo": "Dark Elven Long Bow",
+      "subtitulo": "Bow - Concentration",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:91"
+    },
+    {
+      "id": "masterwork-arma-bow-of-peril-earth",
+      "categoria": "masterwork",
+      "titulo": "Bow of Peril",
+      "subtitulo": "Bow - Earth",
+      "grade": "B",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-B.txt:94"
+    },
+    {
+      "id": "masterwork-arma-forgotten-blade-lightning",
+      "categoria": "masterwork",
+      "titulo": "Forgotten Blade",
+      "subtitulo": "One-Handed Sword - Lightning",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:3"
+    },
+    {
+      "id": "masterwork-arma-heavens-divider-thunder",
+      "categoria": "masterwork",
+      "titulo": "Heaven's Divider",
+      "subtitulo": "Two-Handed Sword - Thunder",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:8"
+    },
+    {
+      "id": "masterwork-arma-blood-brother-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Blood Brother",
+      "subtitulo": "Two-Handed Sword - Great Gale",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:11"
+    },
+    {
+      "id": "masterwork-arma-basalt-battlehammer-concentration",
+      "categoria": "masterwork",
+      "titulo": "Basalt Battlehammer",
+      "subtitulo": "One-Handed Blunt - Concentration",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:16"
+    },
+    {
+      "id": "masterwork-arma-arcana-mace-nature",
+      "categoria": "masterwork",
+      "titulo": "Arcana Mace",
+      "subtitulo": "One-Handed Blunt (mago) - Nature",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:19"
+    },
+    {
+      "id": "masterwork-arma-dragon-hunter-axe-thunder",
+      "categoria": "masterwork",
+      "titulo": "Dragon Hunter Axe",
+      "subtitulo": "Two-Handed Blunt - Thunder",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:24"
+    },
+    {
+      "id": "masterwork-arma-imperial-staff-nature",
+      "categoria": "masterwork",
+      "titulo": "Imperial Staff",
+      "subtitulo": "Two-Handed Blunt (mago) - Nature",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:27"
+    },
+    {
+      "id": "masterwork-arma-angel-slayer-concentration",
+      "categoria": "masterwork",
+      "titulo": "Angel Slayer",
+      "subtitulo": "Dagger - Concentration",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:32"
+    },
+    {
+      "id": "masterwork-arma-blades-of-delusion-earth",
+      "categoria": "masterwork",
+      "titulo": "Blades of Delusion",
+      "subtitulo": "Dual Sword - Earth",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:37"
+    },
+    {
+      "id": "masterwork-arma-tallum-blade-dark-legions-edge-lightning",
+      "categoria": "masterwork",
+      "titulo": "Tallum Blade*Dark Legion's Edge",
+      "subtitulo": "Dual Sword - Lightning",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:40"
+    },
+    {
+      "id": "masterwork-arma-demon-splinter-thunder",
+      "categoria": "masterwork",
+      "titulo": "Demon Splinter",
+      "subtitulo": "Dual Fist - Thunder",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:45"
+    },
+    {
+      "id": "masterwork-arma-saint-spear-destruction",
+      "categoria": "masterwork",
+      "titulo": "Saint Spear",
+      "subtitulo": "Polearm - Destruction",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:50"
+    },
+    {
+      "id": "masterwork-arma-draconic-bow-earth",
+      "categoria": "masterwork",
+      "titulo": "Draconic Bow",
+      "subtitulo": "Bow - Earth",
+      "grade": "S",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-GRADE-S.txt:55"
+    },
+    {
+      "id": "masterwork-arma-dynasty-sword-earth",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Sword",
+      "subtitulo": "Dynasty - One-Handed Sword - Earth",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:3"
+    },
+    {
+      "id": "masterwork-arma-dynasty-phantom-nature",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Phantom",
+      "subtitulo": "Dynasty - One-Handed Sword (mago) - Nature",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:6"
+    },
+    {
+      "id": "masterwork-arma-dynasty-blade-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Blade",
+      "subtitulo": "Dynasty - Two-Handed Sword - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:11"
+    },
+    {
+      "id": "masterwork-arma-dynasty-mace-earth",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Mace",
+      "subtitulo": "Dynasty - One-Handed Blunt (mago) - Earth",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:16"
+    },
+    {
+      "id": "masterwork-arma-dynasty-cudgel-landslide",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Cudgel",
+      "subtitulo": "Dynasty - One-Handed Blunt - Landslide",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:19"
+    },
+    {
+      "id": "masterwork-arma-dynasty-staff-holy-spirit",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Staff",
+      "subtitulo": "Dynasty - Two-Handed Blunt (mago) - Holy Spirit",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Heal Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:24"
+    },
+    {
+      "id": "masterwork-arma-dynasty-crusher-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Crusher",
+      "subtitulo": "Dynasty - Two-Handed Blunt - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:27"
+    },
+    {
+      "id": "masterwork-arma-dynasty-knife-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Knife",
+      "subtitulo": "Dynasty - Dagger - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:32"
+    },
+    {
+      "id": "masterwork-arma-dynasty-dual-daggers-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Dual Daggers",
+      "subtitulo": "Dynasty - Dual Dagger - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:37"
+    },
+    {
+      "id": "masterwork-arma-dynasty-dual-sword-earth",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Dual Sword",
+      "subtitulo": "Dynasty - Dual Sword - Earth",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:42"
+    },
+    {
+      "id": "masterwork-arma-dynasty-bagh-nakh-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Bagh-Nakh",
+      "subtitulo": "Dynasty - Dual Fist - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:47"
+    },
+    {
+      "id": "masterwork-arma-dynasty-halberd-earth",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Halberd",
+      "subtitulo": "Dynasty - Polearm - Earth",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:52"
+    },
+    {
+      "id": "masterwork-arma-dynasty-bow-great-gale",
+      "categoria": "masterwork",
+      "titulo": "Dynasty Bow",
+      "subtitulo": "Dynasty - Bow - Great Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-DYNASTY.txt:57"
+    },
+    {
+      "id": "masterwork-arma-icarus-sawsword-destruction",
+      "categoria": "masterwork",
+      "titulo": "Icarus Sawsword",
+      "subtitulo": "Icarus - One-Handed Sword - Destruction",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:3"
+    },
+    {
+      "id": "masterwork-arma-icarus-spirit-nature",
+      "categoria": "masterwork",
+      "titulo": "Icarus Spirit",
+      "subtitulo": "Icarus - One-Handed Sword (mago) - Nature",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Critical Rate",
+          "valor": "+30%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:6"
+    },
+    {
+      "id": "masterwork-arma-icarus-heavy-arms-lightning",
+      "categoria": "masterwork",
+      "titulo": "Icarus Heavy Arms",
+      "subtitulo": "Icarus - Two-Handed Sword - Lightning",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Rate",
+          "valor": "+60"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:11"
+    },
+    {
+      "id": "masterwork-arma-icarus-hammer-earth",
+      "categoria": "masterwork",
+      "titulo": "Icarus Hammer",
+      "subtitulo": "Icarus - One-Handed Blunt - Earth",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Max HP",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:16"
+    },
+    {
+      "id": "masterwork-arma-icarus-hall-hail",
+      "categoria": "masterwork",
+      "titulo": "Icarus Hall",
+      "subtitulo": "Icarus - One-Handed Blunt (mago) - Hail",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:19"
+    },
+    {
+      "id": "masterwork-arma-icarus-disperser-confusion",
+      "categoria": "masterwork",
+      "titulo": "Icarus Disperser",
+      "subtitulo": "Icarus - Dagger - Confusion",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:24"
+    },
+    {
+      "id": "masterwork-arma-icarus-dual-daggers-confusion",
+      "categoria": "masterwork",
+      "titulo": "Icarus Dual Daggers",
+      "subtitulo": "Icarus - Dual Dagger - Confusion",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Evasion",
+          "valor": "+7"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:29"
+    },
+    {
+      "id": "masterwork-arma-icarus-dual-sword-destruction",
+      "categoria": "masterwork",
+      "titulo": "Icarus Dual Sword",
+      "subtitulo": "Icarus - Dual Sword - Destruction",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:34"
+    },
+    {
+      "id": "masterwork-arma-icarus-hand-destruction",
+      "categoria": "masterwork",
+      "titulo": "Icarus Hand",
+      "subtitulo": "Icarus - Dual Fist - Destruction",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:39"
+    },
+    {
+      "id": "masterwork-arma-icarus-trident-thunder",
+      "categoria": "masterwork",
+      "titulo": "Icarus Trident",
+      "subtitulo": "Icarus - Polearm - Thunder",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:44"
+    },
+    {
+      "id": "masterwork-arma-icarus-spitter-concentration",
+      "categoria": "masterwork",
+      "titulo": "Icarus Spitter",
+      "subtitulo": "Icarus - Bow - Concentration",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Physical Skill Power",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-ICARUS.txt:49"
+    },
+    {
+      "id": "masterwork-arma-vesper-cutter-thunder",
+      "categoria": "masterwork",
+      "titulo": "Vesper Cutter",
+      "subtitulo": "Vesper - One-Handed Sword - Thunder",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:3"
+    },
+    {
+      "id": "masterwork-arma-vesper-buster-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Vesper Buster",
+      "subtitulo": "Vesper - One-Handed Sword (mago) - Cleverness",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:6"
+    },
+    {
+      "id": "masterwork-arma-vesper-slasher-gale",
+      "categoria": "masterwork",
+      "titulo": "Vesper Slasher",
+      "subtitulo": "Vesper - Two-Handed Sword - Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:11"
+    },
+    {
+      "id": "masterwork-arma-vesper-avenger-landslide",
+      "categoria": "masterwork",
+      "titulo": "Vesper Avenger",
+      "subtitulo": "Vesper - One-Handed Blunt - Landslide",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Shock Attacks",
+          "valor": "+10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:16"
+    },
+    {
+      "id": "masterwork-arma-vesper-caster-cleverness",
+      "categoria": "masterwork",
+      "titulo": "Vesper Caster",
+      "subtitulo": "Vesper - One-Handed Blunt (mago) - Cleverness",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Magic Skill Reuse",
+          "valor": "-10%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:19"
+    },
+    {
+      "id": "masterwork-arma-vesper-retributer-gale",
+      "categoria": "masterwork",
+      "titulo": "Vesper Retributer",
+      "subtitulo": "Vesper - Two-Handed Blunt - Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:24"
+    },
+    {
+      "id": "masterwork-arma-vesper-singer-hail",
+      "categoria": "masterwork",
+      "titulo": "Vesper Singer",
+      "subtitulo": "Vesper - Two-Handed Blunt (mago) - Hail",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "M.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:27"
+    },
+    {
+      "id": "masterwork-arma-vesper-shaper-gale",
+      "categoria": "masterwork",
+      "titulo": "Vesper Shaper",
+      "subtitulo": "Vesper - Dagger - Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:32"
+    },
+    {
+      "id": "masterwork-arma-vesper-dual-daggers-gale",
+      "categoria": "masterwork",
+      "titulo": "Vesper Dual Daggers",
+      "subtitulo": "Vesper - Dual Dagger - Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:37"
+    },
+    {
+      "id": "masterwork-arma-vesper-dual-sword-destruction",
+      "categoria": "masterwork",
+      "titulo": "Vesper Dual Sword",
+      "subtitulo": "Vesper - Dual Sword - Destruction",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "P.Atk.",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:42"
+    },
+    {
+      "id": "masterwork-arma-vesper-fighter-gale",
+      "categoria": "masterwork",
+      "titulo": "Vesper Fighter",
+      "subtitulo": "Vesper - Dual Fist - Gale",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Atk.Spd",
+          "valor": "+8%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:47"
+    },
+    {
+      "id": "masterwork-arma-vesper-stormer-thunder",
+      "categoria": "masterwork",
+      "titulo": "Vesper Stormer",
+      "subtitulo": "Vesper - Polearm - Thunder",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Critical Damage",
+          "valor": "+5%"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:52"
+    },
+    {
+      "id": "masterwork-arma-vesper-thrower-clairvoyance",
+      "categoria": "masterwork",
+      "titulo": "Vesper Thrower",
+      "subtitulo": "Vesper - Bow - Clairvoyance",
+      "antes": [],
+      "agora": [
+        {
+          "rotulo": "Attack Range",
+          "valor": "+200"
+        }
+      ],
+      "fonte": "MASTERWORK-ARMAS-VESPER.txt:57"
+    }
+  ]
+}
