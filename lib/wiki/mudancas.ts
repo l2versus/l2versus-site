@@ -95,15 +95,10 @@ export async function carregarFeed(): Promise<Feed> {
   };
 }
 
-const MES = [
-  "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-  "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
-];
-
-/** "2026-08-18" → "18 de agosto de 2026". Sem `new Date`: a string ISO já
- *  tem tudo, e converter para Date introduz fuso e pode recuar um dia. */
-export function dataPorExtenso(iso: string): string {
-  const [a, m, d] = iso.split("-").map(Number);
-  if (!a || !m || !d) return iso;
-  return `${d} de ${MES[m - 1]} de ${a}`;
-}
+/* O `dataPorExtenso` que morava aqui montava "18 de agosto de 2026" com uma
+   tabela de meses em português. Saiu quando a página passou a datar em quatro
+   idiomas: agora é `Intl.DateTimeFormat` no locale corrente.
+   O cuidado dele continua valendo e foi mantido no chamador — a data é
+   montada em UTC. Interpretar "2026-08-18" no fuso local recua um dia a
+   oeste de Greenwich, e a timeline do servidor passaria a mentir em um dia
+   para metade dos leitores. */

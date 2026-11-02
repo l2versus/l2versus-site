@@ -2,6 +2,9 @@ import "server-only";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { FamiliaSchema, SECOES, type Familia, type SecaoMeta } from "./types";
+import { traduzirFamilia } from "./frases-conteudo.mjs";
+import { getLocale } from "../i18n/server";
+import type { Locale } from "../i18n/dict";
 
 /**
  * Carregador do conteúdo do wiki.
@@ -28,8 +31,18 @@ export type FamiliaCarregada =
   | { ok: true; familia: Familia }
   | { ok: false; erro: string; detalhe?: string };
 
-/** Lê e valida uma família. Erro é devolvido, nunca engolido. */
-export async function carregarFamilia(nome: string): Promise<FamiliaCarregada> {
+/**
+ * Lê e valida uma família. Erro é devolvido, nunca engolido.
+ *
+ * `traduzir: false` devolve o português cru e NÃO toca no cookie de idioma.
+ * Serve para quem só quer contar entradas (o índice do códice carrega as 8
+ * famílias de uma vez): traduzir 733 entradas para exibir o número 733 é
+ * trabalho jogado fora, e o tradutor aqui percorre campo a campo.
+ */
+export async function carregarFamilia(
+  nome: string,
+  opcoes?: { traduzir?: boolean }
+): Promise<FamiliaCarregada> {
   const arquivo = path.join(DIR, `${nome}.json`);
   let cru: string;
 
@@ -67,7 +80,49 @@ export async function carregarFamilia(nome: string): Promise<FamiliaCarregada> {
     };
   }
 
-  return { ok: true, familia: r.data };
+  if (opcoes?.traduzir === false) return { ok: true, familia: r.data };
+  return { ok: true, familia: await traduzido(r.data) };
+}
+
+/* ------------------------------------------------------------------ *
+ *  TRADUÇÃO DO CONTEÚDO
+ *
+ *  Os JSON de `content/wiki/` são escritos em português — é a língua em que
+ *  a documentação do servidor foi redigida e em que o códice é curado. Os
+ *  outros três idiomas saem de um dicionário por PADRÃO
+ *  (`content/wiki/i18n/<locale>.json`), aplicado aqui, na leitura.
+ *
+ *  Na leitura, e não na geração, pelos mesmos dois motivos do grimório de
+ *  skills: o repositório guarda UM arquivo de conteúdo em vez de quatro que
+ *  podem divergir, e corrigir uma tradução é editar o dicionário e recarregar
+ *  — sem reprocessar e sem recommitar o conteúdo.
+ *
+ *  Padrão ausente devolve o português. É uma lacuna visível, e visível é o
+ *  que queremos: a alternativa (campo em branco) seria o wiki afirmando que
+ *  a jóia não tem efeito nenhum.
+ * ------------------------------------------------------------------ */
+
+type Dicionario = Record<string, string>;
+const cacheDic = new Map<Locale, Promise<Dicionario>>();
+
+function lerDicionario(locale: Locale): Promise<Dicionario> {
+  let p = cacheDic.get(locale);
+  if (!p) {
+    p = readFile(path.join(DIR, "i18n", `${locale}.json`), "utf8")
+      .then((t) => (JSON.parse(t) as { padroes?: Dicionario }).padroes ?? {})
+      /* arquivo ausente = idioma ainda não traduzido, não erro de servidor */
+      .catch(() => ({}));
+    cacheDic.set(locale, p);
+  }
+  return p;
+}
+
+async function traduzido(familia: Familia): Promise<Familia> {
+  const locale = await getLocale();
+  if (locale === "pt") return familia;
+  const dic = await lerDicionario(locale);
+  if (Object.keys(dic).length === 0) return familia;
+  return traduzirFamilia(familia, dic) as Familia;
 }
 
 export type SecaoCarregada = SecaoMeta & {
@@ -80,7 +135,7 @@ export type SecaoCarregada = SecaoMeta & {
 export async function carregarSecoes(): Promise<SecaoCarregada[]> {
   return Promise.all(
     SECOES.map(async (s) => {
-      const estado = await carregarFamilia(s.familia);
+      const estado = await carregarFamilia(s.familia, { traduzir: false });
       return {
         ...s,
         estado,

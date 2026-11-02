@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { carregarFamilia, carregarSecoes } from "@/lib/wiki/data";
 import { SECOES, secaoPorSlug } from "@/lib/wiki/types";
+import { MOSTRAR_PROCEDENCIA } from "@/lib/wiki/procedencia";
 import CodexNav from "../_components/CodexNav";
 import EntradaCard from "../_components/EntradaCard";
 import EstadoIndisponivel from "../_components/EstadoIndisponivel";
@@ -38,7 +39,7 @@ export async function generateMetadata({
   const [estado, t] = await Promise.all([carregarFamilia(meta.familia), getT()]);
   const total = estado.ok ? estado.familia.entradas.length : 0;
   const n = total > LIMIAR_PAGINACAO ? paginaValida(p, total) : 1;
-  const sufixo = n > 1 ? ` (página ${n})` : "";
+  const sufixo = n > 1 ? ` ${t("wiki.ui.meta.pagina_n").replace("{n}", String(n))}` : "";
   return {
     title: `${t(`wiki.sec.${secao}.titulo`)}${sufixo} — Wiki | L2 Versus`,
     description: t(`wiki.sec.${secao}.chamada`),
@@ -158,7 +159,7 @@ export default async function SecaoPage({
                             {linha.comoObter}
                             {linha.pendente && (
                               <span className="ml-2 selo selo-pendente">
-                                não definido
+                                {t("wiki.ui.nao_definido")}
                               </span>
                             )}
                           </td>
@@ -197,7 +198,8 @@ export default async function SecaoPage({
                   {t("wiki.como_ler")}
                 </span>
                 <span className="ml-auto text-[0.75rem] uppercase tracking-[0.18em] text-[var(--color-faint)]">
-                  {comoLer.length} {comoLer.length === 1 ? "nota" : "notas"}
+                  {comoLer.length}{" "}
+                  {t(comoLer.length === 1 ? "wiki.nota" : "wiki.notas")}
                 </span>
               </summary>
               <div className="space-y-4 px-5 pb-5 md:px-6">
@@ -214,9 +216,11 @@ export default async function SecaoPage({
                     <p className="prosa-col text-[0.95rem] leading-relaxed text-[var(--color-muted)]">
                       {n.texto}
                     </p>
-                    <p className="mt-1.5 font-mono text-[0.73rem] text-[var(--color-faint)]">
-                      {n.fonte}
-                    </p>
+                    {MOSTRAR_PROCEDENCIA && (
+                      <p className="mt-1.5 font-mono text-[0.73rem] text-[var(--color-faint)]">
+                        {n.fonte}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -226,8 +230,11 @@ export default async function SecaoPage({
           {/* ---------- as entradas ---------- */}
           <div className="mt-10">
             {!estado.ok ? (
+              /* o título vem do dicionário, não do `meta` — `SECOES.titulo`
+                 está cravado em português, e a seção que falhou era a única
+                 tela do códice que ainda exibia isso */
               <EstadoIndisponivel
-                titulo={meta.titulo}
+                titulo={t(`wiki.sec.${secao}.titulo`)}
                 erro={estado.erro}
                 detalhe={estado.detalhe}
               />
@@ -245,7 +252,7 @@ export default async function SecaoPage({
                       </span>
                     )}
                   </h2>
-                  {geradoDe.length > 0 && (
+                  {MOSTRAR_PROCEDENCIA && geradoDe.length > 0 && (
                     <p className="font-mono text-[0.75rem] text-[var(--color-faint)]">
                       {t("wiki.fonte")}: {geradoDe.join(" · ")}
                     </p>

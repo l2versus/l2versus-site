@@ -52,9 +52,16 @@ export default function LoginPage() {
             <label className={labelCls + " mb-0"} htmlFor="password">
               Senha
             </label>
+            {/* -mr compensa o tracking: letter-spacing entra DEPOIS da última
+                letra também, então um texto espaçado e alinhado à direita fica
+                com um vão fantasma de 0.18em na borda. O olho lê isso como
+                "cortado / desalinhado" em relação à borda direita do input —
+                foi exatamente o que o dono apontou. A margem negativa devolve
+                a borda óptica para o lugar. Mesmo motivo do peso 500: caixa
+                alta pequena com tracking largo precisa de mais corpo. */}
             <Link
               href="/recover"
-              className="text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-faint)] transition hover:text-[var(--color-gold)]"
+              className="-mr-[0.18em] text-[0.7rem] font-medium uppercase tracking-[0.18em] text-[var(--color-muted)] transition hover:text-[var(--color-gold-bright)]"
             >
               Esqueci
             </Link>

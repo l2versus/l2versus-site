@@ -14,14 +14,29 @@ export default async function AuthLayout({
     <div className="grid min-h-screen lg:grid-cols-[1.05fr_1fr]">
       {/* ===== LADO DA ARTE (desktop) ===== */}
       <aside className="relative hidden overflow-hidden lg:block">
-        <Image
-          src="/art/auth-hero.png"
-          alt=""
-          fill
-          priority
-          sizes="55vw"
-          className="object-cover object-[center_18%]"
-        />
+        {/* A arte RESPIRA em vez de ficar parada: deriva lenta de 28s (±2,5%)
+            + brasas subindo + um passe de luz na armadura a cada 9s. É
+            animação de verdade sem vídeo — e sem o risco de qualidade que
+            vídeo traz aqui. Existe um /art/knight-anim.webm, mas ele é um
+            SEGUNDO guerreiro: empilhar os dois brigaria com esta arte, e a
+            máscara alpha dele está furada no brilho da espada (sobra o xadrez
+            de transparência do gerador). Ver .auth-arte-* em globals.css. */}
+        <div className="auth-arte-deriva absolute inset-0">
+          <Image
+            src="/art/auth-hero.png"
+            alt=""
+            fill
+            priority
+            sizes="55vw"
+            className="object-cover object-[center_18%]"
+          />
+        </div>
+        <div className="auth-arte-luz" aria-hidden />
+        <div className="auth-brasas" aria-hidden>
+          {Array.from({ length: 14 }).map((_, i) => (
+            <span key={i} style={{ "--i": i } as React.CSSProperties} />
+          ))}
+        </div>
         {/* Escurecimento para dar profundidade e emenda com o formulário */}
         <div className="absolute inset-0 bg-gradient-to-r from-[rgba(7,7,10,0.35)] via-[rgba(7,7,10,0.15)] to-[var(--color-abyss)]" />
         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-abyss)] via-transparent to-[rgba(7,7,10,0.45)]" />

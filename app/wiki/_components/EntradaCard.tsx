@@ -1,13 +1,21 @@
 import Balanca from "./Balanca";
+import { MOSTRAR_PROCEDENCIA } from "@/lib/wiki/procedencia";
 import { romano } from "@/lib/wiki/data";
 import type { Entrada } from "@/lib/wiki/types";
+import { getT } from "@/lib/i18n/server";
 
 /**
  * Uma entrada do códice: cantoneiras em filete, numeral romano na margem,
  * cabeçalho com nome em Cinzel + selos, e a Balança no corpo.
  *
  * O nome do item fica em INGLÊS de propósito — é assim que jogador de L2
- * procura. Ninguém digita "Anel da Rainha das Formigas".
+ * procura. Ninguém digita "Anel da Rainha das Formigas". O numeral romano e
+ * os glifos também não têm o que traduzir.
+ *
+ * A moldura (os avisos, o rótulo de data, o "Grade") sai do `wiki.ui.*`. O
+ * CONTEÚDO — `titulo`, `prosa`, `notaCliente`, `notaFonte`, os pares da
+ * Balança — continua vindo do JSON em português; é o trabalho de tradução
+ * do conteúdo, que é outro.
  */
 
 function seloTier(tier?: string): string {
@@ -17,7 +25,7 @@ function seloTier(tier?: string): string {
   return "selo selo-tier-normal";
 }
 
-export default function EntradaCard({
+export default async function EntradaCard({
   entrada,
   indice,
   ocultarNotaEstadoAtual,
@@ -28,6 +36,7 @@ export default function EntradaCard({
   ocultarNotaEstadoAtual?: boolean;
 }) {
   const e = entrada;
+  const t = await getT();
 
   return (
     <div data-wk-rise className="relative">
@@ -59,7 +68,12 @@ export default function EntradaCard({
           </h3>
           {(e.boss || e.slot || e.subtitulo || e.grade) && (
             <p className="mt-1.5 text-[0.76rem] uppercase tracking-[0.22em] text-[var(--color-faint)]">
-              {[e.boss && `Boss: ${e.boss}`, e.slot, e.subtitulo, e.grade && `Grade ${e.grade}`]
+              {[
+                e.boss && `${t("wiki.ui.boss")}: ${e.boss}`,
+                e.slot,
+                e.subtitulo,
+                e.grade && `${t("wiki.ui.grade")} ${e.grade}`,
+              ]
                 .filter(Boolean)
                 .join("  ·  ")}
             </p>
@@ -69,9 +83,15 @@ export default function EntradaCard({
         <div className="flex flex-wrap items-center gap-2">
           {e.tier && <span className={seloTier(e.tier)}>{e.tier}</span>}
           {e.skillId && (
-            <span className="selo selo-tier-normal">skill {e.skillId}</span>
+            <span className="selo selo-tier-normal">
+              {t("wiki.ui.selo_skill")} {e.skillId}
+            </span>
           )}
-          {e.itemId && <span className="selo selo-tier-normal">item {e.itemId}</span>}
+          {e.itemId && (
+            <span className="selo selo-tier-normal">
+              {t("wiki.ui.selo_item")} {e.itemId}
+            </span>
+          )}
         </div>
       </header>
 
@@ -97,11 +117,15 @@ export default function EntradaCard({
         {e.notaCliente && (
           <p className="nota nota-cliente">
             <span aria-hidden className="text-[var(--color-crimson)]">⚠</span>
+            {/* Três pedaços, e cada um é uma FRASE inteira: o aviso, a nota
+                vinda da fonte, o fecho. Por isso aqui duas chaves não torcem
+                a ordem em RU/PL — o que o `realce` resolve é palavra realçada
+                NO MEIO de uma frase, que não é o caso. */}
             <span>
               <strong className="font-semibold text-[var(--color-parchment)]">
-                A descrição no cliente está desatualizada.
+                {t("wiki.ui.nota_cliente.titulo")}
               </strong>{" "}
-              {e.notaCliente} O que vale em jogo é o valor desta página.
+              {e.notaCliente} {t("wiki.ui.nota_cliente.fecho")}
             </span>
           </p>
         )}
@@ -113,19 +137,21 @@ export default function EntradaCard({
         )}
         {e.regraDuplicata && (
           <p className="text-[0.92rem] leading-relaxed text-[var(--color-faint)]">
-            Com duas iguais equipadas, só o efeito de uma é aplicado.
+            {t("wiki.ui.regra_duplicata")}
           </p>
         )}
       </div>
 
         {/* rodapé de auditoria: arquivo:linha da fonte */}
         <footer className="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-[rgba(42,37,48,0.7)] pt-3">
-          <span className="font-mono text-[0.75rem] tracking-tight text-[var(--color-faint)]">
-            {e.fonte}
-          </span>
+          {MOSTRAR_PROCEDENCIA && (
+            <span className="font-mono text-[0.75rem] tracking-tight text-[var(--color-faint)]">
+              {e.fonte}
+            </span>
+          )}
           {e.alteradoEm && (
             <span className="text-[0.75rem] uppercase tracking-[0.18em] text-[var(--color-faint)]">
-              alterado em {e.alteradoEm}
+              {t("wiki.ui.alterado_em").replace("{d}", e.alteradoEm)}
             </span>
           )}
         </footer>

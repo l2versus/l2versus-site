@@ -31,7 +31,10 @@ export type ActivePage =
  * sozinho pelo pathname. A prop continua aceita para não quebrar as chamadas
  * existentes, mas é ignorada.
  */
-export default async function SiteHeader({ active: _active }: { active?: ActivePage } = {}) {
+export default async function SiteHeader({
+  active: _active,
+  home = false,
+}: { active?: ActivePage; home?: boolean } = {}) {
   const [t, locale, online] = await Promise.all([getT(), getLocale(), onlineCount()]);
   const nf = { pt: "pt-BR", en: "en-GB", ru: "ru-RU", pl: "pl-PL" }[locale] ?? "pt-BR";
 
@@ -47,7 +50,7 @@ export default async function SiteHeader({ active: _active }: { active?: ActiveP
                 {online.toLocaleString(nf)} {t("site.online_suffix")}
               </span>
             </span>
-            <span className="hidden text-[var(--color-line)] sm:inline">|</span>
+            <span aria-hidden className="nav-sep-dia hidden sm:inline-block" />
             <span className="hidden text-[var(--color-muted)] sm:inline">{t("site.region")}</span>
           </div>
           <div className="flex items-center gap-4">
@@ -75,12 +78,46 @@ export default async function SiteHeader({ active: _active }: { active?: ActiveP
 
       <NavPrincipal
         itens={[
-          { href: "/", rotulo: t("site.nav.home") },
-          { href: "/#eventos", rotulo: t("site.nav.events") },
+          /* RECURSOS ocupa a vaga que era do INÍCIO, e isso é uma TROCA, não
+             um acréscimo: o `.nav-lista` do globals.css está medido para OITO
+             rótulos dentro dos 1152px do `max-w-6xl` (gap 0,85rem, tracking
+             0,12em) e o comentário de lá registra que, com o espaçamento
+             largo, o russo estoura em QUALQUER resolução — não existe largura
+             onde nove caibam. Então entrar sem alguém sair não é opção.
+
+             Quem sai é o INÍCIO, e sai porque é o único item da barra que não
+             leva a lugar nenhum novo: a própria marca à esquerda já é o link
+             para "/" (com `aria-label` de início e scroll suave ao topo
+             quando já se está nela). Era um duplicado do logo gastando a vaga
+             mais valiosa da barra enquanto /recursos — a página que explica os
+             sistemas do servidor — só era alcançável clicando num dos ícones
+             da grade da home. Trocar os dois resolve o acesso sem custar
+             nenhum caminho ao jogador.
+
+             Por que não as outras duas saídas que estavam na mesa:
+             agrupar LOJA + RMT MARKET sob "ECONOMIA" enterraria as duas
+             páginas que dão receita atrás de um hover e exigiria submenu no
+             NavPrincipal (estado, teclado, toque); e tirar DOWNLOAD daqui o
+             tiraria também do painel mobile, que é montado desta MESMA lista
+             — no celular ele ficaria sem porta, e celular é a maior fatia.
+
+             Primeira posição de propósito: é a leitura natural da barra —
+             o que o servidor É, o que está acontecendo, onde consultar, quem
+             está ganhando, assistir, comprar, trocar, baixar. */
+          { href: "/recursos", rotulo: t("site.nav.features") },
+          /* na home a âncora rola na própria página; fora dela, volta para a
+             home com o hash — é a ÚNICA diferença legítima entre os dois
+             lugares, e é por ela que a prop `home` existe */
+          home
+            ? { href: "#eventos", rotulo: t("site.nav.events"), ancora: true }
+            : { href: "/#eventos", rotulo: t("site.nav.events") },
           { href: "/wiki", rotulo: t("site.nav.wiki"), destaque: true },
           { href: "/rankings", rotulo: t("site.nav.ranking") },
           { href: "/streams", rotulo: t("site.nav.streams") },
           { href: "/donate", rotulo: t("site.nav.shop") },
+          /* vizinho da Loja de propósito: são os dois lados da economia —
+             VSCOIN vindo do servidor e item vindo de outro jogador */
+          { href: "/marketplace", rotulo: t("site.nav.market") },
           { href: "/download", rotulo: t("site.nav.download") },
         ]}
         entrar={t("site.login")}

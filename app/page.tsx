@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import EventsLive, { NextEventBadge } from "./_home/EventsLive";
+import Forja from "./_home/Forja";
 import ParallaxFx from "./_home/ParallaxFx";
 import SequenciaScrub from "@/components/media/SequenciaScrub";
-import NavPrincipal from "@/components/site/NavPrincipal";
+import VideoFundo from "@/components/media/VideoFundo";
+import SiteHeader from "@/components/site/SiteHeader";
 import ScrollFx from "./_home/ScrollFx";
 import BrandLogo from "@/components/BrandLogo";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { topByPvp, onlineCount } from "@/lib/repos/rankings";
 import { discordStats } from "@/lib/discord";
 import { getT, getLocale } from "@/lib/i18n/server";
+import { realce } from "@/lib/i18n/realce";
 import { DISCORD_URL, INSTAGRAM_URL } from "@/lib/links";
 
 // A landing lê online e rankings do banco em request-time (nunca no build).
@@ -41,13 +43,64 @@ function SectionHead({ title, sub }: { title: string; sub?: string }) {
   );
 }
 
+/* A medalha do pódio era uma bolinha de 24px com cor inline — vocabulário de
+   app esportivo, e o único ornamento da zona que não era losango. Agora é
+   placa lavrada em losango (.zp-medalha), com as três ligas declaradas em CSS;
+   o 1º lugar ainda ganha um segundo losango em volta. Fora do pódio o número
+   fica tabular, na MESMA caixa de 2,15rem, senão a coluna desalinha. */
 function Medal({ rank }: { rank: number }) {
-  const c = rank === 1 ? "#f0d488" : rank === 2 ? "#cfcfcf" : rank === 3 ? "#c9885b" : "";
-  if (rank > 3) return <span className="font-display text-sm text-[var(--color-faint)]">{rank}</span>;
+  if (rank > 3) return <span className="zp-pos">{rank}</span>;
   return (
-    <span className="inline-grid h-6 w-6 place-items-center rounded-full font-display text-xs" style={{ color: "#111", background: c, boxShadow: `0 0 10px ${c}55` }}>
-      {rank}
+    <span className={`zp-medalha zp-medalha-${rank}`}>
+      <b>{rank}</b>
     </span>
+  );
+}
+
+/* ---- Os dois brasões da Economia ----
+   Substituem o losango genérico e o glifo "⇄". São desenhados aqui, no
+   vocabulário do site (losango, filigrana, cunho), e NÃO vêm de biblioteca de
+   ícone: um ícone de linha de 24px lido em 44px vira risco fino e some sobre
+   pergaminho. Herdam `currentColor` da placa, então o hover do cartão escurece
+   o traço junto. `aria-hidden` porque cada um já vem rotulado pelo título do
+   cartão ao lado — um nome acessível aqui só repetiria o rótulo. */
+function BrasaoMoeda() {
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round">
+        <circle cx="24" cy="24" r="17.5" />
+        {/* a serrilha da moeda cunhada */}
+        <circle cx="24" cy="24" r="14" strokeWidth="1.1" strokeDasharray="1 2.6" opacity="0.75" />
+        <path d="M24 13.5 34.5 24 24 34.5 13.5 24Z" strokeWidth="1.2" />
+        <path d="M24 18 30 24 24 30 18 24Z" fill="currentColor" stroke="none" opacity="0.92" />
+        <path d="M24 4.5v3M24 40.5v3M4.5 24h3M40.5 24h3" strokeWidth="1.2" opacity="0.5" />
+        <path
+          d="M10.2 10.2l2.1 2.1M35.7 35.7l2.1 2.1M37.8 10.2l-2.1 2.1M12.3 35.7l-2.1 2.1"
+          strokeWidth="1"
+          opacity="0.3"
+        />
+      </g>
+    </svg>
+  );
+}
+
+/* A balança, e não duas setas: é o mesmo símbolo que o códice usa para "o que
+   vale em jogo", e diz o que o RMT Market faz de diferente — a casa pesa a
+   troca. Seta de troca é ícone de carteira de cripto, não de mercado medieval. */
+function BrasaoBalanca() {
+  return (
+    <svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round">
+        <path d="M24 5.2 27 8.2 24 11.2 21 8.2Z" fill="currentColor" strokeWidth="1" />
+        <path d="M24 11.2V38" />
+        <path d="M16.5 38h15M19 41.6h10" opacity="0.85" />
+        <path d="M9 15.5h30" />
+        <path d="M12 15.5 9.5 23.5M12 15.5l2.5 8M36 15.5l-2.5 8M36 15.5l2.5 8" strokeWidth="1" opacity="0.7" />
+        {/* os pratos: meia-circunferência varrendo para BAIXO (sweep 0) */}
+        <path d="M6.5 23.5a5.5 5.5 0 0 0 11 0Z" strokeWidth="1.2" />
+        <path d="M30.5 23.5a5.5 5.5 0 0 0 11 0Z" strokeWidth="1.2" />
+      </g>
+    </svg>
   );
 }
 
@@ -91,9 +144,11 @@ export default async function Home() {
   ];
 
   const NEWS = [
-    { date: "05 JUL", title: t("site.news.1.title"), excerpt: t("site.news.1.excerpt") },
-    { date: "02 JUL", title: t("site.news.2.title"), excerpt: t("site.news.2.excerpt") },
-    { date: "28 JUN", title: t("site.news.3.title"), excerpt: t("site.news.3.excerpt") },
+    // a data vinha cravada em português ("05 JUL") e aparecia assim em russo e
+    // polonês também; agora vem do dicionário, com a ordem dia/mês de cada idioma
+    { date: t("site.zp.news.1.date"), title: t("site.news.1.title"), excerpt: t("site.news.1.excerpt") },
+    { date: t("site.zp.news.2.date"), title: t("site.news.2.title"), excerpt: t("site.news.2.excerpt") },
+    { date: t("site.zp.news.3.date"), title: t("site.news.3.title"), excerpt: t("site.news.3.excerpt") },
   ];
 
   const ladder = rankRows.map((r, idx) => ({
@@ -110,48 +165,12 @@ export default async function Home() {
       <ScrollFx />
       <ParallaxFx />
       <div className="grain" aria-hidden />
-      {/* ===== HEADER 2 ANDARES (padrão RU: faixa utilitária + nav principal) ===== */}
-      <div className="sticky top-0 z-50 border-b border-[rgba(78,70,55,0.35)]">
-        {/* faixa utilitária */}
-        <div className="border-b border-[rgba(78,70,55,0.25)] bg-[#0a090c]">
-          <div className="mx-auto flex h-9 max-w-6xl items-center justify-between px-4 text-[0.62rem] uppercase tracking-[0.18em] md:px-6">
-            <div className="flex items-center gap-4 text-[var(--color-faint)]">
-              <span className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#5ec26a]" />
-                <span className="text-[#5ec26a] tabular-nums">{online.toLocaleString(nf)} {t("site.online_suffix")}</span>
-              </span>
-              <span className="hidden text-[var(--color-line)] sm:inline">|</span>
-              <span className="hidden text-[var(--color-muted)] sm:inline">{t("site.region")}</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="hidden items-center gap-1.5 text-[var(--color-muted)] transition-colors hover:text-[var(--color-gold-bright)] sm:flex">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3c-.2.4-.5.9-.6 1.3a18.3 18.3 0 0 0-5.5 0C9.1 3.9 8.8 3.4 8.6 3a19.7 19.7 0 0 0-4.9 1.5A20.4 20.4 0 0 0 .2 18.1a19.9 19.9 0 0 0 6 3c.5-.7.9-1.4 1.3-2.1-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 1 .4.7.8 1.5 1.3 2.1a19.8 19.8 0 0 0 6-3A20.3 20.3 0 0 0 20.3 4.4ZM8 15.3c-1.2 0-2.1-1-2.1-2.3S6.8 10.7 8 10.7s2.2 1 2.1 2.3c0 1.2-.9 2.3-2.1 2.3Zm8 0c-1.2 0-2.1-1-2.1-2.3s.9-2.3 2.1-2.3 2.2 1 2.1 2.3c0 1.2-.9 2.3-2.1 2.3Z"/></svg>
-                Discord
-              </a>
-              <Link href="/dashboard" className="text-[var(--color-muted)] transition-colors hover:text-[var(--color-gold-bright)]">{t("site.panel")}</Link>
-              <LanguageSwitcher current={locale} compact />
-            </div>
-          </div>
-        </div>
-        {/* nav principal — client component: drawer mobile, compactação no
-            scroll e filete que segue o cursor. Os rótulos vêm traduzidos
-            daqui (server) para o i18n continuar server-side. */}
-        <NavPrincipal
-          itens={[
-            { href: "/", rotulo: t("site.nav.home") },
-            { href: "#eventos", rotulo: t("site.nav.events"), ancora: true },
-            { href: "/wiki", rotulo: t("site.nav.wiki"), destaque: true },
-            { href: "/rankings", rotulo: t("site.nav.ranking") },
-            { href: "/streams", rotulo: t("site.nav.streams") },
-            { href: "/donate", rotulo: t("site.nav.shop") },
-            { href: "/download", rotulo: t("site.nav.download") },
-          ]}
-          entrar={t("site.login")}
-          jogar={t("site.play_now")}
-          menuRotulo={t("site.nav.menu")}
-          fecharRotulo={t("site.nav.close")}
-        />
-      </div>
+      {/* ===== HEADER — o mesmo SiteHeader do resto do site.
+          A home mantinha uma CÓPIA inline destes dois andares, e toda
+          melhoria no header precisava ser feita duas vezes (na prática era
+          feita numa). A prop `home` troca só o que é legítimo trocar: a
+          âncora de eventos rola na própria página. ===== */}
+      <SiteHeader home />
 
       {/* ===== HERO full-bleed (arte = background, zero moldura, zero espaço morto) ===== */}
       <header className="relative w-full overflow-hidden border-b border-[rgba(78,70,55,0.3)]">
@@ -160,6 +179,17 @@ export default async function Home() {
           {/* cena com sangria vertical: desliza no scroll sem mostrar borda */}
           <div data-plx="10" className="absolute inset-x-0 -inset-y-[16%]">
             <Image src="/art/scene-siege.png" alt="" fill priority sizes="100vw" className="kenburns object-cover object-[center_28%] opacity-45 [filter:saturate(1.3)_contrast(1.08)]" />
+            {/* A CIDADELA VIVA: o sobrevoo em loop palíndromo (15,9s, sem
+                corte) por cima da arte estática. Nasce invisível e só
+                aparece quando está de fato rodando — se o autoplay falhar,
+                celular, Save-Data ou reduced-motion, fica o Ken Burns de
+                sempre: o modo de falha é a página de ontem. Os scrims e o
+                recorte do cavaleiro continuam por cima, intocados. */}
+            <VideoFundo
+              webm="/video/cidadela-loop.webm"
+              mp4="/video/cidadela-loop.mp4"
+              className="absolute inset-0 h-full w-full object-cover object-[center_28%] opacity-60 [filter:saturate(1.25)_contrast(1.06)]"
+            />
           </div>
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_75%_at_74%_60%,rgba(201,162,75,0.20),transparent_62%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_108%,rgba(255,150,60,0.14),transparent_65%)]" />
@@ -319,93 +349,222 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* ===== ZONA PERGAMINHO (corte diagonal, claro × escuro): RANKINGS + ECONOMIA + NOTÍCIAS ===== */}
+      <DiamondRule />
+
+      {/* ===== A FORJA =====
+          Fica AQUI, no meio da página, de propósito: até este ponto tudo o que
+          a home faz é reprodução comandada pela barra de rolagem — parallax,
+          Ken Burns, split-text e brasas em toda seção. Quando tudo anima
+          igual, nada é momento. Esta é a única coisa da página que responde ao
+          jogador em vez de responder ao scroll, e vem logo antes da zona
+          pergaminho, que é densa de dado e pede um respiro antes. */}
+      <section className="mx-auto max-w-6xl px-4 pb-6 md:px-6">
+        <Forja
+          textos={{
+            kicker: t("site.forja.kicker"),
+            titulo: t("site.forja.titulo"),
+            sub: t("site.forja.sub"),
+            arma: t("site.forja.arma"),
+            armadura: t("site.forja.armadura"),
+            normal: t("site.forja.normal"),
+            abencoado: t("site.forja.abencoado"),
+            encantar: t("site.forja.encantar"),
+            chance: t("site.forja.chance"),
+            recorde: t("site.forja.recorde"),
+            tentativas: t("site.forja.tentativas"),
+            quebrou: t("site.forja.quebrou"),
+            zerou: t("site.forja.zerou"),
+            teto: t("site.forja.teto"),
+            recomecar: t("site.forja.recomecar"),
+            nota: t("site.forja.nota"),
+            seguro: t("site.forja.seguro"),
+            escada: t("site.forja.escada"),
+            escadaNota: t("site.forja.escada_nota"),
+          }}
+        />
+      </section>
+
+      {/* ===== ZONA PERGAMINHO (corte diagonal, claro × escuro) =====
+          Composição nova: RANKINGS + NOTÍCIAS lado a lado, e a ECONOMIA numa
+          FAIXA LARGA embaixo. Antes a economia morava na coluna estreita da
+          direita, em dois quadrados de ~250px — e o dono estava certo em dizer
+          que pareciam rodapé: são as DUAS fontes de receita do servidor
+          disputando o espaço que sobrava de um cartão de notícia. Em 250px não
+          caberia hierarquia nenhuma; na faixa cada cartão fica com ~560px, o
+          que é o que permite os quatro degraus (o que é · o que eu ganho ·
+          ação). De quebra a faixa encosta no vídeo do RMT que vem logo
+          depois — o cartão apresenta o mercado, o filme mostra. ===== */}
       <section className="zone-parchment cut-both">
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 md:px-6 lg:grid-cols-[1.5fr_1fr]">
-          <div data-plx="-4" data-cine="left" className="min-w-0">
-            <div className="mb-5 flex items-end justify-between">
-              <h2 className="sec-title">{t("site.rank.title")}</h2>
-              <Link href="/rankings" className="text-[0.7rem] uppercase tracking-[0.18em] text-[var(--color-gold)] hover:text-[var(--color-gold-bright)]">{t("site.rank.viewall")}</Link>
-            </div>
-            <div className="panel overflow-hidden rounded-sm p-0">
-              <div className="flex items-center justify-between gap-3 border-b border-[var(--color-line)] px-4 py-3">
-                <span className="font-display text-sm tracking-[0.2em] text-[var(--color-gold-bright)]">{t("site.rank.top_pvp")}</span>
-                <div className="flex gap-3 text-[0.65rem] uppercase tracking-[0.15em] text-[var(--color-faint)]">
-                  <span className="text-[var(--color-gold-bright)]">{t("site.rank.pvp")}</span><span>{t("site.rank.pk")}</span><span>{t("site.rank.clans")}</span><span className="hidden sm:inline">{t("site.rank.heroes")}</span>
+        <div className="mx-auto max-w-6xl px-4 md:px-6">
+          <div className="grid gap-12 lg:grid-cols-[1.55fr_1fr] lg:gap-14">
+            {/* ---------------- RANKINGS ---------------- */}
+            <div data-plx="-3" data-cine="left" className="min-w-0">
+              <div className="zp-cabeca">
+                <div className="min-w-0">
+                  <span className="zp-olho">{t("site.zp.rank.olho")}</span>
+                  <h2 className="zp-titulo">{t("site.rank.title")}</h2>
+                </div>
+                <Link href="/rankings?tab=pvp" className="zp-tudo">
+                  {t("site.zp.rank.viewall")}
+                </Link>
+              </div>
+              <div className="zp-fio-cabeca" aria-hidden />
+              <p className="zp-sub">{t("site.zp.rank.sub")}</p>
+
+              <div className="filet zp-moldura panel panel-lit mt-6 overflow-hidden">
+                <span className="filet-alt" aria-hidden />
+                <div className="zp-painel-cabeca">
+                  <span className="zp-painel-titulo">{t("site.rank.top_pvp")}</span>
+                  {/* Estes quatro rótulos pareciam filtro e não clicavam em
+                      nada — e "Heróis", que era um deles, não existe como aba
+                      no /rankings. Agora são as três que existem de verdade,
+                      como link, e a atual é placa preenchida. */}
+                  <nav className="zp-abas" aria-label={t("site.rank.title")}>
+                    <span className="zp-aba zp-aba-ativa" aria-current="page">{t("site.rank.pvp")}</span>
+                    <Link href="/rankings?tab=pk" className="zp-aba">{t("site.rank.pk")}</Link>
+                    <Link href="/rankings?tab=clans" className="zp-aba">{t("site.rank.clans")}</Link>
+                    <Link href="/rankings" className="zp-aba">{t("site.zp.tab_level")}</Link>
+                  </nav>
+                </div>
+
+                {/* Celular: lista, nunca rolagem lateral (o corte diagonal da
+                    zona já consome 3,5vw de cada lado). A troca lista↔tabela
+                    é feita no CSS (.zp-mob / .zp-tabela-caixa) e não por
+                    utility, porque as duas precisam do MESMO limiar de 640px. */}
+                <ul className="zp-mob">
+                  {ladder.length === 0 ? (
+                    <li className="zp-vazio">{t("site.rank.empty")}</li>
+                  ) : ladder.map((p) => (
+                    <li key={p.name} className="zp-mob-item">
+                      <Medal rank={p.rank} />
+                      <div className="min-w-0 flex-1">
+                        <div className="zp-mob-nome">{p.name}</div>
+                        <div className="zp-mob-meta">{p.cls} · {t("site.zp.col_lvl")} {p.lvl}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="zp-mob-num">{p.pvp.toLocaleString(nf)}</div>
+                        <div className="zp-mob-rot">{t("site.rank.pvp")}</div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* ≥640px: tabela com cabeçalho de coluna de verdade. Sem
+                    thead, "1.482" e "76" eram dois números sem nome. */}
+                <div className="zp-tabela-caixa">
+                  <table className="zp-tabela">
+                    <thead>
+                      <tr>
+                        <th scope="col" className="zp-th zp-th-pos">{t("site.zp.col_pos")}</th>
+                        <th scope="col" className="zp-th">{t("site.zp.col_player")}</th>
+                        {/* a coluna mostra a RAÇA (r.race), não a classe —
+                            o rótulo antigo mentiria */}
+                        <th scope="col" className="zp-th">{t("site.zp.col_race")}</th>
+                        <th scope="col" className="zp-th zp-col-clan">{t("site.zp.col_clan")}</th>
+                        <th scope="col" className="zp-th zp-th-dir">{t("site.zp.col_lvl")}</th>
+                        <th scope="col" className="zp-th zp-th-dir">{t("site.rank.pvp")}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {ladder.length === 0 ? (
+                        <tr><td colSpan={6} className="zp-vazio">{t("site.rank.empty")}</td></tr>
+                      ) : ladder.map((p) => (
+                        <tr key={p.name} className={`zp-linha${p.rank <= 3 ? " zp-linha-top" : ""}`}>
+                          <td className="zp-cel-pos"><Medal rank={p.rank} /></td>
+                          <td className="zp-cel-nome">{p.name}</td>
+                          <td className="zp-cel-meta">{p.cls}</td>
+                          <td className="zp-cel-meta zp-col-clan">{p.clan}</td>
+                          <td className="zp-cel-lvl">{p.lvl}</td>
+                          <td className="zp-cel-num">{p.pvp.toLocaleString(nf)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
-
-              {/* Mobile: lista em cards (sem scroll lateral) */}
-              <ul className="sm:hidden">
-                {ladder.length === 0 ? (
-                  <li className="border-t border-[var(--color-line)] px-4 py-5 text-center text-xs text-[var(--color-muted)]">{t("site.rank.empty")}</li>
-                ) : ladder.map((p, i) => (
-                  <li key={p.name} className={`flex items-center gap-3 border-t border-[var(--color-line)] px-4 py-3 ${i % 2 ? "bg-[rgba(255,255,255,0.012)]" : ""}`}>
-                    <Medal rank={p.rank} />
-                    <div className="min-w-0 flex-1">
-                      <div className="truncate font-semibold text-[var(--color-gold-bright)]">{p.name}</div>
-                      <div className="mt-0.5 text-[0.7rem] text-[var(--color-muted)]">{p.cls} · Lv {p.lvl}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-display tabular-nums leading-none text-[var(--color-parchment)]">{p.pvp.toLocaleString(nf)}</div>
-                      <div className="mt-1 text-[0.58rem] uppercase tracking-[0.15em] text-[var(--color-faint)]">{t("site.rank.pvp")}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-
-              {/* ≥sm: tabela completa */}
-              <table className="hidden w-full text-left text-sm sm:table">
-                <tbody>
-                  {ladder.length === 0 ? (
-                    <tr><td colSpan={6} className="px-4 py-5 text-center text-xs text-[var(--color-muted)]">{t("site.rank.empty")}</td></tr>
-                  ) : ladder.map((p, i) => (
-                    <tr key={p.name} className={`border-t border-[var(--color-line)] transition-colors hover:bg-[rgba(201,162,75,0.05)] ${i % 2 ? "bg-[rgba(255,255,255,0.012)]" : ""}`}>
-                      <td className="w-12 px-4 py-2.5"><Medal rank={p.rank} /></td>
-                      <td className="px-3 py-2.5 font-semibold text-[var(--color-gold-bright)]">{p.name}</td>
-                      <td className="px-3 py-2.5 text-xs text-[var(--color-muted)]">{p.cls}</td>
-                      <td className="hidden px-3 py-2.5 text-xs text-[var(--color-muted)] md:table-cell">{p.clan}</td>
-                      <td className="px-3 py-2.5 text-center text-xs text-[var(--color-parchment)]">{p.lvl}</td>
-                      <td className="px-4 py-2.5 text-right font-display tabular-nums text-[var(--color-parchment)]">{p.pvp.toLocaleString(nf)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
-          </div>
 
-          <div data-plx="5" data-cine="right" className="flex min-w-0 flex-col gap-8">
-            <div>
-              <h2 className="sec-title mb-5">{t("site.eco.title")}</h2>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                <Link href="/donate" className="panel panel-gold group flex items-center gap-4 rounded-sm px-4 py-4 transition-transform hover:-translate-y-1 sm:flex-col sm:gap-0 sm:py-6 sm:text-center">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-[rgba(201,162,75,0.35)] bg-[rgba(201,162,75,0.08)] text-xl text-[var(--color-gold-bright)] sm:mb-3">◆</span>
-                  <span className="min-w-0">
-                    <span className="block font-display text-sm tracking-[0.12em] text-[var(--color-gold-bright)]">{t("site.eco.shop")}</span>
-                    <span className="mt-1 block text-xs leading-relaxed text-[var(--color-muted)] sm:mt-2">{t("site.eco.shop_desc")}</span>
-                  </span>
-                </Link>
-                <Link href="/login" className="panel group relative flex items-center gap-4 rounded-sm px-4 py-4 transition-transform hover:-translate-y-1 sm:flex-col sm:gap-0 sm:py-6 sm:text-center">
-                  <span className="absolute right-2 top-2 rounded-sm border border-[rgba(201,162,75,0.5)] px-1.5 py-px text-[0.55rem] uppercase tracking-[0.15em] text-[var(--color-gold-bright)]">{t("site.eco.new")}</span>
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-sm border border-[rgba(201,162,75,0.35)] bg-[rgba(201,162,75,0.08)] text-xl text-[var(--color-gold-bright)] sm:mb-3">⇄</span>
-                  <span className="min-w-0">
-                    <span className="block font-display text-sm tracking-[0.12em] text-[var(--color-gold-bright)]">{t("site.eco.rmt")}</span>
-                    <span className="mt-1 block text-xs leading-relaxed text-[var(--color-muted)] sm:mt-2">{t("site.eco.rmt_desc")}</span>
-                  </span>
-                </Link>
+            {/* ---------------- NOTÍCIAS ---------------- */}
+            <div data-plx="3" data-cine="right" className="min-w-0">
+              <div className="zp-cabeca">
+                <div className="min-w-0">
+                  <span className="zp-olho">{t("site.zp.news.olho")}</span>
+                  <h2 className="zp-titulo">{t("site.news.title")}</h2>
+                </div>
               </div>
-            </div>
-            <div>
-              <h2 className="sec-title mb-5">{t("site.news.title")}</h2>
-              <div className="flex flex-col gap-3">
+              <div className="zp-fio-cabeca" aria-hidden />
+              <div className="zp-noticias">
                 {NEWS.map((n) => (
-                  <article key={n.title} className="panel group rounded-sm px-4 py-3 transition-all hover:border-[rgba(201,162,75,0.5)]">
-                    <span className="font-display text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-gold)]">{n.date}</span>
-                    <h3 className="mt-1 text-sm font-semibold text-[var(--color-parchment)]">{n.title}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-[var(--color-muted)]">{n.excerpt}</p>
+                  <article key={n.title} className="panel zp-noticia">
+                    <span className="zp-data">{n.date}</span>
+                    <div className="min-w-0">
+                      <h3 className="zp-noticia-titulo">{n.title}</h3>
+                      <p className="zp-noticia-texto">{n.excerpt}</p>
+                    </div>
                   </article>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <DiamondRule />
+
+          {/* ---------------- ECONOMIA (faixa larga) ---------------- */}
+          <div className="zp-bloco-eco">
+            <div className="zp-cabeca">
+              <div className="min-w-0">
+                <span className="zp-olho">{t("site.zp.eco.olho")}</span>
+                <h2 className="zp-titulo">{t("site.eco.title")}</h2>
+              </div>
+            </div>
+            <div className="zp-fio-cabeca" aria-hidden />
+            <p className="zp-sub zp-sub-largo">{t("site.zp.eco.sub")}</p>
+
+            <div data-cine-group="rise" className="zp-eco">
+              <Link href="/donate" className="filet zp-moldura panel panel-gold panel-lit wk-luz zp-cartao">
+                <span className="filet-alt" aria-hidden />
+                <span className="zp-brasao">
+                  <BrasaoMoeda />
+                </span>
+                <span className="zp-cartao-corpo">
+                  <span className="zp-olho-linha">
+                    <span className="zp-olho">{t("site.zp.shop.olho")}</span>
+                  </span>
+                  <span className="zp-cartao-titulo">{t("site.eco.shop")}</span>
+                  {/* uma chave só, com a marcação de realce dentro dela: em RU
+                      e PL a palavra realçada cai em outro ponto da oração, e
+                      frase picada em pedaços sai torta nos dois */}
+                  <span className="zp-cartao-lead">
+                    {realce(t("site.zp.shop.lead"), { forte: "zp-forte", enfase: "zp-enfase" })}
+                  </span>
+                  <span className="zp-cartao-acao">{t("site.zp.shop.cta")}</span>
+                </span>
+              </Link>
+
+              {/* /marketplace, não /login: o cartão vizinho leva a /donate, que
+                  explica antes de pedir conta. Mandar este direto para o muro
+                  de senha era pedir cadastro para um mercado que o visitante
+                  ainda não sabe o que é. */}
+              <Link href="/marketplace" className="filet zp-moldura panel panel-gold panel-lit wk-luz zp-cartao">
+                <span className="filet-alt" aria-hidden />
+                <span className="zp-brasao">
+                  <BrasaoBalanca />
+                </span>
+                <span className="zp-cartao-corpo">
+                  <span className="zp-olho-linha">
+                    <span className="zp-olho">{t("site.zp.rmt.olho")}</span>
+                    {/* o selo entra NO FLUXO, ao lado do olho: absoluto no
+                        canto ele cavalgava a primeira linha do texto quando o
+                        cartão estreitava */}
+                    <span className="selo zp-selo">{t("site.eco.new")}</span>
+                  </span>
+                  <span className="zp-cartao-titulo">{t("site.eco.rmt")}</span>
+                  <span className="zp-cartao-lead">
+                    {realce(t("site.zp.rmt.lead"), { forte: "zp-forte", enfase: "zp-enfase" })}
+                  </span>
+                  <span className="zp-cartao-acao">{t("site.zp.rmt.cta")}</span>
+                </span>
+              </Link>
             </div>
           </div>
         </div>
@@ -416,7 +575,8 @@ export default async function Home() {
           RMT-externo × RMT-plataforma (texto queimado no próprio vídeo) e
           termina no "Saque Realizado". As legendas ficam no terço de baixo
           para nunca brigar com os cartões do quadro. */}
-      <SequenciaScrub pasta="/seq/mercado" quadros={48} modo="heroi" alturaVh={260}>
+      {/* 96 quadros: reextraídos do clipe original (ver wiki/page.tsx) */}
+      <SequenciaScrub pasta="/seq/mercado" quadros={192} quadrosBase={96} modo="heroi" alturaVh={260}>
         <div className="ss-cap ss-cap-baixo" data-de="0" data-ate="0.3">
           <p className="text-[0.66rem] uppercase tracking-[0.3em] text-[var(--color-gold)]">{t("site.eco.rmt")}</p>
           <p className="mt-3 font-display text-2xl leading-snug text-[var(--color-parchment)] [text-shadow:0_2px_18px_rgba(0,0,0,0.85)] md:text-4xl">{t("site.cine.rmt1")}</p>

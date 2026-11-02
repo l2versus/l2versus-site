@@ -1,0 +1,742 @@
+/* ============================================================
+   /recursos — "A CARTA DOS OITO SISTEMAS"
+   ------------------------------------------------------------
+   POR QUE ESTE ARQUIVO EXISTE, E NÃO MAIS UTILITIES NO JSX
+
+   A versão anterior da página era oito cartões idênticos escritos
+   só com utilities. O defeito que o dono apontou ("sem hierarquia,
+   sem peso") não era de cor nem de espaçamento: era de ESCALA. Todo
+   texto saía entre 0,6rem e 0,9rem, metade em caixa alta com
+   tracking largo, e nada dominava.
+
+   Hierarquia de verdade é um sistema de escalas que se repete em
+   três pesos de cartão (pilar > cartão > linha). Isso é
+   impossível de manter espalhado em `text-[0.95rem]` por elemento —
+   na primeira revisão um dos oito sai diferente. Então a escala
+   mora aqui, nomeada, e o JSX só escolhe o PESO do bloco.
+
+   ESCALA TIPOGRÁFICA (a decisão central)
+     h1 da página ............ clamp(2.1rem → 4.2rem)   display
+     título de ato ........... clamp(1.5rem → 2.15rem)   display
+     nome do pilar ........... clamp(1.6rem → 2.3rem)    display
+     nome do cartão .......... clamp(1.3rem → 1.6rem)    display
+     lead (o benefício) ...... 1.08rem → 1.3rem          pergaminho, 600
+     corpo ................... 1rem → 1.04rem            muted
+     passo (como usar) ....... 0.97rem                   pergaminho
+     rótulo .................. 0.8rem caixa alta         ouro, 700
+   Nada abaixo de 0,8rem na página inteira. Caixa alta só em RÓTULO
+   (kicker, "Como usar", selo) — nunca em frase.
+
+   O QUE DELIBERADAMENTE NÃO SE USA AQUI
+
+   1. `data-wk-rise` / `data-wk-tilt` / `data-plx`. É a armadilha
+      desta base: `@media (scripting: enabled)` em globals.css põe
+      `[data-wk-rise]` em `opacity: 0`, e quem revela é o
+      WikiMotion — que vive APENAS no layout de /wiki. Usar esses
+      atributos fora do wiki entrega uma página em branco com o
+      conteúdo todo presente e invisível. Já aconteceu no wiki por
+      outro motivo (remonte de layout); aqui não há diretor nenhum.
+
+   2. `.wk-luz`. Mesma raiz: o realce especular depende do mouse
+      setar `--luz-x/--luz-y` via JS. Sem o diretor, `:hover` só
+      acende o fallback — um borrão no canto superior esquerdo. O
+      brilho de hover daqui é CSS puro (borda + placa + fio de topo).
+
+   Resultado: a página é 100% server-rendered, sem uma linha de JS.
+   Para uma página de produto que precisa ser indexada e abrir
+   rápido no celular, isso é feature, não limitação.
+   ============================================================ */
+
+/* ============================================================
+   1. ABERTURA
+   ------------------------------------------------------------
+   Obsidiana, não `zone-parchment`. A escolha é deliberada: o
+   pergaminho é o gesto de ABRIR UM LIVRO e pertence ao códice —
+   gastá-lo aqui roubaria a assinatura do wiki. /recursos é cartaz
+   de produto, e cartaz abre no escuro, com a palavra VERSUS
+   gravada em contorno atrás do título (mesma receita da faixa de
+   raças na home). O pergaminho entra UMA vez, no fim, onde vira
+   argumento: o ato IV é a cláusula do contrato.
+   ============================================================ */
+.rc-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(78, 70, 55, 0.35);
+  padding: 4rem 1rem 3.25rem;
+}
+@media (min-width: 768px) {
+  .rc-hero {
+    padding: 5.5rem 1.5rem 4.25rem;
+  }
+}
+
+/* halo de topo: o mesmo radial da home, para a página não parecer
+   de outro site quando o jogador chega pelo tile */
+.rc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 62% 78% at 50% -14%,
+    rgba(201, 162, 75, 0.17),
+    transparent 62%
+  );
+}
+
+/* A palavra gravada atrás do título. Não é i18n de propósito:
+   "VERSUS" é nome próprio e, como tem largura fixa, nenhuma
+   tradução longa (RU) estoura o recorte. */
+.rc-hero-ghost {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -46%);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 23vw;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #c9a24b;
+  opacity: 0.1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.rc-hero-corpo {
+  position: relative;
+  z-index: 1;
+  max-width: 54rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* rótulo: caixa alta é legítima aqui, mas com CORPO (0.82rem) e
+   peso 700 — era 0.6rem/400 antes, a receita do "sem peso" */
+.rc-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.rc-dia {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  transform: rotate(45deg);
+  border: 1px solid var(--color-gold);
+  background: rgba(201, 162, 75, 0.18);
+}
+
+.rc-h1 {
+  margin-top: 1.1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.1rem, 7.4vw, 4.2rem);
+  line-height: 1.04;
+  letter-spacing: 0.015em;
+  color: var(--color-gold-bright);
+  text-shadow: 0 0 34px rgba(201, 162, 75, 0.3), 0 0 5px rgba(240, 212, 136, 0.35);
+}
+
+.rc-regua {
+  margin: 1.6rem auto 0;
+  max-width: 17rem;
+}
+
+/* a tese. É O TEXTO que estava faltando peso: sobe para 1,3rem no
+   desktop e usa pergaminho (não `muted`), porque é argumento e não
+   legenda. 58ch mantém a linha no ponto de leitura confortável. */
+.rc-tese {
+  margin: 1.6rem auto 0;
+  max-width: 58ch;
+  font-size: clamp(1.08rem, 2.2vw, 1.3rem);
+  line-height: 1.62;
+  color: var(--color-muted);
+}
+.rc-forte {
+  color: var(--color-gold-bright);
+  font-weight: 700;
+}
+
+/* ============================================================
+   2. SUMÁRIO
+   ------------------------------------------------------------
+   A fileira de 8 ícones minúsculos do rodapé antigo era índice
+   fingindo ser decoração: 0,6rem, sem rótulo visível, sem agrupar.
+   Aqui o índice ASSUME a hierarquia da página — quatro grupos, na
+   ordem dos atos, cada um com seu numeral romano. Lido de cima, o
+   sumário já conta que os sistemas não valem todos o mesmo.
+   ============================================================ */
+.rc-sumario {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 0.5rem;
+}
+@media (min-width: 768px) {
+  .rc-sumario {
+    padding: 3rem 1.5rem 0.5rem;
+  }
+}
+.rc-sum-rot {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+.rc-sum-grade {
+  display: grid;
+  gap: 1.5rem 2rem;
+  margin-top: 1.1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(138, 107, 44, 0.3);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) {
+  .rc-sum-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .rc-sum-grade {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.rc-sum-ato {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+/* mesma correção do selo: a `.marginalia` do códice vem em 0,68rem (10,9px
+   medidos). No wiki ela é nota de margem; aqui é o marcador do ato dentro do
+   índice, e precisa ser lida junto com o rótulo que vem ao lado. */
+.rc-sum-ato .marginalia {
+  font-size: 0.84rem;
+}
+.rc-sum-lista {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+/* 0.97rem num índice: o alvo de toque fica confortável no celular e
+   o nome do sistema para de competir em tamanho com o rótulo do
+   grupo, que é o que acontecia quando tudo tinha 0,6rem */
+.rc-sum-link {
+  display: inline-block;
+  font-size: 0.97rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.rc-sum-link:hover {
+  color: var(--color-gold-bright);
+  border-bottom-color: rgba(201, 162, 75, 0.5);
+}
+.rc-sum-link:focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   3. CABEÇALHO DE ATO
+   ------------------------------------------------------------
+   O numeral romano vem da marginália do códice (`.marginalia`) e
+   faz o trabalho que oito títulos iguais não faziam: dizer em que
+   ponto da argumentação o jogador está.
+   ============================================================ */
+.rc-ato {
+  max-width: 76rem;
+  margin: 0 auto;
+  padding: 3.5rem 1rem 0;
+}
+@media (min-width: 768px) {
+  .rc-ato {
+    padding: 4.5rem 1.5rem 0;
+  }
+}
+.rc-ato-cab {
+  max-width: 46rem;
+  margin-bottom: 2rem;
+}
+.rc-ato-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.86rem;
+  letter-spacing: 0.3em;
+}
+.rc-ato-num::after {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold-deep), transparent);
+}
+.rc-ato-tit {
+  margin-top: 0.65rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.6vw, 2.15rem);
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  color: var(--color-parchment);
+}
+.rc-ato-sub {
+  margin-top: 0.7rem;
+  max-width: 52ch;
+  font-size: clamp(1rem, 1.9vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-faint);
+}
+
+/* ============================================================
+   4. A PLACA DO ÍCONE
+   ------------------------------------------------------------
+   Os glifos unicode num quadrado cinza foram substituídos por SVG
+   desenhado (ver page.tsx). A placa é a moldura gravada: duas
+   cantoneiras de 1px no motivo do `.filet`, luz vinda de cima e
+   `currentColor` — assim o ouro muda no hover do cartão inteiro,
+   sem um seletor por ícone.
+   ============================================================ */
+.rc-placa {
+  position: relative;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  color: var(--color-gold);
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  background:
+    radial-gradient(120% 130% at 50% 0%, rgba(201, 162, 75, 0.15), transparent 72%),
+    linear-gradient(180deg, rgba(38, 31, 20, 0.9), rgba(12, 11, 14, 0.92));
+  transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+}
+.rc-placa::before,
+.rc-placa::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-color: rgba(240, 212, 136, 0.6);
+}
+.rc-placa::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.rc-placa::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+.rc-svg {
+  width: 58%;
+  height: 58%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+/* as peças cheias do desenho (losangos, finiais) */
+.rc-svg .sol {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* placa grande: o traço FINA junto com a escala, senão o desenho
+   engorda e perde o ar de gravura */
+.rc-placa-g {
+  width: 6rem;
+  height: 6rem;
+}
+.rc-placa-g .rc-svg {
+  stroke-width: 1.05;
+}
+@media (min-width: 900px) {
+  .rc-placa-g {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+  .rc-placa-g .rc-svg {
+    stroke-width: 0.95;
+  }
+}
+
+/* ============================================================
+   5. TIPOGRAFIA DO SISTEMA (3 pesos, mesma anatomia)
+   ============================================================ */
+.rc-nome {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: var(--color-gold-bright);
+}
+.rc-nome-g {
+  font-size: clamp(1.6rem, 4.6vw, 2.3rem);
+  letter-spacing: 0.02em;
+}
+
+/* O LEAD é a correção mais importante da página: antes o jogador
+   lia uma descrição técnica e tinha que deduzir o benefício. Agora
+   o benefício vem primeiro, em corpo maior e cor de pergaminho, e
+   a descrição vira o segundo plano. */
+.rc-lead {
+  margin-top: 0.7rem;
+  font-size: clamp(1.08rem, 2.1vw, 1.18rem);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-parchment);
+}
+.rc-lead-g {
+  font-size: clamp(1.15rem, 2.6vw, 1.3rem);
+}
+.rc-corpo-txt {
+  margin-top: 0.75rem;
+  max-width: 62ch;
+  font-size: 1rem;
+  line-height: 1.68;
+  color: var(--color-muted);
+}
+@media (min-width: 768px) {
+  .rc-corpo-txt {
+    font-size: 1.04rem;
+  }
+}
+
+/* O "COMO USAR" sai do rodapé do cartão e vira uma FAIXA: fundo
+   próprio, fio de ouro à esquerda. É a única informação acionável
+   do cartão — tinha que ser a coisa mais fácil de achar, e antes
+   era a linha de menor contraste. */
+.rc-passo {
+  margin-top: 1.25rem;
+  padding: 0.75rem 0.9rem 0.8rem;
+  border-left: 2px solid rgba(201, 162, 75, 0.55);
+  background: rgba(201, 162, 75, 0.05);
+}
+.rc-passo-rot {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+.rc-passo-txt {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--color-parchment);
+}
+
+/* ============================================================
+   6. OS TRÊS PESOS DE BLOCO
+   ------------------------------------------------------------
+   A grade uniforme de 8 era o problema. Aqui cada ato tem um RITMO
+   diferente: o pilar (largura cheia, placa gigante), o par (duas
+   colunas), a linha editorial (alternando o lado da placa). Ninguém
+   confunde um Auto-Farm com um cerco olhando de longe.
+   ============================================================ */
+
+/* --- 6a. PILAR: o cartão herói --- */
+.rc-pilar {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.6rem;
+  grid-template-columns: 1fr;
+  transition: border-color 0.25s ease, box-shadow 0.3s ease;
+}
+@media (min-width: 900px) {
+  .rc-pilar {
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    padding: 2.25rem 2.5rem;
+    align-items: start;
+  }
+}
+.rc-pilar:hover {
+  border-color: rgba(240, 212, 136, 0.55);
+  box-shadow: inset 0 1px 0 rgba(240, 212, 136, 0.16),
+    0 28px 60px -34px rgba(201, 162, 75, 0.5);
+}
+.rc-pilar:hover .rc-placa,
+.rc-cartao:hover .rc-placa,
+.rc-linha:hover .rc-placa {
+  color: var(--color-gold-bright);
+  border-color: rgba(240, 212, 136, 0.5);
+  box-shadow: 0 0 28px -10px rgba(201, 162, 75, 0.55);
+}
+/* coluna da esquerda do pilar: placa + selo, empilhados e centrados
+   no mobile, alinhados à esquerda quando há coluna própria */
+.rc-pilar-sel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 900px) {
+  .rc-pilar-sel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+}
+.rc-pilar-txt {
+  min-width: 0;
+}
+
+/* MEDIDO NA PÁGINA, não suposto: o `.selo` herdado do códice nasce com
+   0.6rem — 9,6px na régua real. Num bloco cujo corpo está em 16,6px isso é
+   literalmente o defeito que esta reescrita veio corrigir, e caixa alta com
+   tracking de 0,2em em 9,6px é o pior caso de legibilidade que existe. O selo
+   lá no wiki convive com fichas densas e pode ser pequeno; aqui ele fica ao
+   lado de um título de 35px e precisa de corpo. Só nesta página. */
+.rc-pilar .selo,
+.rc-carta .selo {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  padding: 0.3rem 0.7rem;
+}
+
+/* --- 6b. PAR: dois cartões de peso médio --- */
+.rc-par {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 880px) {
+  .rc-par {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+.rc-cartao {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  transition: border-color 0.25s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+@media (min-width: 768px) {
+  .rc-cartao {
+    padding: 1.75rem;
+  }
+}
+.rc-cartao:hover {
+  border-color: rgba(201, 162, 75, 0.5);
+  box-shadow: 0 22px 48px -30px rgba(201, 162, 75, 0.4);
+}
+.rc-cartao-cab {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+/* o `margin-top:auto` encosta a faixa "Como usar" na base: com dois
+   cartões lado a lado e textos de tamanhos diferentes, sem isso as
+   duas faixas ficam em alturas distintas e o par parece torto */
+.rc-cartao .rc-passo {
+  margin-top: auto;
+}
+.rc-cartao .rc-corpo-txt {
+  margin-bottom: 1.25rem;
+}
+
+/* --- 6c. LINHA: editorial alternado --- */
+.rc-linha {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  grid-template-columns: 1fr;
+  transition: border-color 0.25s ease, box-shadow 0.3s ease;
+}
+.rc-linha + .rc-linha {
+  margin-top: 1.25rem;
+}
+@media (min-width: 760px) {
+  .rc-linha {
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    padding: 2rem 2.25rem;
+    align-items: start;
+  }
+  /* o espelho: a placa troca de lado na segunda linha. É o que
+     tira o ar de lista e dá ritmo de página de revista. */
+  .rc-linha-inv {
+    grid-template-columns: 1fr auto;
+  }
+  .rc-linha-inv > .rc-placa {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .rc-linha-inv > .rc-linha-txt {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+.rc-linha:hover {
+  border-color: rgba(201, 162, 75, 0.5);
+  box-shadow: 0 22px 48px -30px rgba(201, 162, 75, 0.4);
+}
+.rc-linha-txt {
+  min-width: 0;
+}
+
+/* ============================================================
+   7. ATO IV — A CLÁUSULA (pergaminho)
+   ------------------------------------------------------------
+   Aqui o pergaminho é argumento, não enfeite: depois de três atos
+   vendendo conforto, a página vira a página e assina a regra. A
+   virada tonal faz o Anti-Bot parecer o que ele é — compromisso,
+   não feature. Os tokens de cor são remapeados pela própria
+   `.zone-parchment` em globals.css; nada de cor aqui dentro.
+   ============================================================ */
+.rc-carta {
+  margin-top: 4.5rem;
+}
+.rc-carta-corpo {
+  position: relative;
+  z-index: 1;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 860px) {
+  .rc-carta-corpo {
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    padding: 0 1.5rem;
+    align-items: start;
+  }
+}
+/* a placa na zona clara é tinta sobre papel: o fundo escuro da
+   placa escura ficaria um buraco no pergaminho */
+.rc-carta .rc-placa {
+  border-color: rgba(87, 68, 25, 0.45);
+  background:
+    radial-gradient(120% 130% at 50% 0%, rgba(255, 255, 255, 0.6), transparent 70%),
+    linear-gradient(180deg, #faf5e8, #ece2c8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+.rc-carta .rc-placa::before,
+.rc-carta .rc-placa::after {
+  border-color: rgba(87, 68, 25, 0.55);
+}
+.rc-carta .rc-passo {
+  border-left-color: rgba(87, 68, 25, 0.5);
+  background: rgba(87, 68, 25, 0.07);
+}
+/* o selo herdado do códice usa rgba de ouro claro na borda, que
+   sobre papel vira quase invisível — só a borda precisa descer */
+.rc-carta .selo {
+  border-color: rgba(87, 68, 25, 0.55);
+  background: rgba(87, 68, 25, 0.08);
+}
+/* folga entre o cabeçalho do ato e o nome do sistema: no ato IV os dois
+   convivem no mesmo bloco, e sem isso "Anti-Bot" encosta no subtítulo */
+.rc-carta-nome {
+  margin-top: 1.75rem;
+}
+.rc-carta-selo {
+  margin-top: 1.25rem;
+  display: flex;
+}
+
+/* ============================================================
+   8. FECHAMENTO
+   ============================================================ */
+.rc-cta {
+  border-top: 1px solid var(--color-line);
+  background: rgba(201, 162, 75, 0.04);
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .rc-cta {
+    padding: 4.5rem 1.5rem;
+  }
+}
+.rc-cta-tit {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  line-height: 1.16;
+  letter-spacing: 0.02em;
+  color: var(--color-parchment);
+}
+.rc-cta-sub {
+  margin: 0.9rem auto 0;
+  max-width: 44ch;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+.rc-cta-botoes {
+  margin-top: 1.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+}
+.rc-btn {
+  padding: 0.95rem 2rem;
+  font-size: 0.9rem;
+}
+.rc-cta-link {
+  font-size: 0.97rem;
+  color: var(--color-gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201, 162, 75, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.rc-cta-link:hover {
+  color: var(--color-gold-bright);
+  border-bottom-color: var(--color-gold-bright);
+}
+
+/* foco visível em TODO alvo clicável da página — o `outline: none`
+   do reset de alguns navegadores deixaria a navegação por teclado
+   sem pista nenhuma no obsidiana */
+.rc-cta-link:focus-visible,
+.rc-btn:focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   9. MOVIMENTO REDUZIDO
+   Os hovers daqui são transições de cor/sombra, inofensivas; mas a
+   página respeita a preferência por simetria com o resto do site.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .rc-placa,
+  .rc-pilar,
+  .rc-cartao,
+  .rc-linha,
+  .rc-sum-link,
+  .rc-cta-link {
+    transition: none;
+  }
+}

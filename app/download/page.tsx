@@ -152,7 +152,7 @@ export default async function DownloadPage() {
       </section>
 
       {/* GUIA DE INSTALAÇÃO */}
-      <section id="guia" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24">
+      <section id="guia" className="mx-auto max-w-6xl px-6 py-20">
         <div className="diamond-rule mb-4">
           <span className="dia" />
         </div>

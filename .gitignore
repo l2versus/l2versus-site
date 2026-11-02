@@ -12,3 +12,19 @@ npm-debug.log*
 next-env.d.ts
 .playwright-mcp
 tsconfig.tsbuildinfo
+
+.vercel
+
+# credenciais do banco DEMO da nuvem (vitrine) — nunca versionar
+.env.demo
+
+# upscaler portatil (45 MB, baixado sob demanda — ver scripts/tratar-sequencia.mjs)
+scripts/.upscaler/
+public/seq/.*-cru/
+public/seq/.*-tmp/
+
+# Intermediários da tradução do códice (gerados por
+# scripts/fatiar-padroes-wiki.mjs e consumidos pelo merge). O que vale é o
+# dicionário fundido em content/wiki/i18n/<locale>.json, que É versionado.
+content/wiki/i18n/_lotes/
+content/wiki/i18n/_padroes.json

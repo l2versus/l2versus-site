@@ -103,7 +103,7 @@ export default async function DonatePage() {
       </section>
 
       {/* PACOTES VSCOIN */}
-      <section id="pacotes" className="mx-auto max-w-6xl px-6 py-20 scroll-mt-24">
+      <section id="pacotes" className="mx-auto max-w-6xl px-6 py-20">
         <div className="diamond-rule mb-4">
           <span className="dia" />
         </div>
@@ -230,7 +230,7 @@ export default async function DonatePage() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="mx-auto max-w-3xl px-6 py-16 scroll-mt-24">
+      <section id="faq" className="mx-auto max-w-3xl px-6 py-16">
         <div className="diamond-rule mb-4">
           <span className="dia" />
         </div>

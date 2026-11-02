@@ -1,14 +1,20 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { carregarFeed, dataPorExtenso, type MudancaNoFeed } from "@/lib/wiki/mudancas";
+import { carregarFeed, type MudancaNoFeed } from "@/lib/wiki/mudancas";
 import { carregarSecoes } from "@/lib/wiki/data";
+import { SECOES } from "@/lib/wiki/types";
+import { getT, getLocale } from "@/lib/i18n/server";
+import { realce } from "@/lib/i18n/realce";
+import type { Locale } from "@/lib/i18n/dict";
 import CodexNav from "../_components/CodexNav";
 
-export const metadata: Metadata = {
-  title: "O que mudou — linha do tempo | Wiki L2 Versus",
-  description:
-    "Todas as alterações do L2 Versus em relação ao High Five original, em ordem cronológica: jóias, SA de armas, masterwork, conjuntos, augments e armas de herói.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getT();
+  return {
+    title: t("wiki.mud.meta.titulo"),
+    description: t("wiki.mud.meta.descricao"),
+  };
+}
 
 /* O feed existe para ser ESCANEADO — o jogador percorre dezenas de linhas
    procurando o que lhe interessa. Alguns valores da fonte são parágrafos
@@ -19,7 +25,50 @@ export const metadata: Metadata = {
 const resumir = (texto: string, limite = 96) =>
   texto.length <= limite ? texto : `${texto.slice(0, limite).trimEnd()}…`;
 
-function Linha({ m }: { m: MudancaNoFeed }) {
+const BCP47: Record<Locale, string> = {
+  pt: "pt-BR",
+  en: "en-GB",
+  ru: "ru-RU",
+  pl: "pl-PL",
+};
+
+/**
+ * "2026-08-18" → "18 de agosto de 2026" / "18 August 2026" / "18 августа
+ * 2026 г." / "18 sierpnia 2026".
+ *
+ * Vem do `Intl`, não de uma tabela de meses no dicionário: além dos nomes, o
+ * runtime acerta a ORDEM (em inglês o dia e o mês trocam de lugar) e os
+ * sufixos (o "г." russo). Doze meses × quatro idiomas escritos à mão seriam
+ * 48 strings para reproduzir pior o que a plataforma já faz.
+ *
+ * A data é montada e formatada em UTC de propósito. `new Date("2026-08-18")`
+ * é meia-noite UTC: formatado em fuso negativo (o nosso), o dia RECUA para 17.
+ */
+function dataNoLocale(iso: string, locale: Locale): string {
+  const [a, m, d] = iso.split("-").map(Number);
+  if (!a || !m || !d) return iso;
+  return new Intl.DateTimeFormat(BCP47[locale], {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(a, m - 1, d)));
+}
+
+/* `carregarFeed` devolve o título da seção em português (vem de SECOES, que é
+   metadado de código, não conteúdo traduzido). O rótulo que o leitor vê sai
+   do dicionário — a mesma chave `wiki.sec.<slug>.titulo` que o rail e as
+   páginas de seção já usam. Daí o mapa: para `familiasIndisponiveis`, que
+   carrega só o título, é por ele que se chega ao slug. */
+const SLUG_POR_TITULO = new Map(SECOES.map((s) => [s.titulo, s.slug]));
+
+function Linha({
+  m,
+  t,
+}: {
+  m: MudancaNoFeed;
+  t: (chave: string) => string;
+}) {
   const e = m.entrada;
   /* o primeiro efeito do lado AGORA é o resumo mais honesto que existe da
      mudança — é o valor que passou a valer em jogo */
@@ -39,23 +88,33 @@ function Linha({ m }: { m: MudancaNoFeed }) {
             </span>
           )}
         </span>
-        <span className="mud-secao">{m.secaoTitulo}</span>
+        <span className="mud-secao">{t(`wiki.sec.${m.secaoSlug}.titulo`)}</span>
       </Link>
     </li>
   );
 }
 
 export default async function MudancasPage() {
-  const [feed, secoes] = await Promise.all([carregarFeed(), carregarSecoes()]);
+  const [feed, secoes, t, locale] = await Promise.all([
+    carregarFeed(),
+    carregarSecoes(),
+    getT(),
+    getLocale(),
+  ]);
+
+  const indisponiveis = feed.familiasIndisponiveis.map((titulo) => {
+    const slug = SLUG_POR_TITULO.get(titulo);
+    return slug ? t(`wiki.sec.${slug}.titulo`) : titulo;
+  });
 
   return (
     <main className="mx-auto max-w-6xl px-6 py-12 md:py-16">
       <nav className="mb-7 flex items-center gap-2 text-[0.76rem] uppercase tracking-[0.22em] text-[var(--color-faint)]">
         <Link href="/wiki" className="transition-colors hover:text-[var(--color-gold-bright)]">
-          Códice
+          {t("wiki.migalha.codice")}
         </Link>
         <span aria-hidden>/</span>
-        <span className="text-[var(--color-muted)]">O que mudou</span>
+        <span className="text-[var(--color-muted)]">{t("wiki.porta.mudancas")}</span>
       </nav>
 
       <div className="grid min-w-0 gap-10 lg:grid-cols-[232px_1fr] lg:gap-12">
@@ -69,42 +128,39 @@ export default async function MudancasPage() {
               <span aria-hidden className="font-display text-base leading-none">
                 ⟳
               </span>
-              A linha do tempo
+              {t("wiki.mud.linha_do_tempo")}
             </p>
             <h1 className="mt-3 font-display text-[1.75rem] leading-tight tracking-[0.03em] text-[var(--color-parchment)] md:text-[2.4rem]">
-              O que mudou, e quando
+              {t("wiki.mud.titulo")}
             </h1>
             <p className="prosa-col mt-3 text-[0.98rem] leading-relaxed text-[var(--color-muted)]">
-              As seções do códice respondem <em>como funciona</em>. Esta página
-              responde <em>o que mudou</em> — em ordem, da alteração mais recente
-              para a mais antiga. Se você já joga aqui, é por ela que dá para
-              saber o que vale reler.
+              {realce(t("wiki.mud.intro"))}
             </p>
           </header>
 
           <div className="mud-resumo mt-7">
             <span>
-              <b>{feed.totalDatadas}</b> alterações datadas
+              <b>{feed.totalDatadas}</b> {t("wiki.mud.datadas")}
             </span>
             <span>
-              <b>{feed.marcos.length}</b> dias de trabalho
+              <b>{feed.marcos.length}</b> {t("wiki.mud.dias")}
             </span>
             <span>
-              <b>{feed.totalSemData}</b> sem data na fonte
+              <b>{feed.totalSemData}</b> {t("wiki.mud.sem_data_conta")}
             </span>
           </div>
 
-          {feed.familiasIndisponiveis.length > 0 && (
+          {indisponiveis.length > 0 && (
             <p className="nota nota-fonte mt-5">
               <span aria-hidden className="text-[var(--color-gold)]">◆</span>
               <span>
-                Fora desta contagem:{" "}
-                <strong className="text-[var(--color-parchment)]">
-                  {feed.familiasIndisponiveis.join(", ")}
-                </strong>{" "}
-                — {feed.familiasIndisponiveis.length === 1 ? "essa seção ainda não foi" : "essas seções ainda não foram"}{" "}
-                extraída{feed.familiasIndisponiveis.length === 1 ? "" : "s"} da fonte. A
-                linha do tempo cresce quando {feed.familiasIndisponiveis.length === 1 ? "ela entrar" : "elas entrarem"}.
+                {realce(
+                  t(
+                    indisponiveis.length === 1
+                      ? "wiki.mud.fora_contagem_1"
+                      : "wiki.mud.fora_contagem_n"
+                  ).replace("{lista}", indisponiveis.join(", "))
+                )}
               </span>
             </p>
           )}
@@ -115,16 +171,20 @@ export default async function MudancasPage() {
               <section key={marco.data} className="mud-marco">
                 <header className="mud-marco-cabeca">
                   <span className="mud-marco-dia" aria-hidden />
-                  <h2 className="mud-marco-data">{dataPorExtenso(marco.data)}</h2>
+                  <h2 className="mud-marco-data">{dataNoLocale(marco.data, locale)}</h2>
                   <span className="mud-marco-linha" aria-hidden />
                   <span className="mud-marco-total">
                     {marco.itens.length}{" "}
-                    {marco.itens.length === 1 ? "alteração" : "alterações"}
+                    {t(
+                      marco.itens.length === 1
+                        ? "wiki.mud.alteracao"
+                        : "wiki.mud.alteracoes"
+                    )}
                   </span>
                 </header>
                 <ul className="mud-lista">
                   {marco.itens.map((m) => (
-                    <Linha key={`${m.secaoSlug}-${m.entrada.id}`} m={m} />
+                    <Linha key={`${m.secaoSlug}-${m.entrada.id}`} m={m} t={t} />
                   ))}
                 </ul>
               </section>
@@ -137,12 +197,11 @@ export default async function MudancasPage() {
               <div className="diamond-rule mb-5">
                 <span className="dia" />
               </div>
-              <h2 className="sec-title">Sem data na fonte</h2>
+              <h2 className="sec-title">{t("wiki.mud.sem_data_titulo")}</h2>
               <p className="prosa-col mt-3 text-[0.92rem] leading-relaxed text-[var(--color-muted)]">
-                Estas {feed.semData.length} alterações estão documentadas e valem em
-                jogo, mas o arquivo-fonte não registrou <em>quando</em> foram feitas.
-                Ficam aqui em vez de receberem uma data inventada — e sobem para a
-                linha do tempo no dia em que a fonte disser a data.
+                {realce(
+                  t("wiki.mud.sem_data_texto").replace("{n}", String(feed.semData.length))
+                )}
               </p>
               <details className="filet panel panel-lit group mt-5">
                 <span className="filet-alt" aria-hidden />
@@ -152,12 +211,12 @@ export default async function MudancasPage() {
                     className="inline-block h-1.5 w-1.5 rotate-45 border border-[var(--color-gold)] bg-[rgba(201,162,75,0.2)] transition-transform group-open:rotate-[225deg]"
                   />
                   <span className="text-[0.76rem] font-bold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-                    Ver as {feed.semData.length}
+                    {t("wiki.mud.ver_as").replace("{n}", String(feed.semData.length))}
                   </span>
                 </summary>
                 <ul className="mud-lista px-5 pb-5">
                   {feed.semData.map((m) => (
-                    <Linha key={`${m.secaoSlug}-${m.entrada.id}`} m={m} />
+                    <Linha key={`${m.secaoSlug}-${m.entrada.id}`} m={m} t={t} />
                   ))}
                 </ul>
               </details>

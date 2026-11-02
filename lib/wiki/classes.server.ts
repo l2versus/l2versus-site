@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { ArvoreSchema, type ArvoreCarregada } from "./classes";
+import { ArvoreSchema, type ArvoreCarregada, type Classe } from "./classes";
 
 /**
  * O CARREGADOR — vive separado de `classes.ts` porque aquele arquivo é

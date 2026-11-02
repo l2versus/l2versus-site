@@ -2,9 +2,23 @@
 
 import { useMemo, useState, useCallback } from "react";
 import Link from "next/link";
-import { ARQUETIPOS, RACAS, TIERS } from "@/lib/wiki/classes-ui";
+import { ARQUETIPOS, RACAS } from "@/lib/wiki/classes-ui";
 import type { Classe, Divergencia } from "@/lib/wiki/classes";
+import { makeT } from "@/lib/i18n/client";
+import type { Locale } from "@/lib/i18n/dict";
 import GlifoArquetipo from "./GlifoArquetipo";
+
+/* Os quatro degraus da árvore. Só o degrau zero tem chave própria: 1ª, 2ª e 3ª
+   profissão já existiam no dicionário base (`wiki.cls.*`), usadas na ficha de
+   cada classe, e repetir o mesmo rótulo com outro nome é como uma tradução
+   fica certa num lugar e velha no outro. `TIERS` (a lista em português cravada
+   em classes-ui.ts) não é mais lida aqui. */
+const CHAVE_TIER = [
+  "wiki.arv.tier.0",
+  "wiki.cls.profissao_1",
+  "wiki.cls.profissao_2",
+  "wiki.cls.profissao_3",
+];
 
 /**
  * A ÁRVORE DE CLASSES.
@@ -33,12 +47,19 @@ export default function ArvoreClasses({
   classes,
   divergencias,
   resumoSkills,
+  locale,
 }: {
   classes: Classe[];
   divergencias: Divergencia[];
   /** contagens por classId, do extrator de skillTrees; vazio se o arquivo faltar */
   resumoSkills?: Record<number, { skillsUnicas: number; spTotal: number; nivelMinimo: number }>;
+  /** componente cliente não lê cookie: o idioma desce do server component */
+  locale: Locale;
 }) {
+  const t = makeT(locale);
+  const tier = (n: number) => t(CHAVE_TIER[n] ?? CHAVE_TIER[0]);
+  const nomeArquetipo = (chave: string) => t(`wiki.arv.arq.${chave}`);
+
   const [raca, setRaca] = useState<string>("HUMAN");
   const [funcao, setFuncao] = useState<string | null>(null);
   const [aceso, setAceso] = useState<number | null>(null);
@@ -111,7 +132,7 @@ export default function ArvoreClasses({
               aria-current={ativa ? "true" : undefined}
               className={`aba-raca ${ativa ? "aba-raca-ativa" : ""}`}
             >
-              {r.nome}
+              {t(`wiki.arv.raca.${r.chave}`)}
               <span className="ml-2 text-[0.92rem] opacity-60">{n}</span>
             </button>
           );
@@ -121,7 +142,7 @@ export default function ArvoreClasses({
       {/* ---------- legenda / filtro por função ---------- */}
       <div className="mt-5 flex flex-wrap items-center gap-2">
         <span className="mr-1 text-[0.68rem] uppercase tracking-[0.24em] text-[var(--color-faint)]">
-          Função
+          {t("wiki.cls.funcao")}
         </span>
         {ARQUETIPOS.map((a) => {
           const ativo = funcao === a.chave;
@@ -135,7 +156,7 @@ export default function ArvoreClasses({
               style={{ ["--c" as string]: a.cor }}
             >
               <GlifoArquetipo arquetipo={a.chave} className="h-3.5 w-3.5" />
-              {a.nome}
+              {nomeArquetipo(a.chave)}
             </button>
           );
         })}
@@ -145,11 +166,11 @@ export default function ArvoreClasses({
             onClick={() => setFuncao(null)}
             className="ml-1 text-[0.75rem] uppercase tracking-[0.18em] text-[var(--color-faint)] underline-offset-4 transition-colors hover:text-[var(--color-gold-bright)] hover:underline"
           >
-            limpar
+            {t("wiki.arv.limpar")}
           </button>
         )}
         <span className="ml-auto text-[0.75rem] uppercase tracking-[0.18em] text-[var(--color-faint)]">
-          {totalRaca} classes
+          {t("wiki.arv.n_classes").replace("{n}", String(totalRaca))}
         </span>
       </div>
 
@@ -187,14 +208,16 @@ export default function ArvoreClasses({
                   <span className="min-w-0 flex-1">
                     <span className="arv-nome">{c.nome}</span>
                     <span className="arv-meta">
-                      {TIERS[c.tier]}
-                      {c.invocador && <span className="arv-tag">invocador</span>}
+                      {tier(c.tier)}
+                      {c.invocador && (
+                        <span className="arv-tag">{t("wiki.arv.invocador")}</span>
+                      )}
                     </span>
                     {resumoSkills?.[c.id] && (
                       <span className="arv-nums">
-                        <b>{resumoSkills[c.id].skillsUnicas}</b> skills
+                        <b>{resumoSkills[c.id].skillsUnicas}</b> {t("wiki.arv.skills")}
                         <span className="sep" aria-hidden />
-                        nível <b>{resumoSkills[c.id].nivelMinimo}</b>
+                        {t("wiki.arv.nivel")} <b>{resumoSkills[c.id].nivelMinimo}</b>
                       </span>
                     )}
                   </span>
@@ -253,14 +276,18 @@ export default function ArvoreClasses({
                 </span>
                 <h3 className="arv-ramo-titulo">{raiz.nome}</h3>
                 <span className="arv-ramo-linha" aria-hidden />
-                <span className="arv-ramo-total">{totalRamo} classes</span>
+                <span className="arv-ramo-total">
+                  {t("wiki.arv.n_classes").replace("{n}", String(totalRamo))}
+                </span>
               </header>
 
               <div className="arv-sangria overflow-x-auto pb-2">
                 <div className="arv-grade" onMouseLeave={() => setAceso(null)}>
-                  {colunasRamo.map((coluna, t) => (
-                    <div key={t} className="arv-coluna">
-                      <p className="arv-cabecalho">{TIERS[t]}</p>
+                  {/* o índice da coluna se chamava `t`, que agora é o
+                      tradutor — renomeado para `grau` */}
+                  {colunasRamo.map((coluna, grau) => (
+                    <div key={grau} className="arv-coluna">
+                      <p className="arv-cabecalho">{tier(grau)}</p>
                       <div className="arv-pilha">
                         {coluna.map((c) => {
                           const apagado =
@@ -271,17 +298,17 @@ export default function ArvoreClasses({
                             <Link
                               key={c.id}
                               href={`/wiki/classes/${c.slug}`}
-                              className={`arv-no ${t > 0 ? "arv-no-filho" : ""} ${
+                              className={`arv-no ${grau > 0 ? "arv-no-filho" : ""} ${
                                 apagado ? "arv-apagado" : ""
                               } ${naLinhagem ? "arv-aceso" : ""}`}
                               style={{ ["--c" as string]: cor(c.arquetipo) }}
                               onMouseEnter={() => setAceso(c.id)}
                               onFocus={() => setAceso(c.id)}
-                              aria-label={`${c.nome} — ${TIERS[c.tier]}, ${
-                                ARQUETIPOS.find((a) => a.chave === c.arquetipo)?.nome ?? "—"
-                              }`}
+                              aria-label={`${c.nome} — ${tier(c.tier)}, ${nomeArquetipo(
+                                c.arquetipo
+                              )}`}
                             >
-                              {t > 0 && <span className="arv-fio" aria-hidden />}
+                              {grau > 0 && <span className="arv-fio" aria-hidden />}
                               <span className="arv-glifo">
                                 <GlifoArquetipo
                                   arquetipo={c.arquetipo}
@@ -291,22 +318,28 @@ export default function ArvoreClasses({
                               <span className="min-w-0 flex-1">
                                 <span className="arv-nome">{c.nome}</span>
                                 <span className="arv-meta">
-                                  {TIERS[c.tier]}
-                                  {c.invocador && <span className="arv-tag">invocador</span>}
+                                  {tier(c.tier)}
+                                  {c.invocador && (
+                                    <span className="arv-tag">
+                                      {t("wiki.arv.invocador")}
+                                    </span>
+                                  )}
                                   {idsDivergentes.has(c.id) && (
                                     <span
                                       className="arv-tag arv-tag-aviso"
-                                      title="As duas fontes do servidor discordam do pai desta classe — ver nota abaixo"
+                                      title={t("wiki.arv.fontes_divergem_title")}
                                     >
-                                      fontes divergem
+                                      {t("wiki.arv.fontes_divergem")}
                                     </span>
                                   )}
                                 </span>
                                 {resumoSkills?.[c.id] && (
                                   <span className="arv-nums">
-                                    <b>{resumoSkills[c.id].skillsUnicas}</b> skills
+                                    <b>{resumoSkills[c.id].skillsUnicas}</b>{" "}
+                                    {t("wiki.arv.skills")}
                                     <span className="sep" aria-hidden />
-                                    nível <b>{resumoSkills[c.id].nivelMinimo}</b>
+                                    {t("wiki.arv.nivel")}{" "}
+                                    <b>{resumoSkills[c.id].nivelMinimo}</b>
                                   </span>
                                 )}
                               </span>

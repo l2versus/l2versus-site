@@ -2,12 +2,16 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { carregarSecoes } from "@/lib/wiki/data";
 import SequenciaScrub from "@/components/media/SequenciaScrub";
+import { getT } from "@/lib/i18n/server";
+import { realce } from "@/lib/i18n/realce";
 
-export const metadata: Metadata = {
-  title: "Wiki — O Códice do Versus | L2 Versus",
-  description:
-    "O que o L2 Versus tem de diferente do Lineage 2 High Five original: jóias de boss em três degraus, SA de armas trocadas, escada de encantamento de conjunto, skills rebalanceadas. Sempre com o valor de antes e o de agora.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getT();
+  return {
+    title: t("wiki.home.meta.titulo"),
+    description: t("wiki.home.meta.descricao"),
+  };
+}
 
 /**
  * Frontispício do wiki.
@@ -20,11 +24,22 @@ export const metadata: Metadata = {
  * design system e nenhuma tela usava. Sair do obsidiana para o pergaminho no
  * exato momento em que o jogador entra no wiki faz o gesto de ABRIR UM LIVRO,
  * e depois a página volta ao escuro para a navegação.
+ *
+ * Esta página nasceu com o texto cravado em português. O rail à esquerda já
+ * traduzia e o frontispício não, então um jogador russo via o menu em russo e
+ * a página em português — o pior dos dois mundos, porque parece defeito, não
+ * falta de tradução. Agora tudo sai do `wiki.home.*`.
  */
 export default async function WikiIndexPage() {
-  const secoes = await carregarSecoes();
+  const [secoes, t] = await Promise.all([carregarSecoes(), getT()]);
   const prontas = secoes.filter((s) => s.estado.ok);
   const totalEntradas = prontas.reduce((n, s) => n + s.total, 0);
+
+  const comoEFeito = [1, 2, 3].map((n) => ({
+    n: ["I", "II", "III"][n - 1],
+    t: t(`wiki.home.feito.${n}.t`),
+    d: t(`wiki.home.feito.${n}.d`),
+  }));
 
   return (
     <main>
@@ -62,7 +77,7 @@ export default async function WikiIndexPage() {
           </p>
 
           <h1 className="mt-4 font-display text-[2rem] leading-[1.1] tracking-[0.03em] text-[var(--color-parchment)] md:text-[3.1rem]">
-            O Códice do Versus
+            {t("wiki.home.titulo")}
           </h1>
 
           <div className="diamond-rule mx-auto mt-6 max-w-sm">
@@ -70,21 +85,16 @@ export default async function WikiIndexPage() {
           </div>
 
           <p className="prosa-col mx-auto mt-6 text-[1.02rem] leading-relaxed text-[var(--color-muted)] md:text-[1.1rem]">
-            Todo servidor tem um banco de dados de itens. O que quase nenhum tem é
-            a <strong className="text-[var(--color-parchment)]">diferença</strong>.
-            Este códice existe para responder uma pergunta só: se você já conhece
-            Lineage 2, <em>o que muda aqui</em> — e em quanto.
+            {realce(t("wiki.home.tese"))}
           </p>
 
           <p className="prosa-col mx-auto mt-4 text-[0.92rem] leading-relaxed text-[var(--color-faint)]">
-            Cada número foi lido dos arquivos do servidor, um por um, não da
-            descrição que aparece dentro do cliente. Onde os dois divergem, está
-            avisado na página — e o que vale em jogo é o daqui.
+            {t("wiki.home.procedencia")}
           </p>
         </div>
       </section>
 
-      {/* ---------- A LINHA DE BASE (porta de entrada) ---------- */}
+      {/* ---------- AS DUAS PORTAS DE ENTRADA ---------- */}
       <section className="mx-auto max-w-6xl px-6 pt-14 md:pt-16">
         <Link
           href="/wiki/linha-de-base"
@@ -100,14 +110,15 @@ export default async function WikiIndexPage() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block font-display text-xl leading-snug text-[var(--color-parchment)] transition-colors group-hover:text-[var(--color-gold-bright)] md:text-2xl">
-              Comece pela linha de base
+              {t("wiki.home.porta_base.titulo")}
             </span>
             <span className="mt-1.5 block text-[0.95rem] leading-relaxed text-[var(--color-muted)]">
-              Como é um High Five low rate de verdade — e, sistema por sistema, o que
-              o Versus muda em cima dele. Se você só ler uma página, leia esta.
+              {t("wiki.home.porta_base.texto")}
             </span>
           </span>
-          <span className="selo selo-tier-improved shrink-0">o mapa do códice</span>
+          <span className="selo selo-tier-improved shrink-0">
+            {t("wiki.home.porta_base.selo")}
+          </span>
         </Link>
 
         {/* a árvore: a outra porta de entrada, para quem chega pensando
@@ -126,14 +137,15 @@ export default async function WikiIndexPage() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block font-display text-xl leading-snug text-[var(--color-parchment)] transition-colors group-hover:text-[var(--color-gold-bright)] md:text-2xl">
-              A árvore de classes
+              {t("wiki.home.porta_classes.titulo")}
             </span>
             <span className="mt-1.5 block text-[0.95rem] leading-relaxed text-[var(--color-muted)]">
-              As 103 profissões por raça e por função, da inicial à terceira —
-              com a linhagem inteira acendendo quando você passa o mouse.
+              {t("wiki.home.porta_classes.texto")}
             </span>
           </span>
-          <span className="selo selo-tier-normal shrink-0">103 classes</span>
+          <span className="selo selo-tier-normal shrink-0">
+            {t("wiki.home.porta_classes.selo")}
+          </span>
         </Link>
       </section>
 
@@ -143,10 +155,13 @@ export default async function WikiIndexPage() {
           <span className="dia" />
         </div>
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="sec-title">As seções</h2>
+          <h2 className="sec-title">{t("wiki.home.secoes")}</h2>
           <p className="text-[0.68rem] uppercase tracking-[0.22em] text-[var(--color-faint)]">
-            {prontas.length} de {secoes.length} prontas · {totalEntradas}{" "}
-            {totalEntradas === 1 ? "entrada" : "entradas"}
+            {t("wiki.home.prontas")
+              .replace("{n}", String(prontas.length))
+              .replace("{m}", String(secoes.length))}{" "}
+            · {totalEntradas}{" "}
+            {t(totalEntradas === 1 ? "wiki.entrada" : "wiki.entradas")}
           </p>
         </div>
 
@@ -176,18 +191,18 @@ export default async function WikiIndexPage() {
                   </span>
                   {pronta ? (
                     <span className="text-[0.75rem] uppercase tracking-[0.2em] text-[var(--color-faint)]">
-                      {s.total} {s.total === 1 ? "entrada" : "entradas"}
+                      {s.total} {t(s.total === 1 ? "wiki.entrada" : "wiki.entradas")}
                     </span>
                   ) : (
-                    <span className="selo selo-pendente">em preparação</span>
+                    <span className="selo selo-pendente">{t("wiki.em_preparacao")}</span>
                   )}
                 </div>
 
                 <h3 className="mt-4 font-display text-lg leading-snug text-[var(--color-parchment)] transition-colors group-hover:text-[var(--color-gold-bright)]">
-                  {s.titulo}
+                  {t(`wiki.sec.${s.slug}.titulo`)}
                 </h3>
                 <p className="mt-2 text-[0.92rem] leading-relaxed text-[var(--color-muted)]">
-                  {s.chamada}
+                  {t(`wiki.sec.${s.slug}.chamada`)}
                 </p>
               </Link>
             );
@@ -203,7 +218,12 @@ export default async function WikiIndexPage() {
           cavaleiro erguendo a mão — deixamos o convite aparecer nessa deixa. */}
       <SequenciaScrub
         pasta="/seq/versus"
-        quadros={49}
+        /* O clipe original tem 848×478 e 192 quadros a 24fps. O conjunto de
+           desktop usa os 192 (scrub liso, 15 MB) e o de tela pequena usa 96
+           (4 MB) — os dois cobrem o mesmo clipe, só muda a granularidade.
+           Ver scripts/tratar-sequencia.mjs e o comentário de `quadrosBase`. */
+        quadros={192}
+        quadrosBase={96}
         modo="heroi"
         alturaVh={300}
         className="mt-16 md:mt-20"
@@ -213,27 +233,26 @@ export default async function WikiIndexPage() {
             <span className="dia" />
           </div>
           <p className="mt-5 font-display text-2xl leading-snug text-[var(--color-parchment)] [text-shadow:0_2px_18px_rgba(0,0,0,0.85)] md:text-4xl">
-            Lido dos arquivos do servidor.
+            {t("wiki.home.cap1")}
           </p>
         </div>
         <div className="ss-cap ss-cap-baixo" data-de="0.34" data-ate="0.66">
           <p className="font-display text-2xl leading-snug text-[var(--color-parchment)] [text-shadow:0_2px_18px_rgba(0,0,0,0.85)] md:text-4xl">
-            <span className="text-glow-gold">Não da descrição do cliente.</span>
+            <span className="text-glow-gold">{t("wiki.home.cap2")}</span>
           </p>
           <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-[var(--color-muted)] [text-shadow:0_1px_10px_rgba(0,0,0,0.9)]">
-            Quando o jogo mostrar um número velho, o que vale em combate é o que
-            está gravado neste códice.
+            {t("wiki.home.cap2_sub")}
           </p>
         </div>
         <div className="ss-cap ss-cap-baixo" data-de="0.66" data-ate="1">
           <p className="font-display text-2xl leading-snug text-[var(--color-parchment)] [text-shadow:0_2px_18px_rgba(0,0,0,0.85)] md:text-4xl">
-            O que muda, você vê <span className="text-glow-gold">antes de logar</span>.
+            {realce(t("wiki.home.cap3"), { forte: "text-glow-gold" })}
           </p>
           <Link
             href="/wiki/linha-de-base"
             className="btn-gold mt-7 px-7 py-3 text-xs backdrop-blur-sm"
           >
-            ◆ Comece pela linha de base
+            ◆ {t("wiki.home.porta_base.titulo")}
           </Link>
         </div>
       </SequenciaScrub>
@@ -243,26 +262,10 @@ export default async function WikiIndexPage() {
         <div className="diamond-rule mb-4">
           <span className="dia" />
         </div>
-        <h2 className="sec-title">Como este códice é feito</h2>
+        <h2 className="sec-title">{t("wiki.home.feito.titulo")}</h2>
 
         <div data-wk-tilt className="mt-7 grid gap-4 md:grid-cols-3">
-          {[
-            {
-              n: "I",
-              t: "Lido do servidor, não do cliente",
-              d: "Os valores saem dos arquivos do servidor. A descrição dentro do jogo às vezes ficou com o número velho — quando isso acontece, a entrada avisa, e o valor desta página é o que vale.",
-            },
-            {
-              n: "II",
-              t: "Toda entrada cita a origem",
-              d: "No pé de cada entrada está o arquivo e a linha de onde ela saiu. Serve para você conferir, e para nós auditarmos o códice contra a fonte sem adivinhação.",
-            },
-            {
-              n: "III",
-              t: "O que não sabemos fica em branco",
-              d: "Quando a fonte registrou só o valor de hoje, a entrada mostra “estado atual” e diz que o valor antigo não está documentado. Não preenchemos lacuna com chute.",
-            },
-          ].map((c) => (
+          {comoEFeito.map((c) => (
             <div key={c.n} data-wk-rise className="filet panel panel-lit wk-luz p-5">
               <span className="filet-alt" aria-hidden />
               <span className="marginalia">{c.n}</span>

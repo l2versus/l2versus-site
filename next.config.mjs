@@ -8,6 +8,12 @@ const nextConfig = {
   turbopack: { root: import.meta.dirname },
   // mysql2 e bcryptjs rodam no server; garante que nao sejam bundlados no client
   serverExternalPackages: ["mysql2", "bcryptjs"],
+  // Vercel/serverless: o wiki lê content/wiki/*.json em RUNTIME com fs a partir
+  // de process.cwd() (lib/wiki/data.ts). O file tracing não enxerga caminho
+  // dinâmico, então sem esta linha o deploy sobe, responde 200 e mostra o
+  // códice inteiro "em preparação" — o mesmo sintoma traiçoeiro do Coolify
+  // sem o COPY de content/ (ver DEPLOY.md §2). No Docker/Coolify ela é inócua.
+  outputFileTracingIncludes: { "/*": ["./content/**/*"] },
   // Build de producao no VPS: pula type-check e lint (o Turbopack/SWC ja compila
   // os .ts). O type-check crashava tentando auto-instalar typescript.
   typescript: { ignoreBuildErrors: true },

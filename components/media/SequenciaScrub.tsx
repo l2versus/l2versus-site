@@ -39,6 +39,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 type Props = {
   pasta: string;
   quadros: number;
+  /* Quantos quadros o conjunto BASE tem. Os dois níveis não precisam ter a
+     mesma contagem: no desktop a fluidez do scrub justifica 192 quadros, no
+     celular ela custa megabytes que ninguém pediu. Como os dois conjuntos
+     cobrem o MESMO clipe, o progresso 0..1 mapeia certo nos dois — só muda a
+     granularidade. Sem isto, o celular pediria q_097..q_192 de uma pasta que
+     só tem 96 e tomaria 96 respostas 404. */
+  quadrosBase?: number;
   modo?: "heroi" | "banda" | "painel";
   alturaVh?: number;
   className?: string;
@@ -48,6 +55,7 @@ type Props = {
 export default function SequenciaScrub({
   pasta,
   quadros,
+  quadrosBase,
   modo = "heroi",
   alturaVh = 280,
   className = "",
@@ -73,11 +81,25 @@ export default function SequenciaScrub({
     if (!ctx2d) return;
 
     /* ---------- carregamento dos quadros ---------- */
-    const prontos: (HTMLImageElement | undefined)[] = new Array(quadros);
     let iniciou = false;
     let vivo = true;
 
-    const nome = (i: number) => `${pasta}/q_${String(i + 1).padStart(3, "0")}.webp`;
+    /* Conjunto HD só onde ele é necessário.
+       Os clipes de origem são pequenos (o do guerreiro tem 848×478), então num
+       palco de 1920 o navegador ampliava 2,26× com interpolação bilinear. O
+       conjunto `-hd` é reconstruído offline com Real-ESRGAN e tem 192 quadros,
+       mas custa 15–18 MB; o base tem 96 quadros em resolução de tela pequena e
+       custa 4–5 MB. Abaixo de 1100px de palco o base desenha praticamente 1:1 —
+       pagar o HD ali seria baixar megabyte para jogar fora no downscale.
+       Ver scripts/tratar-sequencia.mjs. */
+    const alta = palco.clientWidth >= 1100;
+    const pastaEfetiva = alta ? `${pasta}-hd` : pasta;
+    /* a contagem acompanha o nível — ver o comentário de `quadrosBase` */
+    const nQuadros = alta ? quadros : (quadrosBase ?? quadros);
+    const nome = (i: number) =>
+      `${pastaEfetiva}/q_${String(i + 1).padStart(3, "0")}.webp`;
+
+    const prontos: (HTMLImageElement | undefined)[] = new Array(nQuadros);
 
     const pedir = (i: number) => {
       const img = new Image();
@@ -112,11 +134,11 @@ export default function SequenciaScrub({
       iniciou = true;
       const vistos = new Set<number>();
       /* onda 1: cobertura grosseira; onda 2: o resto em ordem */
-      for (let i = 0; i < quadros; i += 8) {
+      for (let i = 0; i < nQuadros; i += 8) {
         vistos.add(i);
         pedir(i);
       }
-      for (let i = 0; i < quadros; i++) {
+      for (let i = 0; i < nQuadros; i++) {
         if (!vistos.has(i)) pedir(i);
       }
     };
@@ -138,14 +160,14 @@ export default function SequenciaScrub({
     let progresso = 0;
     let raf = 0;
     const alvoAtual = () =>
-      Math.max(0, Math.min(quadros - 1, Math.round(progresso * (quadros - 1))));
+      Math.max(0, Math.min(nQuadros - 1, Math.round(progresso * (nQuadros - 1))));
 
     const desenhar = () => {
       raf = 0;
       const alvo = alvoAtual();
       /* o carregado mais próximo do alvo — nunca tela preta no meio */
       let img: HTMLImageElement | undefined;
-      for (let d = 0; d < quadros; d++) {
+      for (let d = 0; d < nQuadros; d++) {
         img = prontos[alvo - d] ?? prontos[alvo + d];
         if (img) break;
       }
@@ -244,7 +266,7 @@ export default function SequenciaScrub({
       io.disconnect();
       if (raf) cancelAnimationFrame(raf);
     };
-  }, [pasta, quadros, modo]);
+  }, [pasta, quadros, quadrosBase, modo]);
 
   const ehHeroi = modo === "heroi";
   return (
